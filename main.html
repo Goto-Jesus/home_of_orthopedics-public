@@ -41,8 +41,8 @@
               <li class="navigation__item" :class="{'navigation__item--active': currentAnchor === '#reviews'}" style="width: max-content;"><a class="navigation__link" style="line-height: 100%; padding-bottom: 15px;" href="#reviews" @click="() =&gt; {currentAnchor = '#reviews'; isClosedBurgerMenu=true;}" x-on:click="setTimeout(() =&gt; {isShowBurgerMenu = false}, 500)">Відгуки</a></li>
             </ul>
             <p style="margin-bottom: 25px;">Поглиблені персональнi консультації з нутриціології, якi допоможуть вам досягти витриманого здоров'я та життєвої енергії</p>
-            <button class="button--only-text button" type="button" style="margin-bottom: 40px;" @click="isShowPopUpContact=true;">
-              <p class="button__text">Зв'язатися зі мною</p>
+            <button class="button" type="button" style="margin-bottom: 40px;" @click="isShowPopUpContact=true;">
+              <p class="button__text">Зв'язатися зі мною</p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="Зв'язатися зі мною"/>
             </button>
             <h3 style="margin-bottom: 25px; font-size: 18px;">Давайте дружити</h3>
             <div class="social-list" style="margin-bottom: 20px;"><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
@@ -165,7 +165,7 @@
             </div>
           </div>
           <div class="_grid-col-desk-6-6" style="display: flex; justify-content: end; gap: 20px; padding-left: 38px;">
-            <button class="button--only-text button" type="button" @click="isShowPopUpContact=true;">
+            <button class="button--light button--only-text button" type="button" @click="isShowPopUpContact=true;">
               <p class="button__text">ЗВ'ЯЗАТИСЯ</p>
             </button>
             <button class="button-menu" @click="isShowBurgerMenu=true"><img src="./images/icons/menu.svg" alt="menu"/></button>
@@ -205,24 +205,55 @@
             </div>
           </div>
           <div class="slide-main-information__picture">
-            <div class="button-info" x-data="{ isOpenInfo: true }" @click="isOpenInfo=!isOpenInfo">
-              <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
-                <h4 class="button-info__pop-up__title">Легкий</h4>
-                <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+            <div class="slide-main-information__picture__info-container">
+              <div class="slide-main-information__picture__info--1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
+                <div class="button-info" x-data="{ isOpenInfo: true }" @click="isOpenInfo=!isOpenInfo">
+                  <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                    <h4 class="button-info__pop-up__title">Легкий</h4>
+                    <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                  </div>
+                  <div class="button-info__icon">
+                    <div class="button-info__line"></div>
+                    <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                  </div>
+                </div>
               </div>
-              <div class="button-info__icon">
-                <div class="button-info__line"></div>
-                <div class="button-info__line" :class="{'button-info__line--plus':isOpenInfo}"></div>
+              <div class="slide-main-information__picture__info--2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
+                <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
+                  <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                    <h4 class="button-info__pop-up__title">Легкий</h4>
+                    <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                  </div>
+                  <div class="button-info__icon">
+                    <div class="button-info__line"></div>
+                    <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="slide-main-information__picture__info--3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
+                <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
+                  <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                    <h4 class="button-info__pop-up__title">Легкий</h4>
+                    <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                  </div>
+                  <div class="button-info__icon">
+                    <div class="button-info__line"></div>
+                    <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="decor-circle-info">
+            <div class="decor-circle-info" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * -1 / 200) + 'px,' + (mouseY * -1 / 200) + 'px, 0)'}})()">
               <div class="decor-circle-info__container"><img class="decor-circle-info__image" src="./images/icons/3d_orange.svg" alt="3d"/>
                 <p class="decor-circle-info__text">ТЕХНОЛОГІЯ</p>
               </div>
             </div>
             <div style="width: 1056px; height: 1056px; position: absolute;">
               <div class="main-photo" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
-                <div class="main-photo__block"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee" style="width: 706px; height: 710px;"/>
+                <div class="main-photo__block">
+                  <div class="shlem-photo"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee"/>
+                    <div class="decor-blur-point" style="width: 528px; height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="shlem-photo__link" href="#">дізнатися бiльшE</a>
+                  </div>
                 </div>
                 <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
                   <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">

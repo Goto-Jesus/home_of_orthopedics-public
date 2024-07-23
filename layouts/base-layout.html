@@ -41,8 +41,8 @@
               <li class="navigation__item" :class="{'navigation__item--active': currentAnchor === '#reviews'}" style="width: max-content;"><a class="navigation__link" style="line-height: 100%; padding-bottom: 15px;" href="#reviews" @click="() =&gt; {currentAnchor = '#reviews'; isClosedBurgerMenu=true;}" x-on:click="setTimeout(() =&gt; {isShowBurgerMenu = false}, 500)">Відгуки</a></li>
             </ul>
             <p style="margin-bottom: 25px;">Поглиблені персональнi консультації з нутриціології, якi допоможуть вам досягти витриманого здоров'я та життєвої енергії</p>
-            <button class="button--only-text button" type="button" style="margin-bottom: 40px;" @click="isShowPopUpContact=true;">
-              <p class="button__text">Зв'язатися зі мною</p>
+            <button class="button" type="button" style="margin-bottom: 40px;" @click="isShowPopUpContact=true;">
+              <p class="button__text">Зв'язатися зі мною</p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="Зв'язатися зі мною"/>
             </button>
             <h3 style="margin-bottom: 25px; font-size: 18px;">Давайте дружити</h3>
             <div class="social-list" style="margin-bottom: 20px;"><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
@@ -165,7 +165,7 @@
             </div>
           </div>
           <div class="_grid-col-desk-6-6" style="display: flex; justify-content: end; gap: 20px; padding-left: 38px;">
-            <button class="button--only-text button" type="button" @click="isShowPopUpContact=true;">
+            <button class="button--light button--only-text button" type="button" @click="isShowPopUpContact=true;">
               <p class="button__text">ЗВ'ЯЗАТИСЯ</p>
             </button>
             <button class="button-menu" @click="isShowBurgerMenu=true"><img src="./images/icons/menu.svg" alt="menu"/></button>
