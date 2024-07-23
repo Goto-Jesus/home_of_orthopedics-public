@@ -165,7 +165,7 @@
             </div>
           </div>
           <div class="_grid-col-desk-6-6" style="display: flex; justify-content: end; gap: 20px; padding-left: 38px;">
-            <button class="button--light button--only-text button" type="button" @click="isShowPopUpContact=true;">
+            <button class="button--light button" type="button" @click="isShowPopUpContact=true;">
               <p class="button__text">ЗВ'ЯЗАТИСЯ</p>
             </button>
             <button class="button-menu" @click="isShowBurgerMenu=true"><img src="./images/icons/menu.svg" alt="menu"/></button>
@@ -173,91 +173,184 @@
         </div>
       </header>
       <main class="page__main">
-        <div class="slide-main-information" x-data="{ isFirst: true }">
-          <div class="slide-main-information__decor">
-            <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);"></div>
+        <div class="main-slider" x-data="{ isFirst: true }">
+          <div class="main-slider__wrapper" :class="{'main-slider__wrapper--hidden': !isFirst}">
+            <div class="main-slider__decor">
+              <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);"></div>
+            </div>
+            <div class="main-slider__content">
+              <div class="main-slider__switch">
+                <div class="main-slider__switch__container">
+                  <div class="main-slider__switch__item" :class="{'main-slider__switch__item--active': isFirst}" @click="isFirst=true"><img src="./images/icons/shlem-on-switch.png" alt="Шолом Talee"/>
+                    <div>Шолом Talee</div>
+                  </div>
+                  <div class="main-slider__switch__hr"></div>
+                  <div class="main-slider__switch__item" :class="{'main-slider__switch__item--active-right': !isFirst}" @click="isFirst=false"><img src="./images/icons/foot-on-switch.png" alt="Шолом Talee"/>
+                    <div>Ортези Piro</div>
+                  </div>
+                </div>
+                <div class="main-slider__switch__line">
+                  <div class="main-slider__switch__point" :class="{'main-slider__switch__point--right': !isFirst}"></div>
+                  <hr/>
+                </div>
+              </div>
+              <h1 class="main-slider__title">ОРТОПЕДИЧНИЙ <br><b>ШОлом TALEE</b> <br>для вашої дитини</h1>
+              <hr class="main-slider__hr" style="margin-block: 45px"/>
+              <div class="main-slider__container">
+                <p class="main-slider__text">Шолом <span>TALEE®</span> — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
+                <div class="main-slider__button">
+                  <button class="button" type="">
+                    <p class="button__text">ЗАПИСАТИСЯ НА ПРИЙОМ</p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="ЗАПИСАТИСЯ НА ПРИЙОМ"/>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="main-slider__picture">
+              <div class="main-slider__picture__info-container">
+                <div class="main-slider__picture__info--1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
+                  <div class="button-info" x-data="{ isOpenInfo: true }" @click="isOpenInfo=!isOpenInfo">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                      <h4 class="button-info__pop-up__title">Легкий</h4>
+                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                    </div>
+                    <div class="button-info__icon">
+                      <div class="button-info__line"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-slider__picture__info--2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
+                  <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                      <h4 class="button-info__pop-up__title">Легкий</h4>
+                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                    </div>
+                    <div class="button-info__icon">
+                      <div class="button-info__line"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-slider__picture__info--3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
+                  <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                      <h4 class="button-info__pop-up__title">Легкий</h4>
+                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                    </div>
+                    <div class="button-info__icon">
+                      <div class="button-info__line"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="decor-circle-info" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 200) + 'px,' + (mouseY * -1 / 200) + 'px, 0)'}})()">
+                <div class="decor-circle-info__container"><img class="decor-circle-info__image" src="./images/icons/3d_orange.svg" alt="3d"/>
+                  <p class="decor-circle-info__text">ТЕХНОЛОГІЯ</p>
+                </div>
+              </div>
+              <div style="width: 1056px; height: 1056px; position: absolute;">
+                <div class="main-photo" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                  <div class="main-photo__block">
+                    <div class="shlem-photo"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee"/>
+                      <div class="decor-blur-point" style="width: 528px; height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="shlem-photo__link" href="#">дізнатися бiльшE</a>
+                    </div>
+                  </div>
+                  <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                    <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                      <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="slide-main-information__content">
-            <div class="slide-main-information__switch">
-              <div class="slide-main-information__switch__container">
-                <div class="slide-main-information__switch__item" :class="{'slide-main-information__switch__item--active': isFirst}" @click="isFirst=true"><img src="./images/icons/shlem-on-switch.png" alt="Шолом Talee"/>
-                  <div>Шолом Talee</div>
-                </div>
-                <div class="slide-main-information__switch__hr"></div>
-                <div class="slide-main-information__switch__item" :class="{'slide-main-information__switch__item--active-right': !isFirst}" @click="isFirst=false"><img src="./images/icons/foot-on-switch.png" alt="Шолом Talee"/>
-                  <div>Ортези Piro</div>
-                </div>
-              </div>
-              <div class="slide-main-information__switch__line">
-                <div class="slide-main-information__switch__point" :class="{'slide-main-information__switch__point--right': !isFirst}"></div>
-                <hr/>
-              </div>
+          <div class="main-slider__wrapper" :class="{'main-slider__wrapper--hidden': isFirst}">
+            <div class="main-slider__decor">
+              <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #258ad8; filter: blur(300px);"></div>
             </div>
-            <h1 class="slide-main-information__title">ОРТОПЕДИЧНИЙ <br><b>ШОлом TALEE</b> <br>для вашої дитини</h1>
-            <hr class="slide-main-information__hr" style="margin-block: 45px"/>
-            <div class="slide-main-information__container">
-              <p class="slide-main-information__text">Шолом <span>TALEE®</span> — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
-              <div class="slide-main-information__button">
-                <button class="button" type="">
-                  <p class="button__text">ЗАПИСАТИСЯ НА ПРИЙОМ</p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="ЗАПИСАТИСЯ НА ПРИЙОМ"/>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="slide-main-information__picture">
-            <div class="slide-main-information__picture__info-container">
-              <div class="slide-main-information__picture__info--1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
-                <div class="button-info" x-data="{ isOpenInfo: true }" @click="isOpenInfo=!isOpenInfo">
-                  <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
-                    <h4 class="button-info__pop-up__title">Легкий</h4>
-                    <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+            <div class="main-slider__content">
+              <div class="main-slider__switch">
+                <div class="main-slider__switch__container">
+                  <div class="main-slider__switch__item" :class="{'main-slider__switch__item--active': isFirst}" @click="isFirst=true"><img src="./images/icons/shlem-on-switch.png" alt="Шолом Talee"/>
+                    <div>Шолом Talee</div>
                   </div>
-                  <div class="button-info__icon">
-                    <div class="button-info__line"></div>
-                    <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                  <div class="main-slider__switch__hr"></div>
+                  <div class="main-slider__switch__item" :class="{'main-slider__switch__item--active-right': !isFirst}" @click="isFirst=false"><img src="./images/icons/foot-on-switch.png" alt="Шолом Talee"/>
+                    <div>Ортези Piro</div>
                   </div>
                 </div>
-              </div>
-              <div class="slide-main-information__picture__info--2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
-                <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
-                  <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
-                    <h4 class="button-info__pop-up__title">Легкий</h4>
-                    <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
-                  </div>
-                  <div class="button-info__icon">
-                    <div class="button-info__line"></div>
-                    <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
-                  </div>
+                <div class="main-slider__switch__line">
+                  <div class="main-slider__switch__point" :class="{'main-slider__switch__point--right': !isFirst}"></div>
+                  <hr/>
                 </div>
               </div>
-              <div class="slide-main-information__picture__info--3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
-                <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
-                  <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
-                    <h4 class="button-info__pop-up__title">Легкий</h4>
-                    <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
-                  </div>
-                  <div class="button-info__icon">
-                    <div class="button-info__line"></div>
-                    <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
-                  </div>
+              <h1 class="main-slider__title">ОРТОПЕДИЧНИЙ <br><b style='color: #399df5;'>Ортез piro</b> <br>для вашої дитини</h1>
+              <hr class="main-slider__hr" style="margin-block: 45px"/>
+              <div class="main-slider__container">
+                <p class="main-slider__text">Ортез <span style='color: #399df5;'>PIRO®</span> — найтонший та найлегший ортез для гомілковостопного суглоба</p>
+                <div class="main-slider__button">
+                  <button class="button--blue button" type="">
+                    <p class="button__text">ЗАПИСАТИСЯ НА ПРИЙОМ</p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="ЗАПИСАТИСЯ НА ПРИЙОМ"/>
+                  </button>
                 </div>
               </div>
             </div>
-            <div class="decor-circle-info" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * -1 / 200) + 'px,' + (mouseY * -1 / 200) + 'px, 0)'}})()">
-              <div class="decor-circle-info__container"><img class="decor-circle-info__image" src="./images/icons/3d_orange.svg" alt="3d"/>
-                <p class="decor-circle-info__text">ТЕХНОЛОГІЯ</p>
-              </div>
-            </div>
-            <div style="width: 1056px; height: 1056px; position: absolute;">
-              <div class="main-photo" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
-                <div class="main-photo__block">
-                  <div class="shlem-photo"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee"/>
-                    <div class="decor-blur-point" style="width: 528px; height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="shlem-photo__link" href="#">дізнатися бiльшE</a>
+            <div class="main-slider__picture">
+              <div class="main-slider__picture__info-container">
+                <div class="main-slider__picture__info--4" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
+                  <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                      <h4 class="button-info__pop-up__title">Легкий</h4>
+                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                    </div>
+                    <div class="button-info__icon">
+                      <div class="button-info__line"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                    </div>
                   </div>
                 </div>
-                <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
-                  <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
-                    <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                <div class="main-slider__picture__info--5" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
+                  <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                      <h4 class="button-info__pop-up__title">Легкий</h4>
+                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                    </div>
+                    <div class="button-info__icon">
+                      <div class="button-info__line"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-slider__picture__info--6" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
+                  <div class="button-info" x-data="{ isOpenInfo: true }" @click="isOpenInfo=!isOpenInfo">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                      <h4 class="button-info__pop-up__title">Легкий</h4>
+                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                    </div>
+                    <div class="button-info__icon">
+                      <div class="button-info__line"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="decor-circle-info decor-circle-info--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 200) + 'px,' + (mouseY * -1 / 200) + 'px, 0)'}})()">
+                <div class="decor-circle-info__container"><img class="decor-circle-info__image" src="./images/icons/3d_blue_.svg" alt="3d"/>
+                  <p class="decor-circle-info__text">ТЕХНОЛОГІЯ</p>
+                </div>
+              </div>
+              <div style="width: 1056px; height: 1056px; position: absolute;">
+                <div class="main-photo main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                  <div class="main-photo__block">
+                    <div class="shlem-photo"><img src="./images/decor/foot_full_x2.png" alt="Шолом Talee"/>
+                      <div class="decor-blur-point" style="width: 528px; height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="shlem-photo__link" href="#">дізнатися бiльшE</a>
+                    </div>
+                  </div>
+                  <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                    <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                      <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -318,12 +411,12 @@
             </div>
           </div>
           <div style="width: 1056px; height: 1056px; margin: auto; margin-block: -120px -230px;">
-            <div class="main-photo" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+            <div class="main-photo" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
               <div class="main-photo__block"><img src="./images/icons/logo_big.svg" alt="logo orthopedics"/>
               </div>
-              <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
-                <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
-                  <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+              <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                  <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
                 </div>
               </div>
             </div>
