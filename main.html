@@ -26,7 +26,7 @@
                 <div class="contacts-menu__button__image"></div>
               </button>
             </div>
-            <hr class="_anim-items _transition-clip-form-left" style="margin-bottom: 25px;"/><a class="link" href="all_courses.html" style="margin-bottom: 25px;">
+            <hr class="_anim-items _transition-clip-form-left" style="margin-bottom: 25px;"/><a class="link link--" href="all_courses.html" style="margin-bottom: 25px;">
               <div class="link__text">Навчання</div></a>
             <ul style="display: grid; grid-template-columns: repeat(2,1fr); margin-bottom: 15px; gap: 10px;">
               <li class="navigation__item" :class="{'navigation__item--active': currentAnchor === '#about_company'}" style="width: max-content;"><a class="navigation__link" style="line-height: 100%; padding-bottom: 15px;" href="#about_company" @click="() =&gt; {currentAnchor = '#about_company'; isClosedBurgerMenu=true;}" x-on:click="setTimeout(() =&gt; {isShowBurgerMenu = false}, 500)">Про компанію</a></li>
@@ -35,10 +35,11 @@
             </ul>
             <p style="margin-bottom: 25px;">Поглиблені персональнi консультації з нутриціології, якi допоможуть вам досягти витриманого здоров'я та життєвої енергії</p>
             <button class="button" type="button" style="margin-bottom: 40px;" @click="isShowPopUpContact=true;">
-              <p class="button__text">Зв'язатися зі мною</p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="Зв'язатися зі мною"/>
+              <p class="button__text"><span>Зв'язатися зі мною</span>
+              </p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="Зв'язатися зі мною"/>
             </button>
             <h3 style="margin-bottom: 25px; font-size: 18px;">Давайте дружити</h3>
-            <div class="social-list" style="margin-bottom: 20px;"><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
+            <div class="social-list" style="margin-bottom: 20px;"><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
             </div>
             <hr class="_anim-items _transition-clip-form-left" style="margin-bottom: 25px;"/>
             <div>Розробка сайту: <a href="https://www.instagram.com/boris__kruglov/" style="text-decoration: underline; font-weight: 500;">kruglov.design</a></div>
@@ -159,198 +160,199 @@
           </div>
           <div class="_grid-col-desk-6-6" style="display: flex; justify-content: end; gap: 20px; padding-left: 38px;">
             <button class="button--light button" type="button" @click="isShowPopUpContact=true;">
-              <p class="button__text">ЗВ'ЯЗАТИСЯ</p>
+              <p class="button__text"><span>ЗВ'ЯЗАТИСЯ</span>
+              </p>
             </button>
             <button class="button-menu" @click="isShowBurgerMenu=true"><img src="./images/icons/menu.svg" alt="menu"/></button>
           </div>
         </div>
       </header>
       <main class="page__main">
-        <section class="section-main">
-          <div class="main-slider" x-data="{ isFirst: true }">
-            <div class="main-slider__wrapper" :class="{'main-slider__wrapper--hidden': !isFirst}">
-              <div class="main-slider__decor-1">
-                <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);"></div>
-              </div>
-              <div class="main-slider__decor-2">
-                <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);"></div>
-              </div>
-              <div class="main-slider__content">
-                <div class="main-slider__switch">
-                  <div class="main-slider__switch__container">
-                    <div class="main-slider__switch__item" :class="{'main-slider__switch__item--active': isFirst}" @click="isFirst=true"><img src="./images/icons/shlem-on-switch.png" alt="Шолом Talee"/>
-                      <div>Шолом Talee</div>
-                    </div>
-                    <div class="main-slider__switch__hr"></div>
-                    <div class="main-slider__switch__item" :class="{'main-slider__switch__item--active-right': !isFirst}" @click="isFirst=false"><img src="./images/icons/foot-on-switch.png" alt="Шолом Talee"/>
-                      <div>Ортези Piro</div>
-                    </div>
+        <section class="section-main-slider" x-data="{ isFirst: true }">
+          <div class="section-main-slider__wrapper" :class="{'section-main-slider__wrapper--hidden': !isFirst}">
+            <div class="section-main-slider__decor-1">
+              <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);"></div>
+            </div>
+            <div class="section-main-slider__decor-2">
+              <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);"></div>
+            </div>
+            <div class="section-main-slider__content">
+              <div class="section-main-slider__switch">
+                <div class="section-main-slider__switch__container">
+                  <div class="section-main-slider__switch__item" :class="{'section-main-slider__switch__item--active': isFirst}" @click="isFirst=true"><img src="./images/icons/shlem-on-switch.png" alt="Шолом Talee"/>
+                    <div>Шолом Talee</div>
                   </div>
-                  <div class="main-slider__switch__line">
-                    <div class="main-slider__switch__point" :class="{'main-slider__switch__point--right': !isFirst}"></div>
-                    <hr/>
+                  <div class="section-main-slider__switch__hr"></div>
+                  <div class="section-main-slider__switch__item" :class="{'section-main-slider__switch__item--active-right': !isFirst}" @click="isFirst=false"><img src="./images/icons/foot-on-switch.png" alt="Шолом Talee"/>
+                    <div>Ортези Piro</div>
                   </div>
                 </div>
-                <h1 class="main-slider__title">ОРТОПЕДИЧНИЙ <br><b>ШОлом TALEE</b> <br>для вашої дитини</h1>
-                <hr class="main-slider__hr" style="margin-block: 45px"/>
-                <div class="main-slider__container">
-                  <p class="main-slider__text">Шолом <span>TALEE®</span> — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
-                  <div class="main-slider__button">
-                    <button class="button" type="">
-                      <p class="button__text">ЗАПИСАТИСЯ НА ПРИЙОМ</p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="ЗАПИСАТИСЯ НА ПРИЙОМ"/>
-                    </button>
-                  </div>
+                <div class="section-main-slider__switch__line">
+                  <div class="section-main-slider__switch__point" :class="{'section-main-slider__switch__point--right': !isFirst}"></div>
+                  <hr/>
                 </div>
               </div>
-              <div class="main-slider__picture">
-                <div class="main-slider__picture__info-container">
-                  <div class="main-slider__picture__info--1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
-                    <div class="button-info" x-data="{ isOpenInfo: true }" @click="isOpenInfo=!isOpenInfo">
-                      <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
-                        <h4 class="button-info__pop-up__title">Легкий</h4>
-                        <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
-                      </div>
-                      <div class="button-info__icon">
-                        <div class="button-info__line"></div>
-                        <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
-                      </div>
+              <h1 class="section-main-slider__title">ОРТОПЕДИЧНИЙ <br><b>ШОлом TALEE</b> <br>для вашої дитини</h1>
+              <hr class="section-main-slider__hr" style="margin-block: 45px"/>
+              <div class="section-main-slider__container">
+                <p class="section-main-slider__text">Шолом <span>TALEE®</span> — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
+                <div class="section-main-slider__button">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="ЗАПИСАТИСЯ НА ПРИЙОМ"/>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="section-main-slider__picture">
+              <div class="section-main-slider__picture__info-container">
+                <div class="section-main-slider__picture__info--1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
+                  <div class="button-info" x-data="{ isOpenInfo: true }" @click="isOpenInfo=!isOpenInfo">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                      <h4 class="button-info__pop-up__title">Легкий</h4>
+                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
-                  </div>
-                  <div class="main-slider__picture__info--2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
-                    <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
-                      <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
-                        <h4 class="button-info__pop-up__title">Легкий</h4>
-                        <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
-                      </div>
-                      <div class="button-info__icon">
-                        <div class="button-info__line"></div>
-                        <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="main-slider__picture__info--3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
-                    <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
-                      <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
-                        <h4 class="button-info__pop-up__title">Легкий</h4>
-                        <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
-                      </div>
-                      <div class="button-info__icon">
-                        <div class="button-info__line"></div>
-                        <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
-                      </div>
+                    <div class="button-info__icon">
+                      <div class="button-info__line"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
                     </div>
                   </div>
                 </div>
-                <div class="decor-circle-info" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 200) + 'px,' + (mouseY * -1 / 200) + 'px, 0)'}})()">
-                  <div class="decor-circle-info__container"><img class="decor-circle-info__image" src="./images/icons/3d_orange.svg" alt="3d"/>
-                    <p class="decor-circle-info__text">ТЕХНОЛОГІЯ</p>
+                <div class="section-main-slider__picture__info--2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
+                  <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                      <h4 class="button-info__pop-up__title">Легкий</h4>
+                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                    </div>
+                    <div class="button-info__icon">
+                      <div class="button-info__line"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                    </div>
                   </div>
                 </div>
-                <div style="width: 1056px; height: 1056px; position: absolute;">
-                  <div class="main-photo" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
-                    <div class="main-photo__block">
-                      <div class="shlem-photo"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee"/>
-                        <div class="decor-blur-point" style="width: 528px; height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="shlem-photo__link" href="#">дізнатися бiльшE</a>
-                      </div>
+                <div class="section-main-slider__picture__info--3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
+                  <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                      <h4 class="button-info__pop-up__title">Легкий</h4>
+                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
-                    <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
-                      <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
-                        <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
-                      </div>
+                    <div class="button-info__icon">
+                      <div class="button-info__line"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="decor-circle-info" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 200) + 'px,' + (mouseY * -1 / 200) + 'px, 0)'}})()">
+                <div class="decor-circle-info__container"><img class="decor-circle-info__image" src="./images/icons/3d_orange.svg" alt="3d"/>
+                  <p class="decor-circle-info__text">ТЕХНОЛОГІЯ</p>
+                </div>
+              </div>
+              <div style="width: 1056px; height: 1056px; position: absolute;">
+                <div class="main-photo" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                  <div class="main-photo__block">
+                    <div class="object-photo"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee"/>
+                      <div class="decor-blur-point" style="width: 528px; height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="object-photo__link" href="#">дізнатися бiльшE</a>
+                    </div>
+                  </div>
+                  <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                    <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                      <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="main-slider__wrapper" :class="{'main-slider__wrapper--hidden': isFirst}">
-              <div class="main-slider__decor-1">
-                <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #258ad8; filter: blur(300px);"></div>
-              </div>
-              <div class="main-slider__decor-2">
-                <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #2557d8; filter: blur(250px);"></div>
-              </div>
-              <div class="main-slider__content">
-                <div class="main-slider__switch">
-                  <div class="main-slider__switch__container">
-                    <div class="main-slider__switch__item" :class="{'main-slider__switch__item--active': isFirst}" @click="isFirst=true"><img src="./images/icons/shlem-on-switch.png" alt="Шолом Talee"/>
-                      <div>Шолом Talee</div>
-                    </div>
-                    <div class="main-slider__switch__hr"></div>
-                    <div class="main-slider__switch__item" :class="{'main-slider__switch__item--active-right': !isFirst}" @click="isFirst=false"><img src="./images/icons/foot-on-switch.png" alt="Шолом Talee"/>
-                      <div>Ортези Piro</div>
-                    </div>
+          </div>
+          <div class="section-main-slider__wrapper" :class="{'section-main-slider__wrapper--hidden': isFirst}">
+            <div class="section-main-slider__decor-1">
+              <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #258ad8; filter: blur(300px);"></div>
+            </div>
+            <div class="section-main-slider__decor-2">
+              <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #2557d8; filter: blur(250px);"></div>
+            </div>
+            <div class="section-main-slider__content">
+              <div class="section-main-slider__switch">
+                <div class="section-main-slider__switch__container">
+                  <div class="section-main-slider__switch__item" :class="{'section-main-slider__switch__item--active': isFirst}" @click="isFirst=true"><img src="./images/icons/shlem-on-switch.png" alt="Шолом Talee"/>
+                    <div>Шолом Talee</div>
                   </div>
-                  <div class="main-slider__switch__line">
-                    <div class="main-slider__switch__point" :class="{'main-slider__switch__point--right': !isFirst}"></div>
-                    <hr/>
+                  <div class="section-main-slider__switch__hr"></div>
+                  <div class="section-main-slider__switch__item" :class="{'section-main-slider__switch__item--active-right': !isFirst}" @click="isFirst=false"><img src="./images/icons/foot-on-switch.png" alt="Шолом Talee"/>
+                    <div>Ортези Piro</div>
                   </div>
                 </div>
-                <h1 class="main-slider__title">ОРТОПЕДИЧНИЙ <br><b style='color: #399df5;'>Ортез piro</b> <br>для вашої дитини</h1>
-                <hr class="main-slider__hr" style="margin-block: 45px"/>
-                <div class="main-slider__container">
-                  <p class="main-slider__text">Ортез <span style='color: #399df5;'>PIRO®</span> — найтонший та найлегший ортез для гомілковостопного суглоба</p>
-                  <div class="main-slider__button">
-                    <button class="button--blue button" type="">
-                      <p class="button__text">ЗАПИСАТИСЯ НА ПРИЙОМ</p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="ЗАПИСАТИСЯ НА ПРИЙОМ"/>
-                    </button>
-                  </div>
+                <div class="section-main-slider__switch__line">
+                  <div class="section-main-slider__switch__point" :class="{'section-main-slider__switch__point--right': !isFirst}"></div>
+                  <hr/>
                 </div>
               </div>
-              <div class="main-slider__picture">
-                <div class="main-slider__picture__info-container">
-                  <div class="main-slider__picture__info--4" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
-                    <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
-                      <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
-                        <h4 class="button-info__pop-up__title">Легкий</h4>
-                        <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
-                      </div>
-                      <div class="button-info__icon">
-                        <div class="button-info__line"></div>
-                        <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
-                      </div>
+              <h1 class="section-main-slider__title">ОРТОПЕДИЧНИЙ <br><b style='color: #399df5;'>Ортез piro</b> <br>для вашої дитини</h1>
+              <hr class="section-main-slider__hr" style="margin-block: 45px"/>
+              <div class="section-main-slider__container">
+                <p class="section-main-slider__text">Ортез <span style='color: #399df5;'>PIRO®</span> — найтонший та найлегший ортез для гомілковостопного суглоба</p>
+                <div class="section-main-slider__button">
+                  <button class="button--blue button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="ЗАПИСАТИСЯ НА ПРИЙОМ"/>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="section-main-slider__picture">
+              <div class="section-main-slider__picture__info-container">
+                <div class="section-main-slider__picture__info--4" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
+                  <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                      <h4 class="button-info__pop-up__title">Легкий</h4>
+                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
-                  </div>
-                  <div class="main-slider__picture__info--5" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
-                    <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
-                      <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
-                        <h4 class="button-info__pop-up__title">Легкий</h4>
-                        <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
-                      </div>
-                      <div class="button-info__icon">
-                        <div class="button-info__line"></div>
-                        <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="main-slider__picture__info--6" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
-                    <div class="button-info" x-data="{ isOpenInfo: true }" @click="isOpenInfo=!isOpenInfo">
-                      <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
-                        <h4 class="button-info__pop-up__title">Легкий</h4>
-                        <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
-                      </div>
-                      <div class="button-info__icon">
-                        <div class="button-info__line"></div>
-                        <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
-                      </div>
+                    <div class="button-info__icon">
+                      <div class="button-info__line"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
                     </div>
                   </div>
                 </div>
-                <div class="decor-circle-info decor-circle-info--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 200) + 'px,' + (mouseY * -1 / 200) + 'px, 0)'}})()">
-                  <div class="decor-circle-info__container"><img class="decor-circle-info__image" src="./images/icons/3d_blue_.svg" alt="3d"/>
-                    <p class="decor-circle-info__text">ТЕХНОЛОГІЯ</p>
+                <div class="section-main-slider__picture__info--5" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
+                  <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                      <h4 class="button-info__pop-up__title">Легкий</h4>
+                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                    </div>
+                    <div class="button-info__icon">
+                      <div class="button-info__line"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                    </div>
                   </div>
                 </div>
-                <div style="width: 1056px; height: 1056px; position: absolute;">
-                  <div class="main-photo main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
-                    <div class="main-photo__block">
-                      <div class="shlem-photo"><img src="./images/decor/foot_full_x2.png" alt="Шолом Talee"/>
-                        <div class="decor-blur-point" style="width: 528px; height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="shlem-photo__link" href="#">дізнатися бiльшE</a>
-                      </div>
+                <div class="section-main-slider__picture__info--6" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
+                  <div class="button-info" x-data="{ isOpenInfo: true }" @click="isOpenInfo=!isOpenInfo">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                      <h4 class="button-info__pop-up__title">Легкий</h4>
+                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
-                    <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
-                      <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
-                        <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
-                      </div>
+                    <div class="button-info__icon">
+                      <div class="button-info__line"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="decor-circle-info decor-circle-info--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 200) + 'px,' + (mouseY * -1 / 200) + 'px, 0)'}})()">
+                <div class="decor-circle-info__container"><img class="decor-circle-info__image" src="./images/icons/3d_blue_.svg" alt="3d"/>
+                  <p class="decor-circle-info__text">ТЕХНОЛОГІЯ</p>
+                </div>
+              </div>
+              <div style="width: 1056px; height: 1056px; position: absolute;">
+                <div class="main-photo main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                  <div class="main-photo__block">
+                    <div class="object-photo"><img src="./images/decor/foot_full_x2.png" alt="Шолом Talee"/>
+                      <div class="decor-blur-point" style="width: 528px; height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="object-photo__link" href="#">дізнатися бiльшE</a>
+                    </div>
+                  </div>
+                  <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                    <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                      <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
                     </div>
                   </div>
                 </div>
@@ -358,75 +360,460 @@
             </div>
           </div>
         </section>
-        <section class="section-kik">
+        <section class="section-0">
           <div>
-            <h2 class="section-kik__title">єдиний в Україні медичний центр з корекції деформації голови у дітей</h2>
-            <div class="section-kik__container">
-              <div class="section-kik__block-media"> </div>
+            <h2 class="section-0__title">єдиний в Україні медичний центр з корекції деформації голови у дітей</h2>
+            <div class="section-0__container">
+              <div class="section-0__block-media"> </div>
               <div>
-                <h3 class="section-kik__second-title">Співпраця з лікарями</h3>
+                <h3 class="section-0__second-title">Співпраця з лікарями</h3>
                 <div class="wrapper-frame wrapper-frame--bg">
                   <div class="wrapper-frame__container">
                     <article class="card-easy card">
                       <div class="card-easy__container"><img class="card-easy__image" src="./images/icons/profile-plus.svg" loading="lazy" alt="profile icon"/>
                         <p class="card-easy__text">Запрошуємо до співпраці неонатологів, педіатрів, ортопедів, дитячих неврологів та нейрохірургів, мануальних та фізичних терапевтів, масажистів</p>
                       </div>
-                      <div class="card-easy__block card__block"><a class="link" href="#">
+                      <div class="card-easy__block card__block"><a class="link link--" href="#">
                           <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div></a>
                       </div>
                     </article>
                   </div>
                 </div>
               </div>
-              <div class="section-kik__block-media"></div>
-              <div class="section-kik__text">
+              <div class="section-0__block-media"></div>
+              <div class="section-0__text">
                 <p>Ортопедичний шолом <span>Talee</span> призначений для дітей певного віку, які мають проблеми з деформацією голови. Він стане ефективним рішенням для батьків, які прагнуть запобігти або вилікувати ці проблеми у своїх дітей</p>
               </div>
             </div>
-          </div><img class="section-kik__main-photo" src="./images/photos/photo-shlem-children.jpg" alt="photo"/>
+          </div><img class="section-0__main-photo" src="./images/photos/photo-shlem-children.jpg" alt="photo"/>
         </section>
         <hr/>
         <section class="section-about-company _fix-hook" id="about_company">
           <div class="section-about-company__title-container">
-            <div class="section-about-company__lable">01<span>/ Про <br>компанiю</span></div>
-            <div class="section-about-company__title-container__main">
-              <h2 class="section-about-company__first-title">Ми надаємо <span>індивідуальні</span></h2>
-              <h2 class="section-about-company__second-title">та ефективні рішення в лiкуваннi деформації голови використовуючи сучасні <b>ортопедичні шоломи</b></h2>
-            </div>
+            <div class="lable-main">01<span>/ Про <br>компанiю</span></div>
+            <h2 class="title-main"><span>Ми надаємо <i>індивідуальні</i></span><span>та ефективні рішення в лiкуваннi деформації голови</span><span>використовуючи сучасні <b><strong>ортопедичні шоломи</strong></b></span>
+            </h2>
           </div>
           <div class="section-about-company__content-container">
             <div class="wrapper-frame">
               <div class="wrapper-frame__container">
-                <div class="card-lol">
-                  <div class="card-lol__title">1й</div>
-                  <div class="card-lol__text">єдиний в Україні медичний центр з корекції деформації голови у дітей, заснованний <b>у 2024 роцi у м.Днiпро</b></div>
-                </div>
+                <article class="card-easy-2 card"><img class="card-easy-2__image" loading="lazy"/>
+                  <div class="card-easy-2__container">
+                    <h3 class="card-easy-2__title">1й</h3>
+                    <p class="card-easy-2__text">єдиний в Україні медичний центр з корекції деформації голови у дітей, заснованний <b>у 2024 роцi у м.Днiпро</b></p>
+                  </div>
+                </article>
               </div>
             </div>
             <div class="wrapper-frame">
               <div class="wrapper-frame__container">
-                <div class="card-lol">
-                  <div class="card-lol__title">!</div>
-                  <div class="card-lol__text">Як <b>експерти в галузі ортопедії</b>, ми зосереджені на покращенні якості життя дітей за допомогою інноваційних методів лікування</div>
-                </div>
+                <article class="card-easy-2 card"><img class="card-easy-2__image" loading="lazy"/>
+                  <div class="card-easy-2__container">
+                    <h3 class="card-easy-2__title">!</h3>
+                    <p class="card-easy-2__text">Як <b>експерти в галузі ортопедії</b>, ми зосереджені на покращенні якості життя дітей за допомогою інноваційних методів лікування</p>
+                  </div>
+                </article>
               </div>
             </div>
             <div class="wrapper-frame">
               <div class="wrapper-frame__container">
-                <div class="card-lol">
-                  <div class="card-lol__title">3D</div>
-                  <div class="card-lol__text">Технологія 3D сканування гарантує, що шолом ідеально підійде вашій дитині</div>
-                </div>
+                <article class="card-easy-2 card"><img class="card-easy-2__image" loading="lazy"/>
+                  <div class="card-easy-2__container">
+                    <h3 class="card-easy-2__title">3D</h3>
+                    <p class="card-easy-2__text">Технологія 3D сканування гарантує, що шолом ідеально підійде вашій дитині</p>
+                  </div>
+                </article>
               </div>
             </div>
             <div class="wrapper-frame">
               <div class="wrapper-frame__container">
-                <div class="card-lol">
-                  <div class="card-lol__title">20000+</div>
-                  <div class="card-lol__text">Шоломом <span>Talee</span> було вилікувано <br><b>15 000+ дітей</b> по всьому світу</div>
+                <article class="card-easy-2 card"><img class="card-easy-2__image" loading="lazy"/>
+                  <div class="card-easy-2__container">
+                    <h3 class="card-easy-2__title">20000+</h3>
+                    <p class="card-easy-2__text">Шоломом <span>Talee</span> було вилікувано <br><b>15 000+ дітей</b> по всьому світу</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr/>
+        <section class="section-2">
+          <div class="section-2__title-container">
+            <div class="lable-main lable-main--light">02<span>/ Послуги</span></div>
+            <h2 class="title-main title-main--light"><span>Ми хочемо, Щоб ваша дитина</span><span><b>була здоровою</b> та щасливою i ми <b>можемо допомогти</b></span>
+            </h2>
+          </div>
+          <div class="section-2__content-container">
+            <article class="card-block-1 card">
+              <div class="card-block-1__container"><img class="card-block-1__image" src="./images/icons/card_1.svg" loading="lazy" alt="baby icon"/>
+                <h3 class="card-block-1__title">Лiкування деформацiї голови</h3>
+                <p class="card-block-1__text">Шоломотерапія є головним і найефективнішим методом у лікуванні деформації голови. Ортопедичний шолом коригує форму голови дитини ніжно і дбайливо</p>
+              </div>
+              <div class="card-block-1__block card__block"><a class="link link--light" href="#">
+                  <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                  <div class="link__icon">
+                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </div>
+                  </div></a>
+              </div>
+            </article>
+            <article class="card-block-1 card">
+              <div class="card-block-1__container"><img class="card-block-1__image" src="./images/icons/card_2.svg" loading="lazy" alt="baby icon"/>
+                <h3 class="card-block-1__title">ОРТЕЗУВАННЯ ДІТЕЙ</h3>
+                <p class="card-block-1__text">Процес використання ортезів або спеціальних пристосувань для підтримки або виправлення функціональних або структурних вад у дітей</p>
+              </div>
+              <div class="card-block-1__block card__block"><a class="link link--light" href="#">
+                  <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                  <div class="link__icon">
+                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </div>
+                  </div></a>
+              </div>
+            </article>
+            <article class="card-block-1 card">
+              <div class="card-block-1__container"><img class="card-block-1__image" src="./images/icons/card_3.svg" loading="lazy" alt="baby icon"/>
+                <h3 class="card-block-1__title">Консультації дитячого лiкаря ортопеда</h3>
+                <p class="card-block-1__text">В нас ви можете отримати професійні поради від спеціаліста щодо здоров'я та розвитку вашої дитини</p>
+              </div>
+              <div class="card-block-1__block card__block"><a class="link link--light" href="#">
+                  <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                  <div class="link__icon">
+                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </div>
+                  </div></a>
+              </div>
+            </article>
+            <article class="card-block-1 card">
+              <div class="card-block-1__container"><img class="card-block-1__image" src="./images/icons/card_4.svg" loading="lazy" alt="baby icon"/>
+                <h3 class="card-block-1__title">реабiлiтацiя, Фізіотерапія та Масаж</h3>
+                <p class="card-block-1__text">Eфективні методи відновлення рухливості та поліпшення м'язового тонусу у дітей, сприяють загальному здоров'ю та розвитку</p>
+              </div>
+              <div class="card-block-1__block card__block"><a class="link link--light" href="#">
+                  <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                  <div class="link__icon">
+                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </div>
+                  </div></a>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <button class="button" type="">
+            <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+            </p>
+            <div class="button__icon">
+              <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+              </div>
+            </div>
+          </button>
+          <button class="button--phone button" type="">
+            <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+            </p>
+          </button>
+        </section>
+        <hr/>
+        <section class="section-4">
+          <div class="section-4__title-container">
+            <div class="lable-main">04<span>/ Бiльше <br>про шолом</span></div>
+            <h2 class="title-main"><span>індивідуальний підхід</span><span>та <i>висока ефективність</i> <b>корекції деформацій голови</b></span><span>забезпечується за допомогою використання</span><span>точних 3D-моделей голови кожної дитини</span>
+            </h2>
+          </div>
+          <div class="section-4__content-container">
+            <div class="section-4__block-1">
+              <div class="section-4__block-1__container">
+                <div class="wrapper-frame wrapper-frame--bg">
+                  <div class="wrapper-frame__container">
+                    <div class="lolol-content">
+                      <h3 class="lolol-content__title">99%</h3>
+                      <p class="lolol-content__text">Випадків демонструють позитивний ефект за період користування</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame wrapper-frame--bg">
+                  <div class="wrapper-frame__container">
+                    <div class="wrapper-center"><a class="link link--" href="#">
+                        <div class="link__text">бiльше про дослiдження</div>
+                        <div class="link__icon">
+                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                          </div>
+                        </div></a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="section-4__block-2">
+              <h3 class="section-4__title">Шолом <b>TALEE</b>, розроблений з урахуванням стандартів безпеки та якості, стає надійним помічником для батьків у вирішенні проблем дитячого ортопедичного здоров’я</h3>
+              <hr/>
+              <div class="section-4__content">
+                <p class="section-4__text">Ортопедичний шолом ефективно впливає на формування правильної форми голови у дітей, забезпечуючи фізичний комфорт та психологічне благополуччя. Наш продукт дозволяє батькам бути впевненими у здоров’ї своїх немовлят, використовуючи передові технології. Шолом можна носити до 6 місяців для оптимальних результатів</p>
+                <div class="section-4__image-text">Шолом допомагає корегувати <br>голову дитини, забезпечуючи <br>максимальний комфорт та безпеку</div>
+              </div>
+              <hr/>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <div class="wrapper-center">
+                      <div class="lolol-2-content">
+                        <h3 class="lolol-2-content__title">01</h3>
+                        <p class="lolol-2-content__text">передовий засіб для корекції <br>деформацій голови у дітей</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <div class="wrapper-center">
+                      <div class="lolol-2-content">
+                        <h3 class="lolol-2-content__title">02</h3>
+                        <p class="lolol-2-content__text">Наш Шолом відрізняється високою <br>ефективністю та індивідуальним <br>підходом до кожного малюка</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <div class="wrapper-center">
+                      <div class="lolol-2-content">
+                        <h3 class="lolol-2-content__title">03</h3>
+                        <p class="lolol-2-content__text">передовий засіб для корекції <br>деформацій голови у дітей</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <div class="wrapper-center">
+                      <div class="lolol-2-content">
+                        <h3 class="lolol-2-content__title">04</h3>
+                        <p class="lolol-2-content__text">Батьки, які бажають ефективно <br>запобігти або вилікувати деформації <br>голови у своїх дітей</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr/>
+        <section class="section-5">
+          <div class="section-5__block-1">
+            <div class="lable-main">05<span>/ Як це працює</span></div>
+            <div class="wrapper-frame">
+              <div class="wrapper-frame__container">
+                <h2 class="title-h2">Використання індивідуалізованих 3D-моделей голови для створення шолому дозволяє точно підлаштувати його під анатомічні особливості кожної дитини, що максимізує ефективність корекції</h2>
+              </div>
+            </div>
+            <div class="section-5__container"><img class="section-5__image-1" src="./images/decor/decor_5.jpg" alt=""/>
+              <div><img class="section-5__image-2" src="./images/decor/decor_6.jpg" alt=""/>
+                <div class="section-5__text"><b>Ортопедичні шоломи <strong>Tallee</strong></b> відзначаються не тільки високою ефективністю у виправленні деформацій голови, але й сприяють психологічному комфорту дитини через індивідуалізовані дизайни та вибір яскравих кольорів, що позитивно впливає на емоційний стан та сприйняття лікування</div>
+              </div>
+            </div>
+            <button class="button--light button" type="">
+              <p class="button__text"><span>ДІЗНАТИСЯ БІЛЬШЕ</span>
+              </p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="ДІЗНАТИСЯ БІЛЬШЕ"/>
+            </button>
+          </div>
+          <div class="section-5__block-2"></div>
+        </section>
+        <hr/>
+        <section class="section-7">
+          <div class="section-4__title-container">
+            <div class="lable-main">07<span>/ Як проходе <br>лIкування</span></div>
+            <h2 class="title-main"><span><b>Лікування деформації голови</b></span><span>за допомогою ортопедичного шолому проходить</span><span>в <i>декілька етапів</i></span>
+            </h2>
+          </div>
+          <div class="section-4__content-container">
+            <div class="wrapper-frame wrapper-frame--bg">
+              <div class="wrapper-frame__container">
+                <article class="card-easy-3 card">
+                  <div class="card-easy-3__number">01</div>
+                  <div class="card-easy-3__container"><img class="card-easy-3__image" src="./images/icons/card-i_1.svg" loading="lazy" alt="Консультація з спеціалістом"/>
+                    <h3 class="card-easy-3__title">Консультація та <br>Діагностика Діагностика</h3>
+                  </div>
+                  <div class="card-easy-3__block card__block">
+                    <hr/>
+                    <ul class="card-easy-3__list">
+                      <li><span>Лікар-ортопед проводить комплексну оцінку стану голови та <b>визначає ступінь деформації</b></span></li>
+                      <li> <span>Використання сучасних технологій для отримання точної 3D-моделі голови, що служить основою для виготовлення індивідуального шолому</span></li>
+                      <li> <span>Індивідуальне моделювання, враховуючи результати діагностики, створюється індивідуальна <b>3D-модель шолому</b></span></li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="wrapper-frame wrapper-frame--bg">
+              <div class="wrapper-frame__container">
+                <article class="card-easy-3 card">
+                  <div class="card-easy-3__number">02</div>
+                  <div class="card-easy-3__container"><img class="card-easy-3__image" src="./images/icons/card-i_2.svg" loading="lazy" alt="Консультація з спеціалістом"/>
+                    <h3 class="card-easy-3__title">Виготовлення Ортопедичного Шолому</h3>
+                  </div>
+                  <div class="card-easy-3__block card__block">
+                    <hr/>
+                    <ul class="card-easy-3__list">
+                      <li> <span>Розробка та <b>виготовлення шолому</b> за допомогою передових технологій</span></li>
+                      <li> <span>Лікар вказує <b>належний час носіння шолому</b> в день та встановлює індивідуальні параметри для оптимальної ефективності</span></li>
+                      <li> <span>Дитина поступово пристосовується до нового елементу та <b>починає відчувати комфорт</b> при його носінні</span></li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="wrapper-frame wrapper-frame--bg">
+              <div class="wrapper-frame__container">
+                <article class="card-easy-3 card">
+                  <div class="card-easy-3__number">03</div>
+                  <div class="card-easy-3__container"><img class="card-easy-3__image" src="./images/icons/card-i_3.svg" loading="lazy" alt="Консультація з спеціалістом"/>
+                    <h3 class="card-easy-3__title">Консультація та <br>Діагностика Діагностика</h3>
+                  </div>
+                  <div class="card-easy-3__block card__block">
+                    <hr/>
+                    <ul class="card-easy-3__list">
+                      <li><span>Лікар <b>веде контроль за процесом</b> та вносить корективні зміни в режим носіння шолому</span></li>
+                      <li> <span>Родині <b>надається підтримка</b> та інформація для забезпечення ефективності та комфорту лікування</span></li>
+                      <li> <span>Після <b>досягнення максимальної корекції</b> лікар проводить остаточну оцінку та рекомендації для подальшого ведення</span></li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="wrapper-frame wrapper-frame--bg">
+              <div class="wrapper-frame__container">
+                <article class="card-easy-3 card">
+                  <div class="card-easy-3__number">04</div>
+                  <div class="card-easy-3__container"><img class="card-easy-3__image" src="./images/icons/card-i_4.svg" loading="lazy" alt="Завершення &lt;br&gt;Лікування"/>
+                    <h3 class="card-easy-3__title">Консультація та <br>Діагностика Діагностика</h3>
+                  </div>
+                  <div class="card-easy-3__block card__block">
+                    <hr/>
+                    <ul class="card-easy-3__list">
+                      <li><span>Після досягнення поставлених цілей, <b>лікар призначає завершення</b> носіння ортопедичного шолому</span></li>
+                      <li> <span>Цей процес вимагає взаємодії між лікарем, родинами та дитиною для <b>досягнення оптимальних результатів</b> у корекції деформації голови</span></li>
+                      <li> <span>По завершенні лікування ортопедичним шоломом проводиться <b>остаточна оцінка результатів</b> та консультація з лікарем</span></li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <button class="button" type="">
+            <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+            </p>
+            <div class="button__icon">
+              <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+              </div>
+            </div>
+          </button>
+          <button class="button--phone button" type="">
+            <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+            </p>
+          </button>
+        </section>
+        <hr/>
+        <section class="section-8">
+          <div class="section-8__title-container">
+            <div class="lable-main lable-main--light">08<span>/ Чому ми?</span></div>
+            <h2 class="title-main title-main--light"><span><b>Eфективність лікування</b></span><span>ортопедичним шоломом TAlee підтверджена </span><span>численними науковими дослідженнями </span><span>та успішними випадками лікування</span>
+            </h2>
+          </div>
+          <div class="section-8__content-container">
+            <article class="card-block-2  card-block-2--mini-text card"><img class="card-block-2__image" src="./images/icons/card-b_1-state.svg" loading="lazy"/>
+              <div class="card-block-2__container">
+                <p class="card-block-2__text">Єдиний в Україні медичний центр <br>з корекції деформації голови</p>
+              </div>
+            </article>
+            <article class="card-block-2 card"><img class="card-block-2__image" src="./images/icons/card-b_2-doctor.svg" loading="lazy"/>
+              <div class="card-block-2__container">
+                <p class="card-block-2__text">Досвідчені <br>лікарі</p>
+              </div>
+            </article>
+            <article class="card-block-2 card"><img class="card-block-2__image" src="./images/icons/card-b_3-3d.svg" loading="lazy"/>
+              <div class="card-block-2__container">
+                <p class="card-block-2__text">Передовi <br>та 3D технологiї</p>
+              </div>
+            </article>
+            <article class="card-block-2 card"><img class="card-block-2__image" src="./images/icons/card-b_4-health.svg" loading="lazy"/>
+              <div class="card-block-2__container">
+                <p class="card-block-2__text">Кожен шолом <br>виготовляється індивідуало</p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <hr/>
+        <section class="section-7">
+          <div class="section-4__title-container">
+            <div class="lable-main">09<span>/ Нашi <br>лiкарi</span></div>
+            <h2 class="title-main"><span><b>кваліфікована команда</b></span><span>лікарів забезпечує своєчасне та <i>якicне лікування</i></span><span>вашої дитини</span>
+            </h2>
+          </div>
+          <div class="section-9__content-container">
+            <article class="card-block-3 card"><img class="card-block-3__image" src="./images/photos/woman.png" loading="lazy" alt="Дужин Вiкторiя Сергiївна"/>
+              <div class="card-block-3__container">
+                <h3 class="card-block-3__title">Дужин <br>Вiкторiя <br>Сергiївна</h3>
+                <p class="card-block-3__text">Засновниця, CEO <br>МЦ «ДIМ ОРТОПЕДiї»</p>
+                <div class="card-block-3__block card__block">
+                  <div class="social-list" style="gap: 16px; justify-content: start;"><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
+                  </div>
+                  <button class=" button--light button" type="">
+                    <p class="button__text"><span>ДІЗНАТИСЯ БІЛЬШЕ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article class="card-block-3 card"><img class="card-block-3__image" src="./images/photos/man.png" loading="lazy" alt="Олексій Олексійович Голубенко"/>
+              <div class="card-block-3__container">
+                <h3 class="card-block-3__title">Олексій <br>Олексійович <br>Голубенко</h3>
+                <p class="card-block-3__text">Лікар ортопед-травматолог дитячий</p>
+                <div class="card-block-3__block card__block">
+                  <div></div>
+                  <button class=" button--light button" type="">
+                    <p class="button__text"><span>ДІЗНАТИСЯ БІЛЬШЕ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
         <div style="padding-bottom: 74px;">
