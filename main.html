@@ -26,7 +26,7 @@
                 <div class="contacts-menu__button__image"></div>
               </button>
             </div>
-            <hr class="_anim-items _transition-clip-form-left" style="margin-bottom: 25px;"/><a class="link link--" href="all_courses.html" style="margin-bottom: 25px;">
+            <hr class="_anim-items _transition-clip-form-left" style="margin-bottom: 25px;"/><a class="link" href="all_courses.html" style="margin-bottom: 25px;">
               <div class="link__text">Навчання</div></a>
             <ul style="display: grid; grid-template-columns: repeat(2,1fr); margin-bottom: 15px; gap: 10px;">
               <li class="navigation__item" :class="{'navigation__item--active': currentAnchor === '#about_company'}" style="width: max-content;"><a class="navigation__link" style="line-height: 100%; padding-bottom: 15px;" href="#about_company" @click="() =&gt; {currentAnchor = '#about_company'; isClosedBurgerMenu=true;}" x-on:click="setTimeout(() =&gt; {isShowBurgerMenu = false}, 500)">Про компанію</a></li>
@@ -36,7 +36,7 @@
             <p style="margin-bottom: 25px;">Поглиблені персональнi консультації з нутриціології, якi допоможуть вам досягти витриманого здоров'я та життєвої енергії</p>
             <button class="button" type="button" style="margin-bottom: 40px;" @click="isShowPopUpContact=true;">
               <p class="button__text"><span>Зв'язатися зі мною</span>
-              </p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="Зв'язатися зі мною"/>
+              </p>
             </button>
             <h3 style="margin-bottom: 25px; font-size: 18px;">Давайте дружити</h3>
             <div class="social-list" style="margin-bottom: 20px;"><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
@@ -155,7 +155,7 @@
             </div>
             <div style="display: flex; gap: 20px;">
               <div style="width: 48px; height: 48px; display: flex; justify-content: center; align-items: center;"><img src="./images/icons/search_.svg" alt="search"/></div>
-              <div class="mini-button"><img src="./images/icons/instagram-icon-gray.svg" alt="instagram"/></div>
+              <div class="button-mini"><img src="./images/icons/instagram-icon-gray.svg" alt="instagram"/></div>
             </div>
           </div>
           <div class="_grid-col-desk-6-6" style="display: flex; justify-content: end; gap: 20px; padding-left: 38px;">
@@ -171,10 +171,10 @@
         <section class="section-main-slider" x-data="{ isFirst: true }">
           <div class="section-main-slider__wrapper" :class="{'section-main-slider__wrapper--hidden': !isFirst}">
             <div class="section-main-slider__decor-1">
-              <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);"></div>
+              <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);"></div>
             </div>
             <div class="section-main-slider__decor-2">
-              <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);"></div>
+              <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);"></div>
             </div>
             <div class="section-main-slider__content">
               <div class="section-main-slider__switch">
@@ -199,7 +199,7 @@
                 <div class="section-main-slider__button">
                   <button class="button" type="">
                     <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                    </p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="ЗАПИСАТИСЯ НА ПРИЙОМ"/>
+                    </p>
                   </button>
                 </div>
               </div>
@@ -207,38 +207,38 @@
             <div class="section-main-slider__picture">
               <div class="section-main-slider__picture__info-container">
                 <div class="section-main-slider__picture__info--1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
-                  <div class="button-info" x-data="{ isOpenInfo: true }" @click="isOpenInfo=!isOpenInfo">
-                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                  <div class="button-info" x-data="{ isOpen: true }" @click="isOpen=!isOpen">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpen}">
                       <h4 class="button-info__pop-up__title">Легкий</h4>
                       <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
                     <div class="button-info__icon">
                       <div class="button-info__line"></div>
-                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpen}"></div>
                     </div>
                   </div>
                 </div>
                 <div class="section-main-slider__picture__info--2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
-                  <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
-                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                  <div class="button-info" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpen}">
                       <h4 class="button-info__pop-up__title">Легкий</h4>
                       <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
                     <div class="button-info__icon">
                       <div class="button-info__line"></div>
-                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpen}"></div>
                     </div>
                   </div>
                 </div>
                 <div class="section-main-slider__picture__info--3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
-                  <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
-                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                  <div class="button-info" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpen}">
                       <h4 class="button-info__pop-up__title">Легкий</h4>
                       <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
                     <div class="button-info__icon">
                       <div class="button-info__line"></div>
-                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpen}"></div>
                     </div>
                   </div>
                 </div>
@@ -252,7 +252,7 @@
                 <div class="main-photo" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                   <div class="main-photo__block">
                     <div class="object-photo"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee"/>
-                      <div class="decor-blur-point" style="width: 528px; height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="object-photo__link" href="#">дізнатися бiльшE</a>
+                      <div class="decor-blur-point" style="min-width: 528px; min-height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="object-photo__link" href="#">дізнатися бiльшE</a>
                     </div>
                   </div>
                   <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
@@ -266,10 +266,10 @@
           </div>
           <div class="section-main-slider__wrapper" :class="{'section-main-slider__wrapper--hidden': isFirst}">
             <div class="section-main-slider__decor-1">
-              <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #258ad8; filter: blur(300px);"></div>
+              <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #258ad8; filter: blur(300px);"></div>
             </div>
             <div class="section-main-slider__decor-2">
-              <div class="decor-blur-point" style="width: 300px; height: 300px; border-radius: 100%; background: #2557d8; filter: blur(250px);"></div>
+              <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #2557d8; filter: blur(250px);"></div>
             </div>
             <div class="section-main-slider__content">
               <div class="section-main-slider__switch">
@@ -294,7 +294,7 @@
                 <div class="section-main-slider__button">
                   <button class="button--blue button" type="">
                     <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                    </p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="ЗАПИСАТИСЯ НА ПРИЙОМ"/>
+                    </p>
                   </button>
                 </div>
               </div>
@@ -302,38 +302,38 @@
             <div class="section-main-slider__picture">
               <div class="section-main-slider__picture__info-container">
                 <div class="section-main-slider__picture__info--4" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
-                  <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
-                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                  <div class="button-info" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpen}">
                       <h4 class="button-info__pop-up__title">Легкий</h4>
                       <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
                     <div class="button-info__icon">
                       <div class="button-info__line"></div>
-                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpen}"></div>
                     </div>
                   </div>
                 </div>
                 <div class="section-main-slider__picture__info--5" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
-                  <div class="button-info" x-data="{ isOpenInfo: false }" @click="isOpenInfo=!isOpenInfo">
-                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                  <div class="button-info" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpen}">
                       <h4 class="button-info__pop-up__title">Легкий</h4>
                       <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
                     <div class="button-info__icon">
                       <div class="button-info__line"></div>
-                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpen}"></div>
                     </div>
                   </div>
                 </div>
                 <div class="section-main-slider__picture__info--6" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
-                  <div class="button-info" x-data="{ isOpenInfo: true }" @click="isOpenInfo=!isOpenInfo">
-                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpenInfo}">
+                  <div class="button-info" x-data="{ isOpen: true }" @click="isOpen=!isOpen">
+                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpen}">
                       <h4 class="button-info__pop-up__title">Легкий</h4>
                       <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
                     <div class="button-info__icon">
                       <div class="button-info__line"></div>
-                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpenInfo}"></div>
+                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpen}"></div>
                     </div>
                   </div>
                 </div>
@@ -347,7 +347,7 @@
                 <div class="main-photo main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                   <div class="main-photo__block">
                     <div class="object-photo"><img src="./images/decor/foot_full_x2.png" alt="Шолом Talee"/>
-                      <div class="decor-blur-point" style="width: 528px; height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="object-photo__link" href="#">дізнатися бiльшE</a>
+                      <div class="decor-blur-point" style="min-width: 528px; min-height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="object-photo__link" href="#">дізнатися бiльшE</a>
                     </div>
                   </div>
                   <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
@@ -373,7 +373,7 @@
                       <div class="card-easy__container"><img class="card-easy__image" src="./images/icons/profile-plus.svg" loading="lazy" alt="profile icon"/>
                         <p class="card-easy__text">Запрошуємо до співпраці неонатологів, педіатрів, ортопедів, дитячих неврологів та нейрохірургів, мануальних та фізичних терапевтів, масажистів</p>
                       </div>
-                      <div class="card-easy__block card__block"><a class="link link--" href="#">
+                      <div class="card-easy__block card__block"><a class="link" href="#">
                           <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div></a>
                       </div>
                     </article>
@@ -397,7 +397,7 @@
           <div class="section-about-company__content-container">
             <div class="wrapper-frame">
               <div class="wrapper-frame__container">
-                <article class="card-easy-2 card"><img class="card-easy-2__image" loading="lazy"/>
+                <article class="card-easy-2 card">
                   <div class="card-easy-2__container">
                     <h3 class="card-easy-2__title">1й</h3>
                     <p class="card-easy-2__text">єдиний в Україні медичний центр з корекції деформації голови у дітей, заснованний <b>у 2024 роцi у м.Днiпро</b></p>
@@ -407,7 +407,7 @@
             </div>
             <div class="wrapper-frame">
               <div class="wrapper-frame__container">
-                <article class="card-easy-2 card"><img class="card-easy-2__image" loading="lazy"/>
+                <article class="card-easy-2 card">
                   <div class="card-easy-2__container">
                     <h3 class="card-easy-2__title">!</h3>
                     <p class="card-easy-2__text">Як <b>експерти в галузі ортопедії</b>, ми зосереджені на покращенні якості життя дітей за допомогою інноваційних методів лікування</p>
@@ -417,7 +417,7 @@
             </div>
             <div class="wrapper-frame">
               <div class="wrapper-frame__container">
-                <article class="card-easy-2 card"><img class="card-easy-2__image" loading="lazy"/>
+                <article class="card-easy-2 card">
                   <div class="card-easy-2__container">
                     <h3 class="card-easy-2__title">3D</h3>
                     <p class="card-easy-2__text">Технологія 3D сканування гарантує, що шолом ідеально підійде вашій дитині</p>
@@ -427,7 +427,7 @@
             </div>
             <div class="wrapper-frame">
               <div class="wrapper-frame__container">
-                <article class="card-easy-2 card"><img class="card-easy-2__image" loading="lazy"/>
+                <article class="card-easy-2 card">
                   <div class="card-easy-2__container">
                     <h3 class="card-easy-2__title">20000+</h3>
                     <p class="card-easy-2__text">Шоломом <span>Talee</span> було вилікувано <br><b>15 000+ дітей</b> по всьому світу</p>
@@ -438,7 +438,7 @@
           </div>
         </section>
         <hr/>
-        <section class="section-2">
+        <section class="section-2 _fix-hook" id="services">
           <div class="section-2__title-container">
             <div class="lable-main lable-main--light">02<span>/ Послуги</span></div>
             <h2 class="title-main title-main--light"><span>Ми хочемо, Щоб ваша дитина</span><span><b>була здоровою</b> та щасливою i ми <b>можемо допомогти</b></span>
@@ -548,7 +548,7 @@
                 </div>
                 <div class="wrapper-frame wrapper-frame--bg">
                   <div class="wrapper-frame__container">
-                    <div class="wrapper-center"><a class="link link--" href="#">
+                    <div class="wrapper-center"><a class="link" href="#">
                         <div class="link__text">бiльше про дослiдження</div>
                         <div class="link__icon">
                           <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -631,12 +631,173 @@
             </div>
             <button class="button--light button" type="">
               <p class="button__text"><span>ДІЗНАТИСЯ БІЛЬШЕ</span>
-              </p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="ДІЗНАТИСЯ БІЛЬШЕ"/>
+              </p>
             </button>
           </div>
           <div class="section-5__block-2"></div>
         </section>
         <hr/>
+        <section class="section-4" style="z-index: 2;">
+          <div class="section-4__title-container" style="position: relative; justify-content: center">
+            <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);position: absolute; z-index: 2;"></div>
+            <div class="lable-main" style="position: absolute; top: 0; left: 0;">06<span>/ рiшення <br>вiд хвороб</span></div>
+            <div style="max-width: 660px; position: relative; z-index: 2">
+              <h2 class="h2">ОРТОПЕДИЧНИЙ <br>ШОлом TALEE — <b>найкраще рішення</b> для Вашого малюка від таких захворювань, як:</h2>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 60px;">
+            <div class="qwert">
+              <div class="qwert__line"></div>
+              <div class="qwert__line" style="transform: rotate(144deg);"></div>
+              <div class="qwert__line" style="transform: rotate(90deg) translateX(50px); width: 35%;"></div>
+              <div class="qwert__line" style="transform: rotate(36deg);"></div>
+              <div class="qwert__container anim-rotate">
+                <div class="qwert__container anim-rotate--reverse"><img class="qwert__image anim-rotate--stop" src="./images/decor/decor_bg.jpg" alt=""/></div>
+              </div>
+              <div class="screen" style="opacity: 1;">
+                <div class="screen__container">
+                  <div class="screen-desk-c" style="z-index: 3">
+                    <div style="transform: translate(-500px, -260px);">
+                      <div class="button-info-2" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }">
+                        <div class="button-info-2__pop-up" :class="{'button-info-2__pop-up--hidden':!isOpen}">
+                          <article class="card-modal card">
+                            <div class="card-modal__container">
+                              <h3 class="card-modal__title">Плагіоцефалія (асиметрична деформація черепа)</h3>
+                              <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
+                            </div>
+                            <div class="card-modal__block card__block">
+                              <div class="button-mini button-mini--size-m" @click="handleClose()"><img src="./images/icons/_close.svg" alt="close"/></div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="button-info-2__container" :class="{'button-info-2__container--active':isOpen}" @click="isOpen=!isOpen">
+                          <div class="button-info-2__title">Плагіоцефалія</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="screen-desk-c" style="z-index: 2">
+                    <div style="transform: translate(-640px, 0px)">
+                      <div class="button-info-2" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                        <div class="button-info-2__pop-up" :class="{'button-info-2__pop-up--hidden':!isOpen}">
+                          <article class="card-modal card">
+                            <div class="card-modal__container">
+                              <h3 class="card-modal__title">Деформація голови</h3>
+                              <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
+                            </div>
+                            <div class="card-modal__block card__block">
+                              <div class="button-mini button-mini--size-m" @click="handleClose()"><img src="./images/icons/_close.svg" alt="close"/></div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="button-info-2__container" :class="{'button-info-2__container--active':isOpen}" @click="isOpen=!isOpen">
+                          <div class="button-info-2__title">Деформація голови</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="screen-desk-c" style="z-index: 1">
+                    <div style="transform: translate(-500px, 260px);">
+                      <div class="button-info-2" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                        <div class="button-info-2__pop-up" :class="{'button-info-2__pop-up--hidden':!isOpen}">
+                          <article class="card-modal card">
+                            <div class="card-modal__container">
+                              <h3 class="card-modal__title">Синдром плоскої голови</h3>
+                              <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
+                            </div>
+                            <div class="card-modal__block card__block">
+                              <div class="button-mini button-mini--size-m" @click="handleClose()"><img src="./images/icons/_close.svg" alt="close"/></div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="button-info-2__container" :class="{'button-info-2__container--active':isOpen}" @click="isOpen=!isOpen">
+                          <div class="button-info-2__title">Асиметрична брахiцефалiя</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="screen-desk-c" style="z-index: 3">
+                    <div style="transform: translate(500px, -260px);">
+                      <div class="button-info-2 button-info-2--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                        <div class="button-info-2__pop-up" :class="{'button-info-2__pop-up--hidden':!isOpen}">
+                          <article class="card-modal card">
+                            <div class="card-modal__container">
+                              <h3 class="card-modal__title">Брахіцефалія</h3>
+                              <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
+                            </div>
+                            <div class="card-modal__block card__block">
+                              <div class="button-mini button-mini--size-m" @click="handleClose()"><img src="./images/icons/_close.svg" alt="close"/></div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="button-info-2__container" :class="{'button-info-2__container--active':isOpen}" @click="isOpen=!isOpen">
+                          <div class="button-info-2__title">Брахіцефалія</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="screen-desk-c" style="z-index: 2">
+                    <div style="transform: translate(640px, 0px)">
+                      <div class="button-info-2 button-info-2--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                        <div class="button-info-2__pop-up" :class="{'button-info-2__pop-up--hidden':!isOpen}">
+                          <article class="card-modal card">
+                            <div class="card-modal__container">
+                              <h3 class="card-modal__title">ДОлiхоцефалiя</h3>
+                              <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
+                            </div>
+                            <div class="card-modal__block card__block">
+                              <div class="button-mini button-mini--size-m" @click="handleClose()"><img src="./images/icons/_close.svg" alt="close"/></div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="button-info-2__container" :class="{'button-info-2__container--active':isOpen}" @click="isOpen=!isOpen">
+                          <div class="button-info-2__title">ДОлiхоцефалiя</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="screen-desk-c" style="z-index: 1">
+                    <div style="transform: translate(500px, 260px);">
+                      <div class="button-info-2 button-info-2--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                        <div class="button-info-2__pop-up" :class="{'button-info-2__pop-up--hidden':!isOpen}">
+                          <article class="card-modal card">
+                            <div class="card-modal__container">
+                              <h3 class="card-modal__title">Період після операції</h3>
+                              <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
+                            </div>
+                            <div class="card-modal__block card__block">
+                              <div class="button-mini button-mini--size-m" @click="handleClose()"><img src="./images/icons/_close.svg" alt="close"/></div>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="button-info-2__container" :class="{'button-info-2__container--active':isOpen}" @click="isOpen=!isOpen">
+                          <div class="button-info-2__title">Період після операції</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 778px; margin: auto;">
+              <button class="button" type="">
+                <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                </p>
+                <div class="button__icon">
+                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                  </div>
+                </div>
+              </button>
+              <button class="button--phone-mini button" type="">
+                <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+                </p>
+              </button>
+            </section>
+          </div>
+        </section>
         <section class="section-7">
           <div class="section-4__title-container">
             <div class="lable-main">07<span>/ Як проходе <br>лIкування</span></div>
@@ -644,7 +805,7 @@
             </h2>
           </div>
           <div class="section-4__content-container">
-            <div class="wrapper-frame wrapper-frame--bg">
+            <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--30">
               <div class="wrapper-frame__container">
                 <article class="card-easy-3 card">
                   <div class="card-easy-3__number">01</div>
@@ -662,7 +823,7 @@
                 </article>
               </div>
             </div>
-            <div class="wrapper-frame wrapper-frame--bg">
+            <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--30">
               <div class="wrapper-frame__container">
                 <article class="card-easy-3 card">
                   <div class="card-easy-3__number">02</div>
@@ -680,7 +841,7 @@
                 </article>
               </div>
             </div>
-            <div class="wrapper-frame wrapper-frame--bg">
+            <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--30">
               <div class="wrapper-frame__container">
                 <article class="card-easy-3 card">
                   <div class="card-easy-3__number">03</div>
@@ -698,7 +859,7 @@
                 </article>
               </div>
             </div>
-            <div class="wrapper-frame wrapper-frame--bg">
+            <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--30">
               <div class="wrapper-frame__container">
                 <article class="card-easy-3 card">
                   <div class="card-easy-3__number">04</div>
@@ -772,7 +933,7 @@
             <h2 class="title-main"><span><b>кваліфікована команда</b></span><span>лікарів забезпечує своєчасне та <i>якicне лікування</i></span><span>вашої дитини</span>
             </h2>
           </div>
-          <div class="section-9__content-container">
+          <div class="section-9__content-container" style="margin-bottom: 60px;">
             <article class="card-block-3 card"><img class="card-block-3__image" src="./images/photos/woman.png" loading="lazy" alt="Дужин Вiкторiя Сергiївна"/>
               <div class="card-block-3__container">
                 <h3 class="card-block-3__title">Дужин <br>Вiкторiя <br>Сергiївна</h3>
@@ -814,6 +975,260 @@
                 </div>
               </div>
             </article>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="wrapper-frame">
+              <div class="wrapper-frame__container">
+                <article class="card-easy-4 card"><img class="card-easy-4__image" src="./images/icons/profile-plus.svg" loading="lazy" alt="profile icon"/>
+                  <div class="card-easy-4__container">
+                    <h3 class="card-easy-4__title">Співробітництво з лікарями</h3>
+                    <p class="card-easy-4__text">Запрошуємо до співпраці неонатологів, педіатрів, ортопедів, дитячих неврологів та нейрохірургів, мануальних та фізичних терапевтів, масажистів</p>
+                    <div class="card-easy-4__block card__block"><a class="link" href="#">
+                        <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div></a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="wrapper-frame">
+              <div class="wrapper-frame__container">
+                <form style="padding: 4px 24px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="wrapper-frame">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <input class="input-new" type="text" name="my-name" placeholder="Ім’я*"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <input class="input-new" type="tel" name="my-phone" placeholder="Телефон*"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="button" type="submit">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr/>
+        <section class="section-10">
+          <div class="section-10__container">
+            <div style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="display: flex; justify-content: space-between;">
+                <div class="lable-main">10<span>/ частi запитання</span></div>
+                <div class="wrapper-frame wrapper-frame--30">
+                  <div class="wrapper-frame__container">
+                    <div class="wrapper-center" style="padding-inline: 30px;">
+                      <h3 class="h3">Я з радiстю вiдповiм на всi вашi запитання, та зможу вам допомогти</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="position: relative; display: flex; justify-content: right; padding-top: 40px; padding-right: 65px;">
+                <div style="position: absolute">
+                  <div class="decor-blur-point" style="min-width: 640px; min-height: 640px; border-radius: 100%; background: #F8D3BD; filter: blur(100px);"></div>
+                </div>
+                <div style="position: absolute; top: 50%; left: 100px; width: 376px; transform: translateY(-50%);">
+                  <article class="card-block-4 card">
+                    <div class="card-block-4__container">
+                      <h3 class="card-block-4__title">Дужик <br>Вiкторiя <br>Сергiївна</h3>
+                      <p class="card-block-4__text">Засновниця, CEO <br>МЦ «ДIМ ОРТОПЕДiї»</p>
+                    </div>
+                  </article>
+                </div><img src="./images/photos/woman_x2.png" style="position: relative; z-index: 1;"/>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <div class="wrapper-frame wrapper-frame--bg">
+                <div class="wrapper-frame__container">
+                  <div class="accordion" x-data="{isOpen:true}">
+                    <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Як довго триває процес корекції деформації голови у дітей за допомогою ортопедичного шолому?</span>
+                      <div class="accordion__icon">
+                        <div class="accordion__line"></div>
+                        <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                      </div>
+                    </h2>
+                    <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Тривалість корекції деформації голови у дітей за допомогою ортопедичного шолому залежить від ступеня важкості деформації та індивідуальних особливостей кожної дитини. Зазвичай, цей процес може тривати від кількох місяців до кількох років. Повний термін визначається лікарем під час консультації, враховуючи динаміку лікування та реакцію організму пацієнта</div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper-frame wrapper-frame--bg">
+                <div class="wrapper-frame__container">
+                  <div class="accordion" x-data="{isOpen:false}">
+                    <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Як часто потрібно приходити на консультації та контрольні візити під час лікування?</span>
+                      <div class="accordion__icon">
+                        <div class="accordion__line"></div>
+                        <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                      </div>
+                    </h2>
+                    <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Тривалість корекції деформації голови у дітей за допомогою ортопедичного шолому залежить від ступеня важкості деформації та індивідуальних особливостей кожної дитини. Зазвичай, цей процес може тривати від кількох місяців до кількох років. Повний термін визначається лікарем під час консультації, враховуючи динаміку лікування та реакцію організму пацієнта</div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper-frame wrapper-frame--bg">
+                <div class="wrapper-frame__container">
+                  <div class="accordion" x-data="{isOpen:false}">
+                    <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Яким чином визначається необхідність та тривалість використання ортопедичного шолому для конкретного випадку?</span>
+                      <div class="accordion__icon">
+                        <div class="accordion__line"></div>
+                        <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                      </div>
+                    </h2>
+                    <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Тривалість корекції деформації голови у дітей за допомогою ортопедичного шолому залежить від ступеня важкості деформації та індивідуальних особливостей кожної дитини. Зазвичай, цей процес може тривати від кількох місяців до кількох років. Повний термін визначається лікарем під час консультації, враховуючи динаміку лікування та реакцію організму пацієнта</div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper-frame wrapper-frame--bg">
+                <div class="wrapper-frame__container">
+                  <div class="accordion" x-data="{isOpen:false}">
+                    <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Яким чином ви враховуєте індивідуальні особливості дитини при розробці шолому?</span>
+                      <div class="accordion__icon">
+                        <div class="accordion__line"></div>
+                        <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                      </div>
+                    </h2>
+                    <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Тривалість корекції деформації голови у дітей за допомогою ортопедичного шолому залежить від ступеня важкості деформації та індивідуальних особливостей кожної дитини. Зазвичай, цей процес може тривати від кількох місяців до кількох років. Повний термін визначається лікарем під час консультації, враховуючи динаміку лікування та реакцію організму пацієнта</div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper-frame wrapper-frame--bg">
+                <div class="wrapper-frame__container">
+                  <div class="accordion" x-data="{isOpen:false}">
+                    <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Яким чином ви враховуєте індивідуальні особливості дитини при розробці шолому?</span>
+                      <div class="accordion__icon">
+                        <div class="accordion__line"></div>
+                        <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                      </div>
+                    </h2>
+                    <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Тривалість корекції деформації голови у дітей за допомогою ортопедичного шолому залежить від ступеня важкості деформації та індивідуальних особливостей кожної дитини. Зазвичай, цей процес може тривати від кількох місяців до кількох років. Повний термін визначається лікарем під час консультації, враховуючи динаміку лікування та реакцію організму пацієнта</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr/>
+        </section>
+        <section class="section-4">
+          <div class="section-4__title-container">
+            <div class="lable-main">11<span>/ контакти</span></div>
+            <h2 class="title-main"><span><i>Ми завжди вам раді</i> Та готовi</span><span>с радiстЮ <b>вам допомогти,</b> щоб покращити здоров’я </span><span>вашої дитини</span>
+            </h2>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+            <div class="circle-block">
+              <div class="circle-block__container"><img src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></div>
+            </div>
+            <div class="circle-block">
+              <div class="circle-block__container"><img src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></div>
+            </div>
+            <div class="shlem-head">
+              <div class="shlem-head__wrapper" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=10,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()">
+                <div class="shlem-head__face">
+                  <div class="shlem-head__eyes">
+                    <div class="eyes">
+                      <div class="eyes__wrapper">
+                        <div class="eyes__shadow"></div>
+                        <div class="eyes__eye">
+                          <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
+                            <div class="eyes__pupil"></div>
+                          </div>
+                          <div class="eyes__blick-1"></div>
+                          <div class="eyes__blick-2"></div>
+                        </div><img class="eyes__brow" src="./images/icons/brow.svg" alt=""/>
+                      </div>
+                      <div class="eyes__wrapper">
+                        <div class="eyes__shadow eyes__shadow--right"></div>
+                        <div class="eyes__eye">
+                          <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
+                            <div class="eyes__pupil"></div>
+                          </div>
+                          <div class="eyes__blick-1 eyes__blick-1--right"></div>
+                          <div class="eyes__blick-2 eyes__blick-2--right"></div>
+                        </div><img class="eyes__brow eyes__brow--right" src="./images/icons/brow.svg" alt=""/>
+                      </div>
+                    </div>
+                  </div><a class="shlem-head__nose" href="#"><img src="./images/icons/instagram-icon.svg" alt=""/></a><a class="shlem-head__mouth" href="#"><img src="./images/icons/instagram-link.svg" alt=""/></a>
+                </div><img src="./images/decor/shlem_x1.png" alt=""/>
+              </div>
+            </div>
+            <div class="circle-block">
+              <div class="circle-block__wrapper">
+                <div class="circle-block__container"><img src="./images/icons/time.svg" alt="time"/><span>Пн-Пт: 09:00-18:00</span></div>
+                <div class="circle-block__container"><img src="./images/icons/marker.svg" alt="marker"/><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
+                <div class="circle-block__container">
+                  <div style="width: 14px;"></div><a class="link link--negative" href="#">
+                    <div class="link__text">Показати на мапі</div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr/>
+        <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="wrapper-frame">
+            <div class="wrapper-frame__container">
+              <div class="wrapper-center" style="flex-direction: row; gap: 20px; padding-inline: 80px;"><img src="./images/icons/user-file.svg" alt="file"/>
+                <h3 style="font-family: var(--font-family);font-weight: 400;font-size: 28px;line-height: 110%;letter-spacing: 0.01em;text-transform: uppercase;text-align: justify;color: var(--text-talee-title);">Або Залиште ваші дані і найближчим часом ми з вами зв'яжемося</h3>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper-frame">
+            <div class="wrapper-frame__container">
+              <form style="padding: 20px 40px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; height: 100%;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                  <div class="wrapper-frame">
+                    <div class="wrapper-frame__container">
+                      <div class="wrapper-center">
+                        <input class="input-new" type="text" name="my-name" placeholder="Ім’я*"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrapper-frame">
+                    <div class="wrapper-frame__container">
+                      <div class="wrapper-center">
+                        <input class="input-new" type="tel" name="my-phone" placeholder="Телефон*"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <div class="wrapper-center">
+                      <input class="input-new" type="email" name="my-email" placeholder="Пошта*"/>
+                    </div>
+                  </div>
+                </div>
+                <label class="checkbox">
+                  <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                </label>
+                <button class="button" type="submit">
+                  <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                  </p>
+                  <div class="button__icon">
+                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </div>
+                  </div>
+                </button>
+              </form>
+            </div>
           </div>
         </section>
         <div style="padding-bottom: 74px;">

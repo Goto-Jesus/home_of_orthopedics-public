@@ -26,7 +26,7 @@
                 <div class="contacts-menu__button__image"></div>
               </button>
             </div>
-            <hr class="_anim-items _transition-clip-form-left" style="margin-bottom: 25px;"/><a class="link link--" href="all_courses.html" style="margin-bottom: 25px;">
+            <hr class="_anim-items _transition-clip-form-left" style="margin-bottom: 25px;"/><a class="link" href="all_courses.html" style="margin-bottom: 25px;">
               <div class="link__text">Навчання</div></a>
             <ul style="display: grid; grid-template-columns: repeat(2,1fr); margin-bottom: 15px; gap: 10px;">
               <li class="navigation__item" :class="{'navigation__item--active': currentAnchor === '#about_company'}" style="width: max-content;"><a class="navigation__link" style="line-height: 100%; padding-bottom: 15px;" href="#about_company" @click="() =&gt; {currentAnchor = '#about_company'; isClosedBurgerMenu=true;}" x-on:click="setTimeout(() =&gt; {isShowBurgerMenu = false}, 500)">Про компанію</a></li>
@@ -36,7 +36,7 @@
             <p style="margin-bottom: 25px;">Поглиблені персональнi консультації з нутриціології, якi допоможуть вам досягти витриманого здоров'я та життєвої енергії</p>
             <button class="button" type="button" style="margin-bottom: 40px;" @click="isShowPopUpContact=true;">
               <p class="button__text"><span>Зв'язатися зі мною</span>
-              </p><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="Зв'язатися зі мною"/>
+              </p>
             </button>
             <h3 style="margin-bottom: 25px; font-size: 18px;">Давайте дружити</h3>
             <div class="social-list" style="margin-bottom: 20px;"><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
@@ -155,7 +155,7 @@
             </div>
             <div style="display: flex; gap: 20px;">
               <div style="width: 48px; height: 48px; display: flex; justify-content: center; align-items: center;"><img src="./images/icons/search_.svg" alt="search"/></div>
-              <div class="mini-button"><img src="./images/icons/instagram-icon-gray.svg" alt="instagram"/></div>
+              <div class="button-mini"><img src="./images/icons/instagram-icon-gray.svg" alt="instagram"/></div>
             </div>
           </div>
           <div class="_grid-col-desk-6-6" style="display: flex; justify-content: end; gap: 20px; padding-left: 38px;">
