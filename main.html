@@ -533,58 +533,47 @@
           <div class="map__menu" :class="{'map__menu--hidden': !activeRegion}">
             <div style="display: grid; grid-template-rows: max-content 1fr; overflow: hidden;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; padding: 40px; padding-bottom: 0;">
-                <h2 class="map__title">ВІДГУГИ</h2>
-                <div class="button-mini" @click="handleSVGClick"><img src="../images/icons/__close.svg"/></div>
+                <h2 class="map__title">ЦІНИ</h2>
+                <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/__close.svg" alt="icon"/></div>
               </div>
               <div style="display: flex; flex-direction: column; gap: 20px; overflow-Y: scroll; padding-left: 40px; margin-right:10px; padding-right: 10px;">
                 <div class="wrapper-frame wrapper-frame--bg">
                   <div class="wrapper-frame__container">
-                    <div class="card-hard">
-                      <div class="card-hard__head">
-                        <div class="card-hard__head-container">
-                          <div class="card-hard__image"><img src="../images/photos/clients/card-f_1.jpg" alt="photo of child"/></div>
-                          <div>
-                            <div class="card-hard__title">Тетяна <br>та Софія</div>
-                            <div class="card-hard__info">Вік дитини 8 місяців</div>
-                          </div>
-                        </div>
-                        <div class="rating" x-data="{'stars':[1,2,3,4,5],'rating':0,'hoverRating':0,'setRating': function(value) {  this.rating = value;  } ,'setHoverRating': function(value) {  this.hoverRating = value;  } }" x-init="setRating(4)">
-                          <template x-for="star in stars" :key="star"><span class="rating__star" :class="{'selected': star &lt;= rating, 'hovered': star &lt;= hoverRating}" @click="setRating(star)" @mouseover="setHoverRating(star)" @mouseleave="setHoverRating(0)"></span></template>
+                    <article class="card-easy-5 card"><img class="card-easy-5__image" src="./images/icons/card-g_1-shlem.png" loading="lazy"/>
+                      <div class="card-easy-5__container">
+                        <h3 class="card-easy-5__title">Виготовлення Шолому</h3>
+                        <p class="card-easy-5__text">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини через правильний тиск</p>
+                        <div class="card-easy-5__block card__block">
+                          <p><b>67 000</b> грн </p>
                         </div>
                       </div>
-                      <div class="card-hard__body">
-                        <div class="card-hard__body-container">
-                          <div class="card-hard__subtitle">Відгук</div>
-                          <div class="card-hard__date">23. 04. 2024</div>
-                        </div>
-                        <div class="card-hard__text">Завдяки шолому від "Дом Ортопедии", наша донька значно покращила форму голови, і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! <br>Після консультації з ортопедом, ми отримали індивідуально виготовлений шолом, який допоміг вирівняти форму голови нашої доньки без дискомфорту для неї.</div>
-                      </div>
-                    </div>
+                    </article>
                   </div>
                 </div>
                 <div class="wrapper-frame wrapper-frame--bg">
                   <div class="wrapper-frame__container">
-                    <div class="card-hard">
-                      <div class="card-hard__head">
-                        <div class="card-hard__head-container">
-                          <div class="card-hard__image"><img src="../images/photos/clients/card-f_2.jpg" alt="photo of child"/></div>
-                          <div>
-                            <div class="card-hard__title">Ірина <br>та Олександр</div>
-                            <div class="card-hard__info">Вік дитини 8 місяців</div>
-                          </div>
-                        </div>
-                        <div class="rating" x-data="{'stars':[1,2,3,4,5],'rating':0,'hoverRating':0,'setRating': function(value) {  this.rating = value;  } ,'setHoverRating': function(value) {  this.hoverRating = value;  } }" x-init="setRating(4)">
-                          <template x-for="star in stars" :key="star"><span class="rating__star" :class="{'selected': star &lt;= rating, 'hovered': star &lt;= hoverRating}" @click="setRating(star)" @mouseover="setHoverRating(star)" @mouseleave="setHoverRating(0)"></span></template>
+                    <article class="card-easy-5 card"><img class="card-easy-5__image" src="./images/icons/card-g_2-grab.svg" loading="lazy"/>
+                      <div class="card-easy-5__container">
+                        <h3 class="card-easy-5__title">Косультацiя лiкаря </h3>
+                        <p class="card-easy-5__text">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини через правильний тиск</p>
+                        <div class="card-easy-5__block card__block">
+                          <p><b>800</b> грн </p>
                         </div>
                       </div>
-                      <div class="card-hard__body">
-                        <div class="card-hard__body-container">
-                          <div class="card-hard__subtitle">Відгук</div>
-                          <div class="card-hard__date">23. 04. 2024</div>
+                    </article>
+                  </div>
+                </div>
+                <div class="wrapper-frame wrapper-frame--bg">
+                  <div class="wrapper-frame__container">
+                    <article class="card-easy-5 card"><img class="card-easy-5__image" src="./images/icons/card-g_3-massage.svg" loading="lazy"/>
+                      <div class="card-easy-5__container">
+                        <h3 class="card-easy-5__title">Масаж Дитини</h3>
+                        <p class="card-easy-5__text">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини через правильний тиск</p>
+                        <div class="card-easy-5__block card__block">
+                          <p><b>800</b> грн </p>
                         </div>
-                        <div class="card-hard__text">Завдяки шолому від "Дом Ортопедии", наша донька значно покращила форму голови, і ми вже бачимо чудові результати! <br>Після консультації з ортопедом, ми отримали індивідуально виготовлений шолом, який допоміг вирівняти форму голови нашої доньки без дискомфорту для неї.</div>
                       </div>
-                    </div>
+                    </article>
                   </div>
                 </div>
               </div>
@@ -601,7 +590,7 @@
                   </div>
                 </div>
               </button><a class="link link--nowrap" href="#">
-                <div class="link__text">УСІ ВІГУКИ</div></a>
+                <div class="link__text">УСІ ЦІНИ</div></a>
             </div>
           </div>
           <div style="position: absolute; place-self: center;">
