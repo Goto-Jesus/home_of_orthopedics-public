@@ -529,72 +529,434 @@
           </button>
         </section>
         <hr/>
-        <section x-data="mapData" x-init="init()" @mousemove="moveTitle($event)" style="display: grid;">
-          <div class="map__menu" :class="{'map__menu--hidden': !activeRegion}">
-            <div style="display: grid; grid-template-rows: max-content 1fr; overflow: hidden;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; padding: 40px; padding-bottom: 0;">
-                <h2 class="map__title">ЦІНИ</h2>
-                <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 20px; overflow-Y: scroll; padding-left: 40px; margin-right:10px; padding-right: 10px;">
-                <div class="wrapper-frame wrapper-frame--bg">
-                  <div class="wrapper-frame__container">
-                    <article class="card-easy-5 card"><img class="card-easy-5__image" src="./images/icons/card-g_1-shlem.png" loading="lazy"/>
-                      <div class="card-easy-5__container">
-                        <h3 class="card-easy-5__title">Виготовлення Шолому</h3>
-                        <p class="card-easy-5__text">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини через правильний тиск</p>
-                        <div class="card-easy-5__block card__block">
-                          <p><b>67 000</b> грн </p>
-                        </div>
+        <section class="section-map" x-data="mapData" x-init="init()" @mousemove="moveTitle($event)">
+          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Київ'}">
+            <template x-if="delayedActiveRegion === 'Київ' || activeRegion === 'Київ'">
+              <div class="menu">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">ЦІНИ</h2>
+                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                  </div>
+                  <div class="menu__list">
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-easy-5 card"><img class="card-easy-5__image" src="./images/icons/card-g_1-shlem.png" loading="lazy"/>
+                          <div class="card-easy-5__container">
+                            <h3 class="card-easy-5__title">Виготовлення Шолому</h3>
+                            <p class="card-easy-5__text">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини через правильний тиск</p>
+                            <div class="card-easy-5__block card__block">
+                              <p><b>67 000</b> грн</p>
+                            </div>
+                          </div>
+                        </article>
                       </div>
-                    </article>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-easy-5 card"><img class="card-easy-5__image" src="./images/icons/card-g_2-grab.svg" loading="lazy"/>
+                          <div class="card-easy-5__container">
+                            <h3 class="card-easy-5__title">Косультацiя лiкаря </h3>
+                            <p class="card-easy-5__text">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини через правильний тиск</p>
+                            <div class="card-easy-5__block card__block">
+                              <p><b>800</b> грн</p>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-easy-5 card"><img class="card-easy-5__image" src="./images/icons/card-g_3-massage.svg" loading="lazy"/>
+                          <div class="card-easy-5__container">
+                            <h3 class="card-easy-5__title">Масаж Дитини</h3>
+                            <p class="card-easy-5__text">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини через правильний тиск</p>
+                            <div class="card-easy-5__block card__block">
+                              <p><b>800</b> грн</p>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="wrapper-frame wrapper-frame--bg">
-                  <div class="wrapper-frame__container">
-                    <article class="card-easy-5 card"><img class="card-easy-5__image" src="./images/icons/card-g_2-grab.svg" loading="lazy"/>
-                      <div class="card-easy-5__container">
-                        <h3 class="card-easy-5__title">Косультацiя лiкаря </h3>
-                        <p class="card-easy-5__text">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини через правильний тиск</p>
-                        <div class="card-easy-5__block card__block">
-                          <p><b>800</b> грн </p>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-                <div class="wrapper-frame wrapper-frame--bg">
-                  <div class="wrapper-frame__container">
-                    <article class="card-easy-5 card"><img class="card-easy-5__image" src="./images/icons/card-g_3-massage.svg" loading="lazy"/>
-                      <div class="card-easy-5__container">
-                        <h3 class="card-easy-5__title">Масаж Дитини</h3>
-                        <p class="card-easy-5__text">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини через правильний тиск</p>
-                        <div class="card-easy-5__block card__block">
-                          <p><b>800</b> грн </p>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 40px;">
-              <button class="button" type="">
-                <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                </p>
-                <div class="button__icon">
-                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="menu__footer">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
+                      </div>
+                    </div>
+                  </button><a class="link link--nowrap" href="#">
+                    <div class="link__text">ВСІ ЦІНИ</div></a>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Чернігів'}">
+            <template x-if="delayedActiveRegion === 'Чернігів' || activeRegion === 'Чернігів'">
+              <div class="menu">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">ПОСЛУГИ</h2>
+                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                  </div>
+                  <div class="menu__list">
                   </div>
                 </div>
-              </button><a class="link link--nowrap" href="#">
-                <div class="link__text">УСІ ЦІНИ</div></a>
-            </div>
+                <div class="menu__footer">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="link link--nowrap" href="#">
+                    <div class="link__text">ВСІ ПОСЛУГИ</div></a>
+                </div>
+              </div>
+            </template>
           </div>
-          <div style="position: absolute; place-self: center;">
-            <div class="map" id="map">
+          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Черкаси'}">
+            <template x-if="delayedActiveRegion === 'Черкаси' || activeRegion === 'Черкаси'">
+              <div class="menu">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">ЛІКАРІ</h2>
+                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                  </div>
+                  <div class="menu__list">
+                  </div>
+                </div>
+                <div class="menu__footer">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="link link--nowrap" href="#">
+                    <div class="link__text">ВСІ ЛІКАРІ</div></a>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Суми'}">
+            <template x-if="delayedActiveRegion === 'Суми' || activeRegion === 'Суми'">
+              <div class="menu">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">ЛІЦЕНЗІЇ</h2>
+                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                  </div>
+                  <div class="menu__list">
+                  </div>
+                </div>
+                <div class="menu__footer">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="link link--nowrap" href="#">
+                    <div class="link__text">ВСІ ЛІЦЕНЗІЇ</div></a>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Полтава'}">
+            <template x-if="delayedActiveRegion === 'Полтава' || activeRegion === 'Полтава'">
+              <div class="menu">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">РЕЗУЛЬТАТИ ЛІКУВАННЯ</h2>
+                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                  </div>
+                  <div class="menu__list">
+                  </div>
+                </div>
+                <div class="menu__footer">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="link link--nowrap" href="#">
+                    <div class="link__text">ВСІ РЕЗУЛЬТАТИ</div></a>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Харків'}">
+            <template x-if="delayedActiveRegion === 'Харків' || activeRegion === 'Харків'">
+              <div class="menu">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">ОРТЕЗИ PIRO</h2>
+                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                  </div>
+                  <div class="menu__list">
+                  </div>
+                </div>
+                <div class="menu__footer">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="link link--nowrap" href="#">
+                    <div class="link__text">БІЛЬШЕ ПРО ОРТЕЗИ</div></a>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Кіровоград'}">
+            <template x-if="delayedActiveRegion === 'Кіровоград' || activeRegion === 'Кіровоград'">
+              <div class="menu">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">ДОСЛІДЖЕННЯ</h2>
+                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                  </div>
+                  <div class="menu__list">
+                  </div>
+                </div>
+                <div class="menu__footer">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="link link--nowrap" href="#">
+                    <div class="link__text">ВСІ ДОСЛІДЖЕННЯ</div></a>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Дніпро'}">
+            <template x-if="delayedActiveRegion === 'Дніпро' || activeRegion === 'Дніпро'">
+              <div class="menu">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">ПРО КОМПАНІЮ</h2>
+                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                  </div>
+                  <div class="menu__list">
+                  </div>
+                </div>
+                <div class="menu__footer">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="link link--nowrap" href="#">
+                    <div class="link__text">БІЛЬШЕ ПРО КОМПАНІЮ</div></a>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Миколаїв'}">
+            <template x-if="delayedActiveRegion === 'Миколаїв' || activeRegion === 'Миколаїв'">
+              <div class="menu">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">ВІДГУКИ</h2>
+                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                  </div>
+                  <div class="menu__list">
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <div class="card-hard">
+                          <div class="card-hard__head">
+                            <div class="card-hard__head-container">
+                              <div class="card-hard__image"><img src="./images/photos/clients/card-f_1.jpg" alt="photo of child"/></div>
+                              <div>
+                                <div class="card-hard__title">Тетяна <br>та Софія</div>
+                                <div class="card-hard__info">Вік дитини 8 місяців</div>
+                              </div>
+                            </div>
+                            <div class="rating" x-data="{'stars':[1,2,3,4,5],'rating':0,'hoverRating':0,'setRating': function(value) {  this.rating = value;  } ,'setHoverRating': function(value) {  this.hoverRating = value;  } }" x-init="setRating(4)">
+                              <template x-for="star in stars" :key="star"><span class="rating__star" :class="{'selected': star &lt;= rating, 'hovered': star &lt;= hoverRating}" @click="setRating(star)" @mouseover="setHoverRating(star)" @mouseleave="setHoverRating(0)"></span></template>
+                            </div>
+                          </div>
+                          <div class="card-hard__body">
+                            <div class="card-hard__body-container">
+                              <div class="card-hard__subtitle">Відгук</div>
+                              <div class="card-hard__date">23. 04. 2024</div>
+                            </div>
+                            <div class="card-hard__text">Завдяки шолому від "Дом Ортопедии", наша донька значно покращила форму голови, і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! і ми вже бачимо чудові результати! <br>Після консультації з ортопедом, ми отримали індивідуально виготовлений шолом, який допоміг вирівняти форму голови нашої доньки без дискомфорту для неї.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <div class="card-hard">
+                          <div class="card-hard__head">
+                            <div class="card-hard__head-container">
+                              <div class="card-hard__image"><img src="./images/photos/clients/card-f_2.jpg" alt="photo of child"/></div>
+                              <div>
+                                <div class="card-hard__title">Ірина <br>та Олександр</div>
+                                <div class="card-hard__info">Вік дитини 8 місяців</div>
+                              </div>
+                            </div>
+                            <div class="rating" x-data="{'stars':[1,2,3,4,5],'rating':0,'hoverRating':0,'setRating': function(value) {  this.rating = value;  } ,'setHoverRating': function(value) {  this.hoverRating = value;  } }" x-init="setRating(4)">
+                              <template x-for="star in stars" :key="star"><span class="rating__star" :class="{'selected': star &lt;= rating, 'hovered': star &lt;= hoverRating}" @click="setRating(star)" @mouseover="setHoverRating(star)" @mouseleave="setHoverRating(0)"></span></template>
+                            </div>
+                          </div>
+                          <div class="card-hard__body">
+                            <div class="card-hard__body-container">
+                              <div class="card-hard__subtitle">Відгук</div>
+                              <div class="card-hard__date">23. 04. 2024</div>
+                            </div>
+                            <div class="card-hard__text">Завдяки шолому від "Дом Ортопедии", наша донька значно покращила форму голови, і ми вже бачимо чудові результати! <br>Після консультації з ортопедом, ми отримали індивідуально виготовлений шолом, який допоміг вирівняти форму голови нашої доньки без дискомфорту для неї.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu__footer">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="link link--nowrap" href="#">
+                    <div class="link__text">ВСІ ВІДГУКИ</div></a>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Херсон'}">
+            <template x-if="delayedActiveRegion === 'Херсон' || activeRegion === 'Херсон'">
+              <div class="menu">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">НОВИНИ</h2>
+                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                  </div>
+                  <div class="menu__list">
+                  </div>
+                </div>
+                <div class="menu__footer">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="link link--nowrap" href="#">
+                    <div class="link__text">ВСІ НОВИНИ</div></a>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Запоріжжя'}">
+            <template x-if="delayedActiveRegion === 'Запоріжжя' || activeRegion === 'Запоріжжя'">
+              <div class="menu">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">СПІВПРАЦЯ</h2>
+                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                  </div>
+                  <div class="menu__list">
+                  </div>
+                </div>
+                <div class="menu__footer">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="link link--nowrap" href="#">
+                    <div class="link__text">-</div></a>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Донецьк'}">
+            <template x-if="delayedActiveRegion === 'Донецьк' || activeRegion === 'Донецьк'">
+              <div class="menu">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">ШОЛОМ TALEE</h2>
+                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                  </div>
+                  <div class="menu__list">
+                  </div>
+                </div>
+                <div class="menu__footer">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="link link--nowrap" href="#">
+                    <div class="link__text">БІЛЬШЕ ПРО ШОЛОМ</div></a>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="section-map__map">
+            <div class="map" id="map" :class="{'map--no-region': !activeRegion}">
               <div class="map__container">
                 <ul class="map__list">
                   <li class="map__item" :class="{'map__item--active': activeRegion === 'Чернігів'}" style="top: 17.5%; left: 48.5%;">ПОСЛУГИ</li>
@@ -611,8 +973,8 @@
                   <li class="map__item" :class="{'map__item--active': activeRegion === 'Запоріжжя'}" style="top: 63%; left: 69%;">СПІВПРАЦЯ</li>
                 </ul>
               </div>
+              <div class="map__cursor" x-ref="map_title" x-show="titleVisible" x-text="titleContent" :style="{ top: `${titleY}px`, left: `${titleX}px` }"></div>
             </div>
-            <div class="map__cursor" x-ref="map_title" x-show="titleVisible" x-text="titleContent" :style="{ top: `${titleY}px`, left: `${titleX}px` }"></div>
           </div>
         </section>
         <script>
@@ -727,101 +1089,108 @@
             titleContent: '',
             titleX: 0,
             titleY: 0,
-            points: [],
             activeRegion: "Київ",
+            delayedActiveRegion: "Київ",
+            delayTime: 300, // задержка в миллисекундах
             init: function() {
-              if (!document.querySelector('#map svg')) {
-                const svgNS = 'http://www.w3.org/2000/svg';
-                const mapElement = document.createElementNS(svgNS, 'svg');
-                mapElement.setAttribute('viewBox', '0 0 612 405');
-                mapElement.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-                mapElement.setAttribute('width', '100%');
-                mapElement.setAttribute('height', 'auto');
+                if (!document.querySelector('#map svg')) {
+                    const svgNS = 'http://www.w3.org/2000/svg';
+                    const mapElement = document.createElementNS(svgNS, 'svg');
+                    mapElement.setAttribute('viewBox', '0 0 612 405');
+                    mapElement.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+                    mapElement.setAttribute('width', '100%');
+                    mapElement.setAttribute('height', 'auto');
           
-                mapElement.addEventListener('click', (e) => this.handleSVGClick(e));
+                    mapElement.addEventListener('click', (e) => this.handleSVGClick(e));
           
-                for (const key in this.paths) {
-                  const region = this.paths[key];
-                  const pathElement = document.createElementNS(svgNS, 'path');
-                  pathElement.setAttribute('d', region.path);
-                  pathElement.setAttribute('fill', '#EA8529');
-                  pathElement.setAttribute('stroke', '#FBE7D4');
-                  pathElement.setAttribute('stroke-width', '1.25');
-                  pathElement.setAttribute('stroke-linejoin', 'round');
-                  pathElement.setAttribute('opacity', '1');
-                  pathElement.dataset.name = region.name;
+                    for (const key in this.paths) {
+                        const region = this.paths[key];
+                        const pathElement = document.createElementNS(svgNS, 'path');
+                        pathElement.setAttribute('d', region.path);
+                        pathElement.setAttribute('fill', '#EA8529');
+                        pathElement.setAttribute('stroke', '#FBE7D4');
+                        pathElement.setAttribute('stroke-width', '1.25');
+                        pathElement.setAttribute('stroke-linejoin', 'round');
+                        pathElement.setAttribute('opacity', '1');
+                        pathElement.dataset.name = region.name;
           
-                  pathElement.addEventListener('mouseenter', () => {
-                    this.showTitle(region.name);
-                    this.hoverRegion(pathElement, true);
-                  });
-                  pathElement.addEventListener('mouseleave', () => {
-                    this.hideTitle();
-                    this.hoverRegion(pathElement, false);
-                  });
-                  pathElement.addEventListener('mousemove', (e) => this.updateTitlePosition(e));
-                  pathElement.addEventListener('click', (e) => this.handleClick(e, pathElement));
+                        pathElement.addEventListener('mouseenter', () => {
+                            this.showTitle(region.name);
+                            this.hoverRegion(pathElement, true);
+                        });
+                        pathElement.addEventListener('mouseleave', () => {
+                            this.hideTitle();
+                            this.hoverRegion(pathElement, false);
+                        });
+                        pathElement.addEventListener('mousemove', (e) => this.updateTitlePosition(e));
+                        pathElement.addEventListener('click', (e) => this.handleClick(e, pathElement));
           
-                  mapElement.appendChild(pathElement);
+                        mapElement.appendChild(pathElement);
+                    }
+                    document.getElementById('map').appendChild(mapElement);
                 }
-                document.getElementById('map').appendChild(mapElement);
-              }
             },
             handleSVGClick: function(event) {
-              if (this.activeRegion) {
-                const previousPath = document.querySelector(`[data-name="${this.activeRegion}"]`);
-                if (previousPath) {
-                  previousPath.setAttribute('fill', '#EA8529');
+                if (this.activeRegion) {
+                    const previousPath = document.querySelector(`[data-name="${this.activeRegion}"]`);
+                    if (previousPath) {
+                        previousPath.setAttribute('fill', '#EA8529');
+                    }
                 }
-              }
-              this.activeRegion = null;
+                this.activeRegion = null;
+                this.updateDelayedActiveRegion();
             },
             handleClick: function(event, pathElement) {
-              event.stopPropagation();
-              const regionName = pathElement.dataset.name;
+                event.stopPropagation();
+                const regionName = pathElement.dataset.name;
           
-              if (this.activeRegion) {
-                const previousPath = document.querySelector(`[data-name="${this.activeRegion}"]`);
-                if (previousPath) {
-                  previousPath.setAttribute('fill', '#EA8529');
+                if (this.activeRegion) {
+                    const previousPath = document.querySelector(`[data-name="${this.activeRegion}"]`);
+                    if (previousPath) {
+                        previousPath.setAttribute('fill', '#EA8529');
+                    }
                 }
-              }
           
-              this.activeRegion = regionName;
-              pathElement.setAttribute('fill', '#FBE7D4');
+                this.activeRegion = regionName;
+                pathElement.setAttribute('fill', '#FBE7D4');
+                this.updateDelayedActiveRegion();
+            },
+            updateDelayedActiveRegion: function() {
+                setTimeout(() => {
+                    this.delayedActiveRegion = this.activeRegion;
+                }, this.delayTime);
             },
             showTitle: function(name) {
-              this.titleContent = name;
-              this.titleVisible = true;
+                this.titleContent = name;
+                this.titleVisible = true;
             },
             hideTitle: function() {
-              this.titleVisible = false;
+                this.titleVisible = false;
             },
             updateTitlePosition(event) {
-              this.titleX = event.clientX + 25;
-              this.titleY = event.clientY - 15;
+                this.titleX = event.clientX + 25;
+                this.titleY = event.clientY - 15;
             },
             moveTitle(event) {
-              if (this.titleVisible) {
-                this.$refs.map_title.style.display = 'block';
-                this.$refs.map_title.style.top = `${this.titleY}px`;
-                this.$refs.map_title.style.left = `${this.titleX}px`;
-                this.$refs.map_title.textContent = this.titleContent;
-              } else {
-                this.$refs.map_title.style.display = 'none';
-              }
+                if (this.titleVisible) {
+                    this.$refs.map_title.style.display = 'block';
+                    this.$refs.map_title.style.top = `${this.titleY}px`;
+                    this.$refs.map_title.style.left = `${this.titleX}px`;
+                    this.$refs.map_title.textContent = this.titleContent;
+                } else {
+                    this.$refs.map_title.style.display = 'none';
+                }
             },
             hoverRegion: function(pathElement, enter) {
-              if (enter) {
-                pathElement.setAttribute('opacity', '0.35');
-                pathElement.setAttribute('stroke-width', '2.25');
-              } else {
-                pathElement.setAttribute('opacity', '1');
-                pathElement.setAttribute('stroke-width', '1.25');
-              }
+                if (enter) {
+                    pathElement.setAttribute('opacity', '0.35');
+                    pathElement.setAttribute('stroke-width', '2.25');
+                } else {
+                    pathElement.setAttribute('opacity', '1');
+                    pathElement.setAttribute('stroke-width', '1.25');
+                }
             }
           };
-          
         </script>
         <hr/>
         <section class="section-4" x-data="{'images':['./images/decor/shlem/shlem_beige.png','./images/decor/shlem/shlem_orange.png','./images/decor/shlem/shlem_green.png','./images/decor/shlem/shlem_yellow.png','./images/decor/shlem/shlem_pink.png','./images/decor/shlem/shlem_white.png'],'currentImage':'./images/decor/shlem/shlem_beige.png'}" style="z-index: 0; position: relative; display: flex; flex-direction: column; align-items: center;">
