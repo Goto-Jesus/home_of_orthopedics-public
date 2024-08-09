@@ -31,7 +31,7 @@
             <ul style="display: grid; grid-template-columns: repeat(2,1fr); margin-bottom: 15px; gap: 10px;">
               <li class="navigation__item" :class="{'navigation__item--active': currentAnchor === '#about_company'}" style="width: max-content;"><a class="navigation__link" style="line-height: 100%; padding-bottom: 15px;" href="#about_company" @click="() =&gt; {currentAnchor = '#about_company'; isClosedBurgerMenu=true;}" x-on:click="setTimeout(() =&gt; {isShowBurgerMenu = false}, 500)">Про компанію</a></li>
               <li class="navigation__item" :class="{'navigation__item--active': currentAnchor === '#services'}" style="width: max-content;"><a class="navigation__link" style="line-height: 100%; padding-bottom: 15px;" href="#services" @click="() =&gt; {currentAnchor = '#services'; isClosedBurgerMenu=true;}" x-on:click="setTimeout(() =&gt; {isShowBurgerMenu = false}, 500)">Усі послуги</a></li>
-              <li class="navigation__item" :class="{'navigation__item--active': currentAnchor === '#reviews'}" style="width: max-content;"><a class="navigation__link" style="line-height: 100%; padding-bottom: 15px;" href="#reviews" @click="() =&gt; {currentAnchor = '#reviews'; isClosedBurgerMenu=true;}" x-on:click="setTimeout(() =&gt; {isShowBurgerMenu = false}, 500)">Відгуки</a></li>
+              <li class="navigation__item" :class="{'navigation__item--active': currentAnchor === '#:~:text=Відгуки'}" style="width: max-content;"><a class="navigation__link" style="line-height: 100%; padding-bottom: 15px;" href="#:~:text=Відгуки" @click="() =&gt; {currentAnchor = '#:~:text=Відгуки'; isClosedBurgerMenu=true;}" x-on:click="setTimeout(() =&gt; {isShowBurgerMenu = false}, 500)">Вiдгуки</a></li>
             </ul>
             <p style="margin-bottom: 25px;">Поглиблені персональнi консультації з нутриціології, якi допоможуть вам досягти витриманого здоров'я та життєвої енергії</p>
             <button class="button" type="button" style="margin-bottom: 40px;" @click="isShowPopUpContact=true;">
@@ -135,7 +135,7 @@
             <div class="logo"><a href="main.html"><img src="./images/icons/logo.svg" alt="logo"/></a></div>
           </div>
           <div class="_grid-col-desk-2-2" style="display: flex; justify-content: center; align-items: center; height: 100%; padding-block: 17px;">
-            <div style="width: 1px; height: 100%; background: var(--text-talee-title); opacity: 0.3;"></div>
+            <div style="width: 1px; height: 100%; background: var(--text-tale-title); opacity: 0.3;"></div>
           </div>
           <div class="_grid-col-desk-3-3">
             <div class="short-contacts__links">
@@ -149,13 +149,13 @@
                 <ul class="navigation__list">
                   <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#about_company'}"><a class="navigation__link" href="#about_company" @click="currentHook = '#about_company'">Про компанію</a></li>
                   <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#services'}"><a class="navigation__link" href="#services" @click="currentHook = '#services'">Усі послуги</a></li>
-                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#reviews'}"><a class="navigation__link" href="#reviews" @click="currentHook = '#reviews'">Відгуки</a></li>
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#reviews'}"><a class="navigation__link" href="#:~:text=Відгуки" @click="currentHook = '#reviews'">Вiдгуки</a></li>
                 </ul>
               </nav>
             </div>
             <div style="display: flex; gap: 20px;">
               <div style="width: 48px; height: 48px; display: flex; justify-content: center; align-items: center;"><img src="./images/icons/search_.svg" alt="search"/></div>
-              <div class="button-mini"><img src="./images/icons/instagram-icon-gray.svg" alt="instagram"/></div>
+              <div class="button-icon"><img src="./images/icons/instagram-icon-gray.svg" alt="instagram"/></div>
             </div>
           </div>
           <div class="_grid-col-desk-6-6" style="display: flex; justify-content: end; gap: 20px; padding-left: 38px;">
@@ -172,17 +172,225 @@
       <div class="page__menu">
         <template x-if="!isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent">
           <div class="page__menu__container">
-            <div class="contacts-menu" x-data="{ hidden: true }" @click.outside="hidden = true">
-              <div class="contacts-menu__container" x-cloak="x-cloak" :class="{'contacts-menu__container--hidden': hidden}">
-                <div class="contacts-menu__item"> <a class="button-icon" target="_blank" href="#"><img src="./images/icons/social-telegram.svg" alt="telegram-logo"/></a></div>
-                <div class="contacts-menu__item"> <a class="button-icon" target="_blank" href="#"><img src="./images/icons/social-telegram.svg" alt="telegram-logo"/></a></div>
-                <div class="contacts-menu__item"> <a class="button-icon" target="_blank" href="#"><img src="./images/icons/social-telegram.svg" alt="telegram-logo"/></a></div>
-                <div class="contacts-menu__item"> <a class="button-icon" target="_blank" href="#"><img src="./images/icons/social-telegram.svg" alt="telegram-logo"/></a></div>
+            <div class="contacts-menu" x-data="{ isClosed: true }" @click.outside="isClosed = true">
+              <div class="contacts-menu__container" x-cloak="x-cloak" :class="{'contacts-menu__container--close': isClosed}" style="height: calc((20px + 56px) * 3 - 20px);">
+                <div class="contacts-menu__item">
+                  <div class="button-accordion-new-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                    <div class="button-accordion-new-icon__pop-up" :class="{'button-accordion-new-icon__pop-up--hidden':!isOpen}">
+                      <div class="menu" style="height: 82dvh; width: 764px; transform: translateY(-20%);">
+                        <div class="menu__container">
+                          <div class="menu__head">
+                            <h2 class="menu__title">ШОЛОМ TALEE</h2>
+                            <div class="button-icon" @click="handleClose"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                          </div>
+                          <div class="menu__content">
+                            <div style="position: absolute; top: 4%; left: 40%; z-index: 2;">
+                              <div class="button-accordion button-accordion--mini" x-data="{ isOpen: true }" @click="isOpen=!isOpen">
+                                <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                                  <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                                  <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                                </div>
+                                <div class="button-accordion__icon">
+                                  <div class="button-accordion__line"></div>
+                                  <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="position: absolute; top: 20%; left: 50%; z-index: 2;">
+                              <div class="button-accordion button-accordion--mini" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                                <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                                  <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                                  <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                                </div>
+                                <div class="button-accordion__icon">
+                                  <div class="button-accordion__line"></div>
+                                  <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="position: absolute; top: 52%; left: 60%; z-index: 2;">
+                              <div class="button-accordion button-accordion--mini" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                                <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                                  <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                                  <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                                </div>
+                                <div class="button-accordion__icon">
+                                  <div class="button-accordion__line"></div>
+                                  <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="main-photo" style="width: 800px; height: 800px;position: absolute; top: -35%;">
+                              <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                                <div class="main-photo__block">
+                                  <div class="object-photo" style="width: 600px; height: 600px;"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee">
+                                    <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
+                                  </div>
+                                </div>
+                                <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                                  <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                                    <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="position: absolute; bottom: 0; padding-inline: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+                              <div class="wrapper-frame wrapper-frame--bg">
+                                <div class="wrapper-frame__container">
+                                  <div style="padding: 20px">
+                                    <p>01</p>
+                                    <p>Шолом Talee® — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="wrapper-frame wrapper-frame--bg">
+                                <div class="wrapper-frame__container">
+                                  <div style="padding: 20px">
+                                    <p>02</p>
+                                    <p>Шолом TALEE, розроблений з урахуванням високих стандартів безпеки та якості, стає надійним помічником для батьків у вирішенні проблем дитячого ортопедичного здоров’я</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div></div>
+                          </div>
+                        </div>
+                        <div class="menu__footer">
+                          <button class="button" type="">
+                            <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                            </p>
+                            <div class="button__icon">
+                              <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                              </div>
+                            </div>
+                          </button><a class="link link--nowrap" href="#">
+                            <div class="link__text">БІЛЬШЕ ПРО ШОЛОМ</div></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="button-accordion-new-icon__container" :class="{'button-accordion-new-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-new-icon__image" src="./images/icons/shlem-x1.png" alt="icon of phone"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="contacts-menu__item">
+                  <div class="button-accordion-new-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                    <div class="button-accordion-new-icon__pop-up" :class="{'button-accordion-new-icon__pop-up--hidden':!isOpen}">
+                      <div class="menu" style="height: 82dvh; width: 764px; transform: translateY(-28%);">
+                        <div class="menu__container">
+                          <div class="menu__head">
+                            <h2 class="menu__title">ШОЛОМ TALEE</h2>
+                            <div class="button-icon" @click="handleClose"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                          </div>
+                          <div class="menu__content">
+                            <div style="position: absolute; top: 4%; left: 40%; z-index: 2;">
+                              <div class="button-accordion button-accordion--mini" x-data="{ isOpen: true }" @click="isOpen=!isOpen">
+                                <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                                  <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                                  <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                                </div>
+                                <div class="button-accordion__icon">
+                                  <div class="button-accordion__line"></div>
+                                  <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="position: absolute; top: 20%; left: 50%; z-index: 2;">
+                              <div class="button-accordion button-accordion--mini" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                                <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                                  <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                                  <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                                </div>
+                                <div class="button-accordion__icon">
+                                  <div class="button-accordion__line"></div>
+                                  <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="position: absolute; top: 52%; left: 60%; z-index: 2;">
+                              <div class="button-accordion button-accordion--mini" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                                <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                                  <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                                  <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                                </div>
+                                <div class="button-accordion__icon">
+                                  <div class="button-accordion__line"></div>
+                                  <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="main-photo" style="width: 800px; height: 800px;position: absolute; top: -35%;">
+                              <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                                <div class="main-photo__block">
+                                  <div class="object-photo" style="width: 600px; height: 600px;"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee">
+                                    <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
+                                  </div>
+                                </div>
+                                <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                                  <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                                    <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="position: absolute; bottom: 0; padding-inline: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+                              <div class="wrapper-frame wrapper-frame--bg">
+                                <div class="wrapper-frame__container">
+                                  <div style="padding: 20px">
+                                    <p>01</p>
+                                    <p>Шолом Talee® — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="wrapper-frame wrapper-frame--bg">
+                                <div class="wrapper-frame__container">
+                                  <div style="padding: 20px">
+                                    <p>02</p>
+                                    <p>Шолом TALEE, розроблений з урахуванням високих стандартів безпеки та якості, стає надійним помічником для батьків у вирішенні проблем дитячого ортопедичного здоров’я</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div></div>
+                          </div>
+                        </div>
+                        <div class="menu__footer">
+                          <button class="button" type="">
+                            <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                            </p>
+                            <div class="button__icon">
+                              <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                              </div>
+                            </div>
+                          </button><a class="link link--nowrap" href="#">
+                            <div class="link__text">БІЛЬШЕ ПРО ШОЛОМ</div></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="button-accordion-new-icon__container" :class="{'button-accordion-new-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-new-icon__image" src="./images/icons/foot-x1.png" alt="icon of phone"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="contacts-menu__item">
+                  <div class="button-accordion-new-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                    <div class="button-accordion-new-icon__pop-up" :class="{'button-accordion-new-icon__pop-up--hidden':!isOpen}">
+                      <div class="button-icon button-icon--border"><img src="./images/icons/light__phone.svg" alt="instagram"/></div>
+                      <div class="button-icon button-icon--border"><img src="./images/icons/light__phone.svg" alt="instagram"/></div>
+                    </div>
+                    <div class="button-accordion-new-icon__container" :class="{'button-accordion-new-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-new-icon__image" src="./images/icons/light__phone.svg" alt="icon of phone"/>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <button class="contacts-menu__button" type="button" @click="hidden = !hidden" :class="{'contacts-menu__button--close': !hidden}">
+              <button class="contacts-menu__button" type="button" @click="isClosed=!isClosed" :class="{'contacts-menu__button--close': !isClosed}">
                 <div class="contacts-menu__button__image"></div>
               </button>
-            </div><a class="to-up" href="#" :class="{'to-up--close': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"></a>
+            </div><a class="to-up" href="#" :class="{'to-up--hidden': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"/></a>
           </div>
         </template>
       </div>

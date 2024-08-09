@@ -31,7 +31,7 @@
             <ul style="display: grid; grid-template-columns: repeat(2,1fr); margin-bottom: 15px; gap: 10px;">
               <li class="navigation__item" :class="{'navigation__item--active': currentAnchor === '#about_company'}" style="width: max-content;"><a class="navigation__link" style="line-height: 100%; padding-bottom: 15px;" href="#about_company" @click="() =&gt; {currentAnchor = '#about_company'; isClosedBurgerMenu=true;}" x-on:click="setTimeout(() =&gt; {isShowBurgerMenu = false}, 500)">Про компанію</a></li>
               <li class="navigation__item" :class="{'navigation__item--active': currentAnchor === '#services'}" style="width: max-content;"><a class="navigation__link" style="line-height: 100%; padding-bottom: 15px;" href="#services" @click="() =&gt; {currentAnchor = '#services'; isClosedBurgerMenu=true;}" x-on:click="setTimeout(() =&gt; {isShowBurgerMenu = false}, 500)">Усі послуги</a></li>
-              <li class="navigation__item" :class="{'navigation__item--active': currentAnchor === '#reviews'}" style="width: max-content;"><a class="navigation__link" style="line-height: 100%; padding-bottom: 15px;" href="#reviews" @click="() =&gt; {currentAnchor = '#reviews'; isClosedBurgerMenu=true;}" x-on:click="setTimeout(() =&gt; {isShowBurgerMenu = false}, 500)">Відгуки</a></li>
+              <li class="navigation__item" :class="{'navigation__item--active': currentAnchor === '#:~:text=Відгуки'}" style="width: max-content;"><a class="navigation__link" style="line-height: 100%; padding-bottom: 15px;" href="#:~:text=Відгуки" @click="() =&gt; {currentAnchor = '#:~:text=Відгуки'; isClosedBurgerMenu=true;}" x-on:click="setTimeout(() =&gt; {isShowBurgerMenu = false}, 500)">Вiдгуки</a></li>
             </ul>
             <p style="margin-bottom: 25px;">Поглиблені персональнi консультації з нутриціології, якi допоможуть вам досягти витриманого здоров'я та життєвої енергії</p>
             <button class="button" type="button" style="margin-bottom: 40px;" @click="isShowPopUpContact=true;">
@@ -135,7 +135,7 @@
             <div class="logo"><a href="main.html"><img src="./images/icons/logo.svg" alt="logo"/></a></div>
           </div>
           <div class="_grid-col-desk-2-2" style="display: flex; justify-content: center; align-items: center; height: 100%; padding-block: 17px;">
-            <div style="width: 1px; height: 100%; background: var(--text-talee-title); opacity: 0.3;"></div>
+            <div style="width: 1px; height: 100%; background: var(--text-tale-title); opacity: 0.3;"></div>
           </div>
           <div class="_grid-col-desk-3-3">
             <div class="short-contacts__links">
@@ -149,13 +149,13 @@
                 <ul class="navigation__list">
                   <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#about_company'}"><a class="navigation__link" href="#about_company" @click="currentHook = '#about_company'">Про компанію</a></li>
                   <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#services'}"><a class="navigation__link" href="#services" @click="currentHook = '#services'">Усі послуги</a></li>
-                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#reviews'}"><a class="navigation__link" href="#reviews" @click="currentHook = '#reviews'">Відгуки</a></li>
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#reviews'}"><a class="navigation__link" href="#:~:text=Відгуки" @click="currentHook = '#reviews'">Вiдгуки</a></li>
                 </ul>
               </nav>
             </div>
             <div style="display: flex; gap: 20px;">
               <div style="width: 48px; height: 48px; display: flex; justify-content: center; align-items: center;"><img src="./images/icons/search_.svg" alt="search"/></div>
-              <div class="button-mini"><img src="./images/icons/instagram-icon-gray.svg" alt="instagram"/></div>
+              <div class="button-icon"><img src="./images/icons/instagram-icon-gray.svg" alt="instagram"/></div>
             </div>
           </div>
           <div class="_grid-col-desk-6-6" style="display: flex; justify-content: end; gap: 20px; padding-left: 38px;">
@@ -207,38 +207,38 @@
             <div class="section-main-slider__picture">
               <div class="section-main-slider__picture__info-container">
                 <div class="section-main-slider__picture__info--1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
-                  <div class="button-info" x-data="{ isOpen: true }" @click="isOpen=!isOpen">
-                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpen}">
-                      <h4 class="button-info__pop-up__title">Легкий</h4>
-                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                  <div class="button-accordion" x-data="{ isOpen: true }" @click="isOpen=!isOpen">
+                    <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                      <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                      <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
-                    <div class="button-info__icon">
-                      <div class="button-info__line"></div>
-                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpen}"></div>
+                    <div class="button-accordion__icon">
+                      <div class="button-accordion__line"></div>
+                      <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
                     </div>
                   </div>
                 </div>
                 <div class="section-main-slider__picture__info--2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
-                  <div class="button-info" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
-                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpen}">
-                      <h4 class="button-info__pop-up__title">Легкий</h4>
-                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                  <div class="button-accordion" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                    <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                      <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                      <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
-                    <div class="button-info__icon">
-                      <div class="button-info__line"></div>
-                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpen}"></div>
+                    <div class="button-accordion__icon">
+                      <div class="button-accordion__line"></div>
+                      <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
                     </div>
                   </div>
                 </div>
                 <div class="section-main-slider__picture__info--3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
-                  <div class="button-info" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
-                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpen}">
-                      <h4 class="button-info__pop-up__title">Легкий</h4>
-                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                  <div class="button-accordion" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                    <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                      <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                      <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
-                    <div class="button-info__icon">
-                      <div class="button-info__line"></div>
-                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpen}"></div>
+                    <div class="button-accordion__icon">
+                      <div class="button-accordion__line"></div>
+                      <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
                     </div>
                   </div>
                 </div>
@@ -248,8 +248,8 @@
                   <p class="decor-circle-info__text">ТЕХНОЛОГІЯ</p>
                 </div>
               </div>
-              <div style="width: 1056px; height: 1056px; position: absolute;">
-                <div class="main-photo" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+              <div class="main-photo" style="width: 1056px; height: 1056px;position: absolute;">
+                <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                   <div class="main-photo__block">
                     <div class="object-photo"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee"/>
                       <div class="decor-blur-point" style="min-width: 528px; min-height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="object-photo__link" href="#">дізнатися бiльшE</a>
@@ -302,38 +302,38 @@
             <div class="section-main-slider__picture">
               <div class="section-main-slider__picture__info-container">
                 <div class="section-main-slider__picture__info--4" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
-                  <div class="button-info" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
-                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpen}">
-                      <h4 class="button-info__pop-up__title">Легкий</h4>
-                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                  <div class="button-accordion" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                    <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                      <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                      <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
-                    <div class="button-info__icon">
-                      <div class="button-info__line"></div>
-                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpen}"></div>
+                    <div class="button-accordion__icon">
+                      <div class="button-accordion__line"></div>
+                      <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
                     </div>
                   </div>
                 </div>
                 <div class="section-main-slider__picture__info--5" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
-                  <div class="button-info" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
-                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpen}">
-                      <h4 class="button-info__pop-up__title">Легкий</h4>
-                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                  <div class="button-accordion" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                    <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                      <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                      <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
-                    <div class="button-info__icon">
-                      <div class="button-info__line"></div>
-                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpen}"></div>
+                    <div class="button-accordion__icon">
+                      <div class="button-accordion__line"></div>
+                      <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
                     </div>
                   </div>
                 </div>
                 <div class="section-main-slider__picture__info--6" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
-                  <div class="button-info" x-data="{ isOpen: true }" @click="isOpen=!isOpen">
-                    <div class="button-info__pop-up" :class="{'button-info__pop-up--hidden':!isOpen}">
-                      <h4 class="button-info__pop-up__title">Легкий</h4>
-                      <p class="button-info__pop-up__text">Вага шолому - <b>162г.</b></p>
+                  <div class="button-accordion" x-data="{ isOpen: true }" @click="isOpen=!isOpen">
+                    <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                      <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                      <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
                     </div>
-                    <div class="button-info__icon">
-                      <div class="button-info__line"></div>
-                      <div class="button-info__line" :class="{'button-info__line--plus':!isOpen}"></div>
+                    <div class="button-accordion__icon">
+                      <div class="button-accordion__line"></div>
+                      <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
                     </div>
                   </div>
                 </div>
@@ -343,16 +343,16 @@
                   <p class="decor-circle-info__text">ТЕХНОЛОГІЯ</p>
                 </div>
               </div>
-              <div style="width: 1056px; height: 1056px; position: absolute;">
-                <div class="main-photo main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+              <div class="main-photo" style="width: 1056px; height: 1056px;position: absolute;">
+                <div class="main-photo__0 main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                   <div class="main-photo__block">
                     <div class="object-photo"><img src="./images/decor/foot_full_x2.png" alt="Шолом Talee"/>
-                      <div class="decor-blur-point" style="min-width: 528px; min-height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="object-photo__link" href="#">дізнатися бiльшE</a>
+                      <div class="decor-blur-point" style="min-width: 528px; min-height: 20px; border-radius: 100%; background: #f7c7ab; filter: blur(34px);"></div><a class="object-photo__link" href="#">дізнатися бiльшE</a>
                     </div>
                   </div>
-                  <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
-                    <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
-                      <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                  <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                    <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                      <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
                     </div>
                   </div>
                 </div>
@@ -438,7 +438,7 @@
           </div>
         </section>
         <hr/>
-        <section class="section-2 _fix-hook" id="services">
+        <section class="section-2" id="services">
           <div class="section-2__title-container">
             <div class="lable-main lable-main--light">02<span>/ Послуги</span></div>
             <h2 class="title-main title-main--light"><span>Ми хочемо, Щоб ваша дитина</span><span><b>була здоровою</b> та щасливою i ми <b>можемо допомогти</b></span>
@@ -536,7 +536,7 @@
                 <div class="menu__container">
                   <div class="menu__head">
                     <h2 class="menu__title">ЦІНИ</h2>
-                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                    <div class="button-icon" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
                   </div>
                   <div class="menu__list">
                     <div class="wrapper-frame wrapper-frame--bg">
@@ -603,9 +603,78 @@
                 <div class="menu__container">
                   <div class="menu__head">
                     <h2 class="menu__title">ПОСЛУГИ</h2>
-                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                    <div class="button-icon" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
                   </div>
                   <div class="menu__list">
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5 card"><img class="card-block-5__image" src="../images/icons/card-a_1.svg" loading="lazy"/>
+                          <div class="card-block-5__container">
+                            <h3 class="card-block-5__title">Лiкування деформацiї голови</h3>
+                            <p class="card-block-5__text">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини</p>
+                            <div class="card-block-5__block card__block">
+                              <button class=" button--light button--small button--nowrap button" type="">
+                                <p class="button__text"><span>ДІЗНАТИСЯ БІЛЬШЕ</span>
+                                </p>
+                                <div class="button__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5 card"><img class="card-block-5__image" src="../images/icons/card-a_2.svg" loading="lazy"/>
+                          <div class="card-block-5__container">
+                            <h3 class="card-block-5__title">Ортозування дiтей</h3>
+                            <p class="card-block-5__text">Процес використання ортезів або спеціальних пристосувань для підтримки або виправлення функціональних або структурних вад у дітей</p>
+                            <div class="card-block-5__block card__block">
+                              <button class=" button--light button--small button--nowrap button" type="">
+                                <p class="button__text"><span>ДІЗНАТИСЯ БІЛЬШЕ</span>
+                                </p>
+                                <div class="button__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5 card"><img class="card-block-5__image" src="../images/icons/card-a_3.svg" loading="lazy"/>
+                          <div class="card-block-5__container">
+                            <h3 class="card-block-5__title">Консультації дитячого лiкаря ортопеда</h3>
+                            <p class="card-block-5__text">Можливість отримати професійні поради від спеціаліста щодо здоров'я та розвитку вашої дитини</p>
+                            <div class="card-block-5__block card__block">
+                              <button class=" button--light button--small button--nowrap button" type="">
+                                <p class="button__text"><span>ДІЗНАТИСЯ БІЛЬШЕ</span>
+                                </p>
+                                <div class="button__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="menu__footer">
@@ -631,9 +700,71 @@
                 <div class="menu__container">
                   <div class="menu__head">
                     <h2 class="menu__title">ЛІКАРІ</h2>
-                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                    <div class="button-icon" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
                   </div>
                   <div class="menu__list">
+                    <div class="card-info-doc">
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <article class="card-block-8 card" style="margin: 32px;"><img class="card-block-8__image" src="./images/photos/woman.png" loading="lazy" alt="Дужин Вiкторiя Сергiївна"/>
+                            <div class="card-block-8__container">
+                              <h3 class="card-block-8__title">Дужин Вiкторiя <br>Сергiївна</h3>
+                              <p class="card-block-8__text">Засновниця, CEO <br>МЦ «ДIМ ОРТОПЕДiї»</p>
+                              <div class="card-block-8__block card__block">
+                                <div class="social-list" style="gap: 16px; justify-content: start;"><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                      <div class="card-info-doc__container">
+                        <div>
+                          <h3 class="card-info-doc__title">Досвід</h3>
+                          <p class="card-info-doc__text">Молодший науковий співробітник, травматолог-ортопед з 11.2019 по теперішній час (4 роки 6 місяців)ДУ "Інститут патології хребта і суглобів ім. проф. М. І. Сітенко НАМН України". Відділення невідкладної травматології та відновлення, Харків (Медицина, охорона здоров'я, аптеки)Амбулаторний прийом пацієнтів. Асистування на травматологічних та ортопедичних операціях, ендопротезуванні колінних і тазостегнових суглобів. Післяопераційне ведення пацієнтів. Консультації перед і після ендопротезування.Реабілітація хворих після травм і операцій на хребті та суглобах</p>
+                        </div>
+                        <div class="card-info-doc__line"></div>
+                        <div>
+                          <h3 class="card-info-doc__title">Спеціалізація</h3>
+                          <p class="card-info-doc__text">Оравматологія - ортопедія; <br>організація охорони здоров'я;</p>
+                          <h3 class="card-info-doc__title">Стаж</h3>
+                          <p class="card-info-doc__text">08 рокiв</p>
+                          <h3 class="card-info-doc__title">Особисте</h3>
+                          <p class="card-info-doc__text">Щаслива мати двох синiв</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-info-doc">
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <article class="card-block-8 card" style="margin: 32px;"><img class="card-block-8__image" src="./images/photos/woman.png" loading="lazy" alt="Дужин Вiкторiя Сергiївна"/>
+                            <div class="card-block-8__container">
+                              <h3 class="card-block-8__title">Дужин Вiкторiя <br>Сергiївна</h3>
+                              <p class="card-block-8__text">Засновниця, CEO <br>МЦ «ДIМ ОРТОПЕДiї»</p>
+                              <div class="card-block-8__block card__block">
+                                <div class="social-list" style="gap: 16px; justify-content: start;"><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                      <div class="card-info-doc__container">
+                        <div>
+                          <h3 class="card-info-doc__title">Досвід</h3>
+                          <p class="card-info-doc__text">Молодший науковий співробітник, травматолог-ортопед з 11.2019 по теперішній час (4 роки 6 місяців)ДУ "Інститут патології хребта і суглобів ім. проф. М. І. Сітенко НАМН України". Відділення невідкладної травматології та відновлення, Харків (Медицина, охорона здоров'я, аптеки)Амбулаторний прийом пацієнтів. Асистування на травматологічних та ортопедичних операціях, ендопротезуванні колінних і тазостегнових суглобів. Післяопераційне ведення пацієнтів. Консультації перед і після ендопротезування.Реабілітація хворих після травм і операцій на хребті та суглобах</p>
+                        </div>
+                        <div class="card-info-doc__line"></div>
+                        <div>
+                          <h3 class="card-info-doc__title">Спеціалізація</h3>
+                          <p class="card-info-doc__text">Оравматологія - ортопедія; <br>організація охорони здоров'я;</p>
+                          <h3 class="card-info-doc__title">Стаж</h3>
+                          <p class="card-info-doc__text">08 рокiв</p>
+                          <h3 class="card-info-doc__title">Особисте</h3>
+                          <p class="card-info-doc__text">Щаслива мати двох синiв</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="menu__footer">
@@ -655,13 +786,21 @@
           </div>
           <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Суми'}">
             <template x-if="delayedActiveRegion === 'Суми' || activeRegion === 'Суми'">
-              <div class="menu">
+              <div class="menu menu--list-grid">
                 <div class="menu__container">
                   <div class="menu__head">
                     <h2 class="menu__title">ЛІЦЕНЗІЇ</h2>
-                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                    <div class="button-icon" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
                   </div>
                   <div class="menu__list">
+                    <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="../images/photos/certificate.jpg" alt="certificate"/></div>
+                    <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="../images/photos/certificate.jpg" alt="certificate"/></div>
+                    <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="../images/photos/certificate.jpg" alt="certificate"/></div>
+                    <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="../images/photos/certificate.jpg" alt="certificate"/></div>
+                    <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="../images/photos/certificate.jpg" alt="certificate"/></div>
+                    <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="../images/photos/certificate.jpg" alt="certificate"/></div>
+                    <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="../images/photos/certificate.jpg" alt="certificate"/></div>
+                    <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="../images/photos/certificate.jpg" alt="certificate"/></div>
                   </div>
                 </div>
                 <div class="menu__footer">
@@ -687,9 +826,61 @@
                 <div class="menu__container">
                   <div class="menu__head">
                     <h2 class="menu__title">РЕЗУЛЬТАТИ ЛІКУВАННЯ</h2>
-                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                    <div class="button-icon" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
                   </div>
                   <div class="menu__list">
+                    <div class="wrapper-frame">
+                      <div class="wrapper-frame__container">
+                        <div class="card-doc">
+                          <div class="card-doc__title"><b>ВИДИМИЙ РЕЗУЛЬТАТ</b> через <i>5 місяців</i></div>
+                          <div class="card-doc__content">
+                            <div class="card-doc__compare">
+                              <div class="card-doc__compare__item">До лікування:<img src="../images/photos/photo_after.jpg" alt="photo before"/></div>
+                              <div class="card-doc__compare__item active">Після лікування:<img src="../images/photos/photo_before.jpg" alt="photo after"/></div>
+                            </div>
+                            <div class="card-doc__list">
+                              <div class="card-doc__item"><span class="card-doc__item__title">Діагноз:</span><span>Плагіоцефалія (асиметрична деформація черепа)</span></div>
+                              <div class="card-doc__item"><span class="card-doc__item__title">Вік дитини:</span><span>1 рік</span></div>
+                            </div><a class="button  button--small button--light" href="#">
+                              <p class="button__text"><span>ДАТЕЛЬНІШЕ</span>
+                              </p>
+                              <div class="button__icon">
+                                <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                </div>
+                              </div></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame">
+                      <div class="wrapper-frame__container">
+                        <div class="card-doc">
+                          <div class="card-doc__title"><b>ВИДИМИЙ РЕЗУЛЬТАТ</b> через <i>5 місяців</i></div>
+                          <div class="card-doc__content">
+                            <div class="card-doc__compare">
+                              <div class="card-doc__compare__item">До лікування:<img src="../images/photos/photo_after.jpg" alt="photo before"/></div>
+                              <div class="card-doc__compare__item active">Після лікування:<img src="../images/photos/photo_before.jpg" alt="photo after"/></div>
+                            </div>
+                            <div class="card-doc__list">
+                              <div class="card-doc__item"><span class="card-doc__item__title">Діагноз:</span><span>Плагіоцефалія (асиметрична деформація черепа)</span></div>
+                              <div class="card-doc__item"><span class="card-doc__item__title">Вік дитини:</span><span>1 рік</span></div>
+                            </div><a class="button  button--small button--light" href="#">
+                              <p class="button__text"><span>ДАТЕЛЬНІШЕ</span>
+                              </p>
+                              <div class="button__icon">
+                                <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                </div>
+                              </div></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="menu__footer">
@@ -709,43 +900,51 @@
               </div>
             </template>
           </div>
-          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Харків'}">
-            <template x-if="delayedActiveRegion === 'Харків' || activeRegion === 'Харків'">
-              <div class="menu">
-                <div class="menu__container">
-                  <div class="menu__head">
-                    <h2 class="menu__title">ОРТЕЗИ PIRO</h2>
-                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
-                  </div>
-                  <div class="menu__list">
-                  </div>
-                </div>
-                <div class="menu__footer">
-                  <button class="button" type="">
-                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                    </p>
-                    <div class="button__icon">
-                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-                      </div>
-                    </div>
-                  </button><a class="link link--nowrap" href="#">
-                    <div class="link__text">БІЛЬШЕ ПРО ОРТЕЗИ</div></a>
-                </div>
-              </div>
-            </template>
-          </div>
           <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Кіровоград'}">
             <template x-if="delayedActiveRegion === 'Кіровоград' || activeRegion === 'Кіровоград'">
               <div class="menu">
                 <div class="menu__container">
                   <div class="menu__head">
                     <h2 class="menu__title">ДОСЛІДЖЕННЯ</h2>
-                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                    <div class="button-icon" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
                   </div>
                   <div class="menu__list">
+                    <article class="card-block-7 card">
+                      <div class="card-block-7__container">
+                        <h3 class="card-block-7__title">Наслідки позиційної плагіоцефалії для розвитку нервової системи.</h3>
+                        <p class="card-block-7__text">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</p>
+                      </div>
+                      <div class="card-block-7__block card__block">
+                        <button class="button--light button" type="">
+                          <p class="button__text"><span>ЧИТАТИ ДОСЛІДЖЕННЯ</span>
+                          </p>
+                        </button>
+                      </div>
+                    </article>
+                    <article class="card-block-7 card">
+                      <div class="card-block-7__container">
+                        <h3 class="card-block-7__title">Наслідки позиційної плагіоцефалії для розвитку нервової системи.</h3>
+                        <p class="card-block-7__text">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</p>
+                      </div>
+                      <div class="card-block-7__block card__block">
+                        <button class="button--light button" type="">
+                          <p class="button__text"><span>ЧИТАТИ ДОСЛІДЖЕННЯ</span>
+                          </p>
+                        </button>
+                      </div>
+                    </article>
+                    <article class="card-block-7 card">
+                      <div class="card-block-7__container">
+                        <h3 class="card-block-7__title">Наслідки позиційної плагіоцефалії для розвитку нервової системи.</h3>
+                        <p class="card-block-7__text">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</p>
+                      </div>
+                      <div class="card-block-7__block card__block">
+                        <button class="button--light button" type="">
+                          <p class="button__text"><span>ЧИТАТИ ДОСЛІДЖЕННЯ</span>
+                          </p>
+                        </button>
+                      </div>
+                    </article>
                   </div>
                 </div>
                 <div class="menu__footer">
@@ -771,9 +970,32 @@
                 <div class="menu__container">
                   <div class="menu__head">
                     <h2 class="menu__title">ПРО КОМПАНІЮ</h2>
-                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                    <div class="button-icon" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
                   </div>
                   <div class="menu__list">
+                    <article class="card-block-8 card"><img class="card-block-8__image" src="./images/photos/woman.png" loading="lazy" alt="Дужин Вiкторiя Сергiївна"/>
+                      <div class="card-block-8__container">
+                        <h3 class="card-block-8__title">Дужин Вiкторiя <br>Сергiївна</h3>
+                        <p class="card-block-8__text">Засновниця, CEO <br>МЦ «ДIМ ОРТОПЕДiї»</p>
+                        <div class="card-block-8__block card__block">
+                          <div class="social-list" style="gap: 16px; justify-content: start;"><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <div class="accordion" x-data="{isOpen:true}">
+                          <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Хто ми?</span>
+                            <div class="accordion__icon">
+                              <div class="accordion__line"></div>
+                              <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                            </div>
+                          </h2>
+                          <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Наша компанія ПП "Ортофіт" успішно працює з 2014 року. Ми спеціалізуємося на корсетуванні за методом Шено, корекції деформацій голови у немовлят за допомогою ортопедичних шоломів та ортезуванні пацієнтів з ДЦП. Зокрема, ми є одними з провідних виробників апаратів на нижні кінцівки та тулуб: у нашій розробці апарат "ЕЛФ".<br><br>У 2019 році ми створили підрозділ "Ортофіт Преміум", головною місією якого є впровадження нового покоління протезно-ортопедичних виробів, виготовлених за технологією 3D-друку. В рамках цього підрозділу ми повністю відмовилися від гіпсових технологій і використовуємо цифрові технології для розробки та виробництва нового покоління індивідуальних протезно-ортопедичних виробів.</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="menu__footer">
@@ -799,7 +1021,7 @@
                 <div class="menu__container">
                   <div class="menu__head">
                     <h2 class="menu__title">ВІДГУКИ</h2>
-                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                    <div class="button-icon" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
                   </div>
                   <div class="menu__list">
                     <div class="wrapper-frame wrapper-frame--bg">
@@ -877,9 +1099,47 @@
                 <div class="menu__container">
                   <div class="menu__head">
                     <h2 class="menu__title">НОВИНИ</h2>
-                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                    <div class="button-icon" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
                   </div>
                   <div class="menu__list">
+                    <article class="card-block-6 card" x-data="{ dateText: '05.02.2024' }" x-init="$watch('dateText', val =&gt; $el.setAttribute('data-content', val))" :data-content="dateText"><img class="card-block-6__image" src="../images/photos/card-i.jpg" loading="lazy"/>
+                      <div class="card-block-6__container">
+                        <h3 class="card-block-6__title">Цена вопроса не важна, когда чистосердечное признание облегчает</h3>
+                        <p class="card-block-6__text">Figma ipsum component variant main layer. Pen union editor subtract share union subtract list pencil blur. Edit bold vector text polygon community link create. Figma ipsum component variant main layer. Pen union editor subtract share union subtract list pencil blur. Edit bold vector text polygon community link create.</p>
+                      </div>
+                      <div class="card-block-6__block card__block">
+                        <button class=" button--light button" type="">
+                          <p class="button__text"><span>ЧИТАТИ НОВИНУ</span>
+                          </p>
+                          <div class="button__icon">
+                            <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </article>
+                    <article class="card-block-6 card" x-data="{ dateText: '11.03.2023' }" x-init="$watch('dateText', val =&gt; $el.setAttribute('data-content', val))" :data-content="dateText"><img class="card-block-6__image" src="../images/photos/card-i.jpg" loading="lazy"/>
+                      <div class="card-block-6__container">
+                        <h3 class="card-block-6__title">Цена вопроса не важна, когда чистосердечное признание облегчает</h3>
+                        <p class="card-block-6__text">Figma ipsum component variant main layer. Pen union editor subtract share union subtract list pencil blur. Edit bold vector text polygon community link create. Figma ipsum component variant main layer. Pen union editor subtract share union subtract list pencil blur. Edit bold vector text polygon community link create.</p>
+                      </div>
+                      <div class="card-block-6__block card__block">
+                        <button class=" button--light button" type="">
+                          <p class="button__text"><span>ЧИТАТИ НОВИНУ</span>
+                          </p>
+                          <div class="button__icon">
+                            <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </article>
                   </div>
                 </div>
                 <div class="menu__footer">
@@ -905,25 +1165,78 @@
                 <div class="menu__container">
                   <div class="menu__head">
                     <h2 class="menu__title">СПІВПРАЦЯ</h2>
-                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                    <div class="button-icon" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
                   </div>
                   <div class="menu__list">
-                  </div>
-                </div>
-                <div class="menu__footer">
-                  <button class="button" type="">
-                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                    </p>
-                    <div class="button__icon">
-                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <h6 class="_h6 _uppercase">Залиште Ваші Контактні Дані</h6>
+                    <p>Будь ласка, заповніть форму нижче,ми обов'язково зв'яжемося з вами найближчим часом для обговорення можливостей співробітництва</p>
+                    <div class="wrapper-frame">
+                      <div class="wrapper-frame__container">
+                        <form class="form" action="#" method="get">
+                          <div class="wrapper-frame">
+                            <div class="wrapper-frame__container">
+                              <div class="wrapper-center">
+                                <input class="input-new" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="wrapper-frame">
+                            <div class="wrapper-frame__container">
+                              <div class="wrapper-center">
+                                <input class="input-new" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                              </div>
+                            </div>
+                          </div>
+                          <label class="checkbox">
+                            <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                          </label>
+                          <button class="button" type="submit">
+                            <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                            </p>
+                            <div class="button__icon">
+                              <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
+                              </div>
+                            </div>
+                          </button>
+                        </form>
                       </div>
                     </div>
-                  </button><a class="link link--nowrap" href="#">
-                    <div class="link__text">-</div></a>
+                    <div style="display: flex; justify-content: space-between; align-items: end;">
+                      <h6 class="_h6 _uppercase">ВАКАНСІЇ</h6><a class="link link--nowrap" href="#">
+                        <div class="link__text">УСІ ВАКАНСІЇ</div></a>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <div class="accordion" x-data="{isOpen:false}">
+                          <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Технік-протезист нижніх та верхніх кінцівок, ортезист ортопедичного центру</span>
+                            <div class="accordion__icon">
+                              <div class="accordion__line"></div>
+                              <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                            </div>
+                          </h2>
+                          <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <div class="accordion" x-data="{isOpen:false}">
+                          <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Технік-протезист нижніх та верхніх кінцівок, ортезист ортопедичного центру</span>
+                            <div class="accordion__icon">
+                              <div class="accordion__line"></div>
+                              <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                            </div>
+                          </h2>
+                          <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <div></div>
               </div>
             </template>
           </div>
@@ -933,9 +1246,78 @@
                 <div class="menu__container">
                   <div class="menu__head">
                     <h2 class="menu__title">ШОЛОМ TALEE</h2>
-                    <div class="button-mini" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                    <div class="button-icon" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
                   </div>
-                  <div class="menu__list">
+                  <div class="menu__content">
+                    <div style="position: absolute; top: 4%; left: 40%; z-index: 2;">
+                      <div class="button-accordion button-accordion--mini" x-data="{ isOpen: true }" @click="isOpen=!isOpen">
+                        <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                          <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                          <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                        </div>
+                        <div class="button-accordion__icon">
+                          <div class="button-accordion__line"></div>
+                          <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="position: absolute; top: 20%; left: 50%; z-index: 2;">
+                      <div class="button-accordion button-accordion--mini" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                        <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                          <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                          <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                        </div>
+                        <div class="button-accordion__icon">
+                          <div class="button-accordion__line"></div>
+                          <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="position: absolute; top: 52%; left: 60%; z-index: 2;">
+                      <div class="button-accordion button-accordion--mini" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                        <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                          <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                          <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                        </div>
+                        <div class="button-accordion__icon">
+                          <div class="button-accordion__line"></div>
+                          <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-photo" style="width: 800px; height: 800px;position: absolute; top: -30%;">
+                      <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                        <div class="main-photo__block">
+                          <div class="object-photo" style="width: 600px; height: 600px;"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee"/>
+                            <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
+                          </div>
+                        </div>
+                        <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                          <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                            <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="position: absolute; bottom: 0; padding-inline: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+                      <div class="wrapper-frame wrapper-frame--bg">
+                        <div class="wrapper-frame__container">
+                          <div style="padding: 20px">
+                            <p>01</p>
+                            <p>Шолом Talee® — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="wrapper-frame wrapper-frame--bg">
+                        <div class="wrapper-frame__container">
+                          <div style="padding: 20px">
+                            <p>02</p>
+                            <p>Шолом TALEE, розроблений з урахуванням високих стандартів безпеки та якості, стає надійним помічником для батьків у вирішенні проблем дитячого ортопедичного здоров’я</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div></div>
                   </div>
                 </div>
                 <div class="menu__footer">
@@ -955,6 +1337,103 @@
               </div>
             </template>
           </div>
+          <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Харків'}">
+            <template x-if="delayedActiveRegion === 'Харків' || activeRegion === 'Харків'">
+              <div class="menu">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">ОРТЕЗИ PIRO</h2>
+                    <div class="button-icon" @click="handleSVGClick"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                  </div>
+                  <div class="menu__content">
+                    <div style="position: absolute; top: 4%; left: 32%; z-index: 2;">
+                      <div class="button-accordion button-accordion--mini" x-data="{ isOpen: true }" @click="isOpen=!isOpen">
+                        <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                          <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                          <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                        </div>
+                        <div class="button-accordion__icon">
+                          <div class="button-accordion__line"></div>
+                          <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="position: absolute; top: 36%; left: 25%; z-index: 2;">
+                      <div class="button-accordion button-accordion--mini" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                        <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                          <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                          <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                        </div>
+                        <div class="button-accordion__icon">
+                          <div class="button-accordion__line"></div>
+                          <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="position: absolute; top: 40%; left: 72%; z-index: 2;">
+                      <div class="button-accordion button-accordion--mini" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                        <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                          <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                          <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                        </div>
+                        <div class="button-accordion__icon">
+                          <div class="button-accordion__line"></div>
+                          <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="main-photo" style="width: 800px; height: 800px;position: absolute; top: -30%;">
+                      <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                        <div class="main-photo__block">
+                          <div class="object-photo" style="width: 600px; height: 600px;"><img src="./images/decor/foot-2_full_x1.png" alt="Шолом Talee"/>
+                            <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
+                          </div>
+                        </div>
+                        <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                          <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                            <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="position: absolute; bottom: 0; padding-inline: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+                      <div class="wrapper-frame wrapper-frame--bg">
+                        <div class="wrapper-frame__container">
+                          <div style="padding: 20px">
+                            <p>01</p>
+                            <p>Рухливість без oбтяжень.Для дітей із церебральним паралічем та подібними станами ортез на гомілковостопний суглоб є чудовим помічником у покращенні їхньої рухливості та контролю рухів. На жаль, більшість подібних ортезів важкі та громіздкі</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="wrapper-frame wrapper-frame--bg">
+                        <div class="wrapper-frame__container">
+                          <div style="padding: 20px">
+                            <p>02</p>
+                            <p>Під час 3D моделювання ми виставляємо індивідуальні налаштування: положення стопи і гомілковостопного суглоба, фіксація п'яткової області, підйом супінатора, наявність або відсутність шарніра, рух гомілковостопного суглоба і багато іншого.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div></div>
+                  </div>
+                </div>
+                <div class="menu__footer">
+                  <button class="button" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="link link--nowrap" href="#">
+                    <div class="link__text">БІЛЬШЕ ПРО ОРТЕЗИ</div></a>
+                </div>
+              </div>
+            </template>
+          </div>
           <div class="section-map__map">
             <div class="map" id="map" :class="{'map--no-region': !activeRegion}">
               <div class="map__container">
@@ -968,7 +1447,7 @@
                   <li class="map__item" :class="{'map__item--active': activeRegion === 'Кіровоград'}" style="top: 49%; left: 46.5%;">ДОСЛІДЖЕННЯ</li>
                   <li class="map__item" :class="{'map__item--active': activeRegion === 'Дніпро'}" style="top: 48%; left: 66%;">ПРО <br>КОМРАНІЮ</li>
                   <li class="map__item" :class="{'map__item--active': activeRegion === 'Донецьк'}" style="top: 55%; left: 82%;">ШОЛОМ <br>TALEE</li>
-                  <li class="map__item" :class="{'map__item--active': activeRegion === 'Миколаїв'}" style="top: 63%; left: 50%;">ВІДГУГИ</li>
+                  <li class="map__item" :class="{'map__item--active': activeRegion === 'Миколаїв'}" style="top: 63%; left: 50%;">ВІДГУКИ</li>
                   <li class="map__item" :class="{'map__item--active': activeRegion === 'Херсон'}" style="top: 71%; left: 59%;">НОВИНИ</li>
                   <li class="map__item" :class="{'map__item--active': activeRegion === 'Запоріжжя'}" style="top: 63%; left: 69%;">СПІВПРАЦЯ</li>
                 </ul>
@@ -1093,102 +1572,101 @@
             delayedActiveRegion: "Київ",
             delayTime: 300, // задержка в миллисекундах
             init: function() {
-                if (!document.querySelector('#map svg')) {
-                    const svgNS = 'http://www.w3.org/2000/svg';
-                    const mapElement = document.createElementNS(svgNS, 'svg');
-                    mapElement.setAttribute('viewBox', '0 0 612 405');
-                    mapElement.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-                    mapElement.setAttribute('width', '100%');
-                    mapElement.setAttribute('height', 'auto');
+              if (!document.querySelector('#map svg')) {
+                const svgNS = 'http://www.w3.org/2000/svg';
+                const mapElement = document.createElementNS(svgNS, 'svg');
+                mapElement.setAttribute('viewBox', '0 0 612 405');
+                mapElement.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+                mapElement.setAttribute('width', '100%');
           
-                    mapElement.addEventListener('click', (e) => this.handleSVGClick(e));
+                mapElement.addEventListener('click', (e) => this.handleSVGClick(e));
           
-                    for (const key in this.paths) {
-                        const region = this.paths[key];
-                        const pathElement = document.createElementNS(svgNS, 'path');
-                        pathElement.setAttribute('d', region.path);
-                        pathElement.setAttribute('fill', '#EA8529');
-                        pathElement.setAttribute('stroke', '#FBE7D4');
-                        pathElement.setAttribute('stroke-width', '1.25');
-                        pathElement.setAttribute('stroke-linejoin', 'round');
-                        pathElement.setAttribute('opacity', '1');
-                        pathElement.dataset.name = region.name;
+                for (const key in this.paths) {
+                  const region = this.paths[key];
+                  const pathElement = document.createElementNS(svgNS, 'path');
+                  pathElement.setAttribute('d', region.path);
+                  pathElement.setAttribute('fill', '#EA8529');
+                  pathElement.setAttribute('stroke', '#FBE7D4');
+                  pathElement.setAttribute('stroke-width', '1.25');
+                  pathElement.setAttribute('stroke-linejoin', 'round');
+                  pathElement.setAttribute('opacity', '1');
+                  pathElement.dataset.name = region.name;
           
-                        pathElement.addEventListener('mouseenter', () => {
-                            this.showTitle(region.name);
-                            this.hoverRegion(pathElement, true);
-                        });
-                        pathElement.addEventListener('mouseleave', () => {
-                            this.hideTitle();
-                            this.hoverRegion(pathElement, false);
-                        });
-                        pathElement.addEventListener('mousemove', (e) => this.updateTitlePosition(e));
-                        pathElement.addEventListener('click', (e) => this.handleClick(e, pathElement));
+                  pathElement.addEventListener('mouseenter', () => {
+                    this.showTitle(region.name);
+                    this.hoverRegion(pathElement, true);
+                  });
+                  pathElement.addEventListener('mouseleave', () => {
+                    this.hideTitle();
+                    this.hoverRegion(pathElement, false);
+                  });
+                  pathElement.addEventListener('mousemove', (e) => this.updateTitlePosition(e));
+                  pathElement.addEventListener('click', (e) => this.handleClick(e, pathElement));
           
-                        mapElement.appendChild(pathElement);
-                    }
-                    document.getElementById('map').appendChild(mapElement);
+                  mapElement.appendChild(pathElement);
                 }
+                document.getElementById('map').appendChild(mapElement);
+              }
             },
             handleSVGClick: function(event) {
-                if (this.activeRegion) {
-                    const previousPath = document.querySelector(`[data-name="${this.activeRegion}"]`);
-                    if (previousPath) {
-                        previousPath.setAttribute('fill', '#EA8529');
-                    }
+              if (this.activeRegion) {
+                const previousPath = document.querySelector(`[data-name="${this.activeRegion}"]`);
+                if (previousPath) {
+                  previousPath.setAttribute('fill', '#EA8529');
                 }
-                this.activeRegion = null;
-                this.updateDelayedActiveRegion();
+              }
+              this.activeRegion = null;
+              this.updateDelayedActiveRegion();
             },
             handleClick: function(event, pathElement) {
-                event.stopPropagation();
-                const regionName = pathElement.dataset.name;
+              event.stopPropagation();
+              const regionName = pathElement.dataset.name;
           
-                if (this.activeRegion) {
-                    const previousPath = document.querySelector(`[data-name="${this.activeRegion}"]`);
-                    if (previousPath) {
-                        previousPath.setAttribute('fill', '#EA8529');
-                    }
+              if (this.activeRegion) {
+                const previousPath = document.querySelector(`[data-name="${this.activeRegion}"]`);
+                if (previousPath) {
+                  previousPath.setAttribute('fill', '#EA8529');
                 }
+              }
           
-                this.activeRegion = regionName;
-                pathElement.setAttribute('fill', '#FBE7D4');
-                this.updateDelayedActiveRegion();
+              this.activeRegion = regionName;
+              pathElement.setAttribute('fill', '#FBE7D4');
+              this.updateDelayedActiveRegion();
             },
             updateDelayedActiveRegion: function() {
-                setTimeout(() => {
-                    this.delayedActiveRegion = this.activeRegion;
-                }, this.delayTime);
+              setTimeout(() => {
+                this.delayedActiveRegion = this.activeRegion;
+              }, this.delayTime);
             },
             showTitle: function(name) {
-                this.titleContent = name;
-                this.titleVisible = true;
+              this.titleContent = name;
+              this.titleVisible = true;
             },
             hideTitle: function() {
-                this.titleVisible = false;
+              this.titleVisible = false;
             },
             updateTitlePosition(event) {
-                this.titleX = event.clientX + 25;
-                this.titleY = event.clientY - 15;
+              this.titleX = event.clientX + 25;
+              this.titleY = event.clientY - 15;
             },
             moveTitle(event) {
-                if (this.titleVisible) {
-                    this.$refs.map_title.style.display = 'block';
-                    this.$refs.map_title.style.top = `${this.titleY}px`;
-                    this.$refs.map_title.style.left = `${this.titleX}px`;
-                    this.$refs.map_title.textContent = this.titleContent;
-                } else {
-                    this.$refs.map_title.style.display = 'none';
-                }
+              if (this.titleVisible) {
+                this.$refs.map_title.style.display = 'block';
+                this.$refs.map_title.style.top = `${this.titleY}px`;
+                this.$refs.map_title.style.left = `${this.titleX}px`;
+                this.$refs.map_title.textContent = this.titleContent;
+              } else {
+                this.$refs.map_title.style.display = 'none';
+              }
             },
             hoverRegion: function(pathElement, enter) {
-                if (enter) {
-                    pathElement.setAttribute('opacity', '0.35');
-                    pathElement.setAttribute('stroke-width', '2.25');
-                } else {
-                    pathElement.setAttribute('opacity', '1');
-                    pathElement.setAttribute('stroke-width', '1.25');
-                }
+              if (enter) {
+                pathElement.setAttribute('opacity', '0.65');
+                pathElement.setAttribute('stroke-width', '2.25');
+              } else {
+                pathElement.setAttribute('opacity', '1');
+                pathElement.setAttribute('stroke-width', '1.25');
+              }
             }
           };
         </script>
@@ -1244,8 +1722,8 @@
             </div>
           </div>
           <div style="display: flex; flex-direction: column; align-items: center;">
-            <div style="width: 1056px; height: 1056px;">
-              <div class="main-photo" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+            <div class="main-photo" style="width: 1056px; height: 1056px;">
+              <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                 <div class="main-photo__block">
                   <div style="perspective: 1000px;"><img :src="currentImage" alt="Шолом Talee" style="width: 622px; height: 670px;" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=5,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()"/></div>
                 </div>
@@ -1284,9 +1762,9 @@
               <div class="section-4__block-1__container">
                 <div class="wrapper-frame wrapper-frame--bg">
                   <div class="wrapper-frame__container">
-                    <div class="lolol-content">
-                      <h3 class="lolol-content__title">99%</h3>
-                      <p class="lolol-content__text">Випадків демонструють позитивний ефект за період користування</p>
+                    <div class="block-title">
+                      <h3 class="block-title__title">99%</h3>
+                      <p class="block-title__text">Випадків демонструють позитивний ефект за період користування</p>
                     </div>
                   </div>
                 </div>
@@ -1318,9 +1796,9 @@
                 <div class="wrapper-frame">
                   <div class="wrapper-frame__container">
                     <div class="wrapper-center">
-                      <div class="lolol-2-content">
-                        <h3 class="lolol-2-content__title">01</h3>
-                        <p class="lolol-2-content__text">передовий засіб для корекції <br>деформацій голови у дітей</p>
+                      <div class="block-2-title">
+                        <h3 class="block-2-title__title">01</h3>
+                        <p class="block-2-title__text">передовий засіб для корекції <br>деформацій голови у дітей</p>
                       </div>
                     </div>
                   </div>
@@ -1328,9 +1806,9 @@
                 <div class="wrapper-frame">
                   <div class="wrapper-frame__container">
                     <div class="wrapper-center">
-                      <div class="lolol-2-content">
-                        <h3 class="lolol-2-content__title">02</h3>
-                        <p class="lolol-2-content__text">Наш Шолом відрізняється високою <br>ефективністю та індивідуальним <br>підходом до кожного малюка</p>
+                      <div class="block-2-title">
+                        <h3 class="block-2-title__title">02</h3>
+                        <p class="block-2-title__text">Наш Шолом відрізняється високою <br>ефективністю та індивідуальним <br>підходом до кожного малюка</p>
                       </div>
                     </div>
                   </div>
@@ -1338,9 +1816,9 @@
                 <div class="wrapper-frame">
                   <div class="wrapper-frame__container">
                     <div class="wrapper-center">
-                      <div class="lolol-2-content">
-                        <h3 class="lolol-2-content__title">03</h3>
-                        <p class="lolol-2-content__text">передовий засіб для корекції <br>деформацій голови у дітей</p>
+                      <div class="block-2-title">
+                        <h3 class="block-2-title__title">03</h3>
+                        <p class="block-2-title__text">передовий засіб для корекції <br>деформацій голови у дітей</p>
                       </div>
                     </div>
                   </div>
@@ -1348,9 +1826,9 @@
                 <div class="wrapper-frame">
                   <div class="wrapper-frame__container">
                     <div class="wrapper-center">
-                      <div class="lolol-2-content">
-                        <h3 class="lolol-2-content__title">04</h3>
-                        <p class="lolol-2-content__text">Батьки, які бажають ефективно <br>запобігти або вилікувати деформації <br>голови у своїх дітей</p>
+                      <div class="block-2-title">
+                        <h3 class="block-2-title__title">04</h3>
+                        <p class="block-2-title__text">Батьки, які бажають ефективно <br>запобігти або вилікувати деформації <br>голови у своїх дітей</p>
                       </div>
                     </div>
                   </div>
@@ -1365,7 +1843,7 @@
             <div class="lable-main">05<span>/ Як це працює</span></div>
             <div class="wrapper-frame">
               <div class="wrapper-frame__container">
-                <h2 class="title-h2">Використання індивідуалізованих 3D-моделей голови для створення шолому дозволяє точно підлаштувати його під анатомічні особливості кожної дитини, що максимізує ефективність корекції</h2>
+                <h2 class="block-3-title">Використання індивідуалізованих 3D-моделей голови для створення шолому дозволяє точно підлаштувати його під анатомічні особливості кожної дитини, що максимізує ефективність корекції</h2>
               </div>
             </div>
             <div class="section-5__container"><img class="section-5__image-1" src="./images/decor/decor_5.jpg" alt=""/>
@@ -1402,120 +1880,120 @@
                 <div class="screen__container">
                   <div class="screen-desk-c" style="z-index: 3">
                     <div style="transform: translate(-500px, -260px);">
-                      <div class="button-info-2" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }">
-                        <div class="button-info-2__pop-up" :class="{'button-info-2__pop-up--hidden':!isOpen}">
+                      <div class="button-accordion-new" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }">
+                        <div class="button-accordion-new__pop-up" :class="{'button-accordion-new__pop-up--hidden':!isOpen}">
                           <article class="card-modal card">
                             <div class="card-modal__container">
                               <h3 class="card-modal__title">Плагіоцефалія (асиметрична деформація черепа)</h3>
                               <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
                             </div>
                             <div class="card-modal__block card__block">
-                              <div class="button-mini button-mini--size-m" @click="handleClose()"><img src="./images/icons/cclose.svg" alt="close"/></div>
+                              <div class="button-icon button-icon--size-m" @click="handleClose()"><img src="./images/icons/cclose.svg" alt="close"/></div>
                             </div>
                           </article>
                         </div>
-                        <div class="button-info-2__container" :class="{'button-info-2__container--active':isOpen}" @click="isOpen=!isOpen">
-                          <div class="button-info-2__title">Плагіоцефалія</div>
+                        <div class="button-accordion-new__container" :class="{'button-accordion-new__container--active':isOpen}" @click="isOpen=!isOpen">
+                          <div class="button-accordion-new__title">Плагіоцефалія</div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="screen-desk-c" style="z-index: 2">
                     <div style="transform: translate(-640px, 0px)">
-                      <div class="button-info-2" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
-                        <div class="button-info-2__pop-up" :class="{'button-info-2__pop-up--hidden':!isOpen}">
+                      <div class="button-accordion-new" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                        <div class="button-accordion-new__pop-up" :class="{'button-accordion-new__pop-up--hidden':!isOpen}">
                           <article class="card-modal card">
                             <div class="card-modal__container">
                               <h3 class="card-modal__title">Деформація голови</h3>
                               <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
                             </div>
                             <div class="card-modal__block card__block">
-                              <div class="button-mini button-mini--size-m" @click="handleClose()"><img src="./images/icons/cclose.svg" alt="close"/></div>
+                              <div class="button-icon button-icon--size-m" @click="handleClose()"><img src="./images/icons/cclose.svg" alt="close"/></div>
                             </div>
                           </article>
                         </div>
-                        <div class="button-info-2__container" :class="{'button-info-2__container--active':isOpen}" @click="isOpen=!isOpen">
-                          <div class="button-info-2__title">Деформація голови</div>
+                        <div class="button-accordion-new__container" :class="{'button-accordion-new__container--active':isOpen}" @click="isOpen=!isOpen">
+                          <div class="button-accordion-new__title">Деформація голови</div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="screen-desk-c" style="z-index: 1">
                     <div style="transform: translate(-500px, 260px);">
-                      <div class="button-info-2" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
-                        <div class="button-info-2__pop-up" :class="{'button-info-2__pop-up--hidden':!isOpen}">
+                      <div class="button-accordion-new" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                        <div class="button-accordion-new__pop-up" :class="{'button-accordion-new__pop-up--hidden':!isOpen}">
                           <article class="card-modal card">
                             <div class="card-modal__container">
                               <h3 class="card-modal__title">Синдром плоскої голови</h3>
                               <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
                             </div>
                             <div class="card-modal__block card__block">
-                              <div class="button-mini button-mini--size-m" @click="handleClose()"><img src="./images/icons/cclose.svg" alt="close"/></div>
+                              <div class="button-icon button-icon--size-m" @click="handleClose()"><img src="./images/icons/cclose.svg" alt="close"/></div>
                             </div>
                           </article>
                         </div>
-                        <div class="button-info-2__container" :class="{'button-info-2__container--active':isOpen}" @click="isOpen=!isOpen">
-                          <div class="button-info-2__title">Асиметрична брахiцефалiя</div>
+                        <div class="button-accordion-new__container" :class="{'button-accordion-new__container--active':isOpen}" @click="isOpen=!isOpen">
+                          <div class="button-accordion-new__title">Асиметрична брахiцефалiя</div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="screen-desk-c" style="z-index: 3">
                     <div style="transform: translate(500px, -260px);">
-                      <div class="button-info-2 button-info-2--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
-                        <div class="button-info-2__pop-up" :class="{'button-info-2__pop-up--hidden':!isOpen}">
+                      <div class="button-accordion-new button-accordion-new--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                        <div class="button-accordion-new__pop-up" :class="{'button-accordion-new__pop-up--hidden':!isOpen}">
                           <article class="card-modal card">
                             <div class="card-modal__container">
                               <h3 class="card-modal__title">Брахіцефалія</h3>
                               <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
                             </div>
                             <div class="card-modal__block card__block">
-                              <div class="button-mini button-mini--size-m" @click="handleClose()"><img src="./images/icons/cclose.svg" alt="close"/></div>
+                              <div class="button-icon button-icon--size-m" @click="handleClose()"><img src="./images/icons/cclose.svg" alt="close"/></div>
                             </div>
                           </article>
                         </div>
-                        <div class="button-info-2__container" :class="{'button-info-2__container--active':isOpen}" @click="isOpen=!isOpen">
-                          <div class="button-info-2__title">Брахіцефалія</div>
+                        <div class="button-accordion-new__container" :class="{'button-accordion-new__container--active':isOpen}" @click="isOpen=!isOpen">
+                          <div class="button-accordion-new__title">Брахіцефалія</div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="screen-desk-c" style="z-index: 2">
                     <div style="transform: translate(640px, 0px)">
-                      <div class="button-info-2 button-info-2--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
-                        <div class="button-info-2__pop-up" :class="{'button-info-2__pop-up--hidden':!isOpen}">
+                      <div class="button-accordion-new button-accordion-new--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                        <div class="button-accordion-new__pop-up" :class="{'button-accordion-new__pop-up--hidden':!isOpen}">
                           <article class="card-modal card">
                             <div class="card-modal__container">
                               <h3 class="card-modal__title">ДОлiхоцефалiя</h3>
                               <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
                             </div>
                             <div class="card-modal__block card__block">
-                              <div class="button-mini button-mini--size-m" @click="handleClose()"><img src="./images/icons/cclose.svg" alt="close"/></div>
+                              <div class="button-icon button-icon--size-m" @click="handleClose()"><img src="./images/icons/cclose.svg" alt="close"/></div>
                             </div>
                           </article>
                         </div>
-                        <div class="button-info-2__container" :class="{'button-info-2__container--active':isOpen}" @click="isOpen=!isOpen">
-                          <div class="button-info-2__title">ДОлiхоцефалiя</div>
+                        <div class="button-accordion-new__container" :class="{'button-accordion-new__container--active':isOpen}" @click="isOpen=!isOpen">
+                          <div class="button-accordion-new__title">ДОлiхоцефалiя</div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="screen-desk-c" style="z-index: 1">
                     <div style="transform: translate(500px, 260px);">
-                      <div class="button-info-2 button-info-2--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
-                        <div class="button-info-2__pop-up" :class="{'button-info-2__pop-up--hidden':!isOpen}">
+                      <div class="button-accordion-new button-accordion-new--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                        <div class="button-accordion-new__pop-up" :class="{'button-accordion-new__pop-up--hidden':!isOpen}">
                           <article class="card-modal card">
                             <div class="card-modal__container">
                               <h3 class="card-modal__title">Період після операції</h3>
                               <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
                             </div>
                             <div class="card-modal__block card__block">
-                              <div class="button-mini button-mini--size-m" @click="handleClose()"><img src="./images/icons/cclose.svg" alt="close"/></div>
+                              <div class="button-icon button-icon--size-m" @click="handleClose()"><img src="./images/icons/cclose.svg" alt="close"/></div>
                             </div>
                           </article>
                         </div>
-                        <div class="button-info-2__container" :class="{'button-info-2__container--active':isOpen}" @click="isOpen=!isOpen">
-                          <div class="button-info-2__title">Період після операції</div>
+                        <div class="button-accordion-new__container" :class="{'button-accordion-new__container--active':isOpen}" @click="isOpen=!isOpen">
+                          <div class="button-accordion-new__title">Період після операції</div>
                         </div>
                       </div>
                     </div>
@@ -1736,19 +2214,19 @@
             </div>
             <div class="wrapper-frame">
               <div class="wrapper-frame__container">
-                <form style="padding: 4px 24px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <form class="form" action="#" method="get">
+                  <div class="form__container">
                     <div class="wrapper-frame">
                       <div class="wrapper-frame__container">
                         <div class="wrapper-center">
-                          <input class="input-new" type="text" name="my-name" placeholder="Ім’я*"/>
+                          <input class="input-new" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
                         </div>
                       </div>
                     </div>
                     <div class="wrapper-frame">
                       <div class="wrapper-frame__container">
                         <div class="wrapper-center">
-                          <input class="input-new" type="tel" name="my-phone" placeholder="Телефон*"/>
+                          <input class="input-new" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
                         </div>
                       </div>
                     </div>
@@ -1777,7 +2255,7 @@
                 <div class="lable-main">10<span>/ частi запитання</span></div>
                 <div class="wrapper-frame wrapper-frame--30">
                   <div class="wrapper-frame__container">
-                    <div class="wrapper-center" style="padding-inline: 30px;">
+                    <div class="wrapper-center" style="padding: 30px;">
                       <h3 class="h3">Я з радiстю вiдповiм на всi вашi запитання, та зможу вам допомогти</h3>
                     </div>
                   </div>
@@ -1927,25 +2405,25 @@
           <div class="wrapper-frame">
             <div class="wrapper-frame__container">
               <div class="wrapper-center" style="flex-direction: row; gap: 20px; padding-inline: 80px;"><img src="./images/icons/user-file.svg" alt="file"/>
-                <h3 style="font-family: var(--font-family);font-weight: 400;font-size: 28px;line-height: 110%;letter-spacing: 0.01em;text-transform: uppercase;text-align: justify;color: var(--text-talee-title);">Або Залиште ваші дані і найближчим часом ми з вами зв'яжемося</h3>
+                <h3 style="font-family: var(--font-family);font-weight: 400;font-size: 28px;line-height: 110%;letter-spacing: 0.01em;text-transform: uppercase;text-align: justify;color: var(--text-tale-title);">Або Залиште ваші дані і найближчим часом ми з вами зв'яжемося</h3>
               </div>
             </div>
           </div>
           <div class="wrapper-frame">
             <div class="wrapper-frame__container">
-              <form style="padding: 20px 40px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; height: 100%;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <form class="form" action="#" method="get">
+                <div class="form__container">
                   <div class="wrapper-frame">
                     <div class="wrapper-frame__container">
                       <div class="wrapper-center">
-                        <input class="input-new" type="text" name="my-name" placeholder="Ім’я*"/>
+                        <input class="input-new" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
                       </div>
                     </div>
                   </div>
                   <div class="wrapper-frame">
                     <div class="wrapper-frame__container">
                       <div class="wrapper-center">
-                        <input class="input-new" type="tel" name="my-phone" placeholder="Телефон*"/>
+                        <input class="input-new" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
                       </div>
                     </div>
                   </div>
@@ -1953,7 +2431,7 @@
                 <div class="wrapper-frame">
                   <div class="wrapper-frame__container">
                     <div class="wrapper-center">
-                      <input class="input-new" type="email" name="my-email" placeholder="Пошта*"/>
+                      <input class="input-new" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
                     </div>
                   </div>
                 </div>
@@ -2028,8 +2506,8 @@
               </div>
             </div>
           </div>
-          <div style="width: 1056px; height: 1056px; margin: auto; margin-block: -120px -230px;">
-            <div class="main-photo" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+          <div class="main-photo" style="width: 1056px; height: 1056px;margin: auto; margin-block: -120px -230px;">
+            <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
               <div class="main-photo__block"><img src="./images/icons/logo_big.svg" alt="logo orthopedics"/>
               </div>
               <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
@@ -2056,17 +2534,225 @@
       <div class="page__menu">
         <template x-if="!isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent">
           <div class="page__menu__container">
-            <div class="contacts-menu" x-data="{ hidden: true }" @click.outside="hidden = true">
-              <div class="contacts-menu__container" x-cloak="x-cloak" :class="{'contacts-menu__container--hidden': hidden}">
-                <div class="contacts-menu__item"> <a class="button-icon" target="_blank" href="#"><img src="./images/icons/social-telegram.svg" alt="telegram-logo"/></a></div>
-                <div class="contacts-menu__item"> <a class="button-icon" target="_blank" href="#"><img src="./images/icons/social-telegram.svg" alt="telegram-logo"/></a></div>
-                <div class="contacts-menu__item"> <a class="button-icon" target="_blank" href="#"><img src="./images/icons/social-telegram.svg" alt="telegram-logo"/></a></div>
-                <div class="contacts-menu__item"> <a class="button-icon" target="_blank" href="#"><img src="./images/icons/social-telegram.svg" alt="telegram-logo"/></a></div>
+            <div class="contacts-menu" x-data="{ isClosed: true }" @click.outside="isClosed = true">
+              <div class="contacts-menu__container" x-cloak="x-cloak" :class="{'contacts-menu__container--close': isClosed}" style="height: calc((20px + 56px) * 3 - 20px);">
+                <div class="contacts-menu__item">
+                  <div class="button-accordion-new-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                    <div class="button-accordion-new-icon__pop-up" :class="{'button-accordion-new-icon__pop-up--hidden':!isOpen}">
+                      <div class="menu" style="height: 82dvh; width: 764px; transform: translateY(-20%);">
+                        <div class="menu__container">
+                          <div class="menu__head">
+                            <h2 class="menu__title">ШОЛОМ TALEE</h2>
+                            <div class="button-icon" @click="handleClose"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                          </div>
+                          <div class="menu__content">
+                            <div style="position: absolute; top: 4%; left: 40%; z-index: 2;">
+                              <div class="button-accordion button-accordion--mini" x-data="{ isOpen: true }" @click="isOpen=!isOpen">
+                                <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                                  <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                                  <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                                </div>
+                                <div class="button-accordion__icon">
+                                  <div class="button-accordion__line"></div>
+                                  <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="position: absolute; top: 20%; left: 50%; z-index: 2;">
+                              <div class="button-accordion button-accordion--mini" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                                <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                                  <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                                  <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                                </div>
+                                <div class="button-accordion__icon">
+                                  <div class="button-accordion__line"></div>
+                                  <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="position: absolute; top: 52%; left: 60%; z-index: 2;">
+                              <div class="button-accordion button-accordion--mini" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                                <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                                  <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                                  <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                                </div>
+                                <div class="button-accordion__icon">
+                                  <div class="button-accordion__line"></div>
+                                  <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="main-photo" style="width: 800px; height: 800px;position: absolute; top: -35%;">
+                              <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                                <div class="main-photo__block">
+                                  <div class="object-photo" style="width: 600px; height: 600px;"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee">
+                                    <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
+                                  </div>
+                                </div>
+                                <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                                  <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                                    <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="position: absolute; bottom: 0; padding-inline: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+                              <div class="wrapper-frame wrapper-frame--bg">
+                                <div class="wrapper-frame__container">
+                                  <div style="padding: 20px">
+                                    <p>01</p>
+                                    <p>Шолом Talee® — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="wrapper-frame wrapper-frame--bg">
+                                <div class="wrapper-frame__container">
+                                  <div style="padding: 20px">
+                                    <p>02</p>
+                                    <p>Шолом TALEE, розроблений з урахуванням високих стандартів безпеки та якості, стає надійним помічником для батьків у вирішенні проблем дитячого ортопедичного здоров’я</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div></div>
+                          </div>
+                        </div>
+                        <div class="menu__footer">
+                          <button class="button" type="">
+                            <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                            </p>
+                            <div class="button__icon">
+                              <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                              </div>
+                            </div>
+                          </button><a class="link link--nowrap" href="#">
+                            <div class="link__text">БІЛЬШЕ ПРО ШОЛОМ</div></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="button-accordion-new-icon__container" :class="{'button-accordion-new-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-new-icon__image" src="./images/icons/shlem-x1.png" alt="icon of phone"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="contacts-menu__item">
+                  <div class="button-accordion-new-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                    <div class="button-accordion-new-icon__pop-up" :class="{'button-accordion-new-icon__pop-up--hidden':!isOpen}">
+                      <div class="menu" style="height: 82dvh; width: 764px; transform: translateY(-28%);">
+                        <div class="menu__container">
+                          <div class="menu__head">
+                            <h2 class="menu__title">ШОЛОМ TALEE</h2>
+                            <div class="button-icon" @click="handleClose"><img src="./images/icons/ccclose.svg" alt="icon"/></div>
+                          </div>
+                          <div class="menu__content">
+                            <div style="position: absolute; top: 4%; left: 40%; z-index: 2;">
+                              <div class="button-accordion button-accordion--mini" x-data="{ isOpen: true }" @click="isOpen=!isOpen">
+                                <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                                  <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                                  <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                                </div>
+                                <div class="button-accordion__icon">
+                                  <div class="button-accordion__line"></div>
+                                  <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="position: absolute; top: 20%; left: 50%; z-index: 2;">
+                              <div class="button-accordion button-accordion--mini" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                                <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                                  <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                                  <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                                </div>
+                                <div class="button-accordion__icon">
+                                  <div class="button-accordion__line"></div>
+                                  <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="position: absolute; top: 52%; left: 60%; z-index: 2;">
+                              <div class="button-accordion button-accordion--mini" x-data="{ isOpen: false }" @click="isOpen=!isOpen">
+                                <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                                  <h4 class="button-accordion__pop-up__title">Легкий</h4>
+                                  <p class="button-accordion__pop-up__text">Вага шолому - <b>162г.</b></p>
+                                </div>
+                                <div class="button-accordion__icon">
+                                  <div class="button-accordion__line"></div>
+                                  <div class="button-accordion__line" :class="{'button-accordion__line--plus':!isOpen}"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="main-photo" style="width: 800px; height: 800px;position: absolute; top: -35%;">
+                              <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                                <div class="main-photo__block">
+                                  <div class="object-photo" style="width: 600px; height: 600px;"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee">
+                                    <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
+                                  </div>
+                                </div>
+                                <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                                  <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                                    <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="position: absolute; bottom: 0; padding-inline: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+                              <div class="wrapper-frame wrapper-frame--bg">
+                                <div class="wrapper-frame__container">
+                                  <div style="padding: 20px">
+                                    <p>01</p>
+                                    <p>Шолом Talee® — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="wrapper-frame wrapper-frame--bg">
+                                <div class="wrapper-frame__container">
+                                  <div style="padding: 20px">
+                                    <p>02</p>
+                                    <p>Шолом TALEE, розроблений з урахуванням високих стандартів безпеки та якості, стає надійним помічником для батьків у вирішенні проблем дитячого ортопедичного здоров’я</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div></div>
+                          </div>
+                        </div>
+                        <div class="menu__footer">
+                          <button class="button" type="">
+                            <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                            </p>
+                            <div class="button__icon">
+                              <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                              </div>
+                            </div>
+                          </button><a class="link link--nowrap" href="#">
+                            <div class="link__text">БІЛЬШЕ ПРО ШОЛОМ</div></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="button-accordion-new-icon__container" :class="{'button-accordion-new-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-new-icon__image" src="./images/icons/foot-x1.png" alt="icon of phone"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="contacts-menu__item">
+                  <div class="button-accordion-new-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
+                    <div class="button-accordion-new-icon__pop-up" :class="{'button-accordion-new-icon__pop-up--hidden':!isOpen}">
+                      <div class="button-icon button-icon--border"><img src="./images/icons/light__phone.svg" alt="instagram"/></div>
+                      <div class="button-icon button-icon--border"><img src="./images/icons/light__phone.svg" alt="instagram"/></div>
+                    </div>
+                    <div class="button-accordion-new-icon__container" :class="{'button-accordion-new-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-new-icon__image" src="./images/icons/light__phone.svg" alt="icon of phone"/>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <button class="contacts-menu__button" type="button" @click="hidden = !hidden" :class="{'contacts-menu__button--close': !hidden}">
+              <button class="contacts-menu__button" type="button" @click="isClosed=!isClosed" :class="{'contacts-menu__button--close': !isClosed}">
                 <div class="contacts-menu__button__image"></div>
               </button>
-            </div><a class="to-up" href="#" :class="{'to-up--close': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"></a>
+            </div><a class="to-up" href="#" :class="{'to-up--hidden': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"/></a>
           </div>
         </template>
       </div>
