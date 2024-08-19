@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
 // =========================================================================
 /* Breakpoints */
 const breakpoints = {
   desktop: 1400, // ↓ max   Desktop   ↑ min
-  labtop: 1200, // ↓ max   Labtop    ↑ min
+  laptop: 1200, // ↓ max   Laptop    ↑ min
   tablet: 992, // ↓ max   Tablet    ↑ min
   phablet: 768, // ↓ max   Phablet   ↑ min
   phone: 576, // ↓ max   Phone     ↑ min
@@ -70,7 +70,7 @@ if (hadMySlider) {
       },
     },
   });
-  
+
   mySlider.mount();
 }
 
@@ -83,12 +83,12 @@ if (hadMySlider2) {
     autoplay: true,
     resetProgress: false,
     breakpoints: {
-      [breakpoints.labtop]: {
+      [breakpoints.laptop]: {
         perPage: 1,
       },
     },
   });
-  
+
   mySlider2.mount();
 }
 // =========================================================================
