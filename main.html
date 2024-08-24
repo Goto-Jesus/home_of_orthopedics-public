@@ -15,7 +15,24 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
     <script type="module" src="./scripts/app.js" defer></script>
   </head>
-  <body class="page__body" x-data="{mouseX: 0,mouseY: 0,isShowToUp: false,isShowBurgerMenu: false,isShowPopUpContact: false,isShowPopUpContent: false,currentHook: '',contentType: '',contentSrc: '',isTablet: false,isPhone: false,}" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 576);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 576);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent }">
+  <body class="page__body" x-data="{
+      mouseX: 0,
+      mouseY: 0,
+      isShowToUp: false,
+
+      isShowBurgerMenu: false,
+      isShowSearchMenu: false,
+      isShowPopUpContact: false,
+      isShowPopUpRepeat: false,
+      isShowPopUpDoctor: false,
+      isShowPopUpContent: false,
+
+      currentHook: '',
+      contentType: '',
+      contentSrc: '',
+      isTablet: false,
+      isPhone: false,
+    }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 576);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 576);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor }">
     <div class="page__wrapper">
       <template x-if="isShowBurgerMenu">
         <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
@@ -31,25 +48,24 @@
             <div class="burger-menu__header">
               <h2 class="title-main  title-main--small title-main--first"><span>БЕЗПЕКА ТА ЗДОРОВ’Я ДИТИНИ — <i>НАШ ПРІОРИТЕТ</i></span>
               </h2>
-              
               <button class="button-icon-service" @click="setTimeout(() =&gt; {isShowBurgerMenu=false}, 500);isClosedBurgerMenu=true;" type=""><img src="./images/icons/menu-close.svg" alt="close"/></button>
             </div>
             
             <div class="burger-menu__main">
               <div style="
-          height: 100%;
-          display: flex;
-          gap: 42px;
-          padding-bottom: 30px;
-        ">
-                <div style="
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
             height: 100%;
+            display: flex;
+            gap: 42px;
             padding-bottom: 30px;
-            border-bottom: 1px solid #62500f26;
           ">
+                <div style="
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+                padding-bottom: 30px;
+                border-bottom: 1px solid #62500f26;
+              ">
                   <div>
                     <h4 class="h-1" style="margin-bottom: 18px;">Компанія</h4>
                     <hr style="margin-bottom: 18px;"/>
@@ -77,7 +93,7 @@
                       <div class="social-list"><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
                       </div>
                     </div>
-                    <button class="button" type="">
+                    <button class="button" @click="" type="">
                       <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                       </p>
                       <div class="button__icon">
@@ -92,8 +108,8 @@
                 </div>
                 
                 <div style="
-            padding-bottom: 30px;
-          ">
+              padding-bottom: 30px;
+            ">
                   <h4 class="h-1" style="margin-bottom: 18px;">Послуги</h4>
                   <hr style="margin-bottom: 18px;"/>
                   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
@@ -217,71 +233,565 @@
           </div>
         </div>
       </template>
-      <template x-if="isShowPopUpContact">
-        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp=false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'pop-up--closed': isClosedPopUp, 'pop-up--fixed': false}">
-          <div class="pop-up__button">
-            <button class="contacts-menu__button contacts-menu__button--close" type="button" @click="isClosedPopUp=true" x-on:click="setTimeout(() =&gt; {isShowPopUpContact = false}, 500);">
-              <div class="contacts-menu__button__image"></div>
-            </button>
+      <template x-if="isShowSearchMenu">
+        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
+          <div class="burger-menu__container">
+            <div class="screen" style="z-index: -1;">
+              <div class="screen__container">
+                <div class="_no-event screen-desk-↙">
+                  <div class="decor-blur-point" style="min-width: 400px; min-height: 400px; border-radius: 100%; background: #f7c7ab; filter: blur(185px);"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="burger-menu__header">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <div class="wrapper-center">
+                    <label class="input-new input-new--search">
+                      <input class="input-new__input" type="text" name="my-search" placeholder="Що ви шукаєте?" title="Що ви шукаєте?"/>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <button class="button-icon-service" @click="setTimeout(() =&gt; {isShowSearchMenu=false}, 500);isClosedBurgerMenu=true;" type=""><img src="./images/icons/menu-close.svg" alt="close"/></button>
+            </div>
+            
+            <div class="burger-menu__main">
+              <div style="
+            height: 100%;
+            display: flex;
+            gap: 42px;
+            padding-bottom: 30px;
+          ">
+                
+                <div style="
+              padding-bottom: 30px;
+            ">
+                  <h4 class="h-1" style="margin-bottom: 18px;">Послуги</h4>
+                  <hr style="margin-bottom: 18px;"/>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5  card-block-5--mini card"><img class="card-block-5__image" src="../images/icons/card-a_1.svg" loading="lazy"/>
+                          <div class="card-block-5__container">
+                            <h3 class="card-block-5__title">Лiкування деформацiї голови</h3>
+                            <p class="card-block-5__text">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини</p>
+                            <div class="card-block-5__block card__block"><a class="link" href="#">
+                                <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                                <div class="link__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div></a>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5  card-block-5--mini card"><img class="card-block-5__image" src="../images/icons/card-a_2.svg" loading="lazy"/>
+                          <div class="card-block-5__container">
+                            <h3 class="card-block-5__title">Ортозування дiтей</h3>
+                            <p class="card-block-5__text">Процес використання ортезів або спеціальних пристосувань для підтримки або виправлення функціональних або структурних вад у дітей</p>
+                            <div class="card-block-5__block card__block"><a class="link" href="#">
+                                <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                                <div class="link__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div></a>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5  card-block-5--mini card"><img class="card-block-5__image" src="../images/icons/card-a_3.svg" loading="lazy"/>
+                          <div class="card-block-5__container">
+                            <h3 class="card-block-5__title">Консультації дитячого лiкаря ортопеда</h3>
+                            <p class="card-block-5__text">Можливість отримати професійні поради від спеціаліста щодо здоров'я та розвитку вашої дитини</p>
+                            <div class="card-block-5__block card__block"><a class="link" href="#">
+                                <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                                <div class="link__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div></a>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <article class="card-block-5  card-block-5--mini card"><img class="card-block-5__image" src="../images/icons/card-g_3-massage.svg" loading="lazy"/>
+                          <div class="card-block-5__container">
+                            <h3 class="card-block-5__title">реабiлiтацiя, Фізіотерапія та Масаж</h3>
+                            <p class="card-block-5__text">Eфективні методи відновлення рухливості та поліпшення м'язового тонусу у дітей, сприяють загальному здоров'ю та розвитку</p>
+                            <div class="card-block-5__block card__block"><a class="link" href="#">
+                                <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                                <div class="link__icon">
+                                  <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                                  </div>
+                                </div></a>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="burger-menu__footer" style="display: flex; justify-content: space-between;">
+              <div style="
+          display: flex;
+          gap: 4px;
+          font-family: var(--second-family);
+          font-weight: 400;
+          font-size: 15px;
+          color: #5d5955;
+        "><span style="
+            opacity: 0.35;
+          ">Дизайн та розробка: </span><a href="https://www.instagram.com/boris__kruglov/" target="_blank" style="
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(93, 89, 85, 0.3);
+          "> Борис Круглов</a></div>
+              <div style="display: flex; gap: 36px;">
+                <div @click="setTimeout(() =&gt; {isShowSearchMenu=false}, 500);isClosedBurgerMenu=true;" style="
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            cursor: pointer;
+          "><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span style="
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 80%;
+                letter-spacing: 0.01em;
+                text-transform: uppercase;
+                color: var(--dark-gray);
+            ">Повернутися назад</span></div><a class="link link--negative" href="#">
+                  <div class="link__text">УСІ ПОСЛУГИ</div></a>
+              </div>
+            </div>
           </div>
-          <div class="pop-up__content">
-            <section class="section-contact-me _grid decor-shadow-gradient _fix-hook" id="contants" style="margin-bottom: 40px">
-              <template x-if="!isTablet">
-                <div class="screen">
-                  <div class="screen__container">
-                    <div class="_no-event screen-desk-↓">
-                      <div style="transform: scale(1.25) translate(-170px, 50px) rotate(27deg)"><img class="at-ramdom-rotate-2" src="./images/decor/ingir.png" alt="least"/></div>
-                    </div>
-                  </div>
-                </div>
-              </template>
-              <div class="section-contact-me__decor _fix-for-decor _grid-col-desk-2-2 _grid-col-lab-1-1 _grid-col-phone-1-2 _place-lab-↗ _place-phone-c">
-                <div class="decor decor--big _anim-items _anim-once __transition-left">
-                  <div class="decor__image"><img class="decor__image__photo" src="./images/photos/self_12.jpg" alt="photo"/><img class="decor__image__decor" src="./images/decor/decore_3.jpg" alt="photo"/></div>
-                </div>
-                <div class="short-contacts">
-                  <h2 class="short-contacts__name">Світлана Олійник</h2>
-                  <div class="short-contacts__links">
-                    <div class="short-contacts__link"><img src="./images/icons/email.svg"/><a href="mailto:#">#</a></div>
-                    <div class="short-contacts__link"><img src="./images/icons/phone.svg"/><a href="tel:+38 095 120 75 75">+38 095 120 75 75</a></div>
-                  </div>
+        </div>
+      </template>
+      <template x-if="isShowPopUpContact">
+        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
+          <div class="burger-menu__container">
+            <div class="screen" style="z-index: -1;">
+              <div class="screen__container">
+                <div class="_no-event screen-desk-↙">
+                  <div class="decor-blur-point" style="min-width: 400px; min-height: 400px; border-radius: 100%; background: #f7c7ab; filter: blur(185px);"></div>
                 </div>
               </div>
-              <div class="_grid-col-desk-4-5 _grid-col-lab-3-3 _grid-col-tab-2-2 _grid-col-phone-1-2 _place-lab-↖ _place-phone-c">
-                <form class="_flex _flex-col" action="#" method="get" style="gap: 66px;">
-                  <div class="title  title--second title--font-family">
-                    <p class="title__text">Зв'язатися зі мною</p>
-                    <div class="title__container">
-                      <h2 class="title__main-text">З будь-яких питань пов'язаних з вашим здоров'ям та його поліпшенням я з радістю готова вам допомогти і буду рада, якщо ваше життя стане кращим</h2>
+            </div>
+            
+            <div class="burger-menu__header">
+              <h2 class="title-main  title-main--small title-main--first"><span>Запишіться на консультацію <i>Просто зараз</i></span>
+              </h2>
+              <button class="button-icon-service" @click="setTimeout(() =&gt; {isShowPopUpContact=false}, 500);isClosedBurgerMenu=true;" type=""><img src="./images/icons/menu-close.svg" alt="close"/></button>
+            </div>
+            
+            <div class="burger-menu__main">
+              <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <div class="wrapper-center" style="flex-direction: row; gap: 20px; padding-inline: 80px;"><img src="./images/icons/user-file.svg" alt="file"/>
+                      <h3 style="
+              font-family: var(--font-family);
+              font-weight: 400;
+              font-size: 28px;
+              line-height: 110%;
+              letter-spacing: 0.01em;
+              text-transform: uppercase;
+              text-align: left;
+              color: var(--text-tale-title);
+          ">Залиште ваші дані і найближчим часом ми з вами зв'яжемося</h3>
                     </div>
                   </div>
-                  <div class="_flex _flex-col" style="gap: 45px;">
-                    <div class="input">
-                      <label class="input__lable" for="name">Як вас звати? *</label>
-                      <input class="input__input" id="name" type="text" name="name" required="required"/>
+                </div>
+                <form class="form" action="#" method="get" style="padding: 0;">
+                  <div class="form__container">
+                    <div class="wrapper-frame">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <label class="input-new">
+                            <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                          </label>
+                        </div>
+                      </div>
                     </div>
-                    <div class="input">
-                      <label class="input__lable" for="phone" title="напишіть ваш номер в такому форматі: 380501234567">Який ваш номер телфону? *</label>
-                      <input class="input__input" id="phone" type="tel" name="phone" pattern="[0-9]{12}" required="required"/>
-                    </div>
-                    <div class="input">
-                      <label class="input__lable" for="email">Яка ваша пошта?</label>
-                      <input class="input__input" id="email" type="email" name="email"/>
+                    <div class="wrapper-frame">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <label class="input-new">
+                            <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                          </label>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                  <div class="wrapper-frame">
+                    <div class="wrapper-frame__container">
+                      <div class="wrapper-center">
+                        <label class="input-new">
+                          <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <label class="checkbox">
+                    <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                  </label>
+                  <button class="button" @click="" type="submit">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button>
                 </form>
+              </section>
+              <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; justify-content: center; align-items: center; place-items: center; padding-block: 20px;">
+                <div class="circle-block circle-block--mini">
+                  <div class="circle-block__container"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></div>
+                </div>
+                <div class="circle-block circle-block--mini">
+                  <div class="circle-block__container"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></div>
+                </div>
+                <div class="circle-block circle-block--mini">
+                  <div class="circle-block__wrapper">
+                    <div class="circle-block__container"><img src="./images/icons/time.svg" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
+                    <div class="circle-block__container"><img src="./images/icons/marker.svg" alt="marker"/><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
+                    <div class="circle-block__container">
+                      <div style="width: 14px;"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="shlem-head shlem-head--mini">
+                  <div class="shlem-head__wrapper" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=10,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()">
+                    <div class="shlem-head__face">
+                      <div class="shlem-head__eyes">
+                        <div class="eyes">
+                          <div class="eyes__wrapper">
+                            <div class="eyes__shadow"></div>
+                            <div class="eyes__eye">
+                              <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
+                                <div class="eyes__pupil"></div>
+                              </div>
+                              <div class="eyes__blick-1"></div>
+                              <div class="eyes__blick-2"></div>
+                            </div><img class="eyes__brow" src="./images/icons/brow.svg" alt="image brow"/>
+                          </div>
+                          <div class="eyes__wrapper">
+                            <div class="eyes__shadow eyes__shadow--right"></div>
+                            <div class="eyes__eye">
+                              <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
+                                <div class="eyes__pupil"></div>
+                              </div>
+                              <div class="eyes__blick-1 eyes__blick-1--right"></div>
+                              <div class="eyes__blick-2 eyes__blick-2--right"></div>
+                            </div><img class="eyes__brow eyes__brow--right" src="./images/icons/brow.svg" alt="image brow"/>
+                          </div>
+                        </div>
+                      </div><a class="shlem-head__nose" href="https://www.instagram.com"><img src="./images/icons/instagram-icon.svg" alt="instagram icon"/></a><a class="shlem-head__mouth" href="https://www.instagram.com"><img src="./images/icons/instagram-link.svg" alt="instagram link"/></a>
+                    </div><img src="./images/decor/shlem_x1_.png" alt="Шлем TALEE"/>
+                  </div>
+                </div>
+                <div class="social-list" style="place-self: end;"><a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
+                </div>
               </div>
-            </section>
-            <div></div>
+            </div>
+            
+            <div class="burger-menu__footer" style="display: flex; justify-content: space-between;">
+              <div style="
+          display: flex;
+          gap: 4px;
+          font-family: var(--second-family);
+          font-weight: 400;
+          font-size: 15px;
+          color: #5d5955;
+        "><span style="
+            opacity: 0.35;
+          ">Дизайн та розробка: </span><a href="https://www.instagram.com/boris__kruglov/" target="_blank" style="
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(93, 89, 85, 0.3);
+          "> Борис Круглов</a></div>
+              <div style="display: flex; gap: 36px;">
+                <div @click="setTimeout(() =&gt; {isShowPopUpContact=false}, 500);isClosedBurgerMenu=true;" style="
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            cursor: pointer;
+          "><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span style="
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 80%;
+                letter-spacing: 0.01em;
+                text-transform: uppercase;
+                color: var(--dark-gray);
+            ">Повернутися назад</span></div><a class="link link--negative" href="#">
+                  <div class="link__text">УСІ ПОСЛУГИ</div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template x-if="isShowPopUpDoctor">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      'pop-up--closed': isClosedPopUp,
+      'pop-up--fixed': false,
+    }">
+          <div class="pop-up__content">
+            <div class="modal" x-data="{
+              title: &quot;&quot;
+            }" style="max-width: 920px;">
+              <div class="modal__button">
+                <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" type=""><img src="../images/icons/cclose.svg" alt="icon"/></button>
+              </div>
+              <div class="modal__content">
+                <div class="card-info-doc" x-data="{
+      name: '',
+      info: '',
+      image: '',
+      alt: '',
+      experience: '',
+      specialization: '',
+      seniority: '',
+      personal: '',
+
+      facebook: false,
+      instagram: false,
+      youtube: false,
+      telegram: false,
+
+      updateDoctor(newData) {
+        Object.assign(this, newData);
+      }
+    }" @notify.window="updateDoctor($event.detail);" x-cloak="x-cloak">
+                  <article class="card-block-8 card"><img class="card-block-8__image" src="image" :src="image" loading="lazy" alt="alt"/>
+                    <div class="card-block-8__container">
+                      <h3 class="card-block-8__title" x-text="name">false</h3>
+                      <p class="card-block-8__text" x-text="info">false</p>
+                      <div class="card-block-8__block card__block">
+                        <div class="social-list" style="gap: 16px; justify-content: start;">
+                          <template x-if="facebook"><a class="social-link social-link--small" :href="facebook" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a>
+                          </template>
+                          <template x-if="instagram"><a class="social-link social-link--small" :href="instagram" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a>
+                          </template>
+                          <template x-if="youtube"><a class="social-link social-link--small" :href="youtube" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
+                          </template>
+                          <template x-if="telegram"><a class="social-link social-link--small" :href="telegram" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
+                          </template>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <hr/>
+                  <div class="card-info-doc__container">
+                    <div>
+                      <h3 class="card-info-doc__title">Досвід</h3>
+                      <p class="card-info-doc__text" x-text="experience"></p>
+                    </div>
+                    <div class="card-info-doc__line"></div>
+                    <div>
+                      <h3 class="card-info-doc__title">Спеціалізація</h3>
+                      <p class="card-info-doc__text" x-text="specialization"></p>
+                      <h3 class="card-info-doc__title">Стаж</h3>
+                      <p class="card-info-doc__text" x-text="seniority"></p>
+                      <h3 class="card-info-doc__title">Особисте</h3>
+                      <p class="card-info-doc__text" x-text="personal"></p>
+                    </div>
+                  </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; margin: auto; margin-top: 80px;">
+                  <button class="button" @click="isShowPopUpRepeat = true" type="">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button><a class="button button--phone-mini" href="tel:+38 095 120 75 75">
+                    <p class="button__text"><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+                    </p></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template x-if="isShowPopUpRepeat">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      'pop-up--closed': isClosedPopUp,
+      'pop-up--fixed': false,
+    }">
+          <div class="pop-up__content">
+            <div class="modal">
+              <div class="modal__button">
+                <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpRepeat = false}, 500);isClosedPopUp=true;" type=""><img src="../images/icons/cclose.svg" alt="icon"/></button>
+              </div>
+              <div class="modal__content">
+                <div class="screen" style="z-index: -1;">
+                  <div class="screen__container">
+                    <div class="screen-desk-↘" style="transform: translate(40%, 40%)">
+                      <div class="decor-blur-point" style="min-width: 1200px; min-height: 400px; border-radius: 100%; background: #f7c7ab; filter: blur(220px);"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <h3 style="
+              font-family: var(--font-family);
+              font-weight: 400;
+              font-size: 36px;
+              line-height: 120%;
+              text-transform: uppercase;
+              text-align: center;
+              color: var(--primary);
+              margin-bottom: 30px;
+            ">Запишіться на консультацію <br>Просто зараз</h3>
+                
+                <form class="form" action="#" method="get" style="padding: 0;">
+                  <div class="form__container">
+                    <div class="wrapper-frame">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <label class="input-new">
+                            <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <label class="input-new">
+                            <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrapper-frame">
+                    <div class="wrapper-frame__container">
+                      <div class="wrapper-center">
+                        <label class="input-new">
+                          <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrapper-frame">
+                    <div class="wrapper-frame__container">
+                      <textarea class="textarea" name="my-message" cols="" rows="7" placeholder="Ваше повідомлення"></textarea>
+                    </div>
+                  </div>
+                  <label class="checkbox">
+                    <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                  </label>
+                  <button class="button" @click="" type="submit">
+                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                    </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
+                  </button>
+                </form>
+                
+                <div style="
+              display: grid;
+              grid-template-columns: repeat(6, 1fr);
+              gap: 20px;
+              justify-content: center;
+              align-items: center;
+              place-items: center;
+              margin-top: 40px;
+            ">
+                  <div class="circle-block circle-block--micro">
+                    <div class="circle-block__container"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"><span>info@dimortopedii.com</span></div>
+                  </div>
+                  <div class="circle-block circle-block--micro">
+                    <div class="circle-block__wrapper">
+                      <div class="circle-block__container"><img src="./images/icons/time.svg" alt="time"><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
+                      <div class="circle-block__container"><img src="./images/icons/marker.svg" alt="marker"><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
+                    </div>
+                  </div>
+                  <div class="circle-block circle-block--micro">
+                    <div class="circle-block__container"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"><span>+38 (095) 120 75 75</span></div>
+                  </div>
+                  <div class="shlem-head shlem-head--mini">
+                    <div class="shlem-head__wrapper" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=10,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()">
+                      <div class="shlem-head__face">
+                        <div class="shlem-head__eyes">
+                          <div class="eyes">
+                            <div class="eyes__wrapper">
+                              <div class="eyes__shadow"></div>
+                              <div class="eyes__eye">
+                                <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
+                                  <div class="eyes__pupil"></div>
+                                </div>
+                                <div class="eyes__blick-1"></div>
+                                <div class="eyes__blick-2"></div>
+                              </div><img class="eyes__brow" src="./images/icons/brow.svg" alt="image brow"/>
+                            </div>
+                            <div class="eyes__wrapper">
+                              <div class="eyes__shadow eyes__shadow--right"></div>
+                              <div class="eyes__eye">
+                                <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
+                                  <div class="eyes__pupil"></div>
+                                </div>
+                                <div class="eyes__blick-1 eyes__blick-1--right"></div>
+                                <div class="eyes__blick-2 eyes__blick-2--right"></div>
+                              </div><img class="eyes__brow eyes__brow--right" src="./images/icons/brow.svg" alt="image brow"/>
+                            </div>
+                          </div>
+                        </div><a class="shlem-head__nose" href="https://www.instagram.com"><img src="./images/icons/instagram-icon.svg" alt="instagram icon"/></a><a class="shlem-head__mouth" href="https://www.instagram.com"><img src="./images/icons/instagram-link.svg" alt="instagram link"/></a>
+                      </div><img src="./images/decor/shlem_x1_.png" alt="Шлем TALEE"/>
+                    </div>
+                  </div>
+                  <div class="social-list"><a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </template>
       <template x-if="isShowPopUpContent">
-        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp=false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'pop-up--closed': isClosedPopUp, 'pop-up--fixed': true}">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      'pop-up--closed': isClosedPopUp,
+      'pop-up--fixed': true,
+    }">
           <div class="pop-up__button">
-            <button class="contacts-menu__button contacts-menu__button--close" type="button" @click="isClosedPopUp=true" x-on:click="setTimeout(() =&gt; {isShowPopUpContent = false}, 500);">
-              <div class="contacts-menu__button__image"></div>
-            </button>
+            <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpContent = false}, 500);isClosedPopUp=true;" type=""><img src="../images/icons/cclose.svg" alt="icon"/></button>
           </div>
           <div class="pop-up__content">
             <section class="section-modal">
@@ -289,6 +799,7 @@
                 <div class="section-modal__bg"></div>
                 <div class="section-modal__screen"><img class="section-modal__content" x-show="contentType==='image'" :src="contentSrc" alt="image"/>
                   <video class="section-modal__content" x-show="contentType==='video'" :src="contentSrc" autoplay="autoplay" controls="controls"></video>
+                  <iframe class="section-modal__content" x-show="contentType==='url'" width="100%" height="100%" :src="contentSrc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </div>
             </section>
@@ -305,7 +816,11 @@
           </div>
           <div class="_grid-col-desk-3-3">
             <div class="short-contacts__links">
-              <div class="short-contacts__link"><img src="./images/icons/location.svg"/><a href="https://maps.app.goo.gl/yshKEwuENadzYZaSA" target="_blanck">м. Дніпро, вул. Троїцька, 21Г</a></div>
+              <div class="short-contacts__link" @click="
+  isShowPopUpContent = true;
+  contentType = 'url';
+  contentSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d165.36786284226784!2d35.04044810765634!3d48.45872054068833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2dfec05384b%3A0x75b21560c0e2f0ec!2z0YPQuy4g0KLRgNC-0LjRhtC60LDRjywgMjHQsywg0JTQvdC10L_RgCwg0JTQvdC10L_RgNC-0L_QtdGC0YDQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDQ5MDAw!5e0!3m2!1sru!2sua!4v1724411003246!5m2!1sru!2sua';
+"><img src="./images/icons/location.svg"/><a href="#map-modal">м. Дніпро, вул. Троїцька, 21Г</a></div>
               <div class="short-contacts__link short-contacts__link--bold"><img src="./images/icons/phone_.svg"/><a href="tel:+38 095 120 75 75">+38 095 120 75 75</a></div>
             </div>
           </div>
@@ -320,12 +835,19 @@
               </nav>
             </div>
             <div style="display: flex; gap: 20px;">
-              <div style="width: 48px; height: 48px; display: flex; justify-content: center; align-items: center;"><img src="./images/icons/search_.svg" alt="search"/></div>
+              <div @click="isShowSearchMenu=true;" style="
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        "><img src="./images/icons/search_.svg" alt="search"/></div>
               <button class="button-icon" @click="" type=""><img src="./images/icons/instagram-icon-gray.svg" alt="instagram"/></button>
             </div>
           </div>
           <div class="_grid-col-desk-6-6" style="display: flex; justify-content: end; gap: 20px; padding-left: 38px;">
-            <button class="button button--light" type="button" @click="isShowPopUpContact=true;">
+            <button class="button button--light" @click="isShowPopUpContact=true;" type="button">
               <p class="button__text"><span>ЗВ'ЯЗАТИСЯ</span>
               </p>
             </button>
@@ -362,11 +884,18 @@
               <h1 class="section-main-slider__title">ОРТОПЕДИЧНИЙ <br><b>ШОлом TALEE</b> <br>для вашої дитини</h1>
               <hr class="section-main-slider__hr" style="margin-block: 45px"/>
               <div class="section-main-slider__container">
-                <p class="section-main-slider__text">Шолом <span>TALEE®</span> — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
+                <p class="section-main-slider__text">Шолом <span>TALEE<sup>®</sup></span> — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
                 <div class="section-main-slider__button">
-                  <button class="button" type="">
+                  <button class="button" @click="isShowPopUpRepeat = true" type="">
                     <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                     </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
                   </button>
                 </div>
               </div>
@@ -431,6 +960,7 @@
               </div>
             </div>
           </div>
+          
           <div class="section-main-slider__wrapper" :class="{'section-main-slider__wrapper--hidden': isFirst}">
             <div class="section-main-slider__decor-1">
               <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #258ad8; filter: blur(300px);"></div>
@@ -457,11 +987,18 @@
               <h1 class="section-main-slider__title">ОРТОПЕДИЧНИЙ <br><b style='color: #399df5;'>Ортез piro</b> <br>для вашої дитини</h1>
               <hr class="section-main-slider__hr" style="margin-block: 45px"/>
               <div class="section-main-slider__container">
-                <p class="section-main-slider__text">Ортез <span style='color: #399df5;'>PIRO®</span> — найтонший та найлегший ортез для гомілковостопного суглоба</p>
+                <p class="section-main-slider__text">Ортез <span style='color: #399df5;'>PIRO<sup>®</sup></span> — найтонший та найлегший ортез для гомілковостопного суглоба</p>
                 <div class="section-main-slider__button">
-                  <button class="button button--blue" type="">
+                  <button class="button button--blue" @click="isShowPopUpRepeat = true" type="">
                     <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                     </p>
+                    <div class="button__icon">
+                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </div>
+                    </div>
                   </button>
                 </div>
               </div>
@@ -536,12 +1073,12 @@
                   <div class="video-link__view" @click="
   isShowPopUpContent = true;
   contentType = 'video';
-  contentSrc = './video/main-video.mp4'
+  contentSrc = './video/experience.mp4';
 ">
-                    <div class="video-link__button"></div><img class="video-link__image" src="https://picsum.photos/512" alt="video"/>
+                    <div class="video-link__button"></div><img class="video-link__image" src="./images/decor/decor_4_.jpg" alt="video"/>
                   </div>
                 </div>
-              </div> 
+              </div>
               <div>
                 <h3 class="section-0__second-title">Співпраця з лікарями</h3>
                 <div class="wrapper-frame wrapper-frame--bg">
@@ -557,7 +1094,7 @@
                   </div>
                 </div>
               </div>
-              <div class="section-0__block-media"></div>
+              <div class="section-0__block-media"><img src="./images/decor/decor_5_.jpg" alt="mother and child"/></div>
               <div class="section-0__text">
                 <p>Ортопедичний шолом <span>Talee</span> призначений для дітей певного віку, які мають проблеми з деформацією голови. Він стане ефективним рішенням для батьків, які прагнуть запобігти або вилікувати ці проблеми у своїх дітей</p>
               </div>
@@ -689,7 +1226,7 @@
           </div>
         </section>
         <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-          <button class="button" type="">
+          <button class="button" @click="isShowPopUpRepeat = true" type="">
             <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
             </p>
             <div class="button__icon">
@@ -699,11 +1236,9 @@
 
               </div>
             </div>
-          </button>
-          <button class="button button--phone" type="">
-            <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
-            </p>
-          </button>
+          </button><a class="button button--phone" href="tel:+38 095 120 75 75">
+            <p class="button__text"><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+            </p></a>
         </section>
         <hr/>
         <section class="section-map" x-data="mapData" x-init="init()" @mousemove="moveTitle($event)">
@@ -763,7 +1298,7 @@
                     </div>
                   </div>
                   <div class="menu__footer">
-                    <button class="button" type="">
+                    <button class="button" @click="" type="">
                       <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                       </p>
                       <div class="button__icon">
@@ -795,7 +1330,7 @@
                               <h3 class="card-block-5__title">Лiкування деформацiї голови</h3>
                               <p class="card-block-5__text">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини</p>
                               <div class="card-block-5__block card__block">
-                                <button class="button  button--light button--small button--nowrap" type="">
+                                <button class="button  button--light button--small button--nowrap" @click="" type="">
                                   <p class="button__text"><span>ДІЗНАТИСЯ БІЛЬШЕ</span>
                                   </p>
                                   <div class="button__icon">
@@ -818,7 +1353,7 @@
                               <h3 class="card-block-5__title">Ортозування дiтей</h3>
                               <p class="card-block-5__text">Процес використання ортезів або спеціальних пристосувань для підтримки або виправлення функціональних або структурних вад у дітей</p>
                               <div class="card-block-5__block card__block">
-                                <button class="button  button--light button--small button--nowrap" type="">
+                                <button class="button  button--light button--small button--nowrap" @click="" type="">
                                   <p class="button__text"><span>ДІЗНАТИСЯ БІЛЬШЕ</span>
                                   </p>
                                   <div class="button__icon">
@@ -841,7 +1376,7 @@
                               <h3 class="card-block-5__title">Консультації дитячого лiкаря ортопеда</h3>
                               <p class="card-block-5__text">Можливість отримати професійні поради від спеціаліста щодо здоров'я та розвитку вашої дитини</p>
                               <div class="card-block-5__block card__block">
-                                <button class="button  button--light button--small button--nowrap" type="">
+                                <button class="button  button--light button--small button--nowrap" @click="" type="">
                                   <p class="button__text"><span>ДІЗНАТИСЯ БІЛЬШЕ</span>
                                   </p>
                                   <div class="button__icon">
@@ -860,7 +1395,7 @@
                     </div>
                   </div>
                   <div class="menu__footer">
-                    <button class="button" type="">
+                    <button class="button" @click="" type="">
                       <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                       </p>
                       <div class="button__icon">
@@ -885,7 +1420,7 @@
                       <button class="button-icon" @click="handleSVGClick" type=""><img src="./images/icons/ccclose.svg" alt="icon"/></button>
                     </div>
                     <div class="menu__list">
-                      <div class="card-info-doc">
+                      <div class="card-info-doc" @notify.window="updateDoctor($event.detail);" x-cloak="x-cloak">
                         <div class="wrapper-frame">
                           <div class="wrapper-frame__container">
                             <article class="card-block-8 card" style="margin: 32px;"><img class="card-block-8__image" src="./images/photos/woman.png" loading="lazy" alt="Дужин Вiкторiя Сергiївна"/>
@@ -893,7 +1428,7 @@
                                 <h3 class="card-block-8__title">Дужин Вiкторiя <br>Сергiївна</h3>
                                 <p class="card-block-8__text">Засновниця, CEO <br>МЦ «ДIМ ОРТОПЕДiї»</p>
                                 <div class="card-block-8__block card__block">
-                                  <div class="social-list" style="gap: 16px; justify-content: start;"><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
+                                  <div class="social-list" style="gap: 16px; justify-content: start;"><a class="social-link social-link--small" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link social-link--small" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link social-link--small" href="https://web.telegram.org" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
                                   </div>
                                 </div>
                               </div>
@@ -916,7 +1451,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="card-info-doc">
+                      <div class="card-info-doc" @notify.window="updateDoctor($event.detail);" x-cloak="x-cloak">
                         <div class="wrapper-frame">
                           <div class="wrapper-frame__container">
                             <article class="card-block-8 card" style="margin: 32px;"><img class="card-block-8__image" src="./images/photos/woman.png" loading="lazy" alt="Дужин Вiкторiя Сергiївна"/>
@@ -924,7 +1459,7 @@
                                 <h3 class="card-block-8__title">Дужин Вiкторiя <br>Сергiївна</h3>
                                 <p class="card-block-8__text">Засновниця, CEO <br>МЦ «ДIМ ОРТОПЕДiї»</p>
                                 <div class="card-block-8__block card__block">
-                                  <div class="social-list" style="gap: 16px; justify-content: start;"><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
+                                  <div class="social-list" style="gap: 16px; justify-content: start;"><a class="social-link social-link--small" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link social-link--small" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link social-link--small" href="https://web.telegram.org" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
                                   </div>
                                 </div>
                               </div>
@@ -950,7 +1485,7 @@
                     </div>
                   </div>
                   <div class="menu__footer">
-                    <button class="button" type="">
+                    <button class="button" @click="" type="">
                       <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                       </p>
                       <div class="button__icon">
@@ -986,7 +1521,7 @@
                     </div>
                   </div>
                   <div class="menu__footer">
-                    <button class="button" type="">
+                    <button class="button" @click="" type="">
                       <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                       </p>
                       <div class="button__icon">
@@ -1066,7 +1601,7 @@
                     </div>
                   </div>
                   <div class="menu__footer">
-                    <button class="button" type="">
+                    <button class="button" @click="" type="">
                       <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                       </p>
                       <div class="button__icon">
@@ -1097,7 +1632,7 @@
                           <p class="card-block-7__text">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</p>
                         </div>
                         <div class="card-block-7__block card__block">
-                          <button class="button button--light" type="">
+                          <button class="button button--light" @click="" type="">
                             <p class="button__text"><span>ЧИТАТИ ДОСЛІДЖЕННЯ</span>
                             </p>
                           </button>
@@ -1109,7 +1644,7 @@
                           <p class="card-block-7__text">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</p>
                         </div>
                         <div class="card-block-7__block card__block">
-                          <button class="button button--light" type="">
+                          <button class="button button--light" @click="" type="">
                             <p class="button__text"><span>ЧИТАТИ ДОСЛІДЖЕННЯ</span>
                             </p>
                           </button>
@@ -1121,7 +1656,7 @@
                           <p class="card-block-7__text">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</p>
                         </div>
                         <div class="card-block-7__block card__block">
-                          <button class="button button--light" type="">
+                          <button class="button button--light" @click="" type="">
                             <p class="button__text"><span>ЧИТАТИ ДОСЛІДЖЕННЯ</span>
                             </p>
                           </button>
@@ -1130,7 +1665,7 @@
                     </div>
                   </div>
                   <div class="menu__footer">
-                    <button class="button" type="">
+                    <button class="button" @click="" type="">
                       <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                       </p>
                       <div class="button__icon">
@@ -1160,7 +1695,7 @@
                           <h3 class="card-block-8__title">Дужин Вiкторiя <br>Сергiївна</h3>
                           <p class="card-block-8__text">Засновниця, CEO <br>МЦ «ДIМ ОРТОПЕДiї»</p>
                           <div class="card-block-8__block card__block">
-                            <div class="social-list" style="gap: 16px; justify-content: start;"><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
+                            <div class="social-list" style="gap: 16px; justify-content: start;"><a class="social-link social-link--small" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link social-link--small" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link social-link--small" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
                             </div>
                           </div>
                         </div>
@@ -1181,7 +1716,7 @@
                     </div>
                   </div>
                   <div class="menu__footer">
-                    <button class="button" type="">
+                    <button class="button" @click="" type="">
                       <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                       </p>
                       <div class="button__icon">
@@ -1259,7 +1794,7 @@
                     </div>
                   </div>
                   <div class="menu__footer">
-                    <button class="button" type="">
+                    <button class="button" @click="" type="">
                       <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                       </p>
                       <div class="button__icon">
@@ -1290,7 +1825,7 @@
                           <p class="card-block-6__text">Figma ipsum component variant main layer. Pen union editor subtract share union subtract list pencil blur. Edit bold vector text polygon community link create. Figma ipsum component variant main layer. Pen union editor subtract share union subtract list pencil blur. Edit bold vector text polygon community link create.</p>
                         </div>
                         <div class="card-block-6__block card__block">
-                          <button class="button  button--light" type="">
+                          <button class="button  button--light" @click="" type="">
                             <p class="button__text"><span>ЧИТАТИ НОВИНУ</span>
                             </p>
                             <div class="button__icon">
@@ -1309,7 +1844,7 @@
                           <p class="card-block-6__text">Figma ipsum component variant main layer. Pen union editor subtract share union subtract list pencil blur. Edit bold vector text polygon community link create. Figma ipsum component variant main layer. Pen union editor subtract share union subtract list pencil blur. Edit bold vector text polygon community link create.</p>
                         </div>
                         <div class="card-block-6__block card__block">
-                          <button class="button  button--light" type="">
+                          <button class="button  button--light" @click="" type="">
                             <p class="button__text"><span>ЧИТАТИ НОВИНУ</span>
                             </p>
                             <div class="button__icon">
@@ -1325,7 +1860,7 @@
                     </div>
                   </div>
                   <div class="menu__footer">
-                    <button class="button" type="">
+                    <button class="button" @click="" type="">
                       <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                       </p>
                       <div class="button__icon">
@@ -1352,44 +1887,40 @@
                     <div class="menu__list">
                       <h6 class="_h6 _uppercase">Залиште Ваші Контактні Дані</h6>
                       <p>Будь ласка, заповніть форму нижче,ми обов'язково зв'яжемося з вами найближчим часом для обговорення можливостей співробітництва</p>
-                      <div class="wrapper-frame">
-                        <div class="wrapper-frame__container">
-                          <form class="form" action="#" method="get">
-                            <div class="wrapper-frame">
-                              <div class="wrapper-frame__container">
-                                <div class="wrapper-center">
-                                  <label class="input-new">
-                                    <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
-                                  </label>
-                                </div>
-                              </div>
+                      <form class="form" action="#" method="get" style="padding: 0;">
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                              </label>
                             </div>
-                            <div class="wrapper-frame">
-                              <div class="wrapper-frame__container">
-                                <div class="wrapper-center">
-                                  <label class="input-new">
-                                    <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
-                                  </label>
-                                </div>
-                              </div>
+                          </div>
+                        </div>
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                              </label>
                             </div>
-                            <label class="checkbox">
-                              <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
-                            </label>
-                            <button class="button" type="submit">
-                              <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                              </p>
-                              <div class="button__icon">
-                                <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          </div>
+                        </div>
+                        <label class="checkbox">
+                          <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                        </label>
+                        <button class="button" @click="" type="submit">
+                          <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                          </p>
+                          <div class="button__icon">
+                            <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
-                                </div>
-                              </div>
-                            </button>
-                          </form>
-                        </div>
-                      </div>
+                            </div>
+                          </div>
+                        </button>
+                      </form>
                       <div style="display: flex; justify-content: space-between; align-items: end;">
                         <h6 class="_h6 _uppercase">ВАКАНСІЇ</h6><a class="link link--nowrap" href="#">
                           <div class="link__text">УСІ ВАКАНСІЇ</div></a>
@@ -1507,7 +2038,7 @@
                     </div>
                   </div>
                   <div class="menu__footer">
-                    <button class="button" type="">
+                    <button class="button" @click="" type="">
                       <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                       </p>
                       <div class="button__icon">
@@ -1604,7 +2135,7 @@
                     </div>
                   </div>
                   <div class="menu__footer">
-                    <button class="button" type="">
+                    <button class="button" @click="" type="">
                       <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                       </p>
                       <div class="button__icon">
@@ -1940,7 +2471,7 @@
           </div>
           
           <div style="width: 380px; position: absolute; bottom: 14%; display: flex; align-items: center; justify-content: center; flex-direction: column">
-            <button class="button" type="">
+            <button class="button" @click="" type="" style="position: relative; z-index: 1;">
               <p class="button__text"><span>БІЛЬШЕ ПРО ШОЛОМ</span>
               </p>
               <div class="button__icon">
@@ -2056,13 +2587,24 @@
                 <div class="section-5__text"><b>Ортопедичні шоломи <strong>Tallee</strong></b> відзначаються не тільки високою ефективністю у виправленні деформацій голови, але й сприяють психологічному комфорту дитини через індивідуалізовані дизайни та вибір яскравих кольорів, що позитивно впливає на емоційний стан та сприйняття лікування</div>
               </div>
             </div>
-            <button class="button button--light" type="">
+            <button class="button button--light" @click="" type="">
               <p class="button__text"><span>ДІЗНАТИСЯ БІЛЬШЕ</span>
               </p>
             </button>
           </div>
           
-          <div class="section-5__block-2"></div>
+          <div class="section-5__block-2">
+            <div class="video" x-data="{ isPlay: false }" :class="{'video--play': isPlay}">
+              <video src="./video/experience.mp4" loop="loop" muted="muted" x-ref="video" @click="
+        if (isPlay) {
+          $refs.video.pause();
+          isPlay = false; 
+        } else { 
+          $refs.video.play();
+          isPlay = true;
+    }"></video>
+            </div>
+          </div>
         </section>
         <hr/>
         <section class="section-4" style="z-index: 2;">
@@ -2208,7 +2750,7 @@
               </div>
             </div>
             <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 778px; margin: auto;">
-              <button class="button" type="">
+              <button class="button" @click="isShowPopUpRepeat = true" type="">
                 <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                 </p>
                 <div class="button__icon">
@@ -2218,11 +2760,9 @@
 
                   </div>
                 </div>
-              </button>
-              <button class="button button--phone-mini" type="">
-                <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
-                </p>
-              </button>
+              </button><a class="button button--phone-mini" href="tel:+38 095 120 75 75">
+                <p class="button__text"><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+                </p></a>
             </section>
           </div>
         </section>
@@ -2309,7 +2849,7 @@
           </div>
         </section>
         <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-          <button class="button" type="">
+          <button class="button" @click="isShowPopUpRepeat = true" type="">
             <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
             </p>
             <div class="button__icon">
@@ -2319,11 +2859,9 @@
 
               </div>
             </div>
-          </button>
-          <button class="button button--phone" type="">
-            <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
-            </p>
-          </button>
+          </button><a class="button button--phone" href="tel:+38 095 120 75 75">
+            <p class="button__text"><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+            </p></a>
         </section>
         <hr/>
         <section class="section-block section-block--light  section-block--columns-4 section-block--background-2" style="background-image: url(&quot;../images/decor/decor_7.jpg&quot;);">
@@ -2379,12 +2917,26 @@
                   <li class="splide__slide">
                     <article class="card-block-3 card"><img class="card-block-3__image" src="./images/photos/woman.png" loading="lazy" alt="Дужин Вiкторiя Сергiївна"/>
                       <div class="card-block-3__container">
-                        <h3 class="card-block-3__title">Дужин <br>Вiкторiя <br>Сергiївна</h3>
-                        <p class="card-block-3__text">Засновниця, CEO <br>МЦ «ДIМ ОРТОПЕДiї»</p>
+                        <h3 class="card-block-3__title">Дужин Вiкторiя Сергiївна</h3>
+                        <p class="card-block-3__text">Засновниця, CEO МЦ «ДIМ ОРТОПЕДiї»</p>
                         <div class="card-block-3__block card__block">
-                          <div class="social-list" style="gap: 16px; justify-content: start;"><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link social-link--small" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
+                          <div class="social-list" style="gap: 16px; justify-content: start;"><a class="social-link social-link--small" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link social-link--small" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link social-link--small" href="https://web.telegram.org" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
                           </div>
-                          <button class="button  button--light" type="">
+                          <button class="button  button--light" @click="isShowPopUpDoctor = true;setTimeout(() =&gt; {
+                  $dispatch('notify', {
+                    name: 'Дужин Вiкторiя Сергiївна',
+                    info: 'Засновниця, CEO МЦ «ДIМ ОРТОПЕДiї»',
+                    image: './images/photos/woman.png',
+                    alt: 'Дужин Вiкторiя Сергiївна',
+                    experience: 'Молодший науковий співробітник, травматолог-ортопед з 11.2019 по теперішній час (4 роки 6 місяців)ДУ ❞Інститут патології хребта і суглобів ім. проф. М. І. Сітенко НАМН України❞. Відділення невідкладної травматології та відновлення, Харків (Медицина, охорона здоров❜я, аптеки)Амбулаторний прийом пацієнтів. Асистування на травматологічних та ортопедичних операціях, ендопротезуванні колінних і тазостегнових суглобів. Післяопераційне ведення пацієнтів. Консультації перед і після ендопротезування.Реабілітація хворих після травм і операцій на хребті та суглобах',
+                    specialization: 'Оравматологія - ортопедія; організація охорони здоров❜я;',
+                    seniority: '08 рокiв',
+                    personal: 'Щаслива мати двох синiв',
+                    facebook: 'https://www.facebook.com',
+                    instagram: 'https://www.instagram.com',
+                    telegram: 'https://web.telegram.org',
+                  });
+                }, 0);" type="">
                             <p class="button__text"><span>ДІЗНАТИСЯ БІЛЬШЕ</span>
                             </p>
                             <div class="button__icon">
@@ -2402,11 +2954,25 @@
                   <li class="splide__slide">
                     <article class="card-block-3 card"><img class="card-block-3__image" src="./images/photos/man.png" loading="lazy" alt="Олексій Олексійович Голубенко"/>
                       <div class="card-block-3__container">
-                        <h3 class="card-block-3__title">Олексій <br>Олексійович <br>Голубенко</h3>
+                        <h3 class="card-block-3__title">Олексій Олексійович Голубенко</h3>
                         <p class="card-block-3__text">Лікар ортопед-травматолог дитячий</p>
                         <div class="card-block-3__block card__block">
                           <div></div>
-                          <button class="button  button--light" type="">
+                          <button class="button  button--light" @click="isShowPopUpDoctor = true;setTimeout(() =&gt; {
+                  $dispatch('notify', {
+                    name: 'Олексій Олексійович Голубенко',
+                    info: 'Лікар ортопед-травматолог дитячий',
+                    image: './images/photos/man.png',
+                    alt: 'Олексій Олексійович Голубенко',
+                    experience: '....',
+                    specialization: '...',
+                    seniority: '...',
+                    personal: '...',
+                    facebook: false,
+                    instagram: false,
+                    telegram: false,
+                  });
+                }, 0);" type="">
                             <p class="button__text"><span>ДІЗНАТИСЯ БІЛЬШЕ</span>
                             </p>
                             <div class="button__icon">
@@ -2456,43 +3022,39 @@
               </article>
             </div>
           </div>
-          <div class="wrapper-frame">
-            <div class="wrapper-frame__container">
-              <form class="form" action="#" method="get">
-                <div class="form__container">
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <label class="input-new">
-                          <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <label class="input-new">
-                          <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
-                        </label>
-                      </div>
-                    </div>
+          <form class="form" action="#" method="get" style="padding: 0;">
+            <div class="form__container">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <div class="wrapper-center">
+                    <label class="input-new">
+                      <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                    </label>
                   </div>
                 </div>
-                <button class="button" type="submit">
-                  <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                  </p>
-                  <div class="button__icon">
-                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              </div>
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <div class="wrapper-center">
+                    <label class="input-new">
+                      <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="button" @click="" type="submit">
+              <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+              </p>
+              <div class="button__icon">
+                <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
-                    </div>
-                  </div>
-                </button>
-              </form>
-            </div>
-          </div>
+                </div>
+              </div>
+            </button>
+          </form>
         </div>
         <hr/>
         <section class="section-10">
@@ -2508,6 +3070,7 @@
                   </div>
                 </div>
               </div>
+              
               <div style="position: relative; display: flex; justify-content: right; padding-top: 40px; padding-right: 65px;">
                 <div style="position: absolute">
                   <div class="decor-blur-point" style="min-width: 640px; min-height: 640px; border-radius: 100%; background: #F8D3BD; filter: blur(100px);"></div>
@@ -2522,6 +3085,8 @@
                 </div><img src="./images/photos/woman_x2.png" style="position: relative; z-index: 1;"/>
               </div>
             </div>
+            
+            
             <div style="display: flex; flex-direction: column; gap: 20px;">
               <div class="wrapper-frame wrapper-frame--bg">
                 <div class="wrapper-frame__container">
@@ -2600,11 +3165,11 @@
           </div>
           <div class="section-block__content-container">
             <div class="circle-block">
-              <div class="circle-block__container"><img src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></div>
+              <div class="circle-block__container"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></div>
             </div>
             
             <div class="circle-block">
-              <div class="circle-block__container"><img src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></div>
+              <div class="circle-block__container"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></div>
             </div>
             
             <div class="shlem-head">
@@ -2620,7 +3185,7 @@
                           </div>
                           <div class="eyes__blick-1"></div>
                           <div class="eyes__blick-2"></div>
-                        </div><img class="eyes__brow" src="./images/icons/brow.svg" alt=""/>
+                        </div><img class="eyes__brow" src="./images/icons/brow.svg" alt="image brow"/>
                       </div>
                       <div class="eyes__wrapper">
                         <div class="eyes__shadow eyes__shadow--right"></div>
@@ -2630,17 +3195,17 @@
                           </div>
                           <div class="eyes__blick-1 eyes__blick-1--right"></div>
                           <div class="eyes__blick-2 eyes__blick-2--right"></div>
-                        </div><img class="eyes__brow eyes__brow--right" src="./images/icons/brow.svg" alt=""/>
+                        </div><img class="eyes__brow eyes__brow--right" src="./images/icons/brow.svg" alt="image brow"/>
                       </div>
                     </div>
-                  </div><a class="shlem-head__nose" href="#"><img src="./images/icons/instagram-icon.svg" alt=""/></a><a class="shlem-head__mouth" href="#"><img src="./images/icons/instagram-link.svg" alt=""/></a>
-                </div><img src="./images/decor/shlem_x1.png" alt=""/>
+                  </div><a class="shlem-head__nose" href="https://www.instagram.com"><img src="./images/icons/instagram-icon.svg" alt="instagram icon"/></a><a class="shlem-head__mouth" href="https://www.instagram.com"><img src="./images/icons/instagram-link.svg" alt="instagram link"/></a>
+                </div><img src="./images/decor/shlem_x1_.png" alt="Шлем TALEE"/>
               </div>
             </div>
             
             <div class="circle-block">
               <div class="circle-block__wrapper">
-                <div class="circle-block__container"><img src="./images/icons/time.svg" alt="time"/><span>Пн-Пт: 09:00-18:00</span></div>
+                <div class="circle-block__container"><img src="./images/icons/time.svg" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
                 <div class="circle-block__container"><img src="./images/icons/marker.svg" alt="marker"/><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
                 <div class="circle-block__container">
                   <div style="width: 14px;"></div><a class="link link--negative" href="#">
@@ -2655,59 +3220,64 @@
           <div class="wrapper-frame">
             <div class="wrapper-frame__container">
               <div class="wrapper-center" style="flex-direction: row; gap: 20px; padding-inline: 80px;"><img src="./images/icons/user-file.svg" alt="file"/>
-                <h3 style="font-family: var(--font-family);font-weight: 400;font-size: 28px;line-height: 110%;letter-spacing: 0.01em;text-transform: uppercase;text-align: justify;color: var(--text-tale-title);">Або Залиште ваші дані і найближчим часом ми з вами зв'яжемося</h3>
+                <h3 style="
+              font-family: var(--font-family);
+              font-weight: 400;
+              font-size: 28px;
+              line-height: 110%;
+              letter-spacing: 0.01em;
+              text-transform: uppercase;
+              text-align: left;
+              color: var(--text-tale-title);
+          ">Або Залиште ваші дані і найближчим часом ми з вами зв'яжемося</h3>
               </div>
             </div>
           </div>
-          <div class="wrapper-frame">
-            <div class="wrapper-frame__container">
-              <form class="form" action="#" method="get">
-                <div class="form__container">
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <label class="input-new">
-                          <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <label class="input-new">
-                          <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
-                        </label>
-                      </div>
-                    </div>
+          <form class="form" action="#" method="get" style="padding: 0;">
+            <div class="form__container">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <div class="wrapper-center">
+                    <label class="input-new">
+                      <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                    </label>
                   </div>
                 </div>
-                <div class="wrapper-frame">
-                  <div class="wrapper-frame__container">
-                    <div class="wrapper-center">
-                      <label class="input-new">
-                        <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
-                      </label>
-                    </div>
+              </div>
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <div class="wrapper-center">
+                    <label class="input-new">
+                      <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                    </label>
                   </div>
                 </div>
-                <label class="checkbox">
-                  <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
-                </label>
-                <button class="button" type="submit">
-                  <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                  </p>
-                  <div class="button__icon">
-                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              </div>
+            </div>
+            <div class="wrapper-frame">
+              <div class="wrapper-frame__container">
+                <div class="wrapper-center">
+                  <label class="input-new">
+                    <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <label class="checkbox">
+              <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+            </label>
+            <button class="button" @click="" type="submit">
+              <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+              </p>
+              <div class="button__icon">
+                <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
-                    </div>
-                  </div>
-                </button>
-              </form>
-            </div>
-          </div>
+                </div>
+              </div>
+            </button>
+          </form>
         </section>
         <div style="padding-bottom: 74px;">
           <div style="display: grid; grid-template-columns: .36fr .64fr; grid-template-rows: 1fr 1fr; gap: 20px; row-gap: 15px;">
@@ -2719,7 +3289,7 @@
             <div class="wrapper-frame _grid-col-desk-1-1 _grid-row-desk-2-2">
               <div class="wrapper-frame__container" style="padding: 38px 90px; height: 100%; display: flex; flex-direction: column; justify-content center; align-items: center; gap: 25px;">
                 <p>Ми в соцiльних мережах</p>
-                <div class="social-list"><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
+                <div class="social-list"><a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
                 </div>
               </div>
             </div>
@@ -2788,10 +3358,10 @@
         </div>
       </main>
       <div class="page__menu">
-        <template x-if="!isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent">
+        <template x-if="!isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
           <div class="page__menu__container">
-            <div class="contacts-menu" x-data="{ isClosed: true }" @click.outside="isClosed = true">
-              <div class="contacts-menu__container" x-cloak="x-cloak" :class="{'contacts-menu__container--close': isClosed}" style="height: calc((20px + 56px) * 3 - 20px);">
+            <div class="contacts-menu" x-data="{ isClosed: true }" @click.outside="isClosed = true" :class="{'contacts-menu--closed': isClosed}" x-cloak="x-cloak">
+              <div class="contacts-menu__container" style="height: calc((20px + 56px) * 3 - 20px);">
                 <div class="contacts-menu__item">
                   <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }">
                     <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}" style="transform: translateY(-20%);">
@@ -2875,7 +3445,7 @@
                             </div>
                           </div>
                           <div class="menu__footer">
-                            <button class="button" type="">
+                            <button class="button" @click="" type="">
                               <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                               </p>
                               <div class="button__icon">
@@ -2978,7 +3548,7 @@
                             </div>
                           </div>
                           <div class="menu__footer">
-                            <button class="button" type="">
+                            <button class="button" @click="" type="">
                               <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                               </p>
                               <div class="button__icon">
@@ -3009,6 +3579,7 @@
                   </div>
                 </div>
               </div>
+              
               <button class="contacts-menu__button" type="button" @click="isClosed=!isClosed" :class="{'contacts-menu__button--close': !isClosed}">
                 <div class="contacts-menu__button__image"></div>
               </button>
