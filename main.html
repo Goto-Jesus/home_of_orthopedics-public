@@ -67,27 +67,26 @@
                 justify-content: space-between;
                 height: 100%;
                 padding-bottom: 30px;
-                border-bottom: 1px solid #62500f26;
-              ">
+                border-bottom: 1px solid #62500f26;">
                   <div>
-                    <h4 class="h-1" style="margin-bottom: 18px;">Компанія</h4>
-                    <hr style="margin-bottom: 18px;"/>
-                    <div style="display: flex; justify-content: space-between; padding-right: 66px;">
-                      <ul class="my-list">
-                        <li><a href="#">Про компанію</a></li>
-                        <li><a href="#">Лiкарi</a></li>
-                        <li><a href="#">Ліцензії</a></li>
-                        <li><a href="#">Дослiдження</a></li>
-                        <li><a href="#">Спiвпраця</a></li>
-                        <li><a href="#">Цiни</a></li>
+                    <h4 class="section-links__title">Компанія</h4>
+                    <hr class="section-links__hr"/>
+                    <div class="section-links__columns">
+                      <ul class="list-of-links">
+                        <li><a class="_link" href="#">Про компанію</a></li>
+                        <li><a class="_link" href="#">Лiкарi</a></li>
+                        <li><a class="_link" href="#">Ліцензії</a></li>
+                        <li><a class="_link" href="#">Дослiдження</a></li>
+                        <li><a class="_link" href="#">Спiвпраця</a></li>
+                        <li><a class="_link" href="#">Цiни</a></li>
                       </ul>
-                      <ul class="my-list">
-                        <li><a href="#">Про шолом</a></li>
-                        <li><a href="#">Ортези Piro</a></li>
-                        <li><a href="#">Результати лiкування</a></li>
-                        <li><a href="#">Відгуки</a></li>
-                        <li><a href="#">Новини</a></li>
-                        <li><a href="#">Контакти</a></li>
+                      <ul class="list-of-links">
+                        <li><a class="_link" href="#">Про шолом</a></li>
+                        <li><a class="_link" href="#">Ортези Piro</a></li>
+                        <li><a class="_link" href="#">Результати лiкування</a></li>
+                        <li><a class="_link" href="#">Відгуки</a></li>
+                        <li><a class="_link" href="#">Новини</a></li>
+                        <li><a class="_link" href="#">Контакти</a></li>
                       </ul>
                     </div>
                   </div>
@@ -110,11 +109,9 @@
                   </div>
                 </div>
                 
-                <div style="
-              padding-bottom: 30px;
-            ">
-                  <h4 class="h-1" style="margin-bottom: 18px;">Послуги</h4>
-                  <hr style="margin-bottom: 18px;"/>
+                <div style="padding-bottom: 30px;">
+                  <h4 class="section-links__title">Послуги</h4>
+                  <hr class="section-links__hr"/>
                   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                     <div class="wrapper-frame wrapper-frame--bg">
                       <div class="wrapper-frame__container">
@@ -284,11 +281,9 @@
             padding-bottom: 30px;
           ">
                 
-                <div style="
-              padding-bottom: 30px;
-            ">
-                  <h4 class="h-1" style="margin-bottom: 18px;">Послуги</h4>
-                  <hr style="margin-bottom: 18px;"/>
+                <div style="padding-bottom: 30px;">
+                  <h4 class="section-links__title">Послуги</h4>
+                  <hr class="section-links__hr"/>
                   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                     <div class="wrapper-frame wrapper-frame--bg">
                       <div class="wrapper-frame__container">
@@ -3461,41 +3456,43 @@
           </form>
         </div>
         <hr/>
-        <section class="section-10">
-          <div class="section-10__container">
-            <div style="display: flex; flex-direction: column; justify-content: space-between;">
-              <div style="display: flex; justify-content: space-between;">
+        <section class="section-accordion">
+          <div class="section-accordion__container">
+            <div class="section-accordion__content">
+              <div class="section-accordion__lable">
                 <div class="lable-main">11<span>/ частi запитання</span></div>
                 <div class="wrapper-frame wrapper-frame--30">
                   <div class="wrapper-frame__container">
-                    <div class="wrapper-center" style="padding: 30px;">
-                      <h3 class="h3">Я з радiстю вiдповiм на всi вашi запитання, та зможу вам допомогти</h3>
+                    <div class="wrapper-center">
+                      <h3 class="section-accordion__lable__title">Я з радiстю вiдповiм на всi вашi запитання, та зможу вам допомогти</h3>
                     </div>
                   </div>
                 </div>
               </div>
               
-              <div style="position: relative; display: flex; justify-content: right; padding-top: 40px; padding-right: 65px;">
-                <div style="position: absolute">
+              <div class="section-accordion__decor">
+                <div class="section-accordion__decor__point">
                   <div class="decor-blur-point" style="min-width: 640px; min-height: 640px; border-radius: 100%; background: #F8D3BD; filter: blur(100px);"></div>
                 </div>
-                <div style="position: absolute; top: 50%; left: 100px; width: 376px; transform: translateY(-50%);">
-                  <article class="card-block-4 card">
-                    
-                    
-                    <div class="card-block-4__container">
-                      <h3 class="card-block-4__title">Дужик <br>Вiкторiя <br>Сергiївна</h3>
-                      <p class="card-block-4__text">Засновниця, CEO <br>МЦ «ДIМ ОРТОПЕДiї»</p>
-                    </div>
-                    
-                    
-                  </article>
-                </div><img src="./images/photos/woman_x2.png" style="position: relative; z-index: 1;"/>
+                <div class="section-accordion__decor__block">
+                  <div class="section-accordion__decor__card">
+                    <article class="card-block-4 card">
+                      
+                      
+                      <div class="card-block-4__container">
+                        <h3 class="card-block-4__title">Дужик <br>Вiкторiя <br>Сергiївна</h3>
+                        <p class="card-block-4__text">Засновниця, CEO <br>МЦ «ДIМ ОРТОПЕДiї»</p>
+                      </div>
+                      
+                      
+                    </article>
+                  </div><img class="section-accordion__decor__image" src="./images/photos/woman_x2.png"/>
+                </div>
               </div>
             </div>
             
             
-            <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="section-accordion__list">
               <div class="wrapper-frame wrapper-frame--bg">
                 <div class="wrapper-frame__container">
                   <div class="accordion" x-data="{isOpen:true}">
@@ -3563,68 +3560,6 @@
               </div>
             </div>
           </div>
-          <hr/>
-        </section>
-        <section class="section-block  section-block--columns-4">
-          <div class="section-block__title-container">
-            <div class="lable-main">12<span>/ Контакти</span></div>
-            <h2 class="title-main">
-              <div class="title-main__item"> <i>Ми завжди вам раді</i> Та готовi</div>
-              <div class="title-main__item"><span> с радiстЮ <b>вам допомогти,</b> щоб покращити здоров’я </span><span> вашої дитини</span>
-              </div>
-            </h2>
-          </div>
-          <div class="section-block__content-container">
-            <div class="circle-block">
-              <div class="circle-block__container"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></div>
-            </div>
-            
-            <div class="circle-block">
-              <div class="circle-block__container"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></div>
-            </div>
-            
-            <div class="shlem-head">
-              <div class="shlem-head__wrapper" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=10,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()">
-                <div class="shlem-head__face">
-                  <div class="shlem-head__eyes">
-                    <div class="eyes">
-                      <div class="eyes__wrapper">
-                        <div class="eyes__shadow"></div>
-                        <div class="eyes__eye">
-                          <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
-                            <div class="eyes__pupil"></div>
-                          </div>
-                          <div class="eyes__blick-1"></div>
-                          <div class="eyes__blick-2"></div>
-                        </div><img class="eyes__brow" src="./images/icons/brow.svg" alt="image brow"/>
-                      </div>
-                      <div class="eyes__wrapper">
-                        <div class="eyes__shadow eyes__shadow--right"></div>
-                        <div class="eyes__eye">
-                          <div class="eyes__rot" :style="(() =&gt; {let eyeRect = $el.getBoundingClientRect();let eyeX = eyeRect.left + (eyeRect.width / 2);let eyeY = eyeRect.top + (eyeRect.height / 2);let rad = Math.atan2(-(mouseY - eyeY), mouseX - eyeX);let rot = (rad * (180 / Math.PI) * -1) + 180;return `transform: rotate(${rot}deg)`;})()">
-                            <div class="eyes__pupil"></div>
-                          </div>
-                          <div class="eyes__blick-1 eyes__blick-1--right"></div>
-                          <div class="eyes__blick-2 eyes__blick-2--right"></div>
-                        </div><img class="eyes__brow eyes__brow--right" src="./images/icons/brow.svg" alt="image brow"/>
-                      </div>
-                    </div>
-                  </div><a class="shlem-head__nose" href="https://www.instagram.com"><img src="./images/icons/instagram-icon.svg" alt="instagram icon"/></a><a class="shlem-head__mouth" href="https://www.instagram.com"><img src="./images/icons/instagram-link.svg" alt="instagram link"/></a>
-                </div><img src="./images/decor/shlem_x1_.png" alt="Шлем TALEE"/>
-              </div>
-            </div>
-            
-            <div class="circle-block">
-              <div class="circle-block__wrapper">
-                <div class="circle-block__container"><img src="./images/icons/time.svg" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
-                <div class="circle-block__container"><img src="./images/icons/marker.svg" alt="marker"/><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
-                <div class="circle-block__container">
-                  <div style="width: 14px;"></div><a class="link link--negative" href="#">
-                    <div class="link__text">Показати на мапі</div></a>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
         <hr/>
         <section class="section-form">
@@ -3681,87 +3616,120 @@
             </button>
           </form>
         </section>
-        <div style="padding-bottom: 74px;">
-          <div style="display: grid; grid-template-columns: .36fr .64fr; grid-template-rows: 1fr 1fr; gap: 20px; row-gap: 15px;">
-            <div class="wrapper-frame _grid-col-desk-1-1 _grid-row-desk-1-1">
-              <div class="wrapper-frame__container" style="padding: 38px 90px; ">
-                <h3 class="text-title">МЦ <span>«ДIМ ОРТОПЕДІЇ»</span> — Перший та єдиний в Україні медичний центр з корекції деформації голови у дітей</h3>
-              </div>
-            </div>
-            <div class="wrapper-frame _grid-col-desk-1-1 _grid-row-desk-2-2">
-              <div class="wrapper-frame__container" style="padding: 38px 90px; height: 100%; display: flex; flex-direction: column; justify-content center; align-items: center; gap: 25px;">
-                <p>Ми в соцiльних мережах</p>
-                <div class="social-list"><a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
-                </div>
-              </div>
-            </div>
-            <div class="wrapper-frame _grid-col-desk-2-2 _grid-row-desk-1-2">
-              <div class="wrapper-frame__container" style="display: grid; grid-template-columns: 2fr 1fr; gap: 130px; height: 100%; padding: 40px 50px;">
-                <div>
-                  <h4 class="h-1" style="margin-bottom: 18px;">Компанія</h4>
-                  <hr style="margin-bottom: 18px;"/>
-                  <div style="display: flex; justify-content: space-between; padding-right: 66px;">
-                    <ul class="my-list">
-                      <li><a class="_link" href="#">Про компанію</a></li>
-                      <li><a class="_link" href="#">Лiкарi</a></li>
-                      <li><a class="_link" href="#">Ліцензії</a></li>
-                      <li><a class="_link" href="#">Дослiдження</a></li>
-                      <li><a class="_link" href="#">Спiвпраця</a></li>
-                      <li><a class="_link" href="#">Цiни</a></li>
-                    </ul>
-                    <ul class="my-list">
-                      <li><a class="_link" href="#">Про шолом</a></li>
-                      <li><a class="_link" href="#">Ортези Piro</a></li>
-                      <li><a class="_link" href="#">Результати лiкування</a></li>
-                      <li><a class="_link" href="#">Відгуки</a></li>
-                      <li><a class="_link" href="#">Новини</a></li>
-                      <li><a class="_link" href="#">Контакти</a></li>
-                    </ul>
+      </main>
+      <div class="page__menu"></div>
+      <footer class="page__footer">
+        <div class="section-footer">
+          <div class="section-footer__links">
+            <div class="_grid-col-desk-1-1 _grid-col-tab-1-1 _grid-row-desk-1-1 _grid-row-tab-1-1">
+              <div class="wrapper-frame wrapper-frame--full">
+                <div class="wrapper-frame__container">
+                  <div class="wrapper-center">
+                    <h3 class="section-footer__links__title">МЦ <span>«ДIМ ОРТОПЕДІЇ»</span> — Перший та єдиний в Україні медичний центр з корекції деформації голови у дітей</h3>
                   </div>
                 </div>
-                <div>
-                  <h4 class="h-1" style="margin-bottom: 18px;">Послуги</h4>
-                  <hr style="margin-bottom: 18px;"/>
-                  <ul class="my-list">
-                    <li><a class="_link" href="#">Лiкування деформацiї голови</a></li>
-                    <li><a class="_link" href="#">Консультації дитячого лiкаря ортопеда</a></li>
-                    <li><a class="_link" href="#">Ортозування дiтей</a></li>
-                    <li><a class="_link" href="#">Фізіотерапія та масаж</a></li>
-                    <li><a class="_link" href="#">Реабiлiтацiя</a></li>
-                    <li><a class="_link" href="#">Усі послуги</a></li>
-                  </ul>
+              </div>
+            </div>
+            
+            <div class="_grid-col-desk-1-1 _grid-col-tab-1-1 _grid-row-desk-2-2 _grid-row-tab-3-3">
+              <div class="wrapper-frame wrapper-frame--full">
+                <div class="wrapper-frame__container">
+                  <div class="section-footer__links__social wrapper-center">
+                    <p>Ми в соцiльних мережах</p>
+                    <div class="social-list"><a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="_grid-col-desk-2-2 _grid-col-tab-1-1 _grid-row-desk-1-2 _grid-row-tab-2-2">
+              <div class="wrapper-frame wrapper-frame--full">
+                <div class="wrapper-frame__container">
+                  <div class="section-links">
+                    <div>
+                      <div>
+                        <h4 class="section-links__title">Компанія</h4>
+                        <hr class="section-links__hr"/>
+                        <div class="section-links__columns">
+                          <ul class="list-of-links">
+                            <li><a class="_link" href="#">Про компанію</a></li>
+                            <li><a class="_link" href="#">Лiкарi</a></li>
+                            <li><a class="_link" href="#">Ліцензії</a></li>
+                            <li><a class="_link" href="#">Дослiдження</a></li>
+                            <li><a class="_link" href="#">Спiвпраця</a></li>
+                            <li><a class="_link" href="#">Цiни</a></li>
+                          </ul>
+                          <ul class="list-of-links">
+                            <li><a class="_link" href="#">Про шолом</a></li>
+                            <li><a class="_link" href="#">Ортези Piro</a></li>
+                            <li><a class="_link" href="#">Результати лiкування</a></li>
+                            <li><a class="_link" href="#">Відгуки</a></li>
+                            <li><a class="_link" href="#">Новини</a></li>
+                            <li><a class="_link" href="#">Контакти</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <h4 class="section-links__title">Послуги</h4>
+                        <hr class="section-links__hr"/>
+                        <ul class="list-of-links">
+                          <li><a class="_link" href="#">Лiкування деформацiї голови</a></li>
+                          <li><a class="_link" href="#">Консультації дитячого лiкаря ортопеда</a></li>
+                          <li><a class="_link" href="#">Ортозування дiтей</a></li>
+                          <li><a class="_link" href="#">Фізіотерапія та масаж</a></li>
+                          <li><a class="_link" href="#">Реабiлiтацiя</a></li>
+                          <li><a class="_link" href="#">Усі послуги</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="main-photo" style="width: 1056px; height: 1056px;margin: auto; margin-block: -120px -230px;">
-            <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
-              <div class="main-photo__block"><img src="./images/icons/logo_big.svg" alt="logo orthopedics"/>
-              </div>
-              <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
-                <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
-                  <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+          
+          <div class="section-footer__decor">
+            <div class="main-photo" style="width: 1056px; height: 1056px;">
+              <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                <div class="main-photo__block"><img src="./images/icons/logo_big.svg" alt="logo orthopedics"/>
+                </div>
+                <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                  <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                    <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div style="display: flex; justify-content: space-between;">
-            <div class="wrapper-frame" style="width: 484px; height: 150px;">
-              <div style="margin: auto;"><a style="display: block; margin-bottom: 10px;">Політика конфіденційності</a>
-                <p>© 2024-МЦ «ДIМ ОРТОПЕДІЇ», <br/>Усі права захищено</p>
+          
+          <div class="section-footer__footer">
+            <div class="card-footer">
+              <div class="wrapper-frame wrapper-frame--full">
+                <div class="wrapper-frame__container">
+                  <div class="wrapper-center">
+                    <div><a class="card-footer__link" href="#">Політика конфіденційності</a>
+                      <p>© 2024-МЦ «ДIМ ОРТОПЕДІЇ», <br/>Усі права захищено</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="wrapper-frame" style="width: 484px; height: 150px;">
-              <div style="display: flex; justify-content: center; align-items: center; gap: 25px; margin: auto;">
-                <p style="text-align: end;">Дизайн <br/>та розробка:</p><a href="https://www.instagram.com/boris__kruglov/" target="_blank"><img src="./images/icons/logo_kruglov.svg" alt="logo of kruglov design"/></a>
+            <div class="card-footer">
+              <div class="wrapper-frame wrapper-frame--full">
+                <div class="wrapper-frame__container">
+                  <div class="wrapper-center">
+                    <div class="card-footer__block">
+                      <p>Дизайн <br/>та розробка:</p><a href="https://www.instagram.com/boris__kruglov/" target="_blank"><img src="./images/icons/logo_kruglov.svg" alt="kruglov design"/></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </main>
-      <div class="page__menu"></div>
-      <footer class="page__footer">
-        <div></div>
       </footer>
     </div>
   </body>
