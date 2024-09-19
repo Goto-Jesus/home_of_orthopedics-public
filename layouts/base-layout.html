@@ -32,7 +32,7 @@
       contentSrc: '',
       isTablet: false,
       isPhone: false,
-    }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 576);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 576);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor }">
+    }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 650);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 650);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor }">
     <div class="page__wrapper">
       <template x-if="isShowBurgerMenu">
         <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
@@ -450,51 +450,55 @@
                     </div>
                   </div>
                 </div>
-                <form class="form" action="#" method="get" style="padding: 0;">
-                  <div class="form__container">
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <label class="input-new">
-                            <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
-                          </label>
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <form class="form" action="#" method="get">
+                      <div class="form__container">
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                              </label>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <label class="input-new">
-                            <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
-                          </label>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <label class="input-new">
+                              <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
+                            </label>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <label class="input-new">
-                          <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <label class="checkbox">
-                    <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
-                  </label>
-                  <button class="button" @click="" type="submit">
-                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                    </p>
-                    <div class="button__icon">
-                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <label class="checkbox">
+                        <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                      </label>
+                      <button class="button" @click="" type="submit">
+                        <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                        </p>
+                        <div class="button__icon">
+                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
-                      </div>
-                    </div>
-                  </button>
-                </form>
+                          </div>
+                        </div>
+                      </button>
+                    </form>
+                  </div>
+                </div>
               </section>
               <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; justify-content: center; align-items: center; place-items: center; padding-block: 20px;">
                 <div class="circle-block circle-block--mini">
@@ -665,7 +669,7 @@
                       </div>
                     </div>
                   </button><a class="button button--phone-mini" href="tel:+38 095 120 75 75">
-                    <p class="button__text"><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+                    <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
                     </p></a>
                 </div>
               </div>
@@ -703,56 +707,60 @@
               margin-bottom: 30px;
             ">Запишіться на консультацію <br>Просто зараз</h3>
                 
-                <form class="form" action="#" method="get" style="padding: 0;">
-                  <div class="form__container">
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <label class="input-new">
-                            <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
-                          </label>
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <form class="form" action="#" method="get">
+                      <div class="form__container">
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                              </label>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <label class="input-new">
-                            <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
-                          </label>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <label class="input-new">
+                              <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
+                            </label>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <label class="input-new">
-                          <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
-                        </label>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <textarea name="my-message" cols="30" rows="10" placeholder="Ваше повідомлення"></textarea>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <textarea class="textarea" name="my-message" cols="" rows="7" placeholder="Ваше повідомлення"></textarea>
-                    </div>
-                  </div>
-                  <label class="checkbox">
-                    <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
-                  </label>
-                  <button class="button" @click="" type="submit">
-                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                    </p>
-                    <div class="button__icon">
-                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <label class="checkbox">
+                        <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                      </label>
+                      <button class="button" @click="" type="submit">
+                        <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                        </p>
+                        <div class="button__icon">
+                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
-                      </div>
-                    </div>
-                  </button>
-                </form>
+                          </div>
+                        </div>
+                      </button>
+                    </form>
+                  </div>
+                </div>
                 
                 <div style="
               display: grid;

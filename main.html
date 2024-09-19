@@ -32,7 +32,7 @@
       contentSrc: '',
       isTablet: false,
       isPhone: false,
-    }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 576);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 576);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor }">
+    }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 650);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 650);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor }">
     <div class="page__wrapper">
       <template x-if="isShowBurgerMenu">
         <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
@@ -450,51 +450,55 @@
                     </div>
                   </div>
                 </div>
-                <form class="form" action="#" method="get" style="padding: 0;">
-                  <div class="form__container">
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <label class="input-new">
-                            <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
-                          </label>
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <form class="form" action="#" method="get">
+                      <div class="form__container">
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                              </label>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <label class="input-new">
-                            <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
-                          </label>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <label class="input-new">
+                              <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
+                            </label>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <label class="input-new">
-                          <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <label class="checkbox">
-                    <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
-                  </label>
-                  <button class="button" @click="" type="submit">
-                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                    </p>
-                    <div class="button__icon">
-                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <label class="checkbox">
+                        <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                      </label>
+                      <button class="button" @click="" type="submit">
+                        <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                        </p>
+                        <div class="button__icon">
+                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
-                      </div>
-                    </div>
-                  </button>
-                </form>
+                          </div>
+                        </div>
+                      </button>
+                    </form>
+                  </div>
+                </div>
               </section>
               <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; justify-content: center; align-items: center; place-items: center; padding-block: 20px;">
                 <div class="circle-block circle-block--mini">
@@ -665,7 +669,7 @@
                       </div>
                     </div>
                   </button><a class="button button--phone-mini" href="tel:+38 095 120 75 75">
-                    <p class="button__text"><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+                    <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
                     </p></a>
                 </div>
               </div>
@@ -703,56 +707,60 @@
               margin-bottom: 30px;
             ">Запишіться на консультацію <br>Просто зараз</h3>
                 
-                <form class="form" action="#" method="get" style="padding: 0;">
-                  <div class="form__container">
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <label class="input-new">
-                            <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
-                          </label>
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <form class="form" action="#" method="get">
+                      <div class="form__container">
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <div class="wrapper-center">
+                              <label class="input-new">
+                                <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                              </label>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <label class="input-new">
-                            <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
-                          </label>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <label class="input-new">
+                              <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
+                            </label>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <label class="input-new">
-                          <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
-                        </label>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <textarea name="my-message" cols="30" rows="10" placeholder="Ваше повідомлення"></textarea>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <textarea class="textarea" name="my-message" cols="" rows="7" placeholder="Ваше повідомлення"></textarea>
-                    </div>
-                  </div>
-                  <label class="checkbox">
-                    <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
-                  </label>
-                  <button class="button" @click="" type="submit">
-                    <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                    </p>
-                    <div class="button__icon">
-                      <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <label class="checkbox">
+                        <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                      </label>
+                      <button class="button" @click="" type="submit">
+                        <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                        </p>
+                        <div class="button__icon">
+                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
-                      </div>
-                    </div>
-                  </button>
-                </form>
+                          </div>
+                        </div>
+                      </button>
+                    </form>
+                  </div>
+                </div>
                 
                 <div style="
               display: grid;
@@ -911,6 +919,7 @@
               
               <h1 class="section-main-slider__title">ОРТОПЕДИЧНИЙ<br><b>ШОлом TALEE</b> <br>для вашої дитини</h1>
               
+              <div class="section-main-slider__empty--talee"></div>
               <hr class="section-main-slider__hr"/>
               
               <div class="section-main-slider__container">
@@ -925,14 +934,20 @@
 
                     </div>
                   </div>
-                </button>
+                </button><a class="link" href="#">
+                  <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                  <div class="link__icon">
+                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </div>
+                  </div></a>
               </div>
             </div>
             
             
             <div class="section-main-slider__picture">
-              
-              
               <div class="section-main-slider__picture__decor">
                 <div class="decor-circle-info" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 200) + 'px,' + (mouseY * -1 / 200) + 'px, 0)'}})()">
                   <div class="decor-circle-info__container"><img class="decor-circle-info__image" src="./images/icons/3d_orange.svg" alt="3d"/>
@@ -941,16 +956,16 @@
                 </div>
               </div>
               
-              <div class="main-photo" style="width: 1056px; height: 1056px;position: absolute;">
+              <div class="main-photo" style="width: 1056px; height: 1056px;position: absolute;" data-da=".section-main-slider__empty--talee,650,0">
                 <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                   <div class="main-photo__block">
                     <div style="position: relative;">
                       <div class="object-photo object-photo--main"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee"/>
-                        <div class="decor-blur-point" style="min-width: 528px; min-height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="object-photo__link" href="#">ДІЗНАТИСЯ БІЛЬШЕ</a>
+                        <div class="decor-blur-point" style="min-width: 528px; min-height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div>
                       </div>
                       <div class="section-main-slider__picture__info-container">
                         <div class="section-main-slider__picture__info--1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
-                          <div class="button-accordion-simple" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
+                          <div class="button-accordion-simple" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                             <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                               <div class="title-simple">
                                 <h4 class="title-simple__main-text">Легкий</h4>
@@ -962,7 +977,7 @@
                           </div>
                         </div>
                         <div class="section-main-slider__picture__info--2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
-                          <div class="button-accordion-simple" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
+                          <div class="button-accordion-simple" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                             <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                               <div class="title-simple">
                                 <h4 class="title-simple__main-text">Легкий</h4>
@@ -974,7 +989,7 @@
                           </div>
                         </div>
                         <div class="section-main-slider__picture__info--3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
-                          <div class="button-accordion-simple" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
+                          <div class="button-accordion-simple" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                             <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                               <div class="title-simple">
                                 <h4 class="title-simple__main-text">Легкий</h4>
@@ -1026,6 +1041,7 @@
               
               <h1 class="section-main-slider__title">ОртоПЕдичний<br><b style='color: var(--primary-blue);'>Ортез piro</b> <br>для вашої дитини</h1>
               
+              <div class="section-main-slider__empty--piro"></div>
               <hr class="section-main-slider__hr"/>
               
               <div class="section-main-slider__container">
@@ -1040,14 +1056,20 @@
 
                     </div>
                   </div>
-                </button>
+                </button><a class="link" href="#">
+                  <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
+                  <div class="link__icon">
+                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </div>
+                  </div></a>
               </div>
             </div>
             
             
             <div class="section-main-slider__picture">
-              
-              
               <div class="section-main-slider__picture__decor">
                 <div class="decor-circle-info" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 200) + 'px,' + (mouseY * -1 / 200) + 'px, 0)'}})()">
                   <div class="decor-circle-info__container"><img class="decor-circle-info__image" src="./images/icons/3d_blue_.svg" alt="3d"/>
@@ -1056,16 +1078,16 @@
                 </div>
               </div>
               
-              <div class="main-photo" style="width: 1056px; height: 1056px;position: absolute;">
+              <div class="main-photo" style="width: 1056px; height: 1056px;position: absolute;" data-da=".section-main-slider__empty--piro,650,0">
                 <div class="main-photo__0 main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                   <div class="main-photo__block">
                     <div style="position: relative;">
                       <div class="object-photo object-photo--main"><img src="./images/decor/foot_full_x2.png" alt="Ортези Piro"/>
-                        <div class="decor-blur-point" style="min-width: 528px; min-height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div><a class="object-photo__link" href="#">ДІЗНАТИСЯ БІЛЬШЕ</a>
+                        <div class="decor-blur-point" style="min-width: 528px; min-height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div>
                       </div>
                       <div class="section-main-slider__picture__info-container">
                         <div class="section-main-slider__picture__info--4" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 150) + 'px,' + (mouseY * -1 / 150) + 'px, 0)'}})()">
-                          <div class="button-accordion-simple" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
+                          <div class="button-accordion-simple" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                             <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                               <div class="title-simple">
                                 <h4 class="title-simple__main-text">Легкий</h4>
@@ -1077,7 +1099,7 @@
                           </div>
                         </div>
                         <div class="section-main-slider__picture__info--5" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 130) + 'px,' + (mouseY * -1 / 130) + 'px, 0)'}})()">
-                          <div class="button-accordion-simple" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
+                          <div class="button-accordion-simple" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                             <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                               <div class="title-simple">
                                 <h4 class="title-simple__main-text">Легкий</h4>
@@ -1089,7 +1111,7 @@
                           </div>
                         </div>
                         <div class="section-main-slider__picture__info--6" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; !isFirst) {return 'transform: translate3d(' + (mouseX * -1 / 170) + 'px,' + (mouseY * -1 / 170) + 'px, 0)'}})()">
-                          <div class="button-accordion-simple" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
+                          <div class="button-accordion-simple" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                             <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                               <div class="title-simple">
                                 <h4 class="title-simple__main-text">Легкий</h4>
@@ -1328,7 +1350,7 @@
               </div>
             </div>
           </button><a class="button button--phone" href="tel:+38 095 120 75 75">
-            <p class="button__text"><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+            <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
             </p></a>
         </section>
         <hr/>
@@ -1337,7 +1359,7 @@
             <div class="lable-main">03<span>/ Карта інформації</span></div>
           </div>
           
-          <div class="section-map__content-container">
+          <div class="section-map__content-container" :class="{'section-map__content-container--hidden-menu': activeRegion === null}">
             <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Київ'}">
               <template x-if="delayedActiveRegion === 'Київ' || activeRegion === 'Київ'">
                 <div class="menu">
@@ -2176,7 +2198,7 @@
                                     <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
                                   </div>
                                   <div class="menu-object__item-1">
-                                    <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
+                                    <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                                       <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                                         <div class="title-simple title-simple--mini">
                                           <h4 class="title-simple__main-text">Легкий</h4>
@@ -2188,7 +2210,7 @@
                                     </div>
                                   </div>
                                   <div class="menu-object__item-2">
-                                    <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
+                                    <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                                       <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                                         <div class="title-simple title-simple--mini">
                                           <h4 class="title-simple__main-text">Легкий</h4>
@@ -2200,7 +2222,7 @@
                                     </div>
                                   </div>
                                   <div class="menu-object__item-3">
-                                    <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
+                                    <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                                       <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                                         <div class="title-simple title-simple--mini">
                                           <h4 class="title-simple__main-text">Легкий</h4>
@@ -2282,7 +2304,7 @@
                                     <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
                                   </div>
                                   <div class="menu-object__item-4">
-                                    <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
+                                    <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                                       <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                                         <div class="title-simple title-simple--mini">
                                           <h4 class="title-simple__main-text">Легкий</h4>
@@ -2294,7 +2316,7 @@
                                     </div>
                                   </div>
                                   <div class="menu-object__item-5">
-                                    <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
+                                    <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                                       <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                                         <div class="title-simple title-simple--mini">
                                           <h4 class="title-simple__main-text">Легкий</h4>
@@ -2306,7 +2328,7 @@
                                     </div>
                                   </div>
                                   <div class="menu-object__item-6">
-                                    <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
+                                    <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                                       <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                                         <div class="title-simple title-simple--mini">
                                           <h4 class="title-simple__main-text">Легкий</h4>
@@ -2604,13 +2626,7 @@
           };
         </script>
         <hr/>
-        <section class="section-4" x-data="{'images':['./images/decor/shlem/shlem_beige.png','./images/decor/shlem/shlem_orange.png','./images/decor/shlem/shlem_green.png','./images/decor/shlem/shlem_yellow.png','./images/decor/shlem/shlem_pink.png','./images/decor/shlem/shlem_white.png'],'currentImage':'./images/decor/shlem/shlem_beige.png'}" style="
-      z-index: 0;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-  ">
+        <section class="section-shlem" x-data="{'images':['./images/decor/shlem/shlem_beige.png','./images/decor/shlem/shlem_orange.png','./images/decor/shlem/shlem_green.png','./images/decor/shlem/shlem_yellow.png','./images/decor/shlem/shlem_pink.png','./images/decor/shlem/shlem_white.png'],'currentImage':'./images/decor/shlem/shlem_beige.png'}">
           <div class="gradient-fon" :class="{
       'gradient-fon--beige':  currentImage === images[0],
       'gradient-fon--orange': currentImage === images[1],
@@ -2620,49 +2636,49 @@
       'gradient-fon--white':  currentImage === images[5],
     }"></div>
           
-          <div class="section-4__title-container" style="position: absolute; justify-content: center; top: 0; width: 100%;">
-            <div class="lable-main" style="position: absolute; top: 0; left: 0;">04<span>/ 3d огляд шолома</span></div>
-            <div style="max-width: 660px; position: relative; z-index: 2">
-              <h2 class="h2"><b>3d</b> огляд шолома</h2>
+          <div class="section-shlem__title-container">
+            <div class="lable-main section-shlem__label">04<span>/ 3d огляд шолома</span></div>
+            <div class="section-shlem__title">
+              <h2><b>3d</b> огляд шолома</h2>
             </div>
           </div>
           
-          <div style="display: flex; justify-content: space-between; width: 100%; position: absolute; top: 58%;">
-            <div style="display: flex;">
+          <div class="section-shlem__pikers">
+            <div class="section-shlem__pikers__block">
               <div class="piker" @click="currentImage=images[0]">
-                <div class="piker__border" :class="{'piker__border--hidden': currentImage !== images[0]}" style="border-color: #efcbb8">
+                <div class="piker__border" :class="{'piker__border--hidden': currentImage!==images[0]}" style="border-color: #efcbb8">
                   <div class="piker__color" style="background: #efcbb8"></div>
                 </div>
                 <div class="piker__title">Бежевий</div>
               </div>
               <div class="piker" @click="currentImage=images[1]">
-                <div class="piker__border" :class="{'piker__border--hidden': currentImage !== images[1]}" style="border-color: #ea8529">
+                <div class="piker__border" :class="{'piker__border--hidden': currentImage!==images[1]}" style="border-color: #ea8529">
                   <div class="piker__color" style="background: #ea8529"></div>
                 </div>
                 <div class="piker__title">Помаранчевий</div>
               </div>
               <div class="piker" @click="currentImage=images[2]">
-                <div class="piker__border" :class="{'piker__border--hidden': currentImage !== images[2]}" style="border-color: #B1DD40">
+                <div class="piker__border" :class="{'piker__border--hidden': currentImage!==images[2]}" style="border-color: #B1DD40">
                   <div class="piker__color" style="background: #B1DD40"></div>
                 </div>
                 <div class="piker__title">Салатовий</div>
               </div>
             </div>
-            <div style="display: flex;">
+            <div class="section-shlem__pikers__block">
               <div class="piker" @click="currentImage=images[3]">
-                <div class="piker__border" :class="{'piker__border--hidden': currentImage !== images[3]}" style="border-color: #EBE313">
+                <div class="piker__border" :class="{'piker__border--hidden': currentImage!==images[3]}" style="border-color: #EBE313">
                   <div class="piker__color" style="background: #EBE313"></div>
                 </div>
                 <div class="piker__title">Жовтий</div>
               </div>
               <div class="piker" @click="currentImage=images[4]">
-                <div class="piker__border" :class="{'piker__border--hidden': currentImage !== images[4]}" style="border-color: #FF887C">
+                <div class="piker__border" :class="{'piker__border--hidden': currentImage!==images[4]}" style="border-color: #FF887C">
                   <div class="piker__color" style="background: #FF887C"></div>
                 </div>
                 <div class="piker__title">Рожевий</div>
               </div>
               <div class="piker" @click="currentImage=images[5]">
-                <div class="piker__border" :class="{'piker__border--hidden': currentImage !== images[5]}" style="border-color: #FFFFFF">
+                <div class="piker__border" :class="{'piker__border--hidden': currentImage!==images[5]}" style="border-color: #FFFFFF">
                   <div class="piker__color" style="background: #FFFFFF"></div>
                 </div>
                 <div class="piker__title">Білий</div>
@@ -2670,11 +2686,11 @@
             </div>
           </div>
           
-          <div style="display: flex; flex-direction: column; align-items: center;">
-            <div class="main-photo" style="width: 1056px; height: 1056px;">
+          <div class="section-shlem__image-block">
+            <div class="main-photo" style="width: 100%; height: 100%;">
               <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                 <div class="main-photo__block">
-                  <div style="perspective: 1000px;"><img :src="currentImage" alt="Шолом Talee" style="width: 622px; height: 670px;" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=5,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()"/></div>
+                  <div style="perspective: 1000px;"><img class="section-shlem__image" alt="Шолом Talee" :src="currentImage" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=5,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()"/></div>
                 </div>
                 <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
                   <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
@@ -2685,7 +2701,7 @@
             </div>
           </div>
           
-          <div style="width: 380px; position: absolute; bottom: 14%; display: flex; align-items: center; justify-content: center; flex-direction: column">
+          <div class="section-shlem__button-block">
             <button class="button" @click="" type="" style="position: relative; z-index: 1;">
               <p class="button__text"><span>БІЛЬШЕ ПРО ШОЛОМ</span>
               </p>
@@ -2712,7 +2728,7 @@
           </div>
           <div class="section-block__content-container section-block__content-container--more-about-talee">
             <div class="section-more-about-talee__block-1">
-              <div class="section-more-about-talee__block-1__container" data-da=".section-block__content-container--more-about-talee,576,1">
+              <div class="section-more-about-talee__block-1__container" data-da=".section-block__content-container--more-about-talee,650,1">
                 <div class="wrapper-frame wrapper-frame--bg">
                   <div class="wrapper-frame__container">
                     <div class="title-block">
@@ -2817,9 +2833,9 @@
                 </div>
               </div>
             </div>
-            <div class="section-how-its-work__container"><img class="section-how-its-work__image-1" src="./images/decor/decor_5.jpg" alt="" data-da=".section-how-its-work__content,576,1"/>
+            <div class="section-how-its-work__container"><img class="section-how-its-work__image-1" src="./images/decor/decor_5.jpg" alt="" data-da=".section-how-its-work__content,650,1"/>
               <div class="section-how-its-work__content"><img class="section-how-its-work__image-2" src="./images/decor/decor_6.jpg" alt=""/>
-                <div class="section-how-its-work__text" data-da=".section-how-its-work__container,576,1"><b>Ортопедичні шоломи <strong>Tallee</strong></b> відзначаються не тільки високою ефективністю у виправленні деформацій голови, але й сприяють психологічному комфорту дитини через індивідуалізовані дизайни та вибір яскравих кольорів, що позитивно впливає на емоційний стан та сприйняття лікування</div>
+                <div class="section-how-its-work__text" data-da=".section-how-its-work__container,650,1"><b>Ортопедичні шоломи <strong>Tallee</strong></b> відзначаються не тільки високою ефективністю у виправленні деформацій голови, але й сприяють психологічному комфорту дитини через індивідуалізовані дизайни та вибір яскравих кольорів, що позитивно впливає на емоційний стан та сприйняття лікування</div>
               </div>
             </div>
             <button class="button button--light" @click="" type="">
@@ -2842,173 +2858,253 @@
           </div>
         </section>
         <hr/>
-        <section class="section-5" style="z-index: 2;">
-          <div class="section-5__title-container" style="position: relative; justify-content: center">
+        <section class="section-solution">
+          <div class="section-solution__title-container">
             <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);position: absolute; z-index: 2;"></div>
-            <div class="lable-main" style="position: absolute; top: 0; left: 0;">07<span>/ рiшення вiд хвороб</span></div>
-            <div style="max-width: 660px; position: relative; z-index: 2">
-              <h2 class="h2">ОРТОПЕДИЧНИЙ <br>ШОлом TALEE — <b>найкраще рішення</b> для Вашого малюка від таких захворювань, як:</h2>
+            
+            
+            <div class="lable-main section-solution__label">07<span>/ рiшення вiд хвороб</span></div>
+            
+            
+            <div class="section-solution__title-block">
+              <h2 class="section-solution__title">ОРТОПЕДИЧНИЙ <br>Шолом TALEE — <b>найкраще рішення</b> для Вашого малюка від таких захворювань, як:</h2>
             </div>
           </div>
-          <div style="display: flex; flex-direction: column; gap: 60px;">
-            <div class="qwert">
-              <div class="qwert__line"></div>
-              <div class="qwert__line" style="transform: rotate(144deg);"></div>
-              <div class="qwert__line" style="transform: rotate(90deg) translateX(50px); width: 35%;"></div>
-              <div class="qwert__line" style="transform: rotate(36deg);"></div>
-              <div class="qwert__container anim-rotate">
-                <div class="qwert__container anim-rotate--reverse"><img class="qwert__image anim-rotate--stop" src="./images/decor/decor_bg.jpg" alt=""/></div>
+          
+          
+          
+          <div class="section-solution__content" x-data="{
+      title: 'Плагіоцефалія (асиметрична деформація черепа)',
+      text: 'Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини. __1',
+    }">
+            <div class="section-solution__buttons">
+              <div class="section-solution__buttons__top">
+                <div class="button-accordion" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="title = 'Плагіоцефалія (асиметрична деформація черепа)';text = 'Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини. __1'" x-cloak="x-cloak">
+                  <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                  </div>
+                  <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
+                    <div class="button-accordion__title">Плагіоцефалія</div>
+                  </div>
+                </div>
+                <div class="button-accordion" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="title = 'Деформація голови';text = 'Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини. __2'" x-cloak="x-cloak">
+                  <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                  </div>
+                  <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
+                    <div class="button-accordion__title">Деформація голови</div>
+                  </div>
+                </div>
+                <div class="button-accordion" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="title = 'Синдром плоскої голови';text = 'Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини. __3'" x-cloak="x-cloak">
+                  <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                  </div>
+                  <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
+                    <div class="button-accordion__title">Синдром плоскої голови</div>
+                  </div>
+                </div>
               </div>
-              <div class="screen" style="opacity: 1;">
-                <div class="screen__container">
-                  <div class="screen-desk-c" style="z-index: 3">
-                    <div style="transform: translate(-500px, -260px);">
-                      <div class="button-accordion" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
-                        <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
-                          <article class="card-modal card">
-                            
-                            
-                            <div class="card-modal__container">
-                              <h3 class="card-modal__title">Плагіоцефалія (асиметрична деформація черепа)</h3>
-                              <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
+              
+              <div class="section-solution__buttons__bottom">
+                <div class="button-accordion button-accordion--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="title = 'Брахіцефалія';text = 'Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини. __4'" x-cloak="x-cloak">
+                  <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                  </div>
+                  <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
+                    <div class="button-accordion__title">Брахіцефалія</div>
+                  </div>
+                </div>
+                <div class="button-accordion button-accordion--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="title = 'Долiхоцефалiя';text = 'Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини. __5'" x-cloak="x-cloak">
+                  <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                  </div>
+                  <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
+                    <div class="button-accordion__title">Долiхоцефалiя</div>
+                  </div>
+                </div>
+                <div class="button-accordion button-accordion--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="title = 'Період після операції';text = 'Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини. __6'" x-cloak="x-cloak">
+                  <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                  </div>
+                  <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
+                    <div class="button-accordion__title">Період після операції</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="section-solution__circle">
+              <div class="circle-pointer">
+                <div class="circle-pointer__line"></div>
+                <div class="circle-pointer__line" style="transform: rotate(144deg);"></div>
+                <div class="circle-pointer__line" style="transform: rotate(90deg) translateX(50px); width: 35%;"></div>
+                <div class="circle-pointer__line" style="transform: rotate(36deg);"></div>
+                <div class="circle-pointer__container anim-rotate">
+                  <div class="circle-pointer__container anim-rotate--reverse"><img class="circle-pointer__image anim-rotate--stop" src="./images/decor/decor_bg.jpg" alt=""/></div>
+                </div>
+                <div class="circle-pointer__block">
+                  <div class="screen" style="opacity: 1;">
+                    <div class="screen__container">
+                      <div class="screen-desk-c" style="z-index: 6">
+                        <div class="circle-pointer__item--1">
+                          <div class="button-accordion" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                            <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                              <article class="card-modal card">
+                                
+                                
+                                <div class="card-modal__container">
+                                  <h3 class="card-modal__title">Плагіоцефалія (асиметрична деформація черепа)</h3>
+                                  <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини. __1</p>
+                                </div>
+                                
+                                
+                                <div class="card-modal__block card__block">
+                                  <button class="button-icon button-icon--size-m" @click="handleClose()" type=""><img src="./images/icons/cclose.svg" alt="close"/></button>
+                                </div>
+                              </article>
                             </div>
-                            
-                            
-                            <div class="card-modal__block card__block">
-                              <button class="button-icon button-icon--size-m" @click="handleClose()" type=""><img src="./images/icons/cclose.svg" alt="close"/></button>
+                            <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
+                              <div class="button-accordion__title">Плагіоцефалія</div>
                             </div>
-                          </article>
-                        </div>
-                        <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
-                          <div class="button-accordion__title">Плагіоцефалія</div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="screen-desk-c" style="z-index: 2">
-                    <div style="transform: translate(-640px, 0px)">
-                      <div class="button-accordion" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
-                        <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
-                          <article class="card-modal card">
-                            
-                            
-                            <div class="card-modal__container">
-                              <h3 class="card-modal__title">Деформація голови</h3>
-                              <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
+                      <div class="screen-desk-c" style="z-index: 5">
+                        <div class="circle-pointer__item--2">
+                          <div class="button-accordion" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                            <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                              <article class="card-modal card">
+                                
+                                
+                                <div class="card-modal__container">
+                                  <h3 class="card-modal__title">Деформація голови</h3>
+                                  <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини. __2</p>
+                                </div>
+                                
+                                
+                                <div class="card-modal__block card__block">
+                                  <button class="button-icon button-icon--size-m" @click="handleClose()" type=""><img src="./images/icons/cclose.svg" alt="close"/></button>
+                                </div>
+                              </article>
                             </div>
-                            
-                            
-                            <div class="card-modal__block card__block">
-                              <button class="button-icon button-icon--size-m" @click="handleClose()" type=""><img src="./images/icons/cclose.svg" alt="close"/></button>
+                            <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
+                              <div class="button-accordion__title">Деформація голови</div>
                             </div>
-                          </article>
-                        </div>
-                        <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
-                          <div class="button-accordion__title">Деформація голови</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="screen-desk-c" style="z-index: 1">
-                    <div style="transform: translate(-500px, 260px);">
-                      <div class="button-accordion" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
-                        <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
-                          <article class="card-modal card">
-                            
-                            
-                            <div class="card-modal__container">
-                              <h3 class="card-modal__title">Синдром плоскої голови</h3>
-                              <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
-                            </div>
-                            
-                            
-                            <div class="card-modal__block card__block">
-                              <button class="button-icon button-icon--size-m" @click="handleClose()" type=""><img src="./images/icons/cclose.svg" alt="close"/></button>
-                            </div>
-                          </article>
-                        </div>
-                        <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
-                          <div class="button-accordion__title">Асиметрична брахiцефалiя</div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="screen-desk-c" style="z-index: 3">
-                    <div style="transform: translate(500px, -260px);">
-                      <div class="button-accordion button-accordion--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
-                        <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
-                          <article class="card-modal card">
-                            
-                            
-                            <div class="card-modal__container">
-                              <h3 class="card-modal__title">Брахіцефалія</h3>
-                              <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
+                      <div class="screen-desk-c" style="z-index: 4">
+                        <div class="circle-pointer__item--3">
+                          <div class="button-accordion" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                            <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                              <article class="card-modal card">
+                                
+                                
+                                <div class="card-modal__container">
+                                  <h3 class="card-modal__title">Синдром плоскої голови</h3>
+                                  <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини. __3</p>
+                                </div>
+                                
+                                
+                                <div class="card-modal__block card__block">
+                                  <button class="button-icon button-icon--size-m" @click="handleClose()" type=""><img src="./images/icons/cclose.svg" alt="close"/></button>
+                                </div>
+                              </article>
                             </div>
-                            
-                            
-                            <div class="card-modal__block card__block">
-                              <button class="button-icon button-icon--size-m" @click="handleClose()" type=""><img src="./images/icons/cclose.svg" alt="close"/></button>
+                            <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
+                              <div class="button-accordion__title">Синдром плоскої голови</div>
                             </div>
-                          </article>
-                        </div>
-                        <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
-                          <div class="button-accordion__title">Брахіцефалія</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="screen-desk-c" style="z-index: 2">
-                    <div style="transform: translate(640px, 0px)">
-                      <div class="button-accordion button-accordion--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
-                        <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
-                          <article class="card-modal card">
-                            
-                            
-                            <div class="card-modal__container">
-                              <h3 class="card-modal__title">ДОлiхоцефалiя</h3>
-                              <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
-                            </div>
-                            
-                            
-                            <div class="card-modal__block card__block">
-                              <button class="button-icon button-icon--size-m" @click="handleClose()" type=""><img src="./images/icons/cclose.svg" alt="close"/></button>
-                            </div>
-                          </article>
-                        </div>
-                        <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
-                          <div class="button-accordion__title">ДОлiхоцефалiя</div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="screen-desk-c" style="z-index: 1">
-                    <div style="transform: translate(500px, 260px);">
-                      <div class="button-accordion button-accordion--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-cloak="x-cloak">
-                        <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
-                          <article class="card-modal card">
-                            
-                            
-                            <div class="card-modal__container">
-                              <h3 class="card-modal__title">Період після операції</h3>
-                              <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.</p>
+                      <div class="screen-desk-c" style="z-index: 3">
+                        <div class="circle-pointer__item--4">
+                          <div class="button-accordion button-accordion--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                            <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                              <article class="card-modal card">
+                                
+                                
+                                <div class="card-modal__container">
+                                  <h3 class="card-modal__title">Брахіцефалія</h3>
+                                  <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини. __4</p>
+                                </div>
+                                
+                                
+                                <div class="card-modal__block card__block">
+                                  <button class="button-icon button-icon--size-m" @click="handleClose()" type=""><img src="./images/icons/cclose.svg" alt="close"/></button>
+                                </div>
+                              </article>
                             </div>
-                            
-                            
-                            <div class="card-modal__block card__block">
-                              <button class="button-icon button-icon--size-m" @click="handleClose()" type=""><img src="./images/icons/cclose.svg" alt="close"/></button>
+                            <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
+                              <div class="button-accordion__title">Брахіцефалія</div>
                             </div>
-                          </article>
+                          </div>
                         </div>
-                        <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
-                          <div class="button-accordion__title">Період після операції</div>
+                      </div>
+                      <div class="screen-desk-c" style="z-index: 2">
+                        <div class="circle-pointer__item--5">
+                          <div class="button-accordion button-accordion--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                            <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                              <article class="card-modal card">
+                                
+                                
+                                <div class="card-modal__container">
+                                  <h3 class="card-modal__title">Долiхоцефалiя</h3>
+                                  <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини. __5</p>
+                                </div>
+                                
+                                
+                                <div class="card-modal__block card__block">
+                                  <button class="button-icon button-icon--size-m" @click="handleClose()" type=""><img src="./images/icons/cclose.svg" alt="close"/></button>
+                                </div>
+                              </article>
+                            </div>
+                            <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
+                              <div class="button-accordion__title">Долiхоцефалiя</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="screen-desk-c" style="z-index: 1">
+                        <div class="circle-pointer__item--6">
+                          <div class="button-accordion button-accordion--mirrow" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                            <div class="button-accordion__pop-up" :class="{'button-accordion__pop-up--hidden':!isOpen}">
+                              <article class="card-modal card">
+                                
+                                
+                                <div class="card-modal__container">
+                                  <h3 class="card-modal__title">Період після операції</h3>
+                                  <p class="card-modal__text">Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини. __6</p>
+                                </div>
+                                
+                                
+                                <div class="card-modal__block card__block">
+                                  <button class="button-icon button-icon--size-m" @click="handleClose()" type=""><img src="./images/icons/cclose.svg" alt="close"/></button>
+                                </div>
+                              </article>
+                            </div>
+                            <div class="button-accordion__container" :class="{'button-accordion__container--active':isOpen}" @click="isOpen=!isOpen">
+                              <div class="button-accordion__title">Період після операції</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              
+              <div class="section-solution__cards">
+                <article class="card-modal card">
+                  
+                  
+                  <div class="card-modal__container">
+                    <h3 class="card-modal__title" x-text="title">title</h3>
+                    <p class="card-modal__text" x-text="text">text</p>
+                  </div>
+                  
+                  
+                </article>
+              </div>
             </div>
-            <section class="section-buttons" style="width: 778px; margin: auto;">
+            
+            
+            <section class="section-buttons" style="width: 100%; max-width: 778px; margin: auto;">
               <button class="button" @click="isShowPopUpRepeat = true" type="">
                 <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                 </p>
@@ -3020,12 +3116,11 @@
                   </div>
                 </div>
               </button><a class="button button--phone-mini" href="tel:+38 095 120 75 75">
-                <p class="button__text"><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+                <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
                 </p></a>
             </section>
           </div>
         </section>
-        <hr/>
         <section class="section-block section-block--licuvanya">
           <div class="section-block__title-container">
             <div class="lable-main lable-main--licuvanya">08<span>/ Як проходе лIкування</span></div>
@@ -3138,7 +3233,7 @@
               </div>
             </div>
           </button><a class="button button--phone" href="tel:+38 095 120 75 75">
-            <p class="button__text"><img class="button__image" src="./images/icons/tabler_arrow-up-2.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+            <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
             </p></a>
         </section>
         <hr/>
@@ -3421,39 +3516,43 @@
               </article>
             </div>
           </div>
-          <form class="form form--form-1" action="#" method="get" style="padding: 0;">
-            <div class="form__container">
-              <div class="wrapper-frame">
-                <div class="wrapper-frame__container">
-                  <div class="wrapper-center">
-                    <label class="input-new">
-                      <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
-                    </label>
+          <div class="wrapper-frame">
+            <div class="wrapper-frame__container">
+              <form class="form form--form-1" action="#" method="get">
+                <div class="form__container">
+                  <div class="wrapper-frame">
+                    <div class="wrapper-frame__container">
+                      <div class="wrapper-center">
+                        <label class="input-new">
+                          <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrapper-frame">
+                    <div class="wrapper-frame__container">
+                      <div class="wrapper-center">
+                        <label class="input-new">
+                          <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                        </label>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="wrapper-frame">
-                <div class="wrapper-frame__container">
-                  <div class="wrapper-center">
-                    <label class="input-new">
-                      <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="button" @click="" type="submit">
-              <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-              </p>
-              <div class="button__icon">
-                <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <button class="button" @click="" type="submit">
+                  <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                  </p>
+                  <div class="button__icon">
+                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
-                </div>
-              </div>
-            </button>
-          </form>
+                    </div>
+                  </div>
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
         <hr/>
         <section class="section-accordion">
@@ -3570,51 +3669,55 @@
               </div>
             </div>
           </div>
-          <form class="form" action="#" method="get" style="padding: 0;">
-            <div class="form__container">
-              <div class="wrapper-frame">
-                <div class="wrapper-frame__container">
-                  <div class="wrapper-center">
-                    <label class="input-new">
-                      <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
-                    </label>
+          <div class="wrapper-frame">
+            <div class="wrapper-frame__container">
+              <form class="form" action="#" method="get">
+                <div class="form__container">
+                  <div class="wrapper-frame">
+                    <div class="wrapper-frame__container">
+                      <div class="wrapper-center">
+                        <label class="input-new">
+                          <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrapper-frame">
+                    <div class="wrapper-frame__container">
+                      <div class="wrapper-center">
+                        <label class="input-new">
+                          <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                        </label>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="wrapper-frame">
-                <div class="wrapper-frame__container">
-                  <div class="wrapper-center">
-                    <label class="input-new">
-                      <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
-                    </label>
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <div class="wrapper-center">
+                      <label class="input-new">
+                        <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
+                      </label>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="wrapper-frame">
-              <div class="wrapper-frame__container">
-                <div class="wrapper-center">
-                  <label class="input-new">
-                    <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <label class="checkbox">
-              <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
-            </label>
-            <button class="button" @click="" type="submit">
-              <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-              </p>
-              <div class="button__icon">
-                <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <label class="checkbox">
+                  <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                </label>
+                <button class="button" @click="" type="submit">
+                  <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                  </p>
+                  <div class="button__icon">
+                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
-                </div>
-              </div>
-            </button>
-          </form>
+                    </div>
+                  </div>
+                </button>
+              </form>
+            </div>
+          </div>
         </section>
       </main>
       <div class="page__menu"></div>
