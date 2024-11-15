@@ -32,7 +32,7 @@
       contentSrc: '',
       isTablet: false,
       isPhone: false,
-    }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 650);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 992);isPhone = (window.innerWidth &lt; 650);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor }">
+    }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor }">
     <div class="page__wrapper">
       <template x-if="isShowBurgerMenu">
         <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
@@ -73,20 +73,20 @@
                     <hr class="section-links__hr"/>
                     <div class="section-links__columns">
                       <ul class="list-of-links">
-                        <li><a class="_link" href="#">Про компанію</a></li>
-                        <li><a class="_link" href="#">Лiкарi</a></li>
-                        <li><a class="_link" href="#">Ліцензії</a></li>
-                        <li><a class="_link" href="#">Дослiдження</a></li>
-                        <li><a class="_link" href="#">Спiвпраця</a></li>
-                        <li><a class="_link" href="#">Цiни</a></li>
+                        <li><a class="_link" href="/about_company.html">Про компанію</a></li>
+                        <li><a class="_link" href="/doctors.html">Лiкарi</a></li>
+                        <li><a class="_link" href="/license.html">Ліцензії</a></li>
+                        <li><a class="_link" href="/research.html">Дослiдження</a></li>
+                        <li><a class="_link" href="/cooperation.html">Спiвпраця</a></li>
+                        <li><a class="_link" href="/prices.html">Цiни</a></li>
                       </ul>
                       <ul class="list-of-links">
-                        <li><a class="_link" href="#">Про шолом</a></li>
-                        <li><a class="_link" href="#">Ортези Piro</a></li>
-                        <li><a class="_link" href="#">Результати лiкування</a></li>
-                        <li><a class="_link" href="#">Відгуки</a></li>
-                        <li><a class="_link" href="#">Новини</a></li>
-                        <li><a class="_link" href="#">Контакти</a></li>
+                        <li><a class="_link" href="/about_talee.html">Про шолом</a></li>
+                        <li><a class="_link" href="/about_piro.html">Ортези Piro</a></li>
+                        <li><a class="_link" href="/results.html">Результати лiкування</a></li>
+                        <li><a class="_link" href="/reviews.html">Відгуки</a></li>
+                        <li><a class="_link" href="/news.html">Новини</a></li>
+                        <li><a class="_link" href="/contacts.html">Контакти</a></li>
                       </ul>
                     </div>
                   </div>
@@ -116,7 +116,7 @@
                     <div class="wrapper-frame wrapper-frame--bg">
                       <div class="wrapper-frame__container">
                         <article class="card-block-5 card-block-5--mini card">
-                          <img class="card-block-5__image" src="./images/icons/card-a_1.svg" loading="lazy"/>
+                          <img class="card-block-5__image" src="./images/icons/icon-v-1_kid.svg" loading="lazy"/>
                           
                           <div class="card-block-5__container">
                             <h3 class="card-block-5__title">Лiкування деформацiї голови</h3>
@@ -140,7 +140,7 @@
                     <div class="wrapper-frame wrapper-frame--bg">
                       <div class="wrapper-frame__container">
                         <article class="card-block-5 card-block-5--mini card">
-                          <img class="card-block-5__image" src="./images/icons/card-a_2.svg" loading="lazy"/>
+                          <img class="card-block-5__image" src="./images/icons/icon-v-2_kid.svg" loading="lazy"/>
                           
                           <div class="card-block-5__container">
                             <h3 class="card-block-5__title">Ортозування дiтей</h3>
@@ -164,7 +164,7 @@
                     <div class="wrapper-frame wrapper-frame--bg">
                       <div class="wrapper-frame__container">
                         <article class="card-block-5 card-block-5--mini card">
-                          <img class="card-block-5__image" src="./images/icons/card-a_3.svg" loading="lazy"/>
+                          <img class="card-block-5__image" src="./images/icons/icon-v-3_kid.svg" loading="lazy"/>
                           
                           <div class="card-block-5__container">
                             <h3 class="card-block-5__title">Консультації дитячого лiкаря ортопеда</h3>
@@ -188,7 +188,7 @@
                     <div class="wrapper-frame wrapper-frame--bg">
                       <div class="wrapper-frame__container">
                         <article class="card-block-5 card-block-5--mini card">
-                          <img class="card-block-5__image" src="./images/icons/card-g_3-massage.svg" loading="lazy"/>
+                          <img class="card-block-5__image" src="./images/icons/icon-v-4_kid.svg" loading="lazy"/>
                           
                           <div class="card-block-5__container">
                             <h3 class="card-block-5__title">реабiлiтацiя, Фізіотерапія та Масаж</h3>
@@ -220,7 +220,7 @@
           gap: 4px;
           font-family: var(--second-family);
           font-weight: 400;
-          font-size: 15px;
+          font-size: px-to-rem(15);
           color: #5d5955;
         "><span style="
             opacity: 0.35;
@@ -237,7 +237,7 @@
           "><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span style="
                 font-family: var(--font-family);
                 font-weight: 400;
-                font-size: 14px;
+                font-size: px-to-rem(14);
                 line-height: 80%;
                 letter-spacing: 0.01em;
                 text-transform: uppercase;
@@ -288,7 +288,7 @@
                     <div class="wrapper-frame wrapper-frame--bg">
                       <div class="wrapper-frame__container">
                         <article class="card-block-5 card-block-5--mini card">
-                          <img class="card-block-5__image" src="./images/icons/card-a_1.svg" loading="lazy"/>
+                          <img class="card-block-5__image" src="./images/icons/icon-v-1_kid.svg" loading="lazy"/>
                           
                           <div class="card-block-5__container">
                             <h3 class="card-block-5__title">Лiкування деформацiї голови</h3>
@@ -312,7 +312,7 @@
                     <div class="wrapper-frame wrapper-frame--bg">
                       <div class="wrapper-frame__container">
                         <article class="card-block-5 card-block-5--mini card">
-                          <img class="card-block-5__image" src="./images/icons/card-a_2.svg" loading="lazy"/>
+                          <img class="card-block-5__image" src="./images/icons/icon-v-2_kid.svg" loading="lazy"/>
                           
                           <div class="card-block-5__container">
                             <h3 class="card-block-5__title">Ортозування дiтей</h3>
@@ -336,7 +336,7 @@
                     <div class="wrapper-frame wrapper-frame--bg">
                       <div class="wrapper-frame__container">
                         <article class="card-block-5 card-block-5--mini card">
-                          <img class="card-block-5__image" src="./images/icons/card-a_3.svg" loading="lazy"/>
+                          <img class="card-block-5__image" src="./images/icons/icon-v-3_kid.svg" loading="lazy"/>
                           
                           <div class="card-block-5__container">
                             <h3 class="card-block-5__title">Консультації дитячого лiкаря ортопеда</h3>
@@ -360,7 +360,7 @@
                     <div class="wrapper-frame wrapper-frame--bg">
                       <div class="wrapper-frame__container">
                         <article class="card-block-5 card-block-5--mini card">
-                          <img class="card-block-5__image" src="./images/icons/card-g_3-massage.svg" loading="lazy"/>
+                          <img class="card-block-5__image" src="./images/icons/icon-v-4_kid.svg" loading="lazy"/>
                           
                           <div class="card-block-5__container">
                             <h3 class="card-block-5__title">реабiлiтацiя, Фізіотерапія та Масаж</h3>
@@ -392,7 +392,7 @@
           gap: 4px;
           font-family: var(--second-family);
           font-weight: 400;
-          font-size: 15px;
+          font-size: px-to-rem(15);
           color: #5d5955;
         "><span style="
             opacity: 0.35;
@@ -409,7 +409,7 @@
           "><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span style="
                 font-family: var(--font-family);
                 font-weight: 400;
-                font-size: 14px;
+                font-size: px-to-rem(14);
                 line-height: 80%;
                 letter-spacing: 0.01em;
                 text-transform: uppercase;
@@ -557,7 +557,7 @@
           gap: 4px;
           font-family: var(--second-family);
           font-weight: 400;
-          font-size: 15px;
+          font-size: px-to-rem(15);
           color: #5d5955;
         "><span style="
             opacity: 0.35;
@@ -574,7 +574,7 @@
           "><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span style="
                 font-family: var(--font-family);
                 font-weight: 400;
-                font-size: 14px;
+                font-size: px-to-rem(14);
                 line-height: 80%;
                 letter-spacing: 0.01em;
                 text-transform: uppercase;
@@ -699,7 +699,7 @@
                 <h3 style="
               font-family: var(--font-family);
               font-weight: 400;
-              font-size: 36px;
+              font-size: px-to-rem(36);
               line-height: 120%;
               text-transform: uppercase;
               text-align: center;
@@ -869,9 +869,9 @@
             <div class="header__navigation">
               <nav class="navigation">
                 <ul class="navigation__list">
-                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#about_company'}"><a class="navigation__link" href="#about_company" @click="currentHook = '#about_company'">Про компанію</a></li>
-                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#services'}"><a class="navigation__link" href="#services" @click="currentHook = '#services'">Усі послуги</a></li>
-                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#reviews'}"><a class="navigation__link" href="#:~:text=Відгуки" @click="currentHook = '#reviews'">Вiдгуки</a></li>
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#about_company'}"><a class="navigation__link" href="/about_company.html" @click="currentHook = '#about_company'">Про компанію</a></li>
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#services'}"><a class="navigation__link" href="/services.html" @click="currentHook = '#services'">Усі послуги</a></li>
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#reviews'}"><a class="navigation__link" href="/reviews.html" @click="currentHook = '#reviews'">Вiдгуки</a></li>
                 </ul>
               </nav>
             </div>
@@ -894,12 +894,272 @@
       </header>
       <main class="page__main">
       </main>
-      <div class="page__menu"></div>
+      <div class="page__menu">
+        <template x-if="!isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
+          <div class="page__menu__container">
+            <div class="page__menu__container__up"><a class="to-up" href="#" :class="{'to-up--hidden': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"/></a>
+              <div class="contacts-menu__item">
+                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                  <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}" style="bottom: 0;">
+                    <div style="height: 82dvh; max-height: 920px; width: 764px;">
+                      <div class="menu menu--list">
+                        <div class="menu__container">
+                          <div class="menu__head">
+                            <h2 class="menu__title">ШОЛОМ TALEE</h2>
+                            <div class="menu__button">
+                              <button class="button-icon" @click="handleClose" type=""><img src="./images/icons/ccclose.svg" alt="icon"/></button>
+                            </div>
+                          </div>
+                          
+                          <div class="menu__content">
+                            <div class="menu-object">
+                              <div class="menu-object__header">
+                                <div class="menu-object__photo">
+                                  <div class="main-photo" style="width: 800px; height: 800px;">
+                                    <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                                      <div class="main-photo__block">
+                                        <div class="object-photo" style="width: 80%; height: 600px;"><img src="./images/decor/shlem_full_x1.png" alt="ШОЛОМ TALEE"/>
+                                          <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
+                                        </div>
+                                        <div class="menu-object__item-1">
+                                          <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                                            <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
+                                              <div class="title-simple title-simple--mini">
+                                                <h4 class="title-simple__main-text">Легкий</h4>
+                                                <p class="title-simple__text">Вага шолому - <b>162г.</b></p>
+                                              </div>
+                                            </div>
+                                            <div class="button-accordion-simple__container" :class="{'button-accordion-simple__container--active':isOpen}" @click="isOpen=!isOpen">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="menu-object__item-2">
+                                          <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                                            <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
+                                              <div class="title-simple title-simple--mini">
+                                                <h4 class="title-simple__main-text">Легкий</h4>
+                                                <p class="title-simple__text">Вага шолому - <b>162г.</b></p>
+                                              </div>
+                                            </div>
+                                            <div class="button-accordion-simple__container" :class="{'button-accordion-simple__container--active':isOpen}" @click="isOpen=!isOpen">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="menu-object__item-3">
+                                          <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                                            <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
+                                              <div class="title-simple title-simple--mini">
+                                                <h4 class="title-simple__main-text">Легкий</h4>
+                                                <p class="title-simple__text">Вага шолому - <b>162г.</b></p>
+                                              </div>
+                                            </div>
+                                            <div class="button-accordion-simple__container" :class="{'button-accordion-simple__container--active':isOpen}" @click="isOpen=!isOpen">
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                                        <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                                          <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="menu-object__footer">
+                                <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--">
+                                  <div class="wrapper-frame__container">
+                                    <div class="menu-object__comment"><b>01</b>
+                                      <p>Шолом <b>Talee<sup>®</sup></b> — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--">
+                                  <div class="wrapper-frame__container">
+                                    <div class="menu-object__comment"><b>02</b>
+                                      <p>Шолом <b>Talee<sup>®</sup></b>, розроблений з урахуванням високих стандартів безпеки та якості, стає надійним помічником для батьків у вирішенні проблем дитячого ортопедичного здоров’я</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+                        <div class="menu__footer">
+                          <button class="button" @click="isShowPopUpRepeat = true" type="">
+                            <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                            </p>
+                            <div class="button__icon">
+                              <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                              </div>
+                            </div>
+                          </button><a class="link link--nowrap" href="#">
+                            <div class="link__text">БІЛЬШЕ ПРО ШОЛОМ</div></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button-accordion-icon__container" :class="{'button-accordion-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-icon__image" src="./images/icons/shlem-x1.png" alt="icon of phone"/>
+                  </div>
+                </div>
+              </div>
+              <div class="contacts-menu__item">
+                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                  <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}" style="bottom: 0;">
+                    <div style="height: 82dvh; max-height: 920px; width: 764px;">
+                      <div class="menu menu--blue menu--list">
+                        <div class="menu__container">
+                          <div class="menu__head">
+                            <h2 class="menu__title">ОРТЕЗИ PIRO</h2>
+                            <div class="menu__button">
+                              <button class="button-icon" @click="handleClose" type=""><img src="./images/icons/ccclose.svg" alt="icon"/></button>
+                            </div>
+                          </div>
+                          
+                          <div class="menu__content">
+                            <div class="menu-object menu-object--blue">
+                              <div class="menu-object__header">
+                                <div class="menu-object__photo">
+                                  <div class="main-photo" style="width: 800px; height: 800px;">
+                                    <div class="main-photo__0 main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                                      <div class="main-photo__block">
+                                        <div class="object-photo" style="width: 80%; height: 600px;"><img src="./images/decor/foot-2_full_x1.png" alt="ОРТЕЗИ PIRO"/>
+                                          <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
+                                        </div>
+                                        <div class="menu-object__item-4">
+                                          <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                                            <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
+                                              <div class="title-simple title-simple--mini">
+                                                <h4 class="title-simple__main-text">Легкий</h4>
+                                                <p class="title-simple__text">Вага шолому - <b>162г.</b></p>
+                                              </div>
+                                            </div>
+                                            <div class="button-accordion-simple__container" :class="{'button-accordion-simple__container--active':isOpen}" @click="isOpen=!isOpen">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="menu-object__item-5">
+                                          <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                                            <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
+                                              <div class="title-simple title-simple--mini">
+                                                <h4 class="title-simple__main-text">Легкий</h4>
+                                                <p class="title-simple__text">Вага шолому - <b>162г.</b></p>
+                                              </div>
+                                            </div>
+                                            <div class="button-accordion-simple__container" :class="{'button-accordion-simple__container--active':isOpen}" @click="isOpen=!isOpen">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="menu-object__item-6">
+                                          <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                                            <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
+                                              <div class="title-simple title-simple--mini">
+                                                <h4 class="title-simple__main-text">Легкий</h4>
+                                                <p class="title-simple__text">Вага шолому - <b>162г.</b></p>
+                                              </div>
+                                            </div>
+                                            <div class="button-accordion-simple__container" :class="{'button-accordion-simple__container--active':isOpen}" @click="isOpen=!isOpen">
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                                        <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                                          <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="menu-object__footer">
+                                <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--blue">
+                                  <div class="wrapper-frame__container">
+                                    <div class="menu-object__comment"><b>01</b>
+                                      <p>Рухливість без oбтяжень. Для дітей із церебральним паралічем та подібними станами ортез на гомілковостопний суглоб є чудовим помічником у покращенні їхньої рухливості та контролю рухів. На жаль, більшість подібних ортезів важкі та громіздкі</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--blue">
+                                  <div class="wrapper-frame__container">
+                                    <div class="menu-object__comment"><b>02</b>
+                                      <p>Під час 3D моделювання ми виставляємо індивідуальні налаштування: положення стопи і гомілковостопного суглоба, фіксація п'яткової області, підйом супінатора, наявність або відсутність шарніра, рух гомілковостопного суглоба і багато іншого.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+                        <div class="menu__footer">
+                          <button class="button button--blue" @click="isShowPopUpRepeat = true" type="">
+                            <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                            </p>
+                            <div class="button__icon">
+                              <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                              </div>
+                            </div>
+                          </button><a class="link link--nowrap" href="#">
+                            <div class="link__text">БІЛЬШЕ ПРО ОРТЕЗИ</div></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button-accordion-icon__container" :class="{'button-accordion-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-icon__image" src="./images/icons/foot-x1.png" alt="icon of phone"/>
+                  </div>
+                </div>
+              </div>
+              <div class="contacts-menu__item">
+                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                  <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}">
+                    <button class="button-icon button-icon--border" @click="" type=""><img src="./images/icons/light__phone.svg" alt="instagram"/></button>
+                    <button class="button-icon button-icon--border" @click="" type=""><img src="./images/icons/light__phone.svg" alt="instagram"/></button>
+                  </div>
+                  <div class="button-accordion-icon__container" :class="{'button-accordion-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-icon__image" src="./images/icons/light__phone.svg" alt="icon of phone"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="contacts-menu contacts-menu--horizontal" x-data="{ isClosed: true }" @click.outside="isClosed = true" :class="{'contacts-menu--closed': isClosed}" x-cloak="x-cloak">
+              <div class="contacts-menu__container" style="width: calc((20px + 56px) * 5 - 20px);">
+                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.instagram.com" target="_blank"><img src="./images/icons/social-instagram.svg" alt="instagram"/></a>
+                </div>
+                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.gmail.com" target="_blank"><img src="./images/icons/social-sms.svg" alt="social-sms"/></a>
+                </div>
+                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.facebook.com" target="_blank"><img src="./images/icons/social-facebook.svg" alt="facebook"/></a>
+                </div>
+                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.viber.com" target="_blank"><img src="./images/icons/social-viber.svg" alt="viber"/></a>
+                </div>
+                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://web.telegram.org" target="_blank"><img src="./images/icons/social-telegram.svg" alt="telegram"/></a>
+                </div>
+              </div>
+              
+              <button class="contacts-menu__button" type="button" @click="isClosed=!isClosed" :class="{'contacts-menu__button--closed': !isClosed}">
+                <div class="contacts-menu__button__image"></div>
+              </button>
+            </div>
+          </div>
+        </template>
+      </div>
       <footer class="page__footer">
         <div class="section-footer">
           <div class="section-footer__links">
             <div class="_grid-col-desk-1-1 _grid-col-tab-1-1 _grid-row-desk-1-1 _grid-row-tab-1-1">
-              <div class="wrapper-frame wrapper-frame--full">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
                 <div class="wrapper-frame__container">
                   <div class="wrapper-center">
                     <h3 class="section-footer__links__title">МЦ <span>«ДIМ ОРТОПЕДІЇ»</span> — Перший та єдиний в Україні медичний центр з корекції деформації голови у дітей</h3>
@@ -909,7 +1169,7 @@
             </div>
             
             <div class="_grid-col-desk-1-1 _grid-col-tab-1-1 _grid-row-desk-2-2 _grid-row-tab-3-3">
-              <div class="wrapper-frame wrapper-frame--full">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
                 <div class="wrapper-frame__container">
                   <div class="section-footer__links__social wrapper-center">
                     <p>Ми в соцiльних мережах</p>
@@ -921,7 +1181,7 @@
             </div>
             
             <div class="_grid-col-desk-2-2 _grid-col-tab-1-1 _grid-row-desk-1-2 _grid-row-tab-2-2">
-              <div class="wrapper-frame wrapper-frame--full">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
                 <div class="wrapper-frame__container">
                   <div class="section-links">
                     <div>
@@ -930,20 +1190,20 @@
                         <hr class="section-links__hr"/>
                         <div class="section-links__columns">
                           <ul class="list-of-links">
-                            <li><a class="_link" href="#">Про компанію</a></li>
-                            <li><a class="_link" href="#">Лiкарi</a></li>
-                            <li><a class="_link" href="#">Ліцензії</a></li>
-                            <li><a class="_link" href="#">Дослiдження</a></li>
-                            <li><a class="_link" href="#">Спiвпраця</a></li>
-                            <li><a class="_link" href="#">Цiни</a></li>
+                            <li><a class="_link" href="/about_company.html">Про компанію</a></li>
+                            <li><a class="_link" href="/doctors.html">Лiкарi</a></li>
+                            <li><a class="_link" href="/license.html">Ліцензії</a></li>
+                            <li><a class="_link" href="/research.html">Дослiдження</a></li>
+                            <li><a class="_link" href="/cooperation.html">Спiвпраця</a></li>
+                            <li><a class="_link" href="/prices.html">Цiни</a></li>
                           </ul>
                           <ul class="list-of-links">
-                            <li><a class="_link" href="#">Про шолом</a></li>
-                            <li><a class="_link" href="#">Ортези Piro</a></li>
-                            <li><a class="_link" href="#">Результати лiкування</a></li>
-                            <li><a class="_link" href="#">Відгуки</a></li>
-                            <li><a class="_link" href="#">Новини</a></li>
-                            <li><a class="_link" href="#">Контакти</a></li>
+                            <li><a class="_link" href="/about_talee.html">Про шолом</a></li>
+                            <li><a class="_link" href="/about_piro.html">Ортези Piro</a></li>
+                            <li><a class="_link" href="/results.html">Результати лiкування</a></li>
+                            <li><a class="_link" href="/reviews.html">Відгуки</a></li>
+                            <li><a class="_link" href="/news.html">Новини</a></li>
+                            <li><a class="_link" href="/contacts.html">Контакти</a></li>
                           </ul>
                         </div>
                       </div>
@@ -953,12 +1213,12 @@
                         <h4 class="section-links__title">Послуги</h4>
                         <hr class="section-links__hr"/>
                         <ul class="list-of-links">
-                          <li><a class="_link" href="#">Лiкування деформацiї голови</a></li>
-                          <li><a class="_link" href="#">Консультації дитячого лiкаря ортопеда</a></li>
-                          <li><a class="_link" href="#">Ортозування дiтей</a></li>
-                          <li><a class="_link" href="#">Фізіотерапія та масаж</a></li>
-                          <li><a class="_link" href="#">Реабiлiтацiя</a></li>
-                          <li><a class="_link" href="#">Усі послуги</a></li>
+                          <li><a class="_link" href="/one_service.html">Лiкування деформацiї голови</a></li>
+                          <li><a class="_link" href="/one_service.html">Консультації дитячого лiкаря ортопеда</a></li>
+                          <li><a class="_link" href="/one_service.html">Ортозування дiтей</a></li>
+                          <li><a class="_link" href="/one_news.html">Фізіотерапія та масаж</a></li>
+                          <li><a class="_link" href="/one_news.html">Реабiлiтацiя</a></li>
+                          <li><a class="_link" href="/services.html">Усі послуги</a></li>
                         </ul>
                       </div>
                     </div>
@@ -969,7 +1229,11 @@
           </div>
           
           <div class="section-footer__decor">
-            <div class="main-photo" style="width: 1056px; height: 1056px;">
+            <div class="main-photo" style="width: 1056px; height: 1056px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        ;">
               <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                 <div class="main-photo__block"><img src="./images/icons/logo_big.svg" alt="logo orthopedics"/>
                 </div>
@@ -984,7 +1248,7 @@
           
           <div class="section-footer__footer">
             <div class="card-footer">
-              <div class="wrapper-frame wrapper-frame--full">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
                 <div class="wrapper-frame__container">
                   <div class="wrapper-center">
                     <div><a class="card-footer__link" href="#">Політика конфіденційності</a>
@@ -995,7 +1259,7 @@
               </div>
             </div>
             <div class="card-footer">
-              <div class="wrapper-frame wrapper-frame--full">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
                 <div class="wrapper-frame__container">
                   <div class="wrapper-center">
                     <div class="card-footer__block">

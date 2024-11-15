@@ -91,6 +91,24 @@ if (hadMySlider2) {
 
   mySlider2.mount();
 }
+
+const hadMySlider3 = document.querySelector("#my-slider-certificate");
+if (hadMySlider3) {
+  const mySlider3 = new Splide("#my-slider-certificate", {
+    type: "loop",
+    perPage: 4,
+    gap: "44px",
+    autoplay: true,
+    resetProgress: false,
+    breakpoints: {
+      [breakpoints.laptop]: {
+        perPage: 2,
+      },
+    },
+  });
+
+  mySlider3.mount();
+}
 // =========================================================================
 /* Adaptive */
 function useDynamicAdapt(type = "max") {
