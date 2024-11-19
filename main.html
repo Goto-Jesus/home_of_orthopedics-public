@@ -893,7 +893,7 @@
         </div>
       </header>
       <main class="page__main">
-        <section class="section-main-slider" x-data="{ isFirst: true }">
+        <section class="section-main-slider" x-data="{'isFirst':true,'timer':null,'startTimer': function(second = 10) {  if (this.timer) {  clearInterval(this.timer);  }   this.timer = setInterval(() =&gt; {  this.isFirst = !this.isFirst;  }, second * 1000);  } ,'toggleOn': function() {  this.isFirst = true;  this.startTimer();  } ,'toggleOff': function() {  this.isFirst = false;  this.startTimer();  } }" x-init="startTimer()">
           <div class="section-main-slider__wrapper" :class="{'section-main-slider__wrapper--hidden': !isFirst}">
             <div class="section-main-slider__decor-1">
               <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);"></div>
@@ -906,11 +906,11 @@
             <div class="section-main-slider__content">
               <div class="section-main-slider__switch">
                 <div class="section-main-slider__switch__container">
-                  <div class="section-main-slider__switch__item" :class="{'section-main-slider__switch__item--active': isFirst}" @click="isFirst=true"><img src="./images/icons/shlem-on-switch.png" alt="Шолом Talee"/>
+                  <div class="section-main-slider__switch__item" :class="{'section-main-slider__switch__item--active': isFirst}" @click="toggleOn()"><img src="./images/icons/shlem-on-switch.png" alt="Шолом Talee"/>
                     <div>Шолом Talee</div>
                   </div>
                   <div class="section-main-slider__switch__hr"></div>
-                  <div class="section-main-slider__switch__item" :class="{'section-main-slider__switch__item--active-right': !isFirst}" @click="isFirst=false"><img src="./images/icons/foot-on-switch.png" alt="Шолом Talee"/>
+                  <div class="section-main-slider__switch__item" :class="{'section-main-slider__switch__item--active-right': !isFirst}" @click="toggleOff()"><img src="./images/icons/foot-on-switch.png" alt="Шолом Talee"/>
                     <div>Ортези Piro</div>
                   </div>
                 </div>
@@ -1015,7 +1015,6 @@
               </div>
             </div>
           </div>
-          
           <div class="section-main-slider__wrapper" :class="{'section-main-slider__wrapper--hidden': !!isFirst}">
             <div class="section-main-slider__decor-1">
               <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #258ad8; filter: blur(300px);"></div>
@@ -1028,11 +1027,11 @@
             <div class="section-main-slider__content">
               <div class="section-main-slider__switch">
                 <div class="section-main-slider__switch__container">
-                  <div class="section-main-slider__switch__item" :class="{'section-main-slider__switch__item--active': isFirst}" @click="isFirst=true"><img src="./images/icons/shlem-on-switch.png" alt="Шолом Talee"/>
+                  <div class="section-main-slider__switch__item" :class="{'section-main-slider__switch__item--active': isFirst}" @click="toggleOn()"><img src="./images/icons/shlem-on-switch.png" alt="Шолом Talee"/>
                     <div>Шолом Talee</div>
                   </div>
                   <div class="section-main-slider__switch__hr"></div>
-                  <div class="section-main-slider__switch__item" :class="{'section-main-slider__switch__item--active-right': !isFirst}" @click="isFirst=false"><img src="./images/icons/foot-on-switch.png" alt="Шолом Talee"/>
+                  <div class="section-main-slider__switch__item" :class="{'section-main-slider__switch__item--active-right': !isFirst}" @click="toggleOff()"><img src="./images/icons/foot-on-switch.png" alt="Шолом Talee"/>
                     <div>Ортези Piro</div>
                   </div>
                 </div>
