@@ -869,9 +869,9 @@
             <div class="header__navigation">
               <nav class="navigation">
                 <ul class="navigation__list">
-                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#about_company'}"><a class="navigation__link" href="/about_company.html" @click="currentHook = '#about_company'">Про компанію</a></li>
-                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#services'}"><a class="navigation__link" href="/services.html" @click="currentHook = '#services'">Усі послуги</a></li>
-                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#reviews'}"><a class="navigation__link" href="/reviews.html" @click="currentHook = '#reviews'">Вiдгуки</a></li>
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#about_company'}"><a class="navigation__link" href="./about_company.html" @click="currentHook = '#about_company'">Про компанію</a></li>
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#services'}"><a class="navigation__link" href="./services.html" @click="currentHook = '#services'">Усі послуги</a></li>
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#reviews'}"><a class="navigation__link" href="./reviews.html" @click="currentHook = '#reviews'">Вiдгуки</a></li>
                 </ul>
               </nav>
             </div>
@@ -935,7 +935,7 @@
                 <div class="title-half__second" x-text="title"></div>
               </div>
               
-              <div style="width: 404px; margin: 0 auto;">
+              <div style="width: 404px; margin: 0 auto; z-index: -1; opacity: 0;">
                 <button class="button" @click="" type="">
                   <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                   </p>

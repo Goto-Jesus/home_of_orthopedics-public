@@ -869,9 +869,9 @@
             <div class="header__navigation">
               <nav class="navigation">
                 <ul class="navigation__list">
-                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#about_company'}"><a class="navigation__link" href="/about_company.html" @click="currentHook = '#about_company'">Про компанію</a></li>
-                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#services'}"><a class="navigation__link" href="/services.html" @click="currentHook = '#services'">Усі послуги</a></li>
-                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#reviews'}"><a class="navigation__link" href="/reviews.html" @click="currentHook = '#reviews'">Вiдгуки</a></li>
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#about_company'}"><a class="navigation__link" href="./about_company.html" @click="currentHook = '#about_company'">Про компанію</a></li>
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#services'}"><a class="navigation__link" href="./services.html" @click="currentHook = '#services'">Усі послуги</a></li>
+                  <li class="navigation__item" :class="{'navigation__item--active': currentHook === '#reviews'}"><a class="navigation__link" href="./reviews.html" @click="currentHook = '#reviews'">Вiдгуки</a></li>
                 </ul>
               </nav>
             </div>
@@ -893,7 +893,7 @@
         </div>
       </header>
       <main class="page__main">
-        <section class="section-main-slider" x-data="{'isFirst':true,'timer':null,'startTimer': function(second = 10) {  if (this.timer) {  clearInterval(this.timer);  }   this.timer = setInterval(() =&gt; {  this.isFirst = !this.isFirst;  }, second * 1000);  } ,'toggleOn': function() {  this.isFirst = true;  this.startTimer();  } ,'toggleOff': function() {  this.isFirst = false;  this.startTimer();  } }" x-init="startTimer()">
+        <section class="section-main-slider" x-data="{'isFirst':true,'timer':null,'startTimer': function(second = 25) {  if (this.timer) {  clearInterval(this.timer);  }  this.timer = setInterval(() =&gt; {  this.isFirst = !this.isFirst;  }, second * 1000);  } ,'toggleOn': function() {  this.isFirst = true;  this.startTimer();  } ,'toggleOff': function() {  this.isFirst = false;  this.startTimer();  } }" x-init="startTimer()">
           <div class="section-main-slider__wrapper" :class="{'section-main-slider__wrapper--hidden': !isFirst}">
             <div class="section-main-slider__decor-1">
               <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);"></div>
