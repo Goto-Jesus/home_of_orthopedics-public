@@ -592,9 +592,7 @@
       'pop-up--fixed': false,
     }">
           <div class="pop-up__content">
-            <div class="modal" x-data="{
-              title: &quot;&quot;
-            }" style="max-width: 920px;">
+            <div class="modal" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
               <div class="modal__button">
                 <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
               </div>
@@ -657,7 +655,7 @@
                     </div>
                   </div>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; margin: auto; margin-top: 80px;">
+                <div class="modal__footer">
                   <button class="button" @click="isShowPopUpRepeat = true" type="">
                     <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                     </p>
@@ -896,14 +894,14 @@
         <div class="section-main-block">
           <div class="section-main-block__title-container">
             <div class="section-main-block__title-container__content-first">
-              <h1 class="section-main-block__title-container__title">Контакти<br><b>МЦ «ДIМ ОРТОПЕДІЇ»</b></h1>
+              <h1 class="section-main-block__title-container__content-first__title">Контакти<br><b>МЦ «ДIМ ОРТОПЕДІЇ»</b></h1>
               <hr/>
-              <p class="section-main-block__title-container__text">Перший та єдиний в Україні медичний центр з корекції деформації голови у дітей</p>
+              <p class="section-main-block__title-container__content-first__text">Перший та єдиний в Україні медичний центр з корекції деформації голови у дітей</p>
             </div>
             
-            <div class="section-main-block__title-container__content">
-              <h3 class="section-main-block__title-container__title-mini _grid-col-desk-2-2 _grid-col-lap-1-1">Співпраця з лікарями</h3>
-              <div class="section-main-block__title-container__video _grid-col-desk-1-1 _grid-col-lap-1-1">
+            <div class="section-main-block__title-container__content-second">
+              <h3 class="section-main-block__title-container__content-second__title-mini _grid-col-desk-2-2 _grid-col-lap-1-1">Співпраця з лікарями</h3>
+              <div class="section-main-block__title-container__content-second__video _grid-col-desk-1-1 _grid-col-lap-1-1">
                 <div class="video-link">
                   <div class="video-link__view" @click="
   isShowPopUpContent = true;
@@ -914,7 +912,7 @@
                   </div>
                 </div>
               </div>
-              <div class="section-main-block__title-container__card _grid-col-desk-2-2 _grid-col-lap-1-1">
+              <div class="section-main-block__title-container__content-second__card _grid-col-desk-2-2 _grid-col-lap-1-1">
                 <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--height wrapper-frame--undefined">
                   <div class="wrapper-frame__container">
                     <article class="card-easy  card-easy--full card-easy--undefined card">
@@ -932,7 +930,7 @@
                   </div>
                 </div>
               </div>
-              <div class="section-main-block__title-container__breadcrumbs _grid-col-desk-1-2">
+              <div class="section-main-block__title-container__content__breadcrumbs _grid-col-desk-1-2">
                 <div class="wrapper-frame">
                   <div class="wrapper-frame__container">
                     <div class="breadcrumbs" style="margin: 24px;">
@@ -951,12 +949,12 @@
           
           
           <div class="section-main-block__content-container">
-            <div class="section-main-block__content-container__photo__index">
-              <div class="main-photo" style="width: 1056px; height: 1056px;">
+            <div class="section-main-block__content-container__wrapper">
+              <div class="main-photo section-main-block__content-container__circle" style="width: 1056px; height: 1056px;">
                 <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                   <div class="main-photo__block">
                     <div style="position: relative">
-                      <div class="section-main-block__content-container__photo"><img src="./images/photos/contacts.jpg" alt="baby"/></div>
+                      <div class="section-main-block__content-container__photo"><img class="section-main-block__content-container__photo__image" src="./images/photos/contacts.jpg" alt="baby"/></div>
                       <div class="section-main-block__content-container__card-photo">
                         <article class="card-block-4 card">
                           
@@ -1326,9 +1324,9 @@
           <div class="page__menu__container">
             <div class="page__menu__container__up"><a class="to-up" href="#" :class="{'to-up--hidden': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"/></a>
               <div class="contacts-menu__item">
-                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                <div class="button-accordion-icon button-accordion-icon--modal-menu" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
                   <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}" style="bottom: 0;">
-                    <div style="height: 82dvh; max-height: 920px; width: 764px;">
+                    <div style="height: 82dvh; max-height: 920px; max-width: 764px;">
                       <div class="menu menu--list">
                         <div class="menu__container">
                           <div class="menu__head">
@@ -1342,10 +1340,10 @@
                             <div class="menu-object">
                               <div class="menu-object__header">
                                 <div class="menu-object__photo">
-                                  <div class="main-photo" style="width: 800px; height: 800px;">
+                                  <div class="main-photo menu-object__circle" style="width: 800px; height: 800px;">
                                     <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                                       <div class="main-photo__block">
-                                        <div class="object-photo" style="width: 80%; height: 600px;"><img src="./images/decor/shlem_full_x1.png" alt="ШОЛОМ TALEE"/>
+                                        <div class="object-photo menu-object__object"><img class="menu-object__object__image" src="./images/decor/shlem_full_x1.png" alt="ШОЛОМ TALEE"/>
                                           <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
                                         </div>
                                         <div class="menu-object__item-1">
@@ -1438,9 +1436,9 @@
                 </div>
               </div>
               <div class="contacts-menu__item">
-                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                <div class="button-accordion-icon button-accordion-icon--modal-menu" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
                   <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}" style="bottom: 0;">
-                    <div style="height: 82dvh; max-height: 920px; width: 764px;">
+                    <div style="height: 82dvh; max-height: 920px; max-width: 764px;">
                       <div class="menu menu--blue menu--list">
                         <div class="menu__container">
                           <div class="menu__head">
@@ -1454,10 +1452,10 @@
                             <div class="menu-object menu-object--blue">
                               <div class="menu-object__header">
                                 <div class="menu-object__photo">
-                                  <div class="main-photo" style="width: 800px; height: 800px;">
+                                  <div class="main-photo menu-object__circle" style="width: 800px; height: 800px;">
                                     <div class="main-photo__0 main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                                       <div class="main-photo__block">
-                                        <div class="object-photo" style="width: 80%; height: 600px;"><img src="./images/decor/foot-2_full_x1.png" alt="ОРТЕЗИ PIRO"/>
+                                        <div class="object-photo menu-object__object"><img class="menu-object__object__image" src="./images/decor/foot-2_full_x1.png" alt="ОРТЕЗИ PIRO"/>
                                           <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
                                         </div>
                                         <div class="menu-object__item-4">
@@ -1562,7 +1560,7 @@
             </div>
             
             <div class="contacts-menu contacts-menu--horizontal" x-data="{ isClosed: true }" @click.outside="isClosed = true" :class="{'contacts-menu--closed': isClosed}" x-cloak="x-cloak">
-              <div class="contacts-menu__container" style="width: calc((20px + 56px) * 5 - 20px);">
+              <div class="contacts-menu__container" style="width:  calc((var(--menu-gap) + var(--menu-item)) * 5 - var(--menu-gap));">
                 <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.instagram.com" target="_blank"><img src="./images/icons/social-instagram.svg" alt="instagram"/></a>
                 </div>
                 <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.gmail.com" target="_blank"><img src="./images/icons/social-sms.svg" alt="social-sms"/></a>
@@ -1574,7 +1572,6 @@
                 <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://web.telegram.org" target="_blank"><img src="./images/icons/social-telegram.svg" alt="telegram"/></a>
                 </div>
               </div>
-              
               <button class="contacts-menu__button" type="button" @click="isClosed=!isClosed" :class="{'contacts-menu__button--closed': !isClosed}">
                 <div class="contacts-menu__button__image"></div>
               </button>

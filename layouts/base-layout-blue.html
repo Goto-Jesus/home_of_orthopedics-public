@@ -915,10 +915,10 @@
                             <div class="menu-object">
                               <div class="menu-object__header">
                                 <div class="menu-object__photo">
-                                  <div class="main-photo" style="width: 800px; height: 800px;">
+                                  <div class="main-photo menu-object__circle" style="width: 800px; height: 800px;">
                                     <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                                       <div class="main-photo__block">
-                                        <div class="object-photo" style="width: 80%; height: 600px;"><img src="./images/decor/shlem_full_x1.png" alt="ШОЛОМ TALEE"/>
+                                        <div class="object-photo menu-object__object"><img class="menu-object__object__image" src="./images/decor/shlem_full_x1.png" alt="ШОЛОМ TALEE"/>
                                           <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
                                         </div>
                                         <div class="menu-object__item-1">
@@ -1027,10 +1027,10 @@
                             <div class="menu-object menu-object--blue">
                               <div class="menu-object__header">
                                 <div class="menu-object__photo">
-                                  <div class="main-photo" style="width: 800px; height: 800px;">
+                                  <div class="main-photo menu-object__circle" style="width: 800px; height: 800px;">
                                     <div class="main-photo__0 main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                                       <div class="main-photo__block">
-                                        <div class="object-photo" style="width: 80%; height: 600px;"><img src="./images/decor/foot-2_full_x1.png" alt="ОРТЕЗИ PIRO"/>
+                                        <div class="object-photo menu-object__object"><img class="menu-object__object__image" src="./images/decor/foot-2_full_x1.png" alt="ОРТЕЗИ PIRO"/>
                                           <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
                                         </div>
                                         <div class="menu-object__item-4">
@@ -1135,7 +1135,7 @@
             </div>
             
             <div class="contacts-menu contacts-menu--horizontal" x-data="{ isClosed: true }" @click.outside="isClosed = true" :class="{'contacts-menu--closed': isClosed}" x-cloak="x-cloak">
-              <div class="contacts-menu__container" style="width: calc((20px + 56px) * 5 - 20px);">
+              <div class="contacts-menu__container" style="width:  calc((var(--menu-gap) + var(--menu-item)) * 5 - var(--menu-gap));">
                 <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.instagram.com" target="_blank"><img src="./images/icons/social-instagram.svg" alt="instagram"/></a>
                 </div>
                 <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.gmail.com" target="_blank"><img src="./images/icons/social-sms.svg" alt="social-sms"/></a>
@@ -1147,7 +1147,6 @@
                 <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://web.telegram.org" target="_blank"><img src="./images/icons/social-telegram.svg" alt="telegram"/></a>
                 </div>
               </div>
-              
               <button class="contacts-menu__button" type="button" @click="isClosed=!isClosed" :class="{'contacts-menu__button--closed': !isClosed}">
                 <div class="contacts-menu__button__image"></div>
               </button>

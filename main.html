@@ -592,9 +592,7 @@
       'pop-up--fixed': false,
     }">
           <div class="pop-up__content">
-            <div class="modal" x-data="{
-              title: &quot;&quot;
-            }" style="max-width: 920px;">
+            <div class="modal" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
               <div class="modal__button">
                 <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
               </div>
@@ -657,7 +655,7 @@
                     </div>
                   </div>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; margin: auto; margin-top: 80px;">
+                <div class="modal__footer">
                   <button class="button" @click="isShowPopUpRepeat = true" type="">
                     <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                     </p>
@@ -1575,7 +1573,7 @@
                       <div class="card-info-doc" @notify.window="updateDoctor($event.detail);" x-cloak="x-cloak">
                         <div class="wrapper-frame">
                           <div class="wrapper-frame__container">
-                            <article class="card-block-8 card" style="margin: 32px;">
+                            <article class="card-block-8 card card-info-doc__card">
                               <img class="card-block-8__image" src="./images/photos/woman.png" loading="lazy" alt="Дужин Вiкторiя Сергiївна"/>
                               
                               <div class="card-block-8__container">
@@ -1610,7 +1608,7 @@
                       <div class="card-info-doc" @notify.window="updateDoctor($event.detail);" x-cloak="x-cloak">
                         <div class="wrapper-frame">
                           <div class="wrapper-frame__container">
-                            <article class="card-block-8 card" style="margin: 32px;">
+                            <article class="card-block-8 card card-info-doc__card">
                               <img class="card-block-8__image" src="./images/photos/woman.png" loading="lazy" alt="Дужин Вiкторiя Сергiївна"/>
                               
                               <div class="card-block-8__container">
@@ -1675,14 +1673,56 @@
                     </div>
                     
                     <div class="menu__list">
-                      <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="./images/photos/certificate.jpg" alt="certificate"/></div>
-                      <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="./images/photos/certificate.jpg" alt="certificate"/></div>
-                      <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="./images/photos/certificate.jpg" alt="certificate"/></div>
-                      <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="./images/photos/certificate.jpg" alt="certificate"/></div>
-                      <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="./images/photos/certificate.jpg" alt="certificate"/></div>
-                      <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="./images/photos/certificate.jpg" alt="certificate"/></div>
-                      <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="./images/photos/certificate.jpg" alt="certificate"/></div>
-                      <div style="border-radius: 30px; height: 236px; box-shadow: 0 0 14px 0 rgba(180, 174, 167, 0.19); overflow: hidden;"><img src="./images/photos/certificate.jpg" alt="certificate"/></div>
+                      <li class="splide__slide" @click="
+  isShowPopUpContent = true;
+  contentType = 'image';
+  contentSrc = './images/photos/certificate.jpg';
+"><img class="splide__image" src="./images/photos/certificate.jpg" alt="certeficat"/></li>
+                      <li class="splide__slide" @click="
+  isShowPopUpContent = true;
+  contentType = 'image';
+  contentSrc = './images/photos/certificate.jpg';
+"><img class="splide__image" src="./images/photos/certificate.jpg" alt="certeficat"/></li>
+                      <li class="splide__slide" @click="
+  isShowPopUpContent = true;
+  contentType = 'image';
+  contentSrc = './images/photos/certificate.jpg';
+"><img class="splide__image" src="./images/photos/certificate.jpg" alt="certeficat"/></li>
+                      <li class="splide__slide" @click="
+  isShowPopUpContent = true;
+  contentType = 'image';
+  contentSrc = './images/photos/certificate.jpg';
+"><img class="splide__image" src="./images/photos/certificate.jpg" alt="certeficat"/></li>
+                      <li class="splide__slide" @click="
+  isShowPopUpContent = true;
+  contentType = 'image';
+  contentSrc = './images/photos/certificate.jpg';
+"><img class="splide__image" src="./images/photos/certificate.jpg" alt="certeficat"/></li>
+                      <li class="splide__slide" @click="
+  isShowPopUpContent = true;
+  contentType = 'image';
+  contentSrc = './images/photos/certificate.jpg';
+"><img class="splide__image" src="./images/photos/certificate.jpg" alt="certeficat"/></li>
+                      <li class="splide__slide" @click="
+  isShowPopUpContent = true;
+  contentType = 'image';
+  contentSrc = './images/photos/certificate.jpg';
+"><img class="splide__image" src="./images/photos/certificate.jpg" alt="certeficat"/></li>
+                      <li class="splide__slide" @click="
+  isShowPopUpContent = true;
+  contentType = 'image';
+  contentSrc = './images/photos/certificate.jpg';
+"><img class="splide__image" src="./images/photos/certificate.jpg" alt="certeficat"/></li>
+                      <li class="splide__slide" @click="
+  isShowPopUpContent = true;
+  contentType = 'image';
+  contentSrc = './images/photos/certificate.jpg';
+"><img class="splide__image" src="./images/photos/certificate.jpg" alt="certeficat"/></li>
+                      <li class="splide__slide" @click="
+  isShowPopUpContent = true;
+  contentType = 'image';
+  contentSrc = './images/photos/certificate.jpg';
+"><img class="splide__image" src="./images/photos/certificate.jpg" alt="certeficat"/></li>
                     </div>
                   </div>
                   
@@ -2193,10 +2233,10 @@
                       <div class="menu-object">
                         <div class="menu-object__header">
                           <div class="menu-object__photo">
-                            <div class="main-photo" style="width: 800px; height: 800px;">
+                            <div class="main-photo menu-object__circle" style="width: 800px; height: 800px;">
                               <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                                 <div class="main-photo__block">
-                                  <div class="object-photo" style="width: 80%; height: 600px;"><img src="./images/decor/shlem_full_x1.png" alt="ШОЛОМ TALEE"/>
+                                  <div class="object-photo menu-object__object"><img class="menu-object__object__image" src="./images/decor/shlem_full_x1.png" alt="ШОЛОМ TALEE"/>
                                     <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
                                   </div>
                                   <div class="menu-object__item-1">
@@ -2299,10 +2339,10 @@
                       <div class="menu-object menu-object--blue">
                         <div class="menu-object__header">
                           <div class="menu-object__photo">
-                            <div class="main-photo" style="width: 800px; height: 800px;">
+                            <div class="main-photo menu-object__circle" style="width: 800px; height: 800px;">
                               <div class="main-photo__0 main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                                 <div class="main-photo__block">
-                                  <div class="object-photo" style="width: 80%; height: 600px;"><img src="./images/decor/foot-2_full_x1.png" alt="ОРТЕЗИ PIRO"/>
+                                  <div class="object-photo menu-object__object"><img class="menu-object__object__image" src="./images/decor/foot-2_full_x1.png" alt="ОРТЕЗИ PIRO"/>
                                     <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
                                   </div>
                                   <div class="menu-object__item-4">
@@ -2821,7 +2861,6 @@
         </section>
         
         
-        <div class="section-more-about-talee__last"></div>
         <hr/>
         <section class="section-how-its-work">
           <div class="section-how-its-work__block-1">
@@ -3787,9 +3826,9 @@
           <div class="page__menu__container">
             <div class="page__menu__container__up"><a class="to-up" href="#" :class="{'to-up--hidden': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"/></a>
               <div class="contacts-menu__item">
-                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                <div class="button-accordion-icon button-accordion-icon--modal-menu" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
                   <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}" style="bottom: 0;">
-                    <div style="height: 82dvh; max-height: 920px; width: 764px;">
+                    <div style="height: 82dvh; max-height: 920px; max-width: 764px;">
                       <div class="menu menu--list">
                         <div class="menu__container">
                           <div class="menu__head">
@@ -3803,10 +3842,10 @@
                             <div class="menu-object">
                               <div class="menu-object__header">
                                 <div class="menu-object__photo">
-                                  <div class="main-photo" style="width: 800px; height: 800px;">
+                                  <div class="main-photo menu-object__circle" style="width: 800px; height: 800px;">
                                     <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                                       <div class="main-photo__block">
-                                        <div class="object-photo" style="width: 80%; height: 600px;"><img src="./images/decor/shlem_full_x1.png" alt="ШОЛОМ TALEE"/>
+                                        <div class="object-photo menu-object__object"><img class="menu-object__object__image" src="./images/decor/shlem_full_x1.png" alt="ШОЛОМ TALEE"/>
                                           <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
                                         </div>
                                         <div class="menu-object__item-1">
@@ -3899,9 +3938,9 @@
                 </div>
               </div>
               <div class="contacts-menu__item">
-                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                <div class="button-accordion-icon button-accordion-icon--modal-menu" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
                   <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}" style="bottom: 0;">
-                    <div style="height: 82dvh; max-height: 920px; width: 764px;">
+                    <div style="height: 82dvh; max-height: 920px; max-width: 764px;">
                       <div class="menu menu--blue menu--list">
                         <div class="menu__container">
                           <div class="menu__head">
@@ -3915,10 +3954,10 @@
                             <div class="menu-object menu-object--blue">
                               <div class="menu-object__header">
                                 <div class="menu-object__photo">
-                                  <div class="main-photo" style="width: 800px; height: 800px;">
+                                  <div class="main-photo menu-object__circle" style="width: 800px; height: 800px;">
                                     <div class="main-photo__0 main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                                       <div class="main-photo__block">
-                                        <div class="object-photo" style="width: 80%; height: 600px;"><img src="./images/decor/foot-2_full_x1.png" alt="ОРТЕЗИ PIRO"/>
+                                        <div class="object-photo menu-object__object"><img class="menu-object__object__image" src="./images/decor/foot-2_full_x1.png" alt="ОРТЕЗИ PIRO"/>
                                           <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
                                         </div>
                                         <div class="menu-object__item-4">
@@ -4023,7 +4062,7 @@
             </div>
             
             <div class="contacts-menu contacts-menu--horizontal" x-data="{ isClosed: true }" @click.outside="isClosed = true" :class="{'contacts-menu--closed': isClosed}" x-cloak="x-cloak">
-              <div class="contacts-menu__container" style="width: calc((20px + 56px) * 5 - 20px);">
+              <div class="contacts-menu__container" style="width:  calc((var(--menu-gap) + var(--menu-item)) * 5 - var(--menu-gap));">
                 <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.instagram.com" target="_blank"><img src="./images/icons/social-instagram.svg" alt="instagram"/></a>
                 </div>
                 <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.gmail.com" target="_blank"><img src="./images/icons/social-sms.svg" alt="social-sms"/></a>
@@ -4035,7 +4074,6 @@
                 <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://web.telegram.org" target="_blank"><img src="./images/icons/social-telegram.svg" alt="telegram"/></a>
                 </div>
               </div>
-              
               <button class="contacts-menu__button" type="button" @click="isClosed=!isClosed" :class="{'contacts-menu__button--closed': !isClosed}">
                 <div class="contacts-menu__button__image"></div>
               </button>

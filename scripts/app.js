@@ -65,9 +65,7 @@ if (hadMySlider) {
     autoplay: true,
     resetProgress: false,
     breakpoints: {
-      [breakpoints.phablet]: {
-        perPage: 1,
-      },
+      [breakpoints.tablet]: { perPage: 1 },
     },
   });
 
@@ -83,9 +81,7 @@ if (hadMySlider2) {
     autoplay: true,
     resetProgress: false,
     breakpoints: {
-      [breakpoints.laptop]: {
-        perPage: 1,
-      },
+      [breakpoints.laptop]: { perPage: 1 },
     },
   });
 
@@ -101,9 +97,8 @@ if (hadMySlider3) {
     autoplay: true,
     resetProgress: false,
     breakpoints: {
-      [breakpoints.laptop]: {
-        perPage: 2,
-      },
+      [breakpoints.laptop]: { perPage: 2 },
+      [breakpoints.phablet]: { perPage: 1 },
     },
   });
 
