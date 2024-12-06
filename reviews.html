@@ -34,9 +34,9 @@
       isPhone: false,
     }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor }">
     <div class="page__wrapper">
-      <template x-if="isShowBurgerMenu">
-        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
-          <div class="burger-menu__container">
+      <template x-cloak x-if="isShowBurgerMenu">
+        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @click="setTimeout(() =&gt; {isShowBurgerMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
+          <div class="burger-menu__container" @click.stop="@click.stop">
             <div class="screen" style="z-index: -1;">
               <div class="screen__container">
                 <div class="_no-event screen-desk-↙">
@@ -91,7 +91,7 @@
                       <div class="social-list"><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
                       </div>
                     </div>
-                    <button class="button" @click="" type="">
+                    <button class="button" @click="isShowPopUpRepeat = true" type="">
                       <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                       </p>
                       <div class="button__icon">
@@ -227,9 +227,9 @@
           </div>
         </div>
       </template>
-      <template x-if="isShowSearchMenu">
-        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
-          <div class="burger-menu__container">
+      <template x-cloak x-if="isShowSearchMenu">
+        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @click="setTimeout(() =&gt; {isShowSearchMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
+          <div class="burger-menu__container" @click.stop="@click.stop">
             <div class="screen" style="z-index: -1;">
               <div class="screen__container">
                 <div class="_no-event screen-desk-↙">
@@ -376,9 +376,9 @@
           </div>
         </div>
       </template>
-      <template x-if="isShowPopUpContact">
-        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
-          <div class="burger-menu__container">
+      <template x-cloak x-if="isShowPopUpContact">
+        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @click="setTimeout(() =&gt; {isShowPopUpContact=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
+          <div class="burger-menu__container" @click.stop="@click.stop">
             <div class="screen" style="z-index: -1;">
               <div class="screen__container">
                 <div class="_no-event screen-desk-↙">
@@ -525,13 +525,13 @@
           </div>
         </div>
       </template>
-      <template x-if="isShowPopUpDoctor">
-        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      <template x-cloak x-if="isShowPopUpDoctor">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': false,
     }">
           <div class="pop-up__content">
-            <div class="modal" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
+            <div class="modal" on-cloak="on-cloak" @click.stop="@click.stop" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
               <div class="modal__button">
                 <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
               </div>
@@ -614,13 +614,13 @@
           </div>
         </div>
       </template>
-      <template x-if="isShowPopUpRepeat">
-        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      <template x-cloak x-if="isShowPopUpRepeat">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpRepeat = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': false,
     }">
           <div class="pop-up__content">
-            <div class="modal">
+            <div class="modal" on-cloak="on-cloak" @click.stop="@click.stop">
               <div class="modal__button">
                 <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpRepeat = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
               </div>
@@ -669,7 +669,7 @@
                       </div>
                       <div class="wrapper-frame">
                         <div class="wrapper-frame__container">
-                          <textarea class="textarea" name="my-message" cols="30" rows="10" placeholder="Ваше повідомлення"></textarea>
+                          <textarea class="textarea" name="my-message" cols="30" rows="5" placeholder="Ваше повідомлення"></textarea>
                         </div>
                       </div>
                       <label class="checkbox">
@@ -743,8 +743,8 @@
           </div>
         </div>
       </template>
-      <template x-if="isShowPopUpContent">
-        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      <template x-cloak x-if="isShowPopUpContent">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpContent = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': true,
     }">
@@ -755,7 +755,7 @@
             <section class="section-modal">
               <div class="section-modal__container">
                 <div class="section-modal__bg"></div>
-                <div class="section-modal__screen"><img class="section-modal__content" x-show="contentType==='image'" :src="contentSrc" alt="image"/>
+                <div class="section-modal__screen" @click.stop="@click.stop"><img class="section-modal__content" x-show="contentType==='image'" :src="contentSrc" alt="image"/>
                   <video class="section-modal__content" x-show="contentType==='video'" :src="contentSrc" autoplay="autoplay" controls="controls"></video>
                   <iframe class="section-modal__content" x-show="contentType==='url'" width="100%" height="100%" :src="contentSrc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -814,7 +814,9 @@
           </div>
         </div>
       </header>
-      <main class="page__main">
+      <main class="page__main"><div @click="console.log('I will not get logged')">
+<button @click.stop>Click Me</button>
+</div>
         <div class="section-main-block">
           <div class="section-main-block__title-container">
             <div class="section-main-block__title-container__content-first">
@@ -1219,7 +1221,7 @@
                     </div>
                     <div class="wrapper-frame">
                       <div class="wrapper-frame__container">
-                        <textarea class="textarea" name="my-message" cols="" rows="7" placeholder="Ваше повідомлення"></textarea>
+                        <textarea class="textarea" name="my-message" cols="" rows="4" placeholder="Ваше повідомлення"></textarea>
                       </div>
                     </div>
                     <label class="checkbox">
