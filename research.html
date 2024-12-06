@@ -4179,10 +4179,13 @@
                 </div>
               </div>
               <div class="contacts-menu__item">
-                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                <div class="button-accordion-icon button-accordion-icon--col" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
                   <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}">
-                    <button class="button-icon button-icon--border" @click="" type=""><img src="./images/icons/light__phone.svg" alt="instagram"/></button>
-                    <button class="button-icon button-icon--border" @click="" type=""><img src="./images/icons/light__phone.svg" alt="instagram"/></button>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <div class="short-contacts__link" style="padding: 20px"><img src="./images/icons/phone.svg"/><a href="tel:+38 095 120 75 75">+38 095 120 75 75</a></div>
+                      </div>
+                    </div>
                   </div>
                   <div class="button-accordion-icon__container" :class="{'button-accordion-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-icon__image" src="./images/icons/light__phone.svg" alt="icon of phone"/>
                   </div>
