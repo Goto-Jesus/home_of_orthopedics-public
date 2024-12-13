@@ -66,7 +66,7 @@
                 border-bottom: 1px solid #62500f26;">
                   <div>
                     <h4 class="section-links__title">Компанія</h4>
-                    <hr class="section-links__hr"/>
+                    <hr class="hr _anim-items _anim-once_ _transition-clip-form-left section-links__hr"/>
                     <div class="section-links__columns">
                       <ul class="list-of-links">
                         <li><a class="_link" href="./about_company.html">Про компанію</a></li>
@@ -107,7 +107,7 @@
                 
                 <div style="padding-bottom: 30px;">
                   <h4 class="section-links__title">Послуги</h4>
-                  <hr class="section-links__hr"/>
+                  <hr class="hr _anim-items _anim-once_ _transition-clip-form-left section-links__hr"/>
                   <div class="burger-menu__list-card">
                     <div class="wrapper-frame wrapper-frame--bg">
                       <div class="wrapper-frame__container">
@@ -256,7 +256,7 @@
                 
                 <div style="padding-bottom: 30px;">
                   <h4 class="section-links__title">Послуги</h4>
-                  <hr class="section-links__hr"/>
+                  <hr class="hr _anim-items _anim-once_ _transition-clip-form-left section-links__hr"/>
                   <div class="burger-menu__list-card">
                     <div class="wrapper-frame wrapper-frame--bg">
                       <div class="wrapper-frame__container">
@@ -577,7 +577,7 @@
                     
                     
                   </article>
-                  <hr/>
+                  <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
                   <div class="card-info-doc__container">
                     <div>
                       <h3 class="card-info-doc__title">Досвід</h3>
@@ -815,7 +815,7 @@
         </div>
       </header>
       <main class="page__main">
-        <section class="section-main-slider" x-data="{'isFirst':true,'timer':null,'startTimer': function(second = 10) {  if (this.timer) {  clearInterval(this.timer);  }  this.timer = setInterval(() =&gt; {  this.isFirst = !this.isFirst;  }, second * 1000);  } ,'toggleOn': function() {  this.isFirst = true;  this.startTimer();  } ,'toggleOff': function() {  this.isFirst = false;  this.startTimer();  } }" x-init="startTimer()">
+        <section class="section-main-slider" x-data="{'isFirst':true,'timer':null,'startTimer': function(second = 30) {  if (this.timer) {  clearInterval(this.timer);  }  this.timer = setInterval(() =&gt; {  this.isFirst = !this.isFirst;  }, second * 1000);  } ,'toggleOn': function() {  this.isFirst = true;  this.startTimer();  } ,'toggleOff': function() {  this.isFirst = false;  this.startTimer();  } }" x-init="startTimer()">
           <div class="section-main-slider__wrapper" :class="{'section-main-slider__wrapper--hidden': !isFirst}">
             <div class="section-main-slider__decor-1">
               <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);"></div>
@@ -838,7 +838,7 @@
                 </div>
                 <div class="section-main-slider__switch__line">
                   <div class="section-main-slider__switch__point" :class="{'section-main-slider__switch__point--right': !isFirst}"></div>
-                  <hr/>
+                  <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
                 </div>
               </div>
               
@@ -846,7 +846,7 @@
               
               <div class="section-main-slider__empty--talee"></div>
               
-              <hr class="section-main-slider__hr"/>
+              <hr class="hr _anim-items _anim-once_ _transition-clip-form-left section-main-slider__hr"/>
               
               <div class="section-main-slider__container">
                 <p class="section-main-slider__text">Шолом <span>TALEE<sup>®</sup></span> — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
@@ -955,7 +955,7 @@
                 </div>
                 <div class="section-main-slider__switch__line">
                   <div class="section-main-slider__switch__point" :class="{'section-main-slider__switch__point--right': !isFirst}"></div>
-                  <hr/>
+                  <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
                 </div>
               </div>
               
@@ -963,7 +963,7 @@
               
               <div class="section-main-slider__empty--piro"></div>
               
-              <hr class="section-main-slider__hr"/>
+              <hr class="hr _anim-items _anim-once_ _transition-clip-form-left section-main-slider__hr"/>
               
               <div class="section-main-slider__container">
                 <p class="section-main-slider__text section-main-slider__text--blue">Ортез <span>PIRO<sup>®</sup></span> — найтонший та найлегший ортез для гомілковостопного суглоба</p>
@@ -1052,10 +1052,11 @@
           </div>
         </section>
         <section class="section-0">
-          <div class="section-0__content">
+          <div class="section-0__content _anim-items _anim-once _transition-left">
             <h2 class="section-0__title" data-da=".section-0,950,last">єдиний в Україні медичний центр з корекції деформації голови у дітей</h2>
+            
             <div class="section-0__container">
-              <div class="section-0__block-media"> 
+              <div class="section-0__block-media _anim-items _anim-once _transition-left">
                 <div class="video-link">
                   <div class="video-link__view" @click="
   isShowPopUpContent = true;
@@ -1085,14 +1086,16 @@
                   </div>
                 </div>
               </div>
-              <div class="section-0__block-media"><img src="./images/decor/decor_5_.jpg" alt="mother and child"/></div>
+              <div class="section-0__block-media _anim-items _anim-once _transition-left"><img src="./images/decor/decor_5_.jpg" alt="mother and child"/></div>
               <div class="section-0__text">
                 <p>Ортопедичний шолом <span>Talee</span> призначений для дітей певного віку, які мають проблеми з деформацією голови. Він стане ефективним рішенням для батьків, які прагнуть запобігти або вилікувати ці проблеми у своїх дітей</p>
               </div>
             </div>
-          </div><img class="section-0__main-photo" src="./images/photos/photo-shlem-children.jpg" alt="photo"/>
+          </div>
+          
+          <img class="section-0__main-photo _anim-items _anim-once _transition-right" src="./images/photos/photo-shlem-children.jpg" alt="photo"/>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
         <section class="section-block">
           <div class="section-block__title-container">
             <div class="lable-main">01<span>/ Про компанiю</span></div>
@@ -1103,65 +1106,73 @@
             </h2>
           </div>
           <div class="section-block__content-container">
-            <div class="wrapper-frame">
-              <div class="wrapper-frame__container">
-                <article class="card-easy-2 card">
-                  
-                  
-                  <div class="card-easy-2__container">
-                    <h3 class="card-easy-2__title">1й</h3>
-                    <p class="card-easy-2__text">єдиний в Україні медичний центр з корекції деформації голови у дітей, заснованний <b>у 2024 роцi у м.Днiпро</b></p>
-                  </div>
-                  
-                  
-                </article>
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_25">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-2 card">
+                    
+                    
+                    <div class="card-easy-2__container">
+                      <h3 class="card-easy-2__title">1й</h3>
+                      <p class="card-easy-2__text">єдиний в Україні медичний центр з корекції деформації голови у дітей, заснованний <b>у 2024 роцi у м.Днiпро</b></p>
+                    </div>
+                    
+                    
+                  </article>
+                </div>
               </div>
             </div>
-            <div class="wrapper-frame">
-              <div class="wrapper-frame__container">
-                <article class="card-easy-2 card">
-                  
-                  
-                  <div class="card-easy-2__container">
-                    <h3 class="card-easy-2__title">!</h3>
-                    <p class="card-easy-2__text">Як <b>експерти в галузі ортопедії</b>, ми зосереджені на покращенні якості життя дітей за допомогою інноваційних методів лікування</p>
-                  </div>
-                  
-                  
-                </article>
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_5">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-2 card">
+                    
+                    
+                    <div class="card-easy-2__container">
+                      <h3 class="card-easy-2__title">!</h3>
+                      <p class="card-easy-2__text">Як <b>експерти в галузі ортопедії</b>, ми зосереджені на покращенні якості життя дітей за допомогою інноваційних методів лікування</p>
+                    </div>
+                    
+                    
+                  </article>
+                </div>
               </div>
             </div>
-            <div class="wrapper-frame">
-              <div class="wrapper-frame__container">
-                <article class="card-easy-2 card">
-                  
-                  
-                  <div class="card-easy-2__container">
-                    <h3 class="card-easy-2__title">3D</h3>
-                    <p class="card-easy-2__text">Технологія 3D сканування гарантує, що шолом ідеально підійде вашій дитині</p>
-                  </div>
-                  
-                  
-                </article>
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_75">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-2 card">
+                    
+                    
+                    <div class="card-easy-2__container">
+                      <h3 class="card-easy-2__title">3D</h3>
+                      <p class="card-easy-2__text">Технологія 3D сканування гарантує, що шолом ідеально підійде вашій дитині</p>
+                    </div>
+                    
+                    
+                  </article>
+                </div>
               </div>
             </div>
-            <div class="wrapper-frame">
-              <div class="wrapper-frame__container">
-                <article class="card-easy-2 card">
-                  
-                  
-                  <div class="card-easy-2__container">
-                    <h3 class="card-easy-2__title">20000+</h3>
-                    <p class="card-easy-2__text">Шоломом <span>Talee</span> було вилікувано <b>20 000+</b> дітей по всьому світу</p>
-                  </div>
-                  
-                  
-                </article>
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-1">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-2 card">
+                    
+                    
+                    <div class="card-easy-2__container">
+                      <h3 class="card-easy-2__title">20000+</h3>
+                      <p class="card-easy-2__text">Шоломом <span>Talee</span> було вилікувано <b>20 000+</b> дітей по всьому світу</p>
+                    </div>
+                    
+                    
+                  </article>
+                </div>
               </div>
             </div>
           </div>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
         <section class="section-block section-block--light  section-block--columns-4 section-block--background-1 section-block--undefined" style="background-image: url(&quot;./images/decor/decor_1.jpg&quot;);">
           <div class="section-block__title-container">
             <div class="lable-main lable-main--light">02<span>/ Послуги</span></div>
@@ -1172,7 +1183,7 @@
             </h2>
           </div>
           <div class="section-block__content-container section-block__content-container--light">
-            <article class="card-block-1 card">
+            <article class="card-block-1 card _anim-items _anim-once _transition-opacity _anim-delay-0_25">
               
               
               <div class="card-block-1__container"><img class="card-block-1__image" src="./images/icons/card_1.svg" loading="lazy" alt="baby icon"/>
@@ -1192,7 +1203,7 @@
                   </div></a>
               </div>
             </article>
-            <article class="card-block-1 card">
+            <article class="card-block-1 card _anim-items _anim-once _transition-opacity _anim-delay-0_5">
               
               
               <div class="card-block-1__container"><img class="card-block-1__image" src="./images/icons/card_2.svg" loading="lazy" alt="baby icon"/>
@@ -1212,7 +1223,7 @@
                   </div></a>
               </div>
             </article>
-            <article class="card-block-1 card">
+            <article class="card-block-1 card _anim-items _anim-once _transition-opacity _anim-delay-0_75">
               
               
               <div class="card-block-1__container"><img class="card-block-1__image" src="./images/icons/card_3.svg" loading="lazy" alt="baby icon"/>
@@ -1232,7 +1243,7 @@
                   </div></a>
               </div>
             </article>
-            <article class="card-block-1 card">
+            <article class="card-block-1 card _anim-items _anim-once _transition-opacity _anim-delay-1">
               
               
               <div class="card-block-1__container"><img class="card-block-1__image" src="./images/icons/card_4.svg" loading="lazy" alt="baby icon"/>
@@ -1269,7 +1280,7 @@
             <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
             </p></a>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
         <section class="section-map" x-data="mapData" x-init="init()" @mousemove="moveTitle($event)">
           <div class="section-map__title-container">
             <div class="lable-main">03<span>/ Карта інформації</span></div>
@@ -2583,7 +2594,7 @@
             }
           };
         </script>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
         <section class="section-shlem" x-data="{'images':['./images/decor/shlem/shlem_beige.png','./images/decor/shlem/shlem_orange.png','./images/decor/shlem/shlem_green.png','./images/decor/shlem/shlem_yellow.png','./images/decor/shlem/shlem_pink.png','./images/decor/shlem/shlem_white.png'],'currentImage':'./images/decor/shlem/shlem_beige.png'}">
           <div class="gradient-fon" :class="{
       'gradient-fon--beige':  currentImage === images[0],
@@ -2674,7 +2685,7 @@
             <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);position: absolute;"></div>
           </div>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
         <section class="section-block section-block--more-about-talee">
           <div class="section-block__title-container">
             <div class="lable-main lable-main--more-about-talee">05<span>/ Бiльше про шолом</span></div>
@@ -2716,12 +2727,12 @@
             
             <div class="section-more-about-talee__block-2">
               <h3 class="section-more-about-talee__title">Шолом <b>TALEE</b>, розроблений з урахуванням стандартів безпеки та якості, стає надійним помічником для батьків у вирішенні проблем дитячого ортопедичного здоров’я</h3>
-              <hr/>
+              <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
               <div class="section-more-about-talee__content">
                 <p class="section-more-about-talee__text">Ортопедичний шолом ефективно впливає на формування правильної форми голови у дітей, забезпечуючи фізичний комфорт та психологічне благополуччя. Наш продукт дозволяє батькам бути впевненими у здоров’ї своїх немовлят, використовуючи передові технології. Шолом можна носити до 6 місяців для оптимальних результатів</p>
                 <div class="section-more-about-talee__image-text">Шолом допомагає корегувати <br>голову дитини, забезпечуючи <br>максимальний комфорт та безпеку</div>
               </div>
-              <hr class="section-more-about-talee__hr"/>
+              <hr class="hr _anim-items _anim-once_ _transition-clip-form-left section-more-about-talee__hr"/>
               <div class="section-more-about-talee__content section-more-about-talee__content--2" data-da=".section-more-about-talee__last,1250,0">
                 <div class="wrapper-frame">
                   <div class="wrapper-frame__container">
@@ -2777,7 +2788,7 @@
         </section>
         
         
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
         <section class="section-how-its-work">
           <div class="section-how-its-work__block-1 _anim-items _anim-once _transition-left">
             <div class="lable-main">06<span>/ Як це працює</span></div>
@@ -2814,7 +2825,7 @@
             </div>
           </div>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
         <section class="section-solution">
           <div class="section-solution__title-container">
             <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);position: absolute; z-index: 2;"></div>
@@ -2886,7 +2897,7 @@
             
             
             <div class="section-solution__circle">
-              <div class="circle-pointer _anim-items _anim_once _transition-scale">
+              <div class="circle-pointer _anim-items _anim_once _transition-opacity">
                 <div class="circle-pointer__line"></div>
                 <div class="circle-pointer__line" style="transform: rotate(144deg);"></div>
                 <div class="circle-pointer__line" style="transform: rotate(90deg) translateX(50px); width: 35%;"></div>
@@ -3100,7 +3111,7 @@
                   
                   
                   <div class="card-easy-3__block card__block">
-                    <hr/>
+                    <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
                     <ul class="card-easy-3__list">
                       <li><span>Лікар-ортопед проводить комплексну оцінку стану голови та <b>визначає ступінь деформації</b></span></li>
                       <li> <span>Використання сучасних технологій для отримання точної 3D-моделі голови, що служить основою для виготовлення індивідуального шолому</span></li>
@@ -3122,7 +3133,7 @@
                   
                   
                   <div class="card-easy-3__block card__block">
-                    <hr/>
+                    <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
                     <ul class="card-easy-3__list">
                       <li> <span>Розробка та <b>виготовлення шолому</b> за допомогою передових технологій</span></li>
                       <li> <span>Лікар вказує <b>належний час носіння шолому</b> в день та встановлює індивідуальні параметри для оптимальної ефективності</span></li>
@@ -3144,7 +3155,7 @@
                   
                   
                   <div class="card-easy-3__block card__block">
-                    <hr/>
+                    <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
                     <ul class="card-easy-3__list">
                       <li><span>Лікар <b>веде контроль за процесом</b> та вносить корективні зміни в режим носіння шолому</span></li>
                       <li> <span>Родині <b>надається підтримка</b> та інформація для забезпечення ефективності та комфорту лікування</span></li>
@@ -3166,7 +3177,7 @@
                   
                   
                   <div class="card-easy-3__block card__block">
-                    <hr/>
+                    <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
                     <ul class="card-easy-3__list">
                       <li><span>Після досягнення поставлених цілей, <b>лікар призначає завершення</b> носіння ортопедичного шолому</span></li>
                       <li> <span>Цей процес вимагає взаємодії між лікарем, родинами та дитиною для <b>досягнення оптимальних результатів</b> у корекції деформації голови</span></li>
@@ -3193,7 +3204,7 @@
             <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
             </p></a>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
         <section class="section-block section-block--light  section-block--columns-4 section-block--background-2" style="background-image: url(&quot;./images/decor/decor_7.jpg&quot;);">
           <div class="section-block__title-container">
             <div class="lable-main lable-main--light">09<span>/ Чому ми?</span></div>
@@ -3204,7 +3215,7 @@
             </h2>
           </div>
           <div class="section-block__content-container section-block__content-container--light">
-            <article class="card-block-2 card-block-2--mini-text card">
+            <article class="card-block-2 card-block-2--mini-text card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_25">
               <img class="card-block-2__image" src="./images/icons/card-b_1-state.svg" loading="lazy"/>
               
               <div class="card-block-2__container">
@@ -3213,7 +3224,7 @@
               
               
             </article>
-            <article class="card-block-2 card">
+            <article class="card-block-2 card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_5">
               <img class="card-block-2__image" src="./images/icons/card-b_2-doctor.svg" loading="lazy"/>
               
               <div class="card-block-2__container">
@@ -3222,7 +3233,7 @@
               
               
             </article>
-            <article class="card-block-2 card">
+            <article class="card-block-2 card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_75">
               <img class="card-block-2__image" src="./images/icons/card-b_3-3d.svg" loading="lazy"/>
               
               <div class="card-block-2__container">
@@ -3231,7 +3242,7 @@
               
               
             </article>
-            <article class="card-block-2 card">
+            <article class="card-block-2 card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-1">
               <img class="card-block-2__image" src="./images/icons/card-b_4-health.svg" loading="lazy"/>
               
               <div class="card-block-2__container">
@@ -3242,7 +3253,7 @@
             </article>
           </div>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
         <section class="section-block  section-block--columns-2 section-block--slider-container">
           <div class="section-block__title-container">
             <div class="lable-main">10<span>/ Нашi лiкарi</span></div>
@@ -3511,7 +3522,7 @@
             </div>
           </div>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
         <section class="section-accordion">
           <div class="section-accordion__container">
             <div class="section-accordion__content">
@@ -3676,7 +3687,7 @@
             </div>
           </div>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
         <section class="section-form">
           <div class="wrapper-frame">
             <div class="wrapper-frame__container">
@@ -3735,7 +3746,7 @@
             </div>
           </div>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left"/>
       </main>
       <div class="page__menu">
         <template x-if="!isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
@@ -4034,7 +4045,7 @@
                     <div>
                       <div>
                         <h4 class="section-links__title">Компанія</h4>
-                        <hr class="section-links__hr"/>
+                        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left section-links__hr"/>
                         <div class="section-links__columns">
                           <ul class="list-of-links">
                             <li><a class="_link" href="./about_company.html">Про компанію</a></li>
@@ -4058,7 +4069,7 @@
                     <div>
                       <div>
                         <h4 class="section-links__title">Послуги</h4>
-                        <hr class="section-links__hr"/>
+                        <hr class="hr _anim-items _anim-once_ _transition-clip-form-left section-links__hr"/>
                         <ul class="list-of-links">
                           <li><a class="_link" href="./one_service.html">Лiкування деформацiї голови</a></li>
                           <li><a class="_link" href="./one_service.html">Консультації дитячого лiкаря ортопеда</a></li>
