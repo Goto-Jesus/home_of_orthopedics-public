@@ -20,6 +20,7 @@
       mouseY: 0,
       isShowToUp: false,
 
+      isShowPageMenu: true,
       isShowBurgerMenu: false,
       isShowSearchMenu: false,
       isShowPopUpContact: false,
@@ -774,7 +775,7 @@
           <div class="header__hr"></div>
           
           
-          <div class="_grid-col-desk-3-3">
+          <div class="_grid-col-max-3-3">
             <div class="short-contacts__links">
               <div class="short-contacts__link" @click="
   isShowPopUpContent = true;
@@ -787,7 +788,7 @@
           </div>
           
           
-          <div class="header__container _grid-col-desk-4-5">
+          <div class="header__container _grid-col-max-4-5">
             <div class="header__navigation">
               <nav class="navigation">
                 <ul class="navigation__list">
@@ -804,7 +805,7 @@
           </div>
           
           
-          <div class="header__buttons _grid-col-desk-6-6">
+          <div class="header__buttons _grid-col-max-6-6">
             <button class="button button--light" @click="isShowPopUpContact=true;" type="">
               <p class="button__text"><span>ЗВ'ЯЗАТИСЯ</span>
               </p>
@@ -3749,7 +3750,7 @@
         <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
       </main>
       <div class="page__menu">
-        <template x-if="!isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
+        <template x-if="isShowPageMenu &amp;&amp; !isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
           <div class="page__menu__container">
             <div class="page__menu__container__up"><a class="to-up" href="#" :class="{'to-up--hidden': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"/></a>
               <div class="contacts-menu__item">

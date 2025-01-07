@@ -20,6 +20,7 @@
       mouseY: 0,
       isShowToUp: false,
 
+      isShowPageMenu: true,
       isShowBurgerMenu: false,
       isShowSearchMenu: false,
       isShowPopUpContact: false,
@@ -774,7 +775,7 @@
           <div class="header__hr"></div>
           
           
-          <div class="_grid-col-desk-3-3">
+          <div class="_grid-col-max-3-3">
             <div class="short-contacts__links">
               <div class="short-contacts__link" @click="
   isShowPopUpContent = true;
@@ -787,7 +788,7 @@
           </div>
           
           
-          <div class="header__container _grid-col-desk-4-5">
+          <div class="header__container _grid-col-max-4-5">
             <div class="header__navigation">
               <nav class="navigation">
                 <ul class="navigation__list">
@@ -804,7 +805,7 @@
           </div>
           
           
-          <div class="header__buttons _grid-col-desk-6-6">
+          <div class="header__buttons _grid-col-max-6-6">
             <button class="button button--light" @click="isShowPopUpContact=true;" type="">
               <p class="button__text"><span>ЗВ'ЯЗАТИСЯ</span>
               </p>
@@ -835,35 +836,53 @@
           </div>
         </div>
         <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
-        <section class="section-news-detail">
-          <div class="section-news-detail__block">
-            <div class="title-easy-4">
-              <p class="title-easy-4__text">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</p>
-              <div class="title-easy-4__container">
-                <h2 class="title-easy-4__main-text">Наслідки позиційної плагіоцефалії для розвитку нервової системи.</h2>
-              </div>
-            </div>
-            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
-            <div class="title-easy-4">
-              <p class="title-easy-4__text">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</p>
-              <div class="title-easy-4__container">
-                <h2 class="title-easy-4__main-text">Наслідки позиційної плагіоцефалії для розвитку нервової системи.</h2>
-              </div>
-            </div>
-            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
-            <div class="title-easy-4">
-              <p class="title-easy-4__text">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</p>
-              <div class="title-easy-4__container">
-                <h2 class="title-easy-4__main-text">Наслідки позиційної плагіоцефалії для розвитку нервової системи.</h2>
-              </div>
-            </div>
+        <section class="section-news-detail" x-data="{isOpen: false}">
+          <div class="section-news-detail__block" :class="{'section-news-detail__block--hidden': !isOpen}">
+            <button class="button" @click="isOpen=!isOpen" type="">
+              <p class="button__text"><span>V</span>
+              </p>
+            </button><a href="#" @click="isOpen=false"> 
+              <div class="title-easy-4">
+                <p class="title-easy-4__text">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</p>
+                <div class="title-easy-4__container">
+                  <h2 class="title-easy-4__main-text">Наслідки позиційної плагіоцефалії для розвитку нервової системи.</h2>
+                </div>
+              </div></a>
+            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/><a href="#" @click="isOpen=false"> 
+              <div class="title-easy-4">
+                <p class="title-easy-4__text">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</p>
+                <div class="title-easy-4__container">
+                  <h2 class="title-easy-4__main-text">Наслідки позиційної плагіоцефалії для розвитку нервової системи.</h2>
+                </div>
+              </div></a>
+            <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/><a href="#" @click="isOpen=false"> 
+              <div class="title-easy-4">
+                <p class="title-easy-4__text">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</p>
+                <div class="title-easy-4__container">
+                  <h2 class="title-easy-4__main-text">Наслідки позиційної плагіоцефалії для розвитку нервової системи.</h2>
+                </div>
+              </div></a>
           </div>
           <div class="section-news-detail__content">
-            <h4 class="_h4 title-s _uppercase">Наслідки позиційної плагіоцефалії для розвитку нервової системи</h4>
-            <p class="block-information__text">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</p>
-            <div class="title">
-              <p class="title__text">Наголошено, що терапія шоломом не призводила до виникнення проблем.У дослідженнях виявлено, що діти з позиційною плагіоцефалією мають підвищений ризик затримки розвитку в дитинстві, і рівень ризику можна порівняти або навіть перевищує рівень ризику для дітей з краніосиностозом.У дослідженнях виявлено, що діти з позиційною плагіоцефалією мають підвищений ризик затримки розвитку в дитинстві, і рівень ризику можна порівняти або навіть перевищує рівень ризику для дітей з краніосиностозом.</p>
+            <h4 class="_h4 title-s _uppercase">Наслідки позиційної плагіоцефалії для розвитку нервової системи</h4><a class="block-information__text" href="#">Neurodevelopmental Implications of «Deformational» Plagiocephaly (BRENT COLLETT, Ph.D., DAVID BREIGER, Ph.D., DARCY KING, ARNP, MICHAEL CUNNINGHAM, M.D., Ph.D., and MATTHEW SPELTZ, Ph.D.)</a>
+            <div class="section-news-detail__content__container-1"><img class="section-news-detail__content__image section-news-detail__content__image-1" src="./images/photos/baby_2-4.png" alt="photo"/>
+              <div class="text-s _text1">Наголошено, що терапія шоломом не призводила до виникнення проблем. У дослідженнях виявлено, що діти з позиційною плагіоцефалією мають підвищений ризик затримки розвитку в дитинстві, і рівень ризику можна порівняти або навіть перевищує рівень ризику для дітей з краніосиностозом.У дослідженнях виявлено, що діти з позиційною плагіоцефалією мають підвищений ризик затримки розвитку в дитинстві, і рівень ризику можна порівняти або навіть перевищує рівень ризику для дітей з краніосиностозом.</div>
             </div>
+            <div class="text-s _text1">Наголошено, що терапія шоломом не призводила до виникнення проблем. У дослідженнях виявлено, що діти з позиційною плагіоцефалією мають підвищений ризик затримки розвитку в дитинстві, і рівень ризику можна порівняти або навіть перевищує рівень ризику для дітей з краніосиностозом. Проте слід з'ясовувати причинно-наслідковий зв'язок. Не виключено вплив асиметричного черепа на розвиток мозку, але також ймовірно, що позиційна плагіоцефалія є просто «маркером» інших станів, які перешкоджають розвитку (наприклад, первинний нервово-м'язовий стан). Можна виділити три можливі взаємозв'язки позиційної плагіоцефалії та розвитку нервової системи. Ці взаємозв'язки можуть доповнювати одне одного.</div><img class="section-news-detail__content__image section-news-detail__content__image-2" src="./images/photos/baby_2-4.png" alt="photo"/>
+            <div class="text-s _text1">Наголошено, що терапія шоломом не призводила до виникнення проблем. У дослідженнях виявлено, що діти з позиційною плагіоцефалією мають підвищений ризик затримки розвитку в дитинстві, і рівень ризику можна порівняти або навіть перевищує рівень ризику для дітей з краніосиностозом. Проте слід з'ясовувати причинно-наслідковий зв'язок. Не виключено вплив асиметричного черепа на розвиток мозку, але також ймовірно, що позиційна плагіоцефалія є просто «маркером» інших станів, які перешкоджають розвитку (наприклад, первинний нервово-м'язовий стан). Можна виділити три можливі взаємозв'язки позиційної плагіоцефалії та розвитку нервової системи. Ці взаємозв'язки можуть доповнювати одне одного.</div>
+            <div class="section-news-detail__content__container-2"><img class="section-news-detail__content__image section-news-detail__content__image-1" src="./images/photos/baby_2-4.png" alt="photo"/>
+              <div class="text-s _text1">Наголошено, що терапія шоломом не призводила до виникнення проблем.У дослідженнях виявлено, що діти з позиційною плагіоцефалією мають підвищений ризик затримки розвитку в дитинстві, і рівень ризику можна порівняти або навіть перевищує рівень ризику для дітей з краніосиностозом.У дослідженнях виявлено, що діти з позиційною плагіоцефалією мають підвищений ризик затримки розвитку в дитинстві, і рівень ризику можна порівняти або навіть перевищує рівень ризику для дітей з краніосиностозом.</div>
+            </div>
+            <ul class="list">
+              <li class="list__item">Деформація черепа і деформація мозку, що виникає при цьому. Багато досліджень припускають, що деформація мозку при позиційній плагіоцефалії або краніосиностозі може бути причиною затримки розвитку.
+              </li>
+              <li class="list__item">Штучне обмеження рухливості дитини. Наприклад, надмірне використання дитячих автокрісел, колисок можуть викликати і позиційні деформації, і затримку рухового розвитку. Так як руховий і когнітивний розвиток у немовлят взаємопов’язані, це може призводити до порушення розвитку когнітивних функцій.
+                <ol class="list__second">
+                  <li class="list__second__item">Деформація черепа і деформація мозку, що виникає при цьому. Багато досліджень припускають, що деформація мозку при позиційній плагіоцефалії або краніосиностозі може бути причиною затримки розвитку.</li>
+                  <li class="list__second__item">Штучне обмеження рухливості дитини. Наприклад, надмірне використання дитячих автокрісел, колисок можуть викликати і позиційні деформації, і затримку рухового розвитку. Так як руховий і когнітивний розвиток у немовлят взаємопов’язані, це може призводити до порушення розвитку когнітивних функцій.</li>
+                </ol>
+              </li>
+            </ul>
           </div>
         </section>
         <section class="section-news-cascade">
@@ -2728,7 +2747,7 @@
         </section>
       </main>
       <div class="page__menu">
-        <template x-if="!isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
+        <template x-if="isShowPageMenu &amp;&amp; !isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
           <div class="page__menu__container">
             <div class="page__menu__container__up"><a class="to-up" href="#" :class="{'to-up--hidden': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"/></a>
               <div class="contacts-menu__item">

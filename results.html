@@ -20,6 +20,7 @@
       mouseY: 0,
       isShowToUp: false,
 
+      isShowPageMenu: true,
       isShowBurgerMenu: false,
       isShowSearchMenu: false,
       isShowPopUpContact: false,
@@ -774,7 +775,7 @@
           <div class="header__hr"></div>
           
           
-          <div class="_grid-col-desk-3-3">
+          <div class="_grid-col-max-3-3">
             <div class="short-contacts__links">
               <div class="short-contacts__link" @click="
   isShowPopUpContent = true;
@@ -787,7 +788,7 @@
           </div>
           
           
-          <div class="header__container _grid-col-desk-4-5">
+          <div class="header__container _grid-col-max-4-5">
             <div class="header__navigation">
               <nav class="navigation">
                 <ul class="navigation__list">
@@ -804,7 +805,7 @@
           </div>
           
           
-          <div class="header__buttons _grid-col-desk-6-6">
+          <div class="header__buttons _grid-col-max-6-6">
             <button class="button button--light" @click="isShowPopUpContact=true;" type="">
               <p class="button__text"><span>ЗВ'ЯЗАТИСЯ</span>
               </p>
@@ -823,8 +824,8 @@
             </div>
             
             <div class="section-main-block__title-container__content-second">
-              <h3 class="section-main-block__title-container__content-second__title-mini _grid-col-desk-2-2 _grid-col-lap-1-1">Співпраця з лікарями</h3>
-              <div class="section-main-block__title-container__content-second__video _grid-col-desk-1-1 _grid-col-lap-1-1">
+              <h3 class="section-main-block__title-container__content-second__title-mini _grid-col-max-2-2 _grid-col-desk-2-2 _grid-col-lap-1-1">Співпраця з лікарями</h3>
+              <div class="section-main-block__title-container__content-second__video _grid-col-max-1-1 _grid-col-desk-1-1 _grid-col-lap-1-1">
                 <div class="video-link">
                   <div class="video-link__view" @click="
   isShowPopUpContent = true;
@@ -835,7 +836,7 @@
                   </div>
                 </div>
               </div>
-              <div class="section-main-block__title-container__content-second__card _grid-col-desk-2-2 _grid-col-lap-1-1">
+              <div class="section-main-block__title-container__content-second__card _grid-col-max-2-2 _grid-col-desk-2-2 _grid-col-lap-1-1">
                 <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--height wrapper-frame--undefined">
                   <div class="wrapper-frame__container">
                     <article class="card-easy  card-easy--full card-easy--undefined card">
@@ -853,7 +854,7 @@
                   </div>
                 </div>
               </div>
-              <div class="section-main-block__title-container__content__breadcrumbs _grid-col-desk-1-2">
+              <div class="section-main-block__title-container__content__breadcrumbs _grid-col-max-1-2">
                 <div class="wrapper-frame">
                   <div class="wrapper-frame__container">
                     <div class="breadcrumbs" style="margin: 24px;">
@@ -912,7 +913,7 @@
           </div>
           <div class="section-block__content-container section-block__content-container--columns-1">
             <div class="block-decor-information">
-              <div class="main-photo" style="width: 1400px; height: 1400px;margin: auto;">
+              <div class="main-photo block-decor-information__main-photo" style="width: 1400px; height: 1400px;">
                 <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                   <div class="main-photo__block">
                     <div class="block-decor-information__wrapper">
@@ -1021,9 +1022,7 @@
             </h2>
           </div>
           <div class="section-block__content-container section-block__content-container--columns-1">
-            <div class="tab" x-data="{
-    activeItem: 0,
-  }">
+            <div class="tab" x-data="{'cards':[[{'title':'5 місяців','imageAfter':'./images/photos/photo_after.jpg','dateAfter':'20.01.2024','imageBefore':'./images/photos/photo_before.jpg','dateBefore':'21.07.2024','diagnose':'5 місяців','age':'1 рік'},{'title':'6 місяців','imageAfter':'./images/photos/photo_after.jpg','dateAfter':'20.01.2024','imageBefore':'./images/photos/photo_before.jpg','dateBefore':'21.07.2024','diagnose':'5 місяців','age':'1 рік'},{'title':'7 місяців','imageAfter':'./images/photos/photo_after.jpg','dateAfter':'20.01.2024','imageBefore':'./images/photos/photo_before.jpg','dateBefore':'21.07.2024','diagnose':'5 місяців','age':'1 рік'}],[{'title':'4 місяців','imageAfter':'./images/photos/photo_after.jpg','dateAfter':'20.01.2024','imageBefore':'./images/photos/photo_before.jpg','dateBefore':'21.07.2024','diagnose':'5 місяців','age':'1 рік'},{'title':'4 місяців','imageAfter':'./images/photos/photo_after.jpg','dateAfter':'20.01.2024','imageBefore':'./images/photos/photo_before.jpg','dateBefore':'21.07.2024','diagnose':'5 місяців','age':'1 рік'}],[{'title':'3 місяців','imageAfter':'./images/photos/photo_after.jpg','dateAfter':'20.01.2024','imageBefore':'./images/photos/photo_before.jpg','dateBefore':'21.07.2024','diagnose':'5 місяців','age':'1 рік'},{'title':'3 місяців','imageAfter':'./images/photos/photo_after.jpg','dateAfter':'20.01.2024','imageBefore':'./images/photos/photo_before.jpg','dateBefore':'21.07.2024','diagnose':'5 місяців','age':'1 рік'}],[{'title':'5 місяців','imageAfter':'./images/photos/photo_after.jpg','dateAfter':'20.01.2024','imageBefore':'./images/photos/photo_before.jpg','dateBefore':'21.07.2024','diagnose':'5 місяців','age':'1 рік'},{'title':'5 місяців','imageAfter':'./images/photos/photo_after.jpg','dateAfter':'20.01.2024','imageBefore':'./images/photos/photo_before.jpg','dateBefore':'21.07.2024','diagnose':'5 місяців','age':'1 рік'},{'title':'5 місяців','imageAfter':'./images/photos/photo_after.jpg','dateAfter':'20.01.2024','imageBefore':'./images/photos/photo_before.jpg','dateBefore':'21.07.2024','diagnose':'5 місяців','age':'1 рік'}]],'activeItem':0}">
               <div class="tab__items">
                 <div class="tab__item" :class="{'tab__item--active': activeItem === 0}" @click="activeItem=0">Плагіоцефалія</div>
                 <div class="tab__item" :class="{'tab__item--active': activeItem === 1}" @click="activeItem=1">Ассиметична брахифацефилия</div>
@@ -1033,126 +1032,48 @@
               <div class="tab__content">
                 <div class="tab__content__title">Плагіоцефалія (асиметрична деформація черепа)</div>
                 <div class="tab__content__list">
-                  <div class="card-result">
-                    <div class="card-result__header"><b><strong>видимий результат</strong></b> через <b>5 місяців</b></div>
-                    <div class="card-result__main">
-                      <div class="card-result__main__compare">
-                        <article class="card-block-9 card">
-                          <img class="card-block-9__image" src="./images/photos/photo_after.jpg" loading="lazy"/>
-                          
-                          <div class="card-block-9__container">
-                            <h3 class="card-block-9__title">До лікування: <br>20.01.2024</h3>
-                          </div>
-                          
-                          
-                        </article>
-                        <article class="card-block-9 card">
-                          <img class="card-block-9__image" src="./images/photos/photo_before.jpg" loading="lazy"/>
-                          
-                          <div class="card-block-9__container">
-                            <h3 class="card-block-9__title"><b>Після лікування:</b> <br>21.07.2024</h3>
-                          </div>
-                          
-                          
-                        </article>
+                  <template x-for="(item, index) in cards[activeItem]" :key="index">
+                    <div class="card-result">
+                      <div class="card-result__header"><b><strong>видимий результат</strong></b> через <b x-text="item.title"></b></div>
+                      <div class="card-result__main">
+                        <div class="card-result__main__compare">
+                          <article class="card-block-9 card">
+                            <img class="card-block-9__image" src="item.imageAfter" :src="item.imageAfter" loading="lazy" alt="undefined"/>
+                            
+                            <div class="card-block-9__container">
+                              <h3 class="card-block-9__title" x-text="До лікування: &lt;br&gt;&lt;span x-text=&quot;item.dateAfter&quot;&gt;undefined&lt;/span&gt;">До лікування: <br><span x-text="item.dateAfter">undefined</span></h3>
+                            </div>
+                            
+                            
+                          </article>
+                          <article class="card-block-9 card">
+                            <img class="card-block-9__image" src="item.imageBefore" :src="item.imageBefore" loading="lazy" alt="undefined"/>
+                            
+                            <div class="card-block-9__container">
+                              <h3 class="card-block-9__title" x-text="&lt;b&gt;Після лікування:&lt;/b&gt; &lt;br&gt;&lt;span x-text=&quot;item.dateBefore&quot;&gt;undefined&lt;/span&gt;"><b>Після лікування:</b> <br><span x-text="item.dateBefore">undefined</span></h3>
+                            </div>
+                            
+                            
+                          </article>
+                        </div>
+                        <div class="card-result__main__text"><span>Діагноз:</span><span x-text="item.diagnose"></span></div>
+                        <div class="card-result__main__text"><span>Вік дитини:</span><span x-text="item.age"></span></div>
                       </div>
-                      <div class="card-result__main__text"><span>Діагноз:</span><span>5 місяців</span></div>
-                      <div class="card-result__main__text"><span>Вік дитини:</span><span>1 рік</span></div>
-                    </div>
-                    <div class="card-result__footer">
-                      <button class="button  button--small button--light" @click="" type="">
-                        <p class="button__text"><span>ДЕТАЛЬНІШЕ</span>
-                        </p>
-                        <div class="button__icon">
-                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <div class="card-result__footer">
+                        <button class="button  button--small button--light" @click="" type="">
+                          <p class="button__text"><span>ДЕТАЛЬНІШЕ</span>
+                          </p>
+                          <div class="button__icon">
+                            <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
+                            </div>
                           </div>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-result">
-                    <div class="card-result__header"><b><strong>видимий результат</strong></b> через <b>5 місяців</b></div>
-                    <div class="card-result__main">
-                      <div class="card-result__main__compare">
-                        <article class="card-block-9 card">
-                          <img class="card-block-9__image" src="./images/photos/photo_after.jpg" loading="lazy"/>
-                          
-                          <div class="card-block-9__container">
-                            <h3 class="card-block-9__title">До лікування: <br>20.01.2024</h3>
-                          </div>
-                          
-                          
-                        </article>
-                        <article class="card-block-9 card">
-                          <img class="card-block-9__image" src="./images/photos/photo_before.jpg" loading="lazy"/>
-                          
-                          <div class="card-block-9__container">
-                            <h3 class="card-block-9__title"><b>Після лікування:</b> <br>21.07.2024</h3>
-                          </div>
-                          
-                          
-                        </article>
+                        </button>
                       </div>
-                      <div class="card-result__main__text"><span>Діагноз:</span><span>5 місяців</span></div>
-                      <div class="card-result__main__text"><span>Вік дитини:</span><span>1 рік</span></div>
                     </div>
-                    <div class="card-result__footer">
-                      <button class="button  button--small button--light" @click="" type="">
-                        <p class="button__text"><span>ДЕТАЛЬНІШЕ</span>
-                        </p>
-                        <div class="button__icon">
-                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-result">
-                    <div class="card-result__header"><b><strong>видимий результат</strong></b> через <b>5 місяців</b></div>
-                    <div class="card-result__main">
-                      <div class="card-result__main__compare">
-                        <article class="card-block-9 card">
-                          <img class="card-block-9__image" src="./images/photos/photo_after.jpg" loading="lazy"/>
-                          
-                          <div class="card-block-9__container">
-                            <h3 class="card-block-9__title">До лікування: <br>20.01.2024</h3>
-                          </div>
-                          
-                          
-                        </article>
-                        <article class="card-block-9 card">
-                          <img class="card-block-9__image" src="./images/photos/photo_before.jpg" loading="lazy"/>
-                          
-                          <div class="card-block-9__container">
-                            <h3 class="card-block-9__title"><b>Після лікування:</b> <br>21.07.2024</h3>
-                          </div>
-                          
-                          
-                        </article>
-                      </div>
-                      <div class="card-result__main__text"><span>Діагноз:</span><span>5 місяців</span></div>
-                      <div class="card-result__main__text"><span>Вік дитини:</span><span>1 рік</span></div>
-                    </div>
-                    <div class="card-result__footer">
-                      <button class="button  button--small button--light" @click="" type="">
-                        <p class="button__text"><span>ДЕТАЛЬНІШЕ</span>
-                        </p>
-                        <div class="button__icon">
-                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
+                  </template>
                 </div>
               </div>
             </div>
@@ -2913,7 +2834,7 @@
         </section>
       </main>
       <div class="page__menu">
-        <template x-if="!isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
+        <template x-if="isShowPageMenu &amp;&amp; !isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
           <div class="page__menu__container">
             <div class="page__menu__container__up"><a class="to-up" href="#" :class="{'to-up--hidden': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"/></a>
               <div class="contacts-menu__item">
