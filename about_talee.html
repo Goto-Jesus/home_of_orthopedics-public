@@ -824,18 +824,16 @@
           
           <div class="section-main-talee__title">
             <div class="section-main-talee__title__wrapper">
-              <div class="section-main-talee__title__container">
-                <div>
+              <div class="section-main-talee__title__container section-main-talee__title__container-1">
+                <div class="section-main-talee__card">
                   <div class="decor-circle-info" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * -1 / 200) + 'px,' + (mouseY * -1 / 200) + 'px, 0)'}})()">
                     <div class="decor-circle-info__container"><img class="decor-circle-info__image" src="./images/icons/3d_orange.svg" alt="3d"/>
                       <p class="decor-circle-info__text">ТЕХНОЛОГІЯ</p>
                     </div>
                   </div>
-                  <div class="section-main-slider__container">
-                    <p class="section-main-slider__text">Шолом <span>TALEE<sup>®</sup></span> — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
-                  </div>
+                  <p class="section-main-slider__text">Шолом <span>TALEE<sup>®</sup></span> — надає ніжне лікування, забезпечуючи оптимальну підтримку і відпочинок для вашої дитини, обумовлюючи безпеку та комфорт</p>
                 </div>
-                <div class="section-main-block__card-photo" style="position: relative; bottom: 0; left: 0; width: max-content; height: max-content">
+                <div class="section-main-block__card-photo">
                   <article class="card-block-4 card" x-cloak="x-cloak">
                     
                     
@@ -853,12 +851,12 @@
                 <div class="section-main-talee__label section-main-talee__label-2">для вашої дитини</div>
               </div>
               
-              <div class="title-half" x-data="{title: 'ШОЛОМ TALEE'}">
+              <div class="title-half title-half--font-size" x-data="{title: 'ШОЛОМ TALEE'}">
                 <div class="title-half__first" x-text="title"></div>
                 <div class="title-half__second" x-text="title"></div>
               </div>
               
-              <div style="width: 404px; margin: 0 auto; z-index: -1; opacity: 0;">
+              <div class="section-main-talee__button-first">
                 <button class="button" @click="isShowPopUpRepeat = true" type="">
                   <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                   </p>
@@ -880,7 +878,7 @@
               <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                 <div class="main-photo__block">
                   <div style="position: relative;">
-                    <div class="object-photo object-photo--main"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee"/>
+                    <div class="object-photo object-photo--main-3"><img src="./images/decor/shlem_full_x1.png" alt="Шолом Talee"/>
                       <div class="decor-blur-point" style="min-width: 328px; min-height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div>
                     </div>
                     <div class="section-main-slider__picture__info-container">
@@ -934,7 +932,7 @@
           
           
           <div class="section-main-talee__button">
-            <div style="width: 404px; margin: 0 auto; margin-top: 30px;">
+            <div class="section-main-talee__button-2">
               <button class="button" @click="isShowPopUpRepeat = true" type="">
                 <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                 </p>
@@ -1096,84 +1094,86 @@
           </div>
           <div class="section-block__content-container section-block__content-container--float-right">
             <div class="section-about-talee">
-              <div class="main-photo" style="width: 876px; height: 876px;">
-                <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
-                  <div class="main-photo__block">
-                    <div style="position: relative;">
-                      <div class="object-photo  object-photo--main object-photo--off-animation"><img src="./images/decor/shlem_full_x1-2.png" alt="Шолом Talee"/>
-                        <div class="decor-blur-point" style="min-width: 328px; min-height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div>
-                      </div>
-                      <div class="section-pop-ups">
-                        <div class="section-pop-ups__pop-up--1">
-                          <div class="button-accordion-simple-2" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
-                            <div class="button-accordion-simple-2__pop-up" :class="{'button-accordion-simple-2__pop-up--hidden':!isOpen}" @click="handleClose">
-                              <div class="wrapper-frame wrapper-frame--bg-2">
-                                <div class="wrapper-frame__container">
-                                  <div class="card-of-pop-up">
-                                    <div class="card-of-pop-up__image"><img class="card-of-pop-up__icon" src="./images/icons/card-z_Comfort.svg" alt="Comfort"/></div>
-                                    <p class="card-of-pop-up__title">Шолом <b>TALEE</b> допоміг</p>
-                                    <div class="card-of-pop-up__container">
-                                      <div class="card-of-pop-up__text-1">Більше <br>ніж</div>
-                                      <div class="card-of-pop-up__text-2">99%</div>
-                                    </div>
-                                    <div class="card-of-pop-up__text">дітей з деформацією черепа <br>досягти значного поліпшення</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="button-accordion-simple-2__container" :class="{'button-accordion-simple-2__container--active':isOpen}" @click="isOpen=!isOpen">
-                            </div>
-                          </div>
+              <div class="section-about-talee__block-1">
+                <div class="main-photo section-about-talee__main-photo" style="width: 876px; height: 876px;">
+                  <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
+                    <div class="main-photo__block">
+                      <div style="position: relative;">
+                        <div class="object-photo  object-photo--main-2 object-photo--off-animation"><img src="./images/decor/shlem_full_x1-2.png" alt="Шолом Talee"/>
+                          <div class="decor-blur-point" style="min-width: 328px; min-height: 30px; border-radius: 100%; background: #f7c7ab; filter: blur(30px);"></div>
                         </div>
-                        <div class="section-pop-ups__pop-up--2">
-                          <div class="button-accordion-simple-2 button-accordion-simple-2--right" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
-                            <div class="button-accordion-simple-2__pop-up" :class="{'button-accordion-simple-2__pop-up--hidden':!isOpen}" @click="handleClose">
-                              <div class="wrapper-frame wrapper-frame--bg-2">
-                                <div class="wrapper-frame__container">
-                                  <div class="card-of-pop-up">
-                                    <div class="card-of-pop-up__image"><img class="card-of-pop-up__icon" src="./images/icons/card-z_Complete.svg" alt="Complete"/></div>
-                                    <div class="card-of-pop-up__container">
-                                      <div class="card-of-pop-up__text-3">Понад <big>90%</big><br>батьків <small>відмітили</small></div>
-                                    </div>
-                                    <p class="card-of-pop-up__title">помітне <b>поліпшення форми</b></p>
-                                    <div class="card-of-pop-up__text">голови дітей вже після <br>першого місяця використання <br>ортопедичного шолома <i>TALEE</i></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="button-accordion-simple-2__container" :class="{'button-accordion-simple-2__container--active':isOpen}" @click="isOpen=!isOpen">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="section-pop-ups__pop-up--3">
-                          <div class="button-accordion-simple-2 button-accordion-simple-2--right-bottom" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
-                            <div class="button-accordion-simple-2__pop-up" :class="{'button-accordion-simple-2__pop-up--hidden':!isOpen}" @click="handleClose">
-                              <div class="wrapper-frame wrapper-frame--bg-2">
-                                <div class="wrapper-frame__container">
-                                  <div class="card-of-pop-up card-of-pop-up--flex">
-                                    <div class="card-of-pop-up__image"><img class="card-of-pop-up__icon" src="./images/icons/card-z_Deformation.svg" alt="Complete"/></div>
-                                    <div class="card-of-pop-up__content">
-                                      <div class="card-of-pop-up__text">Завдяки інноваційному дизайну</div>
-                                      <div class="card-of-pop-up__title">шолом <b>TALEE</b> забезпечує</div>
+                        <div class="section-pop-ups">
+                          <div class="section-pop-ups__pop-up--1">
+                            <div class="button-accordion-simple-2" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                              <div class="button-accordion-simple-2__pop-up" :class="{'button-accordion-simple-2__pop-up--hidden':!isOpen}" @click="handleClose">
+                                <div class="wrapper-frame wrapper-frame--bg-2">
+                                  <div class="wrapper-frame__container">
+                                    <div class="card-of-pop-up">
+                                      <div class="card-of-pop-up__image"><img class="card-of-pop-up__icon" src="./images/icons/card-z_Comfort.svg" alt="Comfort"/></div>
+                                      <p class="card-of-pop-up__title">Шолом <b>TALEE</b> допоміг</p>
                                       <div class="card-of-pop-up__container">
-                                        <div class="card-of-pop-up__text-3"><big>360°</big>вентиляції</div>
+                                        <div class="card-of-pop-up__text-1">Більше <br>ніж</div>
+                                        <div class="card-of-pop-up__text-2">99%</div>
                                       </div>
-                                      <div class="card-of-pop-up__text">що сприяє комфортній <br>температурі голови</div>
+                                      <div class="card-of-pop-up__text">дітей з деформацією черепа <br>досягти значного поліпшення</div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
+                              <div class="button-accordion-simple-2__container" :class="{'button-accordion-simple-2__container--active':isOpen}" @click="isOpen=!isOpen">
+                              </div>
                             </div>
-                            <div class="button-accordion-simple-2__container" :class="{'button-accordion-simple-2__container--active':isOpen}" @click="isOpen=!isOpen">
+                          </div>
+                          <div class="section-pop-ups__pop-up--2">
+                            <div class="button-accordion-simple-2 button-accordion-simple-2--right" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                              <div class="button-accordion-simple-2__pop-up" :class="{'button-accordion-simple-2__pop-up--hidden':!isOpen}" @click="handleClose">
+                                <div class="wrapper-frame wrapper-frame--bg-2">
+                                  <div class="wrapper-frame__container">
+                                    <div class="card-of-pop-up">
+                                      <div class="card-of-pop-up__image"><img class="card-of-pop-up__icon" src="./images/icons/card-z_Complete.svg" alt="Complete"/></div>
+                                      <div class="card-of-pop-up__container">
+                                        <div class="card-of-pop-up__text-3">Понад <big>90%</big><br>батьків <small>відмітили</small></div>
+                                      </div>
+                                      <p class="card-of-pop-up__title">помітне <b>поліпшення форми</b></p>
+                                      <div class="card-of-pop-up__text">голови дітей вже після <br>першого місяця використання <br>ортопедичного шолома <i>TALEE</i></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="button-accordion-simple-2__container" :class="{'button-accordion-simple-2__container--active':isOpen}" @click="isOpen=!isOpen">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="section-pop-ups__pop-up--3">
+                            <div class="button-accordion-simple-2 button-accordion-simple-2--right-bottom" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
+                              <div class="button-accordion-simple-2__pop-up" :class="{'button-accordion-simple-2__pop-up--hidden':!isOpen}" @click="handleClose">
+                                <div class="wrapper-frame wrapper-frame--bg-2">
+                                  <div class="wrapper-frame__container">
+                                    <div class="card-of-pop-up card-of-pop-up--flex">
+                                      <div class="card-of-pop-up__image"><img class="card-of-pop-up__icon" src="./images/icons/card-z_Deformation.svg" alt="Complete"/></div>
+                                      <div class="card-of-pop-up__content">
+                                        <div class="card-of-pop-up__text">Завдяки інноваційному дизайну</div>
+                                        <div class="card-of-pop-up__title">шолом <b>TALEE</b> забезпечує</div>
+                                        <div class="card-of-pop-up__container">
+                                          <div class="card-of-pop-up__text-3"><big>360°</big>вентиляції</div>
+                                        </div>
+                                        <div class="card-of-pop-up__text">що сприяє комфортній <br>температурі голови</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="button-accordion-simple-2__container" :class="{'button-accordion-simple-2__container--active':isOpen}" @click="isOpen=!isOpen">
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
-                    <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
-                      <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                    <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
+                      <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
+                        <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1182,7 +1182,7 @@
                 <h4 class="_h4 title-s">ВИЗНАЧЕННЯ КОМФОРТУ</h4>
                 <h6 class="_h6 title-s">Представляємо нове покоління <br>ортопедичного лікування плагіоцефалії</h6>
                 <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="section-about-talee__list">
                   <div class="wrapper-frame">
                     <div class="wrapper-frame__container">
                       <div class="wrapper-center">
@@ -1565,7 +1565,7 @@
           </div>
         </section>
         <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
-        <section class="section-block section-block--float-right  section-block--columns-3">
+        <section class="section-block section-block--float-right  section-block--columns-1">
           <div class="section-block__title-container">
             <div class="lable-main lable-main--float-right">03<span>/ Коли використовувати</span></div>
             <h2 class="title-main title-main--float-right _anim-items _anim-once _transition-right _transition-clip-form-left">
@@ -1575,55 +1575,57 @@
             </h2>
           </div>
           <div class="section-block__content-container section-block__content-container--float-right">
-            <div class="wrapper-frame wrapper-frame--bg">
-              <div class="wrapper-frame__container">
-                <article class="card-easy-10 card" x-cloak="x-cloak">
-                  <div class="card-easy-10__number">01</div>
-                  <img class="card-easy-10__image" x-cloak="x-cloak" src="./images/photos/cards/photo-card-1_1.jpg" loading="lazy"/>
-                  
-                  <div class="card-easy-10__container" x-cloak="x-cloak">
-                    <h3 class="card-easy-10__title" x-cloak="x-cloak">При діагностованій <i>деформації голови</i></h3>
-                    <p class="card-easy-10__text" x-cloak="x-cloak">Якщо лікар встановив, що у дитини є деформація черепа, така як плагіоцефалія, брахіцефалія, доліхоцефалія - шолом може бути рекомендований для корекції форми голови</p>
-                  </div>
-                  
-                  
-                </article>
+            <div class="section-when-use">
+              <div class="wrapper-frame wrapper-frame--bg">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-10 card" x-cloak="x-cloak">
+                    <div class="card-easy-10__number">01</div>
+                    <img class="card-easy-10__image" x-cloak="x-cloak" src="./images/photos/cards/photo-card-1_1.jpg" loading="lazy"/>
+                    
+                    <div class="card-easy-10__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-10__title" x-cloak="x-cloak">При діагностованій <i>деформації голови</i></h3>
+                      <p class="card-easy-10__text" x-cloak="x-cloak">Якщо лікар встановив, що у дитини є деформація черепа, така як плагіоцефалія, брахіцефалія, доліхоцефалія - шолом може бути рекомендований для корекції форми голови</p>
+                    </div>
+                    
+                    
+                  </article>
+                </div>
               </div>
-            </div>
-            <div class="wrapper-frame wrapper-frame--bg">
-              <div class="wrapper-frame__container">
-                <article class="card-easy-10 card-easy-10--reverse card" x-cloak="x-cloak">
-                  <div class="card-easy-10__number">02</div>
-                  <img class="card-easy-10__image" x-cloak="x-cloak" src="./images/photos/cards/photo-card-1_2.jpg" loading="lazy"/>
-                  
-                  <div class="card-easy-10__container" x-cloak="x-cloak">
-                    <h3 class="card-easy-10__title" x-cloak="x-cloak">Для підтримки <i>правильного росту черепа</i></h3>
-                    <p class="card-easy-10__text" x-cloak="x-cloak">Шолом використовується для корекції росту голови дитини у правильному напрямку, що особливо важливо при швидкому зростанні в перші місяці життя</p>
-                  </div>
-                  
-                  
-                </article>
+              <div class="wrapper-frame wrapper-frame--bg">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-10 card-easy-10--reverse card" x-cloak="x-cloak">
+                    <div class="card-easy-10__number">02</div>
+                    <img class="card-easy-10__image" x-cloak="x-cloak" src="./images/photos/cards/photo-card-1_2.jpg" loading="lazy"/>
+                    
+                    <div class="card-easy-10__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-10__title" x-cloak="x-cloak">Для підтримки <i>правильного росту черепа</i></h3>
+                      <p class="card-easy-10__text" x-cloak="x-cloak">Шолом використовується для корекції росту голови дитини у правильному напрямку, що особливо важливо при швидкому зростанні в перші місяці життя</p>
+                    </div>
+                    
+                    
+                  </article>
+                </div>
               </div>
-            </div>
-            <div class="wrapper-frame wrapper-frame--bg">
-              <div class="wrapper-frame__container">
-                <article class="card-easy-10 card" x-cloak="x-cloak">
-                  <div class="card-easy-10__number">03</div>
-                  <img class="card-easy-10__image" x-cloak="x-cloak" src="./images/photos/cards/photo-card-1_3.jpg" loading="lazy"/>
-                  
-                  <div class="card-easy-10__container" x-cloak="x-cloak">
-                    <h3 class="card-easy-10__title" x-cloak="x-cloak">Коли інші методи <i>неефективні</i></h3>
-                    <p class="card-easy-10__text" x-cloak="x-cloak">Якщо зміна положення під час сну та фізіотерапевтичні вправи не дають бажаного результату, шолом може стати наступним кроком у лікуванні</p>
-                  </div>
-                  
-                  
-                </article>
+              <div class="wrapper-frame wrapper-frame--bg">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-10 card" x-cloak="x-cloak">
+                    <div class="card-easy-10__number">03</div>
+                    <img class="card-easy-10__image" x-cloak="x-cloak" src="./images/photos/cards/photo-card-1_3.jpg" loading="lazy"/>
+                    
+                    <div class="card-easy-10__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-10__title" x-cloak="x-cloak">Коли інші методи <i>неефективні</i></h3>
+                      <p class="card-easy-10__text" x-cloak="x-cloak">Якщо зміна положення під час сну та фізіотерапевтичні вправи не дають бажаного результату, шолом може стати наступним кроком у лікуванні</p>
+                    </div>
+                    
+                    
+                  </article>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
-        <section class="section-block section-block--float-right  section-block--columns-2">
+        <section class="section-block section-block--float-right  section-block--columns-1">
           <div class="section-block__title-container">
             <div class="lable-main lable-main--float-right">04<span>/ ефективність</span></div>
             <h2 class="title-main title-main--float-right _anim-items _anim-once _transition-right _transition-clip-form-left">
@@ -1633,7 +1635,7 @@
             </h2>
           </div>
           <div class="section-block__content-container section-block__content-container--float-right">
-            <div>
+            <div class="sectoin-effectionty">
               <article class="card-easy-11 card" x-cloak="x-cloak">
                 
                 
@@ -1646,69 +1648,71 @@
                 <div class="card-easy-11__block card__block">
                   <div class="card-easy-11__point">
                     <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(50px);"></div>
-                  </div><img src="./images/decor/reddot_1.png" alt="icon"/><img src="./images/decor/reddot_2.png" alt="text"/>
+                  </div>
+                  <div><img class="card-easy-11__image-1" src="./images/decor/reddot_1.png" alt="icon"/></div>
+                  <div><img class="card-easy-11__image-2" src="./images/decor/reddot_2.png" alt="text"/></div>
                 </div>
               </article>
-            </div>
-            <div style="display: grid; gap: 20px;">
-              <div class="block-s">
-                <h4 class="_h4 title-s _uppercase">Наукові висновки однозначні</h4>
-                <div class="_text3 text-s">Дослідження показують, що використання ортопедичного шолома <b>TALEE<sup>®</sup></b> є найефективнішим методом лікування вираженої деформації голови </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px;">
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <div class="title-block-2">
-                          <p class="title-block-2__text">Шолом <b>делікатно коригує</b> деформацію з ростом голови</p>
-                          <div class="title-block-2__container">
-                            <div class="title-block-2__number">01</div>
+              <div class="sectoin-effectionty__block-2">
+                <div class="block-s">
+                  <h4 class="_h4 title-s _uppercase">Наукові висновки однозначні</h4>
+                  <div class="_text3 text-s">Дослідження показують, що використання ортопедичного шолома <b>TALEE<sup>®</sup></b> є найефективнішим методом лікування вираженої деформації голови </div>
+                  <div class="sectoin-effectionty__block-2__list">
+                    <div class="wrapper-frame">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <div class="title-block-2">
+                            <p class="title-block-2__text">Шолом <b>делікатно коригує</b> деформацію з ростом голови</p>
+                            <div class="title-block-2__container">
+                              <div class="title-block-2__number">01</div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <div class="title-block-2">
-                          <p class="title-block-2__text">Лікування триває <b>від 3 до 6 місяців</b></p>
-                          <div class="title-block-2__container">
-                            <div class="title-block-2__number">02</div>
+                    <div class="wrapper-frame">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <div class="title-block-2">
+                            <p class="title-block-2__text">Лікування триває <b>від 3 до 6 місяців</b></p>
+                            <div class="title-block-2__container">
+                              <div class="title-block-2__number">02</div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <div class="title-block-2">
-                          <p class="title-block-2__text"><b>Найкращій вік для початку</b> лікування — близько 4 місяців</p>
-                          <div class="title-block-2__container">
-                            <div class="title-block-2__number">03</div>
+                    <div class="wrapper-frame">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <div class="title-block-2">
+                            <p class="title-block-2__text"><b>Найкращій вік для початку</b> лікування — близько 4 місяців</p>
+                            <div class="title-block-2__container">
+                              <div class="title-block-2__number">03</div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <div class="title-block-2">
-                          <p class="title-block-2__text"><b>Регулярний моніторинг</b> дозволяє адаптувати лікування для досягнення оптимальних результатів</p>
-                          <div class="title-block-2__container">
-                            <div class="title-block-2__number">04</div>
+                    <div class="wrapper-frame">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <div class="title-block-2">
+                            <p class="title-block-2__text"><b>Регулярний моніторинг</b> дозволяє адаптувати лікування для досягнення оптимальних результатів</p>
+                            <div class="title-block-2__container">
+                              <div class="title-block-2__number">04</div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="wrapper-frame">
-                <div class="wrapper-frame__container">
-                  <div style="padding: 40px;">
-                    <h5 class="_h5 title-s _uppercase">Розпочніть забезпечення міцного здоров'я вашої дитини з нашою ранньою профілактикою та лікуванням — це найвигідніша інвестиція в її щасливе майбутнє разом із <b>шоломом TALEE</b></h5>
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <div class="sectoin-effectionty__block-2__title">
+                      <h5 class="_h5 title-s _uppercase">Розпочніть забезпечення міцного здоров'я вашої дитини з нашою ранньою профілактикою та лікуванням — це найвигідніша інвестиція в її щасливе майбутнє разом із <b>шоломом TALEE</b></h5>
+                    </div>
                   </div>
                 </div>
               </div>
