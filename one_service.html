@@ -1012,7 +1012,7 @@
             </div>
           </div>
         </section>
-        <section class="section-block section-block--float-right">
+        <section class="section-block section-block--float-right  section-block--columns-1">
           <div class="section-block__title-container">
             <div class="lable-main lable-main--float-right">02<span>/ Опис послуги</span></div>
             <h2 class="title-main title-main--float-right _anim-items _anim-once _transition-right _transition-clip-form-left">
@@ -1022,13 +1022,14 @@
             </h2>
           </div>
           <div class="section-block__content-container section-block__content-container--float-right">
-            <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--disabled">
-              <div class="wrapper-frame__container">
-                <div class="section-disctiption-service__block-1">
-                  <div class="section-disctiption-service__block-1__content">
-                    <div class="section-disctiption-service__block-1__video">
-                      <div class="video" x-data="{ isPlay: false }" :class="{'video--play': isPlay}">
-                        <video src="./video/experience.mp4" loop="loop" muted="muted" x-ref="video" @click="
+            <div class="section-description-service" x-cloak="x-cloak" x-data="{ height: 0, updateHeight() { this.height = $refs.block.offsetHeight * (window.innerWidth &lt; 950 ? 0.75 : 1);} }" x-init="setTimeout(() =&gt; { updateHeight(); }, 0); window.addEventListener('resize', () =&gt; updateHeight())">
+              <div class="block-wrapper" x-cloak="x-cloak" :style="'height: ' + height + 'px;'">
+                <div class="block-s block-s--mini">
+                  <div class="section-description-service__block-1"> 
+                    <div class="section-description-service__block-1__content">
+                      <div class="section-description-service__block-1__video">
+                        <div class="video" x-data="{ isPlay: false }" :class="{'video--play': isPlay}">
+                          <video src="./video/experience.mp4" loop="loop" muted="muted" x-ref="video" @click="
         if (isPlay) {
           $refs.video.pause();
           isPlay = false; 
@@ -1036,108 +1037,109 @@
           $refs.video.play();
           isPlay = true;
     }"></video>
+                        </div>
+                      </div>
+                      <h3 class="section-description-service__block-1__title">Лiкування деформацiї голови</h3>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <p class="section-description-service__block-1__text">Лікування деформації голови в нашій клініці включає індивідуальний підхід до кожної дитини. Ми використовуємо передові технології та ортопедичні шоломи Talee® для корекції плагіоцефалії та інших форм деформації черепа. Наші лікарі-ортопеди співпрацюють з батьками, щоб створити комфортний та ефективний план лікування.</p>
+                        </div>
                       </div>
                     </div>
-                    <h3 class="section-disctiption-service__block-1__title">Лiкування деформацiї голови</h3>
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <p class="section-disctiption-service__block-1__text">Лікування деформації голови в нашій клініці включає індивідуальний підхід до кожної дитини. Ми використовуємо передові технології та ортопедичні шоломи Talee® для корекції плагіоцефалії та інших форм деформації черепа. Наші лікарі-ортопеди співпрацюють з батьками, щоб створити комфортний та ефективний план лікування.</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="section-disctiption-service__block-1__list">
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <div class="title-block-2">
-                            <p class="title-block-2__text">Передовий засіб для корекції деформацій голови у дітей</p>
-                            <div class="title-block-2__container">
-                              <div class="title-block-2__number">01</div>
+                    
+                    <div class="section-description-service__block-1__list">
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <div class="title-block-2">
+                              <p class="title-block-2__text">Передовий засіб для корекції деформацій голови у дітей</p>
+                              <div class="title-block-2__container">
+                                <div class="title-block-2__number">01</div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <div class="title-block-2">
-                            <p class="title-block-2__text">Наш Шолом відрізняється високою ефективністю та індивідуальним підходом до кожного малюка</p>
-                            <div class="title-block-2__container">
-                              <div class="title-block-2__number">02</div>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <div class="title-block-2">
+                              <p class="title-block-2__text">Наш Шолом відрізняється високою ефективністю та індивідуальним підходом до кожного малюка</p>
+                              <div class="title-block-2__container">
+                                <div class="title-block-2__number">02</div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <div class="title-block-2">
-                            <p class="title-block-2__text">Передовий засіб для корекції деформацій голови у дітей</p>
-                            <div class="title-block-2__container">
-                              <div class="title-block-2__number">03</div>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <div class="title-block-2">
+                              <p class="title-block-2__text">Передовий засіб для корекції деформацій голови у дітей</p>
+                              <div class="title-block-2__container">
+                                <div class="title-block-2__number">03</div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <div class="title-block-2">
-                            <p class="title-block-2__text">Батьки, які бажають ефективно запобігти або вилікувати деформації голови у своїх дітей</p>
-                            <div class="title-block-2__container">
-                              <div class="title-block-2__number">04</div>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <div class="title-block-2">
+                              <p class="title-block-2__text">Батьки, які бажають ефективно запобігти або вилікувати деформації голови у своїх дітей</p>
+                              <div class="title-block-2__container">
+                                <div class="title-block-2__number">04</div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <div class="title-block-2">
-                            <p class="title-block-2__text">Батьки, які бажають ефективно запобігти або вилікувати деформації голови у своїх дітей</p>
-                            <div class="title-block-2__container">
-                              <div class="title-block-2__number">05</div>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <div class="title-block-2">
+                              <p class="title-block-2__text">Батьки, які бажають ефективно запобігти або вилікувати деформації голови у своїх дітей</p>
+                              <div class="title-block-2__container">
+                                <div class="title-block-2__number">05</div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <div class="title-block-2">
-                            <p class="title-block-2__text">Батьки, які бажають ефективно запобігти або вилікувати деформації голови у своїх дітей</p>
-                            <div class="title-block-2__container">
-                              <div class="title-block-2__number">06</div>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <div class="title-block-2">
+                              <p class="title-block-2__text">Батьки, які бажають ефективно запобігти або вилікувати деформації голови у своїх дітей</p>
+                              <div class="title-block-2__container">
+                                <div class="title-block-2__number">06</div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <div class="title-block-2">
-                            <p class="title-block-2__text">Батьки, які бажають ефективно запобігти або вилікувати деформації голови у своїх дітей</p>
-                            <div class="title-block-2__container">
-                              <div class="title-block-2__number">07</div>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <div class="title-block-2">
+                              <p class="title-block-2__text">Батьки, які бажають ефективно запобігти або вилікувати деформації голови у своїх дітей</p>
+                              <div class="title-block-2__container">
+                                <div class="title-block-2__number">07</div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="wrapper-frame">
-                      <div class="wrapper-frame__container">
-                        <div class="wrapper-center">
-                          <div class="title-block-2">
-                            <p class="title-block-2__text">Батьки, які бажають ефективно запобігти або вилікувати деформації голови у своїх дітей</p>
-                            <div class="title-block-2__container">
-                              <div class="title-block-2__number">08</div>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <div class="title-block-2">
+                              <p class="title-block-2__text">Батьки, які бажають ефективно запобігти або вилікувати деформації голови у своїх дітей</p>
+                              <div class="title-block-2__container">
+                                <div class="title-block-2__number">08</div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1146,48 +1148,46 @@
                   </div>
                 </div>
               </div>
-            </div>
-            
-            
-            <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--disabled">
-              <div class="wrapper-frame__container">
-                <div class="section-disctiption-service__block-2">
-                  <div class="section-disctiption-service__block-2__wrapper">
-                    <div class="section-disctiption-service__block-2__title">Переваги</div>
-                    <div class="section-disctiption-service__block-2__block">
-                      <div class="wrapper-frame">
-                        <div class="wrapper-frame__container">
-                          <article class="card-easy-8 card" x-cloak="x-cloak">
-                            
-                            
-                            <div class="card-easy-8__container" x-cloak="x-cloak"><img class="card-easy-8__image" src="./images/icons/icon_hand_talee.svg" loading="lazy"/>
-                              <h3 class="card-easy-8__title" x-cloak="x-cloak">Індивідуалізований план корекції</h3>
-                            </div>
-                            
-                            <p class="card-easy-8__text" x-cloak="x-cloak">Кожен шолом створюється індивідуально для форми голови дитини, забезпечуючи комфортне та ефективне лікування.</p>
-                            
-                          </article>
+              
+              
+              <div class="block-wrapper" x-ref="block">
+                <div class="block-s block-s--mini">
+                  <div class="section-description-service__block-2">
+                    <div class="section-description-service__block-2__wrapper">
+                      <div class="section-description-service__block-2__title">Переваги</div>
+                      <div class="section-description-service__block-2__block">
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <article class="card-easy-8 card" x-cloak="x-cloak">
+                              
+                              
+                              <div class="card-easy-8__container" x-cloak="x-cloak"><img class="card-easy-8__image" src="./images/icons/icon_hand_talee.svg" loading="lazy"/>
+                                <h3 class="card-easy-8__title" x-cloak="x-cloak">Індивідуалізований план корекції</h3>
+                              </div>
+                              
+                              <p class="card-easy-8__text" x-cloak="x-cloak">Кожен шолом створюється індивідуально для форми голови дитини, забезпечуючи комфортне та ефективне лікування.</p>
+                              
+                            </article>
+                          </div>
+                        </div>
+                        <div class="wrapper-frame">
+                          <div class="wrapper-frame__container">
+                            <article class="card-easy-8 card" x-cloak="x-cloak">
+                              
+                              
+                              <div class="card-easy-8__container" x-cloak="x-cloak"><img class="card-easy-8__image" src="./images/icons/icon_diplom.svg" loading="lazy"/>
+                                <h3 class="card-easy-8__title" x-cloak="x-cloak">Досвідчені спеціалісти</h3>
+                              </div>
+                              
+                              <p class="card-easy-8__text" x-cloak="x-cloak">Кожен шолом створюється індивідуально для форми голови дитини, забезпечуючи комфортне та ефективне лікування.</p>
+                              
+                            </article>
+                          </div>
                         </div>
                       </div>
-                      <div class="wrapper-frame">
-                        <div class="wrapper-frame__container">
-                          <article class="card-easy-8 card" x-cloak="x-cloak">
-                            
-                            
-                            <div class="card-easy-8__container" x-cloak="x-cloak"><img class="card-easy-8__image" src="./images/icons/icon_diplom.svg" loading="lazy"/>
-                              <h3 class="card-easy-8__title" x-cloak="x-cloak">Досвідчені спеціалісти</h3>
-                            </div>
-                            
-                            <p class="card-easy-8__text" x-cloak="x-cloak">Кожен шолом створюється індивідуально для форми голови дитини, забезпечуючи комфортне та ефективне лікування.</p>
-                            
-                          </article>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="section-disctiption-service__block-2__title">результати наших паціїнтів</div>
-                    <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--disabled">
-                      <div class="wrapper-frame__container">
-                        <div class="section-disctiption-service__block-2__block-2">
+                      <div class="section-description-service__block-2__title">результати наших паціїнтів</div>
+                      <div class="block-s block-s--mini">
+                        <div class="section-description-service__block-2__block-2">
                           <article class="card-easy-9 card" x-cloak="x-cloak">
                             <img class="card-easy-9__image" x-cloak="x-cloak" src="./images/photos/different_side.jpg" loading="lazy"/>
                             
@@ -1226,23 +1226,23 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  <section class="section-buttons">
-                    <button class="button" @click="isShowPopUpRepeat = true" type="">
-                      <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                      </p>
-                      <div class="button__icon">
-                        <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    
+                    <section class="section-buttons section-buttons--no-margin">
+                      <button class="button" @click="isShowPopUpRepeat = true" type="">
+                        <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                        </p>
+                        <div class="button__icon">
+                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
+                          </div>
                         </div>
-                      </div>
-                    </button><a class="button  button--phone button--phone-undefined" href="tel:+38 095 120 75 75">
-                      <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
-                      </p></a>
-                  </section>
+                      </button><a class="button  button--phone button--phone-undefined" href="tel:+38 095 120 75 75">
+                        <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
+                        </p></a>
+                    </section>
+                  </div>
                 </div>
               </div>
             </div>
