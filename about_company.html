@@ -220,7 +220,7 @@
           "> Борис Круглов</a></div>
               <div class="burger-menu__footer__container">
                 <div class="burger-menu__footer__back" @click="setTimeout(() =&gt; {isShowBurgerMenu=false}, 500);isClosedBurgerMenu=true;"><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span class="burger-menu__footer__back__text">Повернутися назад</span></div>
-                <div class="burger-menu__footer__link"><a class="link link--negative" href="#">
+                <div class="burger-menu__footer__link"><a class="link link--negative" href="/services.html">
                     <div class="link__text">УСІ ПОСЛУГИ</div></a>
                 </div>
               </div>
@@ -369,7 +369,7 @@
           "> Борис Круглов</a></div>
               <div class="burger-menu__footer__container">
                 <div class="burger-menu__footer__back" @click="setTimeout(() =&gt; {isShowSearchMenu=false}, 500);isClosedBurgerMenu=true;"><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span class="burger-menu__footer__back__text">Повернутися назад</span></div>
-                <div class="burger-menu__footer__link"><a class="link link--negative" href="#">
+                <div class="burger-menu__footer__link"><a class="link link--negative" href="/services.html">
                     <div class="link__text">УСІ ПОСЛУГИ</div></a>
                 </div>
               </div>
@@ -518,7 +518,7 @@
           "> Борис Круглов</a></div>
               <div class="burger-menu__footer__container">
                 <div class="burger-menu__footer__back" @click="setTimeout(() =&gt; {isShowPopUpContact=false}, 500);isClosedBurgerMenu=true;"><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span class="burger-menu__footer__back__text">Повернутися назад</span></div>
-                <div class="burger-menu__footer__link"><a class="link link--negative" href="#">
+                <div class="burger-menu__footer__link"><a class="link link--negative" href="/services.html">
                     <div class="link__text">УСІ ПОСЛУГИ</div></a>
                 </div>
               </div>
@@ -1100,17 +1100,17 @@
             </h2>
           </div>
           <div class="section-block__content-container section-block__content-container--columns-1">
-            <div class="section-dates">
-              <div class="section-dates__big-date">2024</div>
+            <div class="section-dates" x-data="{'currentDate':2024,'currentText':'Той самий час коли наш «ДIМ ОРТОПЕДІЇ» запустив свою дiяльнiсть у м. Днiпро, та вже допомогає дiтям з усiєЇ краЇни','dates':[{'date':2018,'text':'2018 Той самий час коли наш «ДIМ ОРТОПЕДІЇ» запустив свою дiяльнiсть у м. Днiпро, та вже допомогає дiтям з усiєЇ краЇни'},{'date':2020,'text':'2020 Той самий час коли наш «ДIМ ОРТОПЕДІЇ» запустив свою дiяльнiсть у м. Днiпро, та вже допомогає дiтям з усiєЇ краЇни'},{'date':2023,'text':'2023 Той самий час коли наш «ДIМ ОРТОПЕДІЇ» запустив свою дiяльнiсть у м. Днiпро, та вже допомогає дiтям з усiєЇ краЇни'},{'date':2025,'text':'2025 Той самий час коли наш «ДIМ ОРТОПЕДІЇ» запустив свою дiяльнiсть у м. Днiпро, та вже допомогає дiтям з усiєЇ краЇни'}],'hanleChangeDate': function(idx) {  const savedDate = this.dates[idx].date;  const savedText = this.dates[idx].text;  this.dates[idx] = {date: this.currentDate, text: this.currentText};  this.currentDate = savedDate;  this.currentText = savedText;  } }">
+              <div class="section-dates__big-date" x-text="currentDate">2024</div>
               
               <div class="section-dates__content">
                 <div class="section-dates__point">
                   <div class="circle-date circle-date--_"></div>
                   <div class="section-dates__card">
                     <div class="title-block-4">
-                      <p class="title-block-4__text">Той самий час коли наш «ДIМ ОРТОПЕДІЇ» запустив свою дiяльнiсть у м. Днiпро, та вже допомогає дiтям з усiєЇ краЇни</p>
+                      <p class="title-block-4__text" x-text="currentText">currentText</p>
                       <div class="title-block-4__container">
-                        <h2 class="title-block-4__main-text">2024</h2>
+                        <h2 class="title-block-4__main-text" x-text="currentDate">currentDate</h2>
                       </div>
                     </div>
                   </div>
@@ -1120,16 +1120,16 @@
               
               <div class="section-dates__container"><img class="section-dates__image-line-up" src="./images/photos/line-up.svg" alt="line-up"/><img class="section-dates__image-line-down" src="./images/photos/line-down.svg" alt="line-down"/>
                 <div class="section-dates__date-1">
-                  <div class="circle-date">2018</div>
+                  <div class="circle-date" x-text="dates[0].date" @click="hanleChangeDate(0)">dates[0].date</div>
                 </div>
                 <div class="section-dates__date-2">
-                  <div class="circle-date circle-date--2023">2023</div>
+                  <div class="circle-date circle-date--2023" x-text="dates[1].date" @click="hanleChangeDate(1)">dates[1].date</div>
                 </div>
                 <div class="section-dates__date-3">
-                  <div class="circle-date circle-date--2025">2025</div>
+                  <div class="circle-date circle-date--2025" x-text="dates[2].date" @click="hanleChangeDate(2)">dates[2].date</div>
                 </div>
                 <div class="section-dates__date-4">
-                  <div class="circle-date circle-date--2020">2020</div>
+                  <div class="circle-date circle-date--2020" x-text="dates[3].date" @click="hanleChangeDate(3)">dates[3].date</div>
                 </div>
                 <div class="section-dates__logo">
                   <div class="wrapper-frame wrapper-frame--bg">
@@ -1190,7 +1190,7 @@
             </article>
           </div>
         </section>
-        <div class="grid-columns-2">
+        <section class="section-what-is-behaver">
           <div class="block-title-text">
             <div class="block-title-text__container">
               <h3 class="block-title-text__title">ЯКЕ ставлення до справи, якою ми займаємося?</h3>
@@ -1206,11 +1206,11 @@
                 <h4 class="block-title-text__title-second">Крім того, ми переконані, що виріб має бути красивим, він має мати чудовий унікальний дизайн, тому це один з наших основних принципів — <i>естетичне ортезування</i></h4>
               </div>
             </div>
-            <div class="block-image-title">
-              <h4 class="block-image-title__title">У компанії ми об’єднали ортопедів, ортезистів, 3D-дизайнерів, програмістів, конструкторів. І це дозволило нам реалізовувати нові ідеї з метою покращення наших виробів</h4>
-            </div>
           </div>
-        </div>
+          <div class="block-image-title">
+            <h4 class="block-image-title__title">У компанії ми об’єднали ортопедів, ортезистів, 3D-дизайнерів, програмістів, конструкторів. І це дозволило нам реалізовувати нові ідеї з метою покращення наших виробів</h4>
+          </div>
+        </section>
         <section class="section-block section-block--float-right  section-block--columns-1">
           <div class="section-block__title-container">
             <div class="lable-main lable-main--float-right">05<span>/ ЛІЦЕНЗІЇ</span></div>
