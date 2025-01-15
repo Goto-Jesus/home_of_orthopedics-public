@@ -20,7 +20,6 @@
       mouseY: 0,
       isShowToUp: false,
 
-      isShowPageMenu: true,
       isShowBurgerMenu: false,
       isShowSearchMenu: false,
       isShowPopUpContact: false,
@@ -35,7 +34,7 @@
       isPhone: false,
     }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor }">
     <div class="page__wrapper">
-      <template x-cloak x-if="isShowBurgerMenu">
+      <template x-if="isShowBurgerMenu">
         <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @click="setTimeout(() =&gt; {isShowBurgerMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
           <div class="burger-menu__container" @click.stop="@click.stop">
             <div class="screen" style="z-index: -1;">
@@ -228,7 +227,7 @@
           </div>
         </div>
       </template>
-      <template x-cloak x-if="isShowSearchMenu">
+      <template x-if="isShowSearchMenu">
         <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @click="setTimeout(() =&gt; {isShowSearchMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
           <div class="burger-menu__container" @click.stop="@click.stop">
             <div class="screen" style="z-index: -1;">
@@ -377,7 +376,7 @@
           </div>
         </div>
       </template>
-      <template x-cloak x-if="isShowPopUpContact">
+      <template x-if="isShowPopUpContact">
         <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @click="setTimeout(() =&gt; {isShowPopUpContact=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
           <div class="burger-menu__container" @click.stop="@click.stop">
             <div class="screen" style="z-index: -1;">
@@ -526,13 +525,15 @@
           </div>
         </div>
       </template>
-      <template x-cloak x-if="isShowPopUpDoctor">
+      <template x-if="isShowPopUpDoctor">
         <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': false,
     }">
           <div class="pop-up__content">
-            <div class="modal" on-cloak="on-cloak" @click.stop="@click.stop" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
+            <div class="modal" on-cloak="on-cloak" @click.stop="@click.stop" x-data="{
+              title: &quot;&quot;
+            }" style="max-width: 920px;">
               <div class="modal__button">
                 <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
               </div>
@@ -595,7 +596,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="modal__footer">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; margin: auto; margin-top: 80px;">
                   <button class="button" @click="isShowPopUpRepeat = true" type="">
                     <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                     </p>
@@ -615,7 +616,7 @@
           </div>
         </div>
       </template>
-      <template x-cloak x-if="isShowPopUpRepeat">
+      <template x-if="isShowPopUpRepeat">
         <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpRepeat = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': false,
@@ -634,7 +635,16 @@
                   </div>
                 </div>
                 
-                <h3 class="pop-up-repeat__title">Запишіться на консультацію <br>Просто зараз</h3>
+                <h3 style="
+              font-family: var(--font-family);
+              font-weight: 400;
+              font-size: px-to-rem(36);
+              line-height: 120%;
+              text-transform: uppercase;
+              text-align: center;
+              color: var(--primary);
+              margin-bottom: 30px;
+            ">Запишіться на консультацію <br>Просто зараз</h3>
                 
                 <div class="wrapper-frame">
                   <div class="wrapper-frame__container">
@@ -691,19 +701,27 @@
                   </div>
                 </div>
                 
-                <div class="pop-up-repeat__container">
-                  <div class="circle-block circle-block--micro"><a class="circle-block__container" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
+                <div style="
+              display: grid;
+              grid-template-columns: repeat(6, 1fr);
+              gap: 20px;
+              justify-content: center;
+              align-items: center;
+              place-items: center;
+              margin-top: 40px;
+            ">
+                  <div class="circle-block circle-block--micro">
+                    <div class="circle-block__container"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"><span>info@dimortopedii.com</span></div>
+                  </div>
                   <div class="circle-block circle-block--micro">
                     <div class="circle-block__wrapper">
-                      <div class="circle-block__container"><img class="circle-block__img-time" src="./images/icons/time.svg" time="time" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
-                      <div class="circle-block__container" @click="
-  isShowPopUpContent = true;
-  contentType = 'url';
-  contentSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d165.36786284226784!2d35.04044810765634!3d48.45872054068833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2dfec05384b%3A0x75b21560c0e2f0ec!2z0YPQuy4g0KLRgNC-0LjRhtC60LDRjywgMjHQsywg0JTQvdC10L_RgCwg0JTQvdC10L_RgNC-0L_QtdGC0YDQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDQ5MDAw!5e0!3m2!1sru!2sua!4v1724411003246!5m2!1sru!2sua';
-"><img src="./images/icons/marker.svg" alt="marker"/><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
+                      <div class="circle-block__container"><img class="circle-block__img-time" src="./images/icons/time.svg" time alt="time"><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
+                      <div class="circle-block__container"><img src="./images/icons/marker.svg" alt="marker"><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
                     </div>
                   </div>
-                  <div class="circle-block circle-block--micro"><a class="circle-block__container" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
+                  <div class="circle-block circle-block--micro">
+                    <div class="circle-block__container"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"><span>+38 (095) 120 75 75</span></div>
+                  </div>
                   <div class="shlem-head shlem-head--mini">
                     <div class="shlem-head__wrapper" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=10,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()">
                       <div class="shlem-head__face">
@@ -734,9 +752,7 @@
                       </div><img src="./images/decor/shlem_x1_.png" alt="Шлем TALEE"/>
                     </div>
                   </div>
-                  <div class="pop-up-repeat__list">
-                    <div class="social-list"><a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
-                    </div>
+                  <div class="social-list"><a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
                   </div>
                 </div>
               </div>
@@ -744,7 +760,7 @@
           </div>
         </div>
       </template>
-      <template x-cloak x-if="isShowPopUpContent">
+      <template x-if="isShowPopUpContent">
         <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpContent = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': true,
@@ -818,13 +834,13 @@
       <main class="page__main">
       </main>
       <div class="page__menu">
-        <template x-if="isShowPageMenu &amp;&amp; !isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
+        <template x-if="!isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
           <div class="page__menu__container">
             <div class="page__menu__container__up"><a class="to-up" href="#" :class="{'to-up--hidden': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"/></a>
               <div class="contacts-menu__item">
-                <div class="button-accordion-icon button-accordion-icon--modal-menu" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
                   <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}" style="bottom: 0;">
-                    <div class="button-accordion-icon__menu">
+                    <div style="height: 82dvh; max-height: 920px; width: 764px;">
                       <div class="menu menu--list">
                         <div class="menu__container">
                           <div class="menu__head">
@@ -934,9 +950,9 @@
                 </div>
               </div>
               <div class="contacts-menu__item">
-                <div class="button-accordion-icon button-accordion-icon--modal-menu" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
                   <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}" style="bottom: 0;">
-                    <div class="button-accordion-icon__menu">
+                    <div style="height: 82dvh; max-height: 920px; width: 764px;">
                       <div class="menu menu--blue menu--list">
                         <div class="menu__container">
                           <div class="menu__head">
@@ -1046,13 +1062,10 @@
                 </div>
               </div>
               <div class="contacts-menu__item">
-                <div class="button-accordion-icon button-accordion-icon--col" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
                   <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}">
-                    <div class="wrapper-frame wrapper-frame--bg">
-                      <div class="wrapper-frame__container">
-                        <div class="short-contacts__link" style="padding: 20px"><img src="./images/icons/phone.svg"/><a href="tel:+38 095 120 75 75">+38 095 120 75 75</a></div>
-                      </div>
-                    </div>
+                    <button class="button-icon button-icon--border" @click="" type=""><img src="./images/icons/light__phone.svg" alt="instagram"/></button>
+                    <button class="button-icon button-icon--border" @click="" type=""><img src="./images/icons/light__phone.svg" alt="instagram"/></button>
                   </div>
                   <div class="button-accordion-icon__container" :class="{'button-accordion-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-icon__image" src="./images/icons/light__phone.svg" alt="icon of phone"/>
                   </div>
@@ -1060,33 +1073,31 @@
               </div>
             </div>
             
-            <div class="page__menu__container__contacts">
-              <div class="contacts-menu contacts-menu--horizontal" x-data="{ isClosed: true }" @click.outside="isClosed = true" :class="{'contacts-menu--closed': isClosed}" x-cloak="x-cloak">
-                <div class="contacts-menu__container" style="width:  calc((var(--menu-gap) + var(--menu-item)) * 5 - var(--menu-gap));">
-                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.instagram.com" target="_blank"><img src="./images/icons/social-instagram.svg" alt="instagram"/></a>
-                  </div>
-                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.gmail.com" target="_blank"><img src="./images/icons/social-sms.svg" alt="social-sms"/></a>
-                  </div>
-                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.facebook.com" target="_blank"><img src="./images/icons/social-facebook.svg" alt="facebook"/></a>
-                  </div>
-                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.viber.com" target="_blank"><img src="./images/icons/social-viber.svg" alt="viber"/></a>
-                  </div>
-                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://web.telegram.org" target="_blank"><img src="./images/icons/social-telegram.svg" alt="telegram"/></a>
-                  </div>
+            <div class="contacts-menu contacts-menu--horizontal" x-data="{ isClosed: true }" @click.outside="isClosed = true" :class="{'contacts-menu--closed': isClosed}" x-cloak="x-cloak">
+              <div class="contacts-menu__container" style="width:  calc((var(--menu-gap) + var(--menu-item)) * 5 - var(--menu-gap));">
+                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.instagram.com" target="_blank"><img src="./images/icons/social-instagram.svg" alt="instagram"/></a>
                 </div>
-                <button class="contacts-menu__button" type="button" @click="isClosed=!isClosed" :class="{'contacts-menu__button--closed': !isClosed}">
-                  <div class="contacts-menu__button__image"></div>
-                </button>
+                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.gmail.com" target="_blank"><img src="./images/icons/social-sms.svg" alt="social-sms"/></a>
+                </div>
+                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.facebook.com" target="_blank"><img src="./images/icons/social-facebook.svg" alt="facebook"/></a>
+                </div>
+                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.viber.com" target="_blank"><img src="./images/icons/social-viber.svg" alt="viber"/></a>
+                </div>
+                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://web.telegram.org" target="_blank"><img src="./images/icons/social-telegram.svg" alt="telegram"/></a>
+                </div>
               </div>
+              <button class="contacts-menu__button" type="button" @click="isClosed=!isClosed" :class="{'contacts-menu__button--closed': !isClosed}">
+                <div class="contacts-menu__button__image"></div>
+              </button>
             </div>
           </div>
         </template>
       </div>
       <footer class="page__footer">
-        <div class="section-footer">
-          <div class="section-footer__links">
+        <div class="section-footer section-footer--blue">
+          <div class="section-footer__links section-footer__links--blue">
             <div class="_grid-col-max-1-1 _grid-row-max-1-1 _grid-col-desk-1-1 _grid-row-desk-1-1 _grid-col-tab-1-1 _grid-row-tab-1-1">
-              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--blue">
                 <div class="wrapper-frame__container">
                   <div class="wrapper-center">
                     <h3 class="section-footer__links__title">МЦ <span>«ДIМ ОРТОПЕДІЇ»</span> — Перший та єдиний в Україні медичний центр з корекції деформації голови у дітей</h3>
@@ -1096,11 +1107,11 @@
             </div>
             
             <div class="_grid-col-max-1-1 _grid-row-max-2-2 _grid-col-desk-1-1 _grid-row-desk-2-2 _grid-col-tab-1-1 _grid-row-tab-3-3">
-              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--blue">
                 <div class="wrapper-frame__container">
                   <div class="section-footer__links__social wrapper-center">
                     <p>Ми в соцiльних мережах</p>
-                    <div class="social-list"><a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
+                    <div class="social-list social-list--blue"><a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
                     </div>
                   </div>
                 </div>
@@ -1108,7 +1119,7 @@
             </div>
             
             <div class="_grid-col-max-2-2 _grid-row-max-1-2 _grid-col-desk-2-2 _grid-row-desk-1-2 _grid-col-tab-1-1 _grid-row-tab-2-2">
-              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--blue">
                 <div class="wrapper-frame__container">
                   <div class="section-links">
                     <div>
@@ -1175,7 +1186,7 @@
           
           <div class="section-footer__footer">
             <div class="card-footer">
-              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--blue">
                 <div class="wrapper-frame__container">
                   <div class="wrapper-center">
                     <div><a class="card-footer__link" href="#">Політика конфіденційності</a>
@@ -1186,7 +1197,7 @@
               </div>
             </div>
             <div class="card-footer">
-              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--undefined">
+              <div class="wrapper-frame  wrapper-frame--full wrapper-frame--blue">
                 <div class="wrapper-frame__container">
                   <div class="wrapper-center">
                     <div class="card-footer__block">

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="page" lang="ua">
+<html class="page page--blue" lang="ua">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +20,7 @@
       mouseY: 0,
       isShowToUp: false,
 
+      isShowPageMenu: true,
       isShowBurgerMenu: false,
       isShowSearchMenu: false,
       isShowPopUpContact: false,
@@ -34,7 +35,7 @@
       isPhone: false,
     }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor }">
     <div class="page__wrapper">
-      <template x-if="isShowBurgerMenu">
+      <template x-cloak x-if="isShowBurgerMenu">
         <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @click="setTimeout(() =&gt; {isShowBurgerMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
           <div class="burger-menu__container" @click.stop="@click.stop">
             <div class="screen" style="z-index: -1;">
@@ -88,7 +89,7 @@
                   </div>
                   <div>
                     <div style="margin-bottom: 25px">
-                      <div class="social-list"><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a><a class="social-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
+                      <div class="social-list"><a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a><a class="social-link" href="https://web.telegram.org" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
                       </div>
                     </div>
                     <button class="button" @click="isShowPopUpRepeat = true" type="">
@@ -105,8 +106,8 @@
                   </div>
                 </div>
                 
-                <div style="padding-bottom: 30px;">
-                  <h4 class="section-links__title">Послуги</h4>
+                <div style="padding-bottom: 30px;"><a href="./services.html"> 
+                    <h4 class="section-links__title">Послуги</h4></a>
                   <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left section-links__hr"/>
                   <div class="burger-menu__list-card">
                     <div class="wrapper-frame wrapper-frame--bg">
@@ -117,7 +118,7 @@
                           <div class="card-block-5__container" x-cloak="x-cloak">
                             <h3 class="card-block-5__title" x-cloak="x-cloak">Лiкування деформацiї голови</h3>
                             <p class="card-block-5__text" x-cloak="x-cloak">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини</p>
-                            <div class="card-block-5__block card__block"><a class="link" href="#">
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
                                 <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
                                 <div class="link__icon">
                                   <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -141,7 +142,7 @@
                           <div class="card-block-5__container" x-cloak="x-cloak">
                             <h3 class="card-block-5__title" x-cloak="x-cloak">Ортозування дiтей</h3>
                             <p class="card-block-5__text" x-cloak="x-cloak">Процес використання ортезів або спеціальних пристосувань для підтримки або виправлення функціональних або структурних вад у дітей</p>
-                            <div class="card-block-5__block card__block"><a class="link" href="#">
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
                                 <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
                                 <div class="link__icon">
                                   <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -165,7 +166,7 @@
                           <div class="card-block-5__container" x-cloak="x-cloak">
                             <h3 class="card-block-5__title" x-cloak="x-cloak">Консультації дитячого лiкаря ортопеда</h3>
                             <p class="card-block-5__text" x-cloak="x-cloak">Можливість отримати професійні поради від спеціаліста щодо здоров'я та розвитку вашої дитини</p>
-                            <div class="card-block-5__block card__block"><a class="link" href="#">
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
                                 <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
                                 <div class="link__icon">
                                   <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -189,7 +190,7 @@
                           <div class="card-block-5__container" x-cloak="x-cloak">
                             <h3 class="card-block-5__title" x-cloak="x-cloak">реабiлiтацiя, Фізіотерапія та Масаж</h3>
                             <p class="card-block-5__text" x-cloak="x-cloak">Eфективні методи відновлення рухливості та поліпшення м'язового тонусу у дітей, сприяють загальному здоров'ю та розвитку</p>
-                            <div class="card-block-5__block card__block"><a class="link" href="#">
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
                                 <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
                                 <div class="link__icon">
                                   <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -219,7 +220,7 @@
           "> Борис Круглов</a></div>
               <div class="burger-menu__footer__container">
                 <div class="burger-menu__footer__back" @click="setTimeout(() =&gt; {isShowBurgerMenu=false}, 500);isClosedBurgerMenu=true;"><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span class="burger-menu__footer__back__text">Повернутися назад</span></div>
-                <div class="burger-menu__footer__link"><a class="link link--negative" href="/services.html">
+                <div class="burger-menu__footer__link"><a class="link link--negative" href="./services.html">
                     <div class="link__text">УСІ ПОСЛУГИ</div></a>
                 </div>
               </div>
@@ -227,7 +228,7 @@
           </div>
         </div>
       </template>
-      <template x-if="isShowSearchMenu">
+      <template x-cloak x-if="isShowSearchMenu">
         <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @click="setTimeout(() =&gt; {isShowSearchMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
           <div class="burger-menu__container" @click.stop="@click.stop">
             <div class="screen" style="z-index: -1;">
@@ -254,8 +255,8 @@
             <div class="burger-menu__main">
               <div class="burger-menu__main__container-2">
                 
-                <div style="padding-bottom: 30px;">
-                  <h4 class="section-links__title">Послуги</h4>
+                <div style="padding-bottom: 30px;"><a href="./services.html"> 
+                    <h4 class="section-links__title">Послуги</h4></a>
                   <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left section-links__hr"/>
                   <div class="burger-menu__list-card">
                     <div class="wrapper-frame wrapper-frame--bg">
@@ -266,7 +267,7 @@
                           <div class="card-block-5__container" x-cloak="x-cloak">
                             <h3 class="card-block-5__title" x-cloak="x-cloak">Лiкування деформацiї голови</h3>
                             <p class="card-block-5__text" x-cloak="x-cloak">Лікування деформації голови включає використання ортопедичних шоломів, що коригують форму голови дитини</p>
-                            <div class="card-block-5__block card__block"><a class="link" href="#">
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
                                 <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
                                 <div class="link__icon">
                                   <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -290,7 +291,7 @@
                           <div class="card-block-5__container" x-cloak="x-cloak">
                             <h3 class="card-block-5__title" x-cloak="x-cloak">Ортозування дiтей</h3>
                             <p class="card-block-5__text" x-cloak="x-cloak">Процес використання ортезів або спеціальних пристосувань для підтримки або виправлення функціональних або структурних вад у дітей</p>
-                            <div class="card-block-5__block card__block"><a class="link" href="#">
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
                                 <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
                                 <div class="link__icon">
                                   <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -314,7 +315,7 @@
                           <div class="card-block-5__container" x-cloak="x-cloak">
                             <h3 class="card-block-5__title" x-cloak="x-cloak">Консультації дитячого лiкаря ортопеда</h3>
                             <p class="card-block-5__text" x-cloak="x-cloak">Можливість отримати професійні поради від спеціаліста щодо здоров'я та розвитку вашої дитини</p>
-                            <div class="card-block-5__block card__block"><a class="link" href="#">
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
                                 <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
                                 <div class="link__icon">
                                   <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -338,7 +339,7 @@
                           <div class="card-block-5__container" x-cloak="x-cloak">
                             <h3 class="card-block-5__title" x-cloak="x-cloak">реабiлiтацiя, Фізіотерапія та Масаж</h3>
                             <p class="card-block-5__text" x-cloak="x-cloak">Eфективні методи відновлення рухливості та поліпшення м'язового тонусу у дітей, сприяють загальному здоров'ю та розвитку</p>
-                            <div class="card-block-5__block card__block"><a class="link" href="#">
+                            <div class="card-block-5__block card__block"><a class="link" href="./one_service.html">
                                 <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div>
                                 <div class="link__icon">
                                   <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -368,7 +369,7 @@
           "> Борис Круглов</a></div>
               <div class="burger-menu__footer__container">
                 <div class="burger-menu__footer__back" @click="setTimeout(() =&gt; {isShowSearchMenu=false}, 500);isClosedBurgerMenu=true;"><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span class="burger-menu__footer__back__text">Повернутися назад</span></div>
-                <div class="burger-menu__footer__link"><a class="link link--negative" href="/services.html">
+                <div class="burger-menu__footer__link"><a class="link link--negative" href="./services.html">
                     <div class="link__text">УСІ ПОСЛУГИ</div></a>
                 </div>
               </div>
@@ -376,7 +377,7 @@
           </div>
         </div>
       </template>
-      <template x-if="isShowPopUpContact">
+      <template x-cloak x-if="isShowPopUpContact">
         <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @click="setTimeout(() =&gt; {isShowPopUpContact=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
           <div class="burger-menu__container" @click.stop="@click.stop">
             <div class="screen" style="z-index: -1;">
@@ -517,7 +518,7 @@
           "> Борис Круглов</a></div>
               <div class="burger-menu__footer__container">
                 <div class="burger-menu__footer__back" @click="setTimeout(() =&gt; {isShowPopUpContact=false}, 500);isClosedBurgerMenu=true;"><img src="./images/icons/arrow-back.svg" alt="arrow back"/><span class="burger-menu__footer__back__text">Повернутися назад</span></div>
-                <div class="burger-menu__footer__link"><a class="link link--negative" href="/services.html">
+                <div class="burger-menu__footer__link"><a class="link link--negative" href="./services.html">
                     <div class="link__text">УСІ ПОСЛУГИ</div></a>
                 </div>
               </div>
@@ -525,15 +526,13 @@
           </div>
         </div>
       </template>
-      <template x-if="isShowPopUpDoctor">
+      <template x-cloak x-if="isShowPopUpDoctor">
         <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': false,
     }">
           <div class="pop-up__content">
-            <div class="modal" on-cloak="on-cloak" @click.stop="@click.stop" x-data="{
-              title: &quot;&quot;
-            }" style="max-width: 920px;">
+            <div class="modal" on-cloak="on-cloak" @click.stop="@click.stop" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
               <div class="modal__button">
                 <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
               </div>
@@ -596,7 +595,7 @@
                     </div>
                   </div>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; margin: auto; margin-top: 80px;">
+                <div class="modal__footer">
                   <button class="button" @click="isShowPopUpRepeat = true" type="">
                     <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
                     </p>
@@ -616,7 +615,7 @@
           </div>
         </div>
       </template>
-      <template x-if="isShowPopUpRepeat">
+      <template x-cloak x-if="isShowPopUpRepeat">
         <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpRepeat = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': false,
@@ -635,16 +634,7 @@
                   </div>
                 </div>
                 
-                <h3 style="
-              font-family: var(--font-family);
-              font-weight: 400;
-              font-size: px-to-rem(36);
-              line-height: 120%;
-              text-transform: uppercase;
-              text-align: center;
-              color: var(--primary);
-              margin-bottom: 30px;
-            ">Запишіться на консультацію <br>Просто зараз</h3>
+                <h3 class="pop-up-repeat__title">Запишіться на консультацію <br>Просто зараз</h3>
                 
                 <div class="wrapper-frame">
                   <div class="wrapper-frame__container">
@@ -701,27 +691,19 @@
                   </div>
                 </div>
                 
-                <div style="
-              display: grid;
-              grid-template-columns: repeat(6, 1fr);
-              gap: 20px;
-              justify-content: center;
-              align-items: center;
-              place-items: center;
-              margin-top: 40px;
-            ">
-                  <div class="circle-block circle-block--micro">
-                    <div class="circle-block__container"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"><span>info@dimortopedii.com</span></div>
-                  </div>
+                <div class="pop-up-repeat__container">
+                  <div class="circle-block circle-block--micro"><a class="circle-block__container" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
                   <div class="circle-block circle-block--micro">
                     <div class="circle-block__wrapper">
-                      <div class="circle-block__container"><img class="circle-block__img-time" src="./images/icons/time.svg" time alt="time"><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
-                      <div class="circle-block__container"><img src="./images/icons/marker.svg" alt="marker"><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
+                      <div class="circle-block__container"><img class="circle-block__img-time" src="./images/icons/time.svg" time="time" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
+                      <div class="circle-block__container" @click="
+  isShowPopUpContent = true;
+  contentType = 'url';
+  contentSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d165.36786284226784!2d35.04044810765634!3d48.45872054068833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2dfec05384b%3A0x75b21560c0e2f0ec!2z0YPQuy4g0KLRgNC-0LjRhtC60LDRjywgMjHQsywg0JTQvdC10L_RgCwg0JTQvdC10L_RgNC-0L_QtdGC0YDQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDQ5MDAw!5e0!3m2!1sru!2sua!4v1724411003246!5m2!1sru!2sua';
+"><img src="./images/icons/marker.svg" alt="marker"/><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
                     </div>
                   </div>
-                  <div class="circle-block circle-block--micro">
-                    <div class="circle-block__container"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"><span>+38 (095) 120 75 75</span></div>
-                  </div>
+                  <div class="circle-block circle-block--micro"><a class="circle-block__container" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
                   <div class="shlem-head shlem-head--mini">
                     <div class="shlem-head__wrapper" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=10,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()">
                       <div class="shlem-head__face">
@@ -752,7 +734,9 @@
                       </div><img src="./images/decor/shlem_x1_.png" alt="Шлем TALEE"/>
                     </div>
                   </div>
-                  <div class="social-list"><a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
+                  <div class="pop-up-repeat__list">
+                    <div class="social-list"><a class="social-link" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-youtube_.svg" alt="youtube"/></a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -760,7 +744,7 @@
           </div>
         </div>
       </template>
-      <template x-if="isShowPopUpContent">
+      <template x-cloak x-if="isShowPopUpContent">
         <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpContent = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': true,
@@ -931,7 +915,7 @@
             </div>
           </div>
         </div>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
         <section class="section-block section-block--blue">
           <div class="section-block__title-container">
             <div class="lable-main lable-main--blue">01<span>/ Про компанiю</span></div>
@@ -1008,9 +992,9 @@
             </div>
           </div>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
         <div class="section-unicum-ortethes">
-          <div class="flex-column">
+          <div class="section-unicum-ortethes__first">
             <div class="lable-main">02<span>/ унікальність ортезів</span></div>
             <div class="section-unicum-ortethes__title">
               <div class="title-easy-22">
@@ -1033,8 +1017,8 @@
               </div>
             </div>
           </div>
-          <div class="flex-column">
-            <div class="grid-columns-2">
+          <div class="section-unicum-ortethes__first">
+            <div class="section-unicum-ortethes__list">
               <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--blue">
                 <div class="wrapper-frame__container">
                   <article class="card-v card" x-cloak="x-cloak">
@@ -1115,80 +1099,82 @@
             </article>
           </div>
         </div>
-        <hr/>
-        <section class="section-block section-block--columns-3">
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+        <section class="section-block section-block--columns-1">
           <div class="section-block__title-container">
-            <div class="lable-main lable-main--columns-3">05<span>/ підбір ортезів</span></div>
-            <h2 class="title-main title-main--columns-3  title-main--blue title-main--float-right _anim-items _anim-once _transition-right _transition-clip-form-left">
+            <div class="lable-main lable-main--columns-1">05<span>/ підбір ортезів</span></div>
+            <h2 class="title-main title-main--columns-1  title-main--blue title-main--float-right _anim-items _anim-once _transition-right _transition-clip-form-left">
               <div class="title-main__item"> ЗРОБІТЬ <i>3 КРОКИ ДО КОМФОРТУ</i> ВАШОЇ ДИТИНИ</div>
               <div class="title-main__item"><span> З <b>НОВИМИ ОРТЕЗАМИ PIRO</b> ВЖЕ СЬОГОДНІ!</span>
               </div>
             </h2>
           </div>
-          <div class="section-block__content-container section-block__content-container--columns-3">
-            <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--blue">
-              <div class="wrapper-frame__container">
-                <article class="card-easy-12 card" x-cloak="x-cloak">
-                  <img class="card-easy-12__image" x-cloak="x-cloak" src="./images/photos/card-f-1.jpg" loading="lazy"/>
-                  
-                  <div class="card-easy-12__container" x-cloak="x-cloak">
-                    <h3 class="card-easy-12__title" x-cloak="x-cloak">3D СКАНУВАННЯ</h3>
-                    <p class="card-easy-12__text" x-cloak="x-cloak">Технологія 3D сканування грантує, що Piro ідеально підійде вашій дитині</p>
-                    <div class="card-easy-12__block card__block">
-                      <div class="card-easy-12__block__head">
-                        <div class="card-easy-12__block__head__number">01</div>
-                        <div class="card-easy-12__block__head__line"></div><img class="card-easy-12__block__head__icon" src="./images/icons/blue-icons/blue-arrow.svg" alt="icon"/>
+          <div class="section-block__content-container section-block__content-container--columns-1">
+            <section class="section-selection-orthoses">
+              <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--blue">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-12 card" x-cloak="x-cloak">
+                    <img class="card-easy-12__image" x-cloak="x-cloak" src="./images/photos/card-f-1.jpg" loading="lazy"/>
+                    
+                    <div class="card-easy-12__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-12__title" x-cloak="x-cloak">3D СКАНУВАННЯ</h3>
+                      <p class="card-easy-12__text" x-cloak="x-cloak">Технологія 3D сканування грантує, що Piro ідеально підійде вашій дитині</p>
+                      <div class="card-easy-12__block card__block">
+                        <div class="card-easy-12__block__head">
+                          <div class="card-easy-12__block__head__number">01</div>
+                          <div class="card-easy-12__block__head__line"></div><img class="card-easy-12__block__head__icon" src="./images/icons/blue-icons/blue-arrow.svg" alt="icon"/>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  
-                </article>
+                    
+                    
+                  </article>
+                </div>
               </div>
-            </div>
-            <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--blue">
-              <div class="wrapper-frame__container">
-                <article class="card-easy-12 card" x-cloak="x-cloak">
-                  <img class="card-easy-12__image" x-cloak="x-cloak" src="./images/photos/card-f-2.jpg" loading="lazy"/>
-                  
-                  <div class="card-easy-12__container" x-cloak="x-cloak">
-                    <h3 class="card-easy-12__title" x-cloak="x-cloak">МОДЕЛЮВАННЯ</h3>
-                    <p class="card-easy-12__text" x-cloak="x-cloak">Ваш лікар подбає про ідеальну форму ортеза, а вам лише залишається вибрати його зовнішній вигляд</p>
-                    <div class="card-easy-12__block card__block">
-                      <div class="card-easy-12__block__head">
-                        <div class="card-easy-12__block__head__number">02</div>
-                        <div class="card-easy-12__block__head__line"></div><img class="card-easy-12__block__head__icon" src="./images/icons/blue-icons/blue-arrow.svg" alt="icon"/>
+              <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--blue">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-12 card" x-cloak="x-cloak">
+                    <img class="card-easy-12__image" x-cloak="x-cloak" src="./images/photos/card-f-2.jpg" loading="lazy"/>
+                    
+                    <div class="card-easy-12__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-12__title" x-cloak="x-cloak">МОДЕЛЮВАННЯ</h3>
+                      <p class="card-easy-12__text" x-cloak="x-cloak">Ваш лікар подбає про ідеальну форму ортеза, а вам лише залишається вибрати його зовнішній вигляд</p>
+                      <div class="card-easy-12__block card__block">
+                        <div class="card-easy-12__block__head">
+                          <div class="card-easy-12__block__head__number">02</div>
+                          <div class="card-easy-12__block__head__line"></div><img class="card-easy-12__block__head__icon" src="./images/icons/blue-icons/blue-arrow.svg" alt="icon"/>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  
-                </article>
+                    
+                    
+                  </article>
+                </div>
               </div>
-            </div>
-            <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--blue">
-              <div class="wrapper-frame__container">
-                <article class="card-easy-12 card" x-cloak="x-cloak">
-                  <img class="card-easy-12__image" x-cloak="x-cloak" src="./images/photos/card-f-3.jpg" loading="lazy"/>
-                  
-                  <div class="card-easy-12__container" x-cloak="x-cloak">
-                    <h3 class="card-easy-12__title" x-cloak="x-cloak">3D ДРУК</h3>
-                    <p class="card-easy-12__text" x-cloak="x-cloak">Ми розпочинаємо друк, використовуючи тільки найсучасніші 3D-принтери для створення ортезів</p>
-                    <div class="card-easy-12__block card__block">
-                      <div class="card-easy-12__block__head">
-                        <div class="card-easy-12__block__head__number">03</div>
-                        <div class="card-easy-12__block__head__line"></div><img class="card-easy-12__block__head__icon" src="./images/icons/blue-icons/blue-done.svg" alt="icon"/>
+              <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--blue">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-12 card" x-cloak="x-cloak">
+                    <img class="card-easy-12__image" x-cloak="x-cloak" src="./images/photos/card-f-3.jpg" loading="lazy"/>
+                    
+                    <div class="card-easy-12__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-12__title" x-cloak="x-cloak">3D ДРУК</h3>
+                      <p class="card-easy-12__text" x-cloak="x-cloak">Ми розпочинаємо друк, використовуючи тільки найсучасніші 3D-принтери для створення ортезів</p>
+                      <div class="card-easy-12__block card__block">
+                        <div class="card-easy-12__block__head">
+                          <div class="card-easy-12__block__head__number">03</div>
+                          <div class="card-easy-12__block__head__line"></div><img class="card-easy-12__block__head__icon" src="./images/icons/blue-icons/blue-done.svg" alt="icon"/>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  
-                </article>
+                    
+                    
+                  </article>
+                </div>
               </div>
-            </div>
+            </section>
           </div>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
         <section class="section-shlem section-shlem--blue" x-data="{'images':['./images/decor/piro/foot-blue.png','./images/decor/piro/foot-purpule.png','./images/decor/piro/foot-milk.png','./images/decor/piro/foot-yellow.png','./images/decor/piro/foot-pink.png','./images/decor/piro/foot-white.png'],'currentImage':'./images/decor/piro/foot-blue.png'}">
           <div class="gradient-fon" :class="{
       'gradient-fon--blue':  currentImage === images[0],
@@ -1276,29 +1262,29 @@
                 </div>
               </div>
             </button>
-            <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #f7c7ab; filter: blur(150px);position: absolute;"></div>
+            <div class="decor-blur-point" style="min-width: 300px; min-height: 300px; border-radius: 100%; background: #bdd3f8; filter: blur(150px);position: absolute;"></div>
           </div>
         </section>
-        <hr/>
-        <div class="section-varieties">
-          <section class="section-block">
-            <div class="section-block__title-container">
-              <h2 class="title-main  title-main--blue title-main--center _anim-items _anim-once _transition-right _transition-clip-form-left">
-                <div class="title-main__item"> РiЗНОВиДНОСТi</div>
-                <div class="title-main__item"><span> <b>ортезів</b> <i>PIRO</i></span>
-                </div>
-              </h2>
-            </div>
-            <div class="section-block__content-container">
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+        <section class="section-block section-block--columns-1">
+          <div class="section-block__title-container">
+            <h2 class="title-main title-main--columns-1  title-main--blue title-main--center _anim-items _anim-once _transition-right _transition-clip-form-left">
+              <div class="title-main__item"> РiЗНОВиДНОСТi</div>
+              <div class="title-main__item"><span> <b>ортезів</b> <i>PIRO</i></span>
+              </div>
+            </h2>
+          </div>
+          <div class="section-block__content-container section-block__content-container--columns-1">
+            <div class="section-varieties">
               <div class="section-varieties__first">
                 <div class="menu-object__photo">
-                  <div class="main-photo" style="width: 920px; height: 920px;">
+                  <div class="main-photo section-varieties__main-photo" style="width: 920px; height: 920px;">
                     <div class="main-photo__0 main-photo--blue" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
                       <div class="main-photo__block">
-                        <div class="object-photo" style="display: flex; flex-direction: column; align-items: center; justify-content: center;"><img src="./images/decor/foot-2_full_x1.png" alt="Piro" style="width: 700px; height: 700px;"/>
+                        <div class="object-photo" style="display: flex; flex-direction: column; align-items: center; justify-content: center;"><img class="section-varieties__image" src="./images/decor/foot-2_full_x1.png" alt="Piro" style="width: 700px; height: 700px;"/>
                           <div class="decor-blur-point" style="min-width: 400px; min-height: 10px; border-radius: 100%; background: #f7c7ab; filter: blur(20px);"></div>
                         </div>
-                        <div class="menu-object__item-4">
+                        <div class="menu-object__item-4 section-varieties__item section-varieties__item--none">
                           <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                             <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                               <div class="title-simple title-simple--mini">
@@ -1310,7 +1296,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="menu-object__item-5">
+                        <div class="menu-object__item-5 section-varieties__item section-varieties__item--none">
                           <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: true, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                             <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                               <div class="title-simple title-simple--mini">
@@ -1322,7 +1308,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="menu-object__item-6">
+                        <div class="menu-object__item-6 section-varieties__item">
                           <div class="button-accordion-simple button-accordion-simple--mini" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" x-on:click="" x-cloak="x-cloak">
                             <div class="button-accordion-simple__pop-up" :class="{'button-accordion-simple__pop-up--hidden':!isOpen}" @click="handleClose">
                               <div class="title-simple title-simple--mini">
@@ -1507,97 +1493,99 @@
                 </div>
               </div>
             </div>
-          </section>
-        </div>
-        <hr/>
-        <section class="section-block">
+          </div>
+        </section>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+        <section class="section-block section-block--columns-1">
           <div class="section-block__title-container">
-            <div class="lable-main">06<span>/ процес Лікування</span></div>
-            <h2 class="title-main  title-main--blue _anim-items _anim-once _transition-right _transition-clip-form-left">
+            <div class="lable-main lable-main--columns-1">06<span>/ процес Лікування</span></div>
+            <h2 class="title-main title-main--columns-1  title-main--blue _anim-items _anim-once _transition-right _transition-clip-form-left">
               <div class="title-main__item"> процес <i>Лікування</i> ортезами piro </div>
               <div class="title-main__item">
               </div>
             </h2>
           </div>
-          <div class="section-block__content-container">
-            <div>
-              <div class="block-image"><img class="block-image__image" src="./images/photos/photo-baby.jpg" alt="background"/>
-                <div class="block-image__block">
-                  <div class="title-white">
-                    <p class="title-white__text">Унікальне поєднання двох матеріалів: м'які ділянки (чорного кольору) запобігають будь-якому тиску, водночас базовий матеріал забезпечує корекцію і контроль положення стопи</p>
-                    <div class="title-white__container">
-                      <h2 class="title-white__main-text"><b>Piro</b> — повністю змінює наявний ринок, встановлюючи новий рівень комфорту гомілковостопного ортеза</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div style="display: grid; gap: 20px;">
-              <div class="block-s">
-                <h4 class="_h4 title-s title-s--blue _uppercase">ефективний спосіб відновлення після травм та оперативних втручань</h4>
-                <div class="_text3 text-s text-s--blue"><b>Ортези Piro</b> - це сучасне рішення для ефективного лікування та підтримки. Вони розроблені з урахуванням останніх технологій та потреб дітей, забезпечуючи комфорт і підтримку при щоденному використанні</div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px;">
-                  <div class="wrapper-frame wrapper-frame--blue">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <div class="title-block-2 title-block-2--blue">
-                          <p class="title-block-2__text"><b>Ідеально підходять</b> до форми тіла, забезпечуючи максимальний комфорт</p>
-                          <div class="title-block-2__container">
-                            <div class="title-block-2__number">01</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="wrapper-frame wrapper-frame--blue">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <div class="title-block-2 title-block-2--blue">
-                          <p class="title-block-2__text"><b>Інноваційні матеріали</b> для довговічності ортезів</p>
-                          <div class="title-block-2__container">
-                            <div class="title-block-2__number">02</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="wrapper-frame wrapper-frame--blue">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <div class="title-block-2 title-block-2--blue">
-                          <p class="title-block-2__text">Ортези <b>легко надягаються</b> і не викликають дискомфорту</p>
-                          <div class="title-block-2__container">
-                            <div class="title-block-2__number">03</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="wrapper-frame wrapper-frame--blue">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <div class="title-block-2 title-block-2--blue">
-                          <p class="title-block-2__text">Підтримка суглобів для прискорення <b>процесів відновлення</b></p>
-                          <div class="title-block-2__container">
-                            <div class="title-block-2__number">04</div>
-                          </div>
-                        </div>
+          <div class="section-block__content-container section-block__content-container--columns-1">
+            <div class="section-process-health">
+              <div class="section-process-health__first">
+                <div class="block-image"><img class="block-image__image" src="./images/photos/photo-baby.jpg" alt="background"/>
+                  <div class="block-image__block">
+                    <div class="title-white">
+                      <p class="title-white__text">Унікальне поєднання двох матеріалів: м'які ділянки (чорного кольору) запобігають будь-якому тиску, водночас базовий матеріал забезпечує корекцію і контроль положення стопи</p>
+                      <div class="title-white__container">
+                        <h2 class="title-white__main-text"><b>Piro</b> — повністю змінює наявний ринок, встановлюючи новий рівень комфорту гомілковостопного ортеза</h2>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="wrapper-frame wrapper-frame--blue">
-                <div class="wrapper-frame__container">
-                  <div style="padding: 40px;">
-                    <h5 class="_h5 title-s title-s--blue _uppercase">«Кожен крок в лікуванні — це крок назустріч повноцінному життю. <b>Ортези Piro</b> — ваш надійний помічник на шляху до одужання»</h5>
+              <div class="section-process-health__second">
+                <div class="block-s">
+                  <h4 class="_h4 title-s title-s--blue _uppercase">ефективний спосіб відновлення після травм та оперативних втручань</h4>
+                  <div class="_text3 text-s text-s--blue"><b>Ортези Piro</b> - це сучасне рішення для ефективного лікування та підтримки. Вони розроблені з урахуванням останніх технологій та потреб дітей, забезпечуючи комфорт і підтримку при щоденному використанні</div>
+                  <div class="section-process-health__second__list">
+                    <div class="wrapper-frame wrapper-frame--blue">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <div class="title-block-2 title-block-2--blue">
+                            <p class="title-block-2__text"><b>Ідеально підходять</b> до форми тіла, забезпечуючи максимальний комфорт</p>
+                            <div class="title-block-2__container">
+                              <div class="title-block-2__number">01</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--blue">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <div class="title-block-2 title-block-2--blue">
+                            <p class="title-block-2__text"><b>Інноваційні матеріали</b> для довговічності ортезів</p>
+                            <div class="title-block-2__container">
+                              <div class="title-block-2__number">02</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--blue">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <div class="title-block-2 title-block-2--blue">
+                            <p class="title-block-2__text">Ортези <b>легко надягаються</b> і не викликають дискомфорту</p>
+                            <div class="title-block-2__container">
+                              <div class="title-block-2__number">03</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--blue">
+                      <div class="wrapper-frame__container">
+                        <div class="wrapper-center">
+                          <div class="title-block-2 title-block-2--blue">
+                            <p class="title-block-2__text">Підтримка суглобів для прискорення <b>процесів відновлення</b></p>
+                            <div class="title-block-2__container">
+                              <div class="title-block-2__number">04</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame wrapper-frame--blue">
+                  <div class="wrapper-frame__container">
+                    <div class="section-process-health__second__block">
+                      <h5 class="_h5 title-s title-s--blue _uppercase">«Кожен крок в лікуванні — це крок назустріч повноцінному життю. <b>Ортези Piro</b> — ваш надійний помічник на шляху до одужання»</h5>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
         <section class="section-block section-block--light  section-block--columns-4 section-block--background-1 section-block--blue" style="background-image: url(&quot;./images/decor/decor_1.jpg&quot;);">
           <div class="section-block__title-container">
             <div class="lable-main lable-main--light">02<span>/ Послуги</span></div>
@@ -1705,7 +1693,7 @@
             <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
             </p></a>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
         <section class="section-block section-block--columns-1">
           <div class="section-block__title-container">
             <div class="lable-main lable-main--columns-1">07<span>/ Відгуки</span></div>
@@ -1896,7 +1884,7 @@
 
                         </div>
                       </div>
-                    </button><a class="link link--nowrap" href="#">
+                    </button><a class="link link--nowrap" href="./prices.html">
                       <div class="link__text">ВСІ ЦІНИ</div></a>
                   </div>
                 </div>
@@ -2010,7 +1998,7 @@
 
                         </div>
                       </div>
-                    </button><a class="link link--nowrap" href="#">
+                    </button><a class="link link--nowrap" href="./services.html">
                       <div class="link__text">ВСІ ПОСЛУГИ</div></a>
                   </div>
                 </div>
@@ -2113,7 +2101,7 @@
 
                         </div>
                       </div>
-                    </button><a class="link link--nowrap" href="#">
+                    </button><a class="link link--nowrap" href="./doctors.html">
                       <div class="link__text">ВСІ ЛІКАРІ</div></a>
                   </div>
                 </div>
@@ -2196,7 +2184,7 @@
 
                         </div>
                       </div>
-                    </button><a class="link link--nowrap" href="#">
+                    </button><a class="link link--nowrap" href="./license.html">
                       <div class="link__text">ВСІ ЛІЦЕНЗІЇ</div></a>
                   </div>
                 </div>
@@ -2281,7 +2269,7 @@
 
                         </div>
                       </div>
-                    </button><a class="link link--nowrap" href="#">
+                    </button><a class="link link--nowrap" href="./results.html">
                       <div class="link__text">ВСІ РЕЗУЛЬТАТИ</div></a>
                   </div>
                 </div>
@@ -2362,7 +2350,7 @@
 
                         </div>
                       </div>
-                    </button><a class="link link--nowrap" href="#">
+                    </button><a class="link link--nowrap" href="./research.html">
                       <div class="link__text">ВСІ ДОСЛІДЖЕННЯ</div></a>
                   </div>
                 </div>
@@ -2422,7 +2410,7 @@
 
                         </div>
                       </div>
-                    </button><a class="link link--nowrap" href="#">
+                    </button><a class="link link--nowrap" href="./about_company.html">
                       <div class="link__text">БІЛЬШЕ ПРО КОМПАНІЮ</div></a>
                   </div>
                 </div>
@@ -2505,7 +2493,7 @@
 
                         </div>
                       </div>
-                    </button><a class="link link--nowrap" href="#">
+                    </button><a class="link link--nowrap" href="./reviews.html">
                       <div class="link__text">ВСІ ВІДГУКИ</div></a>
                   </div>
                 </div>
@@ -2584,7 +2572,7 @@
 
                         </div>
                       </div>
-                    </button><a class="link link--nowrap" href="#">
+                    </button><a class="link link--nowrap" href="./news.html">
                       <div class="link__text">ВСІ НОВИНИ</div></a>
                   </div>
                 </div>
@@ -2639,7 +2627,7 @@
                         </button>
                       </form>
                       <div style="display: flex; justify-content: space-between; align-items: end;">
-                        <h6 class="_h6 _uppercase">ВАКАНСІЇ</h6><a class="link link--nowrap" href="#">
+                        <h6 class="_h6 _uppercase">ВАКАНСІЇ</h6><a class="link link--nowrap" href="./cooperation.html">
                           <div class="link__text">УСІ ВАКАНСІЇ</div></a>
                       </div>
                       <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
@@ -2776,7 +2764,7 @@
 
                         </div>
                       </div>
-                    </button><a class="link link--nowrap" href="#">
+                    </button><a class="link link--nowrap" href="./about_talee.html">
                       <div class="link__text">БІЛЬШЕ ПРО ШОЛОМ</div></a>
                   </div>
                 </div>
@@ -2882,7 +2870,7 @@
 
                         </div>
                       </div>
-                    </button><a class="link link--nowrap" href="#">
+                    </button><a class="link link--nowrap" href="./about_piro.html">
                       <div class="link__text">БІЛЬШЕ ПРО ОРТЕЗИ</div></a>
                   </div>
                 </div>
@@ -3125,7 +3113,7 @@
             }
           };
         </script>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
         <section class="section-accordion section-accordion--blue">
           <div class="section-accordion__container">
             <div class="section-accordion__content">
@@ -3260,7 +3248,7 @@
             </div>
           </div>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
         <section class="section-form section-form--blue">
           <div class="wrapper-frame">
             <div class="wrapper-frame__container">
@@ -3319,16 +3307,16 @@
             </div>
           </div>
         </section>
-        <hr/>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
       </main>
       <div class="page__menu">
-        <template x-if="!isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
+        <template x-if="isShowPageMenu &amp;&amp; !isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
           <div class="page__menu__container">
             <div class="page__menu__container__up"><a class="to-up" href="#" :class="{'to-up--hidden': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"/></a>
               <div class="contacts-menu__item">
-                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                <div class="button-accordion-icon button-accordion-icon--modal-menu" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
                   <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}" style="bottom: 0;">
-                    <div style="height: 82dvh; max-height: 920px; width: 764px;">
+                    <div class="button-accordion-icon__menu">
                       <div class="menu menu--list">
                         <div class="menu__container">
                           <div class="menu__head">
@@ -3427,7 +3415,7 @@
 
                               </div>
                             </div>
-                          </button><a class="link link--nowrap" href="#">
+                          </button><a class="link link--nowrap" href="./about_talee.html">
                             <div class="link__text">БІЛЬШЕ ПРО ШОЛОМ</div></a>
                         </div>
                       </div>
@@ -3438,9 +3426,9 @@
                 </div>
               </div>
               <div class="contacts-menu__item">
-                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                <div class="button-accordion-icon button-accordion-icon--modal-menu" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
                   <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}" style="bottom: 0;">
-                    <div style="height: 82dvh; max-height: 920px; width: 764px;">
+                    <div class="button-accordion-icon__menu">
                       <div class="menu menu--blue menu--list">
                         <div class="menu__container">
                           <div class="menu__head">
@@ -3539,7 +3527,7 @@
 
                               </div>
                             </div>
-                          </button><a class="link link--nowrap" href="#">
+                          </button><a class="link link--nowrap" href="./about_piro.html">
                             <div class="link__text">БІЛЬШЕ ПРО ОРТЕЗИ</div></a>
                         </div>
                       </div>
@@ -3550,10 +3538,13 @@
                 </div>
               </div>
               <div class="contacts-menu__item">
-                <div class="button-accordion-icon" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
+                <div class="button-accordion-icon button-accordion-icon--col" x-data="{ isOpen: false, handleClose(){this.isOpen=false} }" @click.outside="isOpen = false" x-on:click="" x-cloak="x-cloak">
                   <div class="button-accordion-icon__pop-up" :class="{'button-accordion-icon__pop-up--hidden':!isOpen}">
-                    <button class="button-icon button-icon--border" @click="" type=""><img src="./images/icons/light__phone.svg" alt="instagram"/></button>
-                    <button class="button-icon button-icon--border" @click="" type=""><img src="./images/icons/light__phone.svg" alt="instagram"/></button>
+                    <div class="wrapper-frame wrapper-frame--bg">
+                      <div class="wrapper-frame__container">
+                        <div class="short-contacts__link" style="padding: 20px"><img src="./images/icons/phone.svg"/><a href="tel:+38 095 120 75 75">+38 095 120 75 75</a></div>
+                      </div>
+                    </div>
                   </div>
                   <div class="button-accordion-icon__container" :class="{'button-accordion-icon__container--active':isOpen}" @click="isOpen=!isOpen"><img class="button-accordion-icon__image" src="./images/icons/light__phone.svg" alt="icon of phone"/>
                   </div>
@@ -3561,22 +3552,24 @@
               </div>
             </div>
             
-            <div class="contacts-menu contacts-menu--horizontal" x-data="{ isClosed: true }" @click.outside="isClosed = true" :class="{'contacts-menu--closed': isClosed}" x-cloak="x-cloak">
-              <div class="contacts-menu__container" style="width:  calc((var(--menu-gap) + var(--menu-item)) * 5 - var(--menu-gap));">
-                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.instagram.com" target="_blank"><img src="./images/icons/social-instagram.svg" alt="instagram"/></a>
+            <div class="page__menu__container__contacts">
+              <div class="contacts-menu contacts-menu--horizontal" x-data="{ isClosed: true }" @click.outside="isClosed = true" :class="{'contacts-menu--closed': isClosed}" x-cloak="x-cloak">
+                <div class="contacts-menu__container" style="width:  calc((var(--menu-gap) + var(--menu-item)) * 5 - var(--menu-gap));">
+                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.instagram.com" target="_blank"><img src="./images/icons/social-instagram.svg" alt="instagram"/></a>
+                  </div>
+                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.gmail.com" target="_blank"><img src="./images/icons/social-sms.svg" alt="social-sms"/></a>
+                  </div>
+                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.facebook.com" target="_blank"><img src="./images/icons/social-facebook.svg" alt="facebook"/></a>
+                  </div>
+                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.viber.com" target="_blank"><img src="./images/icons/social-viber.svg" alt="viber"/></a>
+                  </div>
+                  <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://web.telegram.org" target="_blank"><img src="./images/icons/social-telegram.svg" alt="telegram"/></a>
+                  </div>
                 </div>
-                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.gmail.com" target="_blank"><img src="./images/icons/social-sms.svg" alt="social-sms"/></a>
-                </div>
-                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.facebook.com" target="_blank"><img src="./images/icons/social-facebook.svg" alt="facebook"/></a>
-                </div>
-                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://www.viber.com" target="_blank"><img src="./images/icons/social-viber.svg" alt="viber"/></a>
-                </div>
-                <div class="contacts-menu__item"><a class="button-icon button-icon--size-m" href="https://web.telegram.org" target="_blank"><img src="./images/icons/social-telegram.svg" alt="telegram"/></a>
-                </div>
+                <button class="contacts-menu__button" type="button" @click="isClosed=!isClosed" :class="{'contacts-menu__button--closed': !isClosed}">
+                  <div class="contacts-menu__button__image"></div>
+                </button>
               </div>
-              <button class="contacts-menu__button" type="button" @click="isClosed=!isClosed" :class="{'contacts-menu__button--closed': !isClosed}">
-                <div class="contacts-menu__button__image"></div>
-              </button>
             </div>
           </div>
         </template>
