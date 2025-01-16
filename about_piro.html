@@ -26,6 +26,7 @@
       isShowPopUpContact: false,
       isShowPopUpRepeat: false,
       isShowPopUpDoctor: false,
+      isShowPopUpResult: false,
       isShowPopUpContent: false,
 
       currentHook: '',
@@ -33,7 +34,7 @@
       contentSrc: '',
       isTablet: false,
       isPhone: false,
-    }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor }">
+    }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor || isShowPopUpResult }">
     <div class="page__wrapper">
       <template x-cloak x-if="isShowBurgerMenu">
         <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @click="setTimeout(() =&gt; {isShowBurgerMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
@@ -609,6 +610,77 @@
                   </button><a class="button button--phone-mini" href="tel:+38 095 120 75 75">
                     <p class="button__text"><img class="button__image" src="./images/icons/phone_.svg" alt="+38 095 120 75 75"/><span>+38 095 120 75 75</span>
                     </p></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template x-cloak x-if="isShowPopUpResult">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpResult = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      'pop-up--closed': isClosedPopUp,
+      'pop-up--fixed': false,
+    }">
+          <div class="pop-up__content">
+            <div class="modal" on-cloak="on-cloak" @click.stop="@click.stop" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
+              <div class="modal__button">
+                <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpResult = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
+              </div>
+              <div class="modal__content">
+                <div class="card-result-info" x-data="{
+      title: '',
+      imageAfter: '',
+      dateAfter: '',
+      imageBefore: '',
+      dateBefore: '',
+      diagnose: '',
+      description: '',
+      age: '',
+
+      updateResult(newData) {
+        Object.assign(this, newData);
+      }
+    }" @notify.window="updateResult($event.detail);" x-cloak="x-cloak">
+                  <div class="card-result-info__grid">
+                    <div class="card-result-info__block">
+                      <div class="card-result-info__block__title">Вік дитини:</div>
+                      <div class="card-result-info__block__text" x-text="age"></div>
+                    </div>
+                    <div class="card-result-info__block">
+                      <div class="card-result-info__block__title">Результат:</div>
+                      <div class="card-result-info__block__text">Через <b x-text='title'></b></div>
+                    </div>
+                  </div>
+                  <div class="card-result-info__flex">
+                    <p>Діагноз</p>
+                    <p x-text="dateAfter"></p>
+                  </div>
+                  <div class="title-easy-2">
+                    <p class="title-easy-2__text"><span x-text="description"></span></p>
+                    <div class="title-easy-2__container">
+                      <h2 class="title-easy-2__main-text"><span x-text="diagnose"></span></h2>
+                    </div>
+                  </div>
+                  <div class="card-result-info__grid">
+                    <article class="card-block-9 card" x-cloak="x-cloak">
+                      <img class="card-block-9__image" x-cloak="x-cloak" src="imageAfter" :src="imageAfter" loading="lazy" alt="undefined"/>
+                      
+                      <div class="card-block-9__container" x-cloak="x-cloak">
+                        <h3 class="card-block-9__title" x-cloak="x-cloak" x-text="ДO ЛІКУВАННЯ">ДO ЛІКУВАННЯ</h3>
+                      </div>
+                      
+                      
+                    </article>
+                    <article class="card-block-9 card" x-cloak="x-cloak">
+                      <img class="card-block-9__image" x-cloak="x-cloak" src="imageBefore" :src="imageBefore" loading="lazy" alt="undefined"/>
+                      
+                      <div class="card-block-9__container" x-cloak="x-cloak">
+                        <h3 class="card-block-9__title" x-cloak="x-cloak" x-text="&lt;b style=&quot;text-transform:uppercase&quot;&gt;ЧЕРЕЗ &lt;span x-text='title'&gt;&lt;/span&gt;&lt;/b&gt;"><b style="text-transform:uppercase">ЧЕРЕЗ <span x-text='title'></span></b></h3>
+                      </div>
+                      
+                      
+                    </article>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2214,7 +2286,19 @@
                               <div class="card-doc__list">
                                 <div class="card-doc__item"><span class="card-doc__item__title">Діагноз:</span><span>Плагіоцефалія (асиметрична деформація черепа)</span></div>
                                 <div class="card-doc__item"><span class="card-doc__item__title">Вік дитини:</span><span>1 рік</span></div>
-                              </div><a class="button  button--small button--light" href="#">
+                              </div>
+                              <button class="button  button--small button--light" @click="isShowPopUpResult=true;setTimeout(() =&gt; {
+                      $dispatch('notify', {
+                        title: '5 місяців',
+                        imageAfter: './images/photos/photo_after.jpg',
+                        dateAfter: '20.01.2024',
+                        imageBefore: './images/photos/photo_before.jpg',
+                        dateBefore: '21.07.2024',
+                        diagnose: 'Плагіоцефалія (асиметрична деформація черепа)',
+                        description: 'Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.',
+                        age: '1 рік',
+                      });
+                    }, 0);" type="">
                                 <p class="button__text"><span>ДЕТАЛЬНІШЕ</span>
                                 </p>
                                 <div class="button__icon">
@@ -2223,7 +2307,8 @@
 </svg>
 
                                   </div>
-                                </div></a>
+                                </div>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -2240,7 +2325,19 @@
                               <div class="card-doc__list">
                                 <div class="card-doc__item"><span class="card-doc__item__title">Діагноз:</span><span>Плагіоцефалія (асиметрична деформація черепа)</span></div>
                                 <div class="card-doc__item"><span class="card-doc__item__title">Вік дитини:</span><span>1 рік</span></div>
-                              </div><a class="button  button--small button--light" href="#">
+                              </div>
+                              <button class="button  button--small button--light" @click="isShowPopUpResult=true;setTimeout(() =&gt; {
+                      $dispatch('notify', {
+                        title: '5 місяців',
+                        imageAfter: './images/photos/photo_after.jpg',
+                        dateAfter: '20.01.2024',
+                        imageBefore: './images/photos/photo_before.jpg',
+                        dateBefore: '21.07.2024',
+                        diagnose: 'Плагіоцефалія (асиметрична деформація черепа)',
+                        description: 'Плагіоцефалія - це асиметрична деформація черепа у немовлят, що часто виникає через тривале лежання на одному боці. Це може призвести до візуально помітної асиметрії голови, але зазвичай не впливає на розвиток мозку дитини.',
+                        age: '1 рік',
+                      });
+                    }, 0);" type="">
                                 <p class="button__text"><span>ДЕТАЛЬНІШЕ</span>
                                 </p>
                                 <div class="button__icon">
@@ -2249,7 +2346,8 @@
 </svg>
 
                                   </div>
-                                </div></a>
+                                </div>
+                              </button>
                             </div>
                           </div>
                         </div>
