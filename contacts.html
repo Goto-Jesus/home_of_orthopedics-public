@@ -458,11 +458,11 @@
                 </div>
               </section>
               <div class="burger-menu__main__container">
-                <div class="circle-block circle-block--mini"><a class="circle-block__container" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
-                <div class="circle-block circle-block--mini"><a class="circle-block__container" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
+                <div class="circle-block circle-block--mini"><a class="circle-block__container circle-block__container--center" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
+                <div class="circle-block circle-block--mini"><a class="circle-block__container circle-block__container--center" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
                 <div class="circle-block circle-block--mini">
                   <div class="circle-block__wrapper">
-                    <div class="circle-block__container"><img src="./images/icons/time.svg" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
+                    <div class="circle-block__container circle-block__container--center"><img src="./images/icons/time.svg" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
                     <div class="circle-block__container" @click="
   isShowPopUpContent = true;
   contentType = 'url';
@@ -764,10 +764,10 @@
                 </div>
                 
                 <div class="pop-up-repeat__container">
-                  <div class="circle-block circle-block--micro"><a class="circle-block__container" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
+                  <div class="circle-block circle-block--micro"><a class="circle-block__container circle-block__container--center" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
                   <div class="circle-block circle-block--micro">
                     <div class="circle-block__wrapper">
-                      <div class="circle-block__container"><img class="circle-block__img-time" src="./images/icons/time.svg" time="time" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
+                      <div class="circle-block__container circle-block__container--center"><img class="circle-block__img-time" src="./images/icons/time.svg" time="time" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
                       <div class="circle-block__container" @click="
   isShowPopUpContent = true;
   contentType = 'url';
@@ -775,7 +775,7 @@
 "><img src="./images/icons/marker.svg" alt="marker"/><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
                     </div>
                   </div>
-                  <div class="circle-block circle-block--micro"><a class="circle-block__container" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
+                  <div class="circle-block circle-block--micro"><a class="circle-block__container circle-block__container--center" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
                   <div class="shlem-head shlem-head--mini">
                     <div class="shlem-head__wrapper" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=10,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()">
                       <div class="shlem-head__face">
@@ -920,7 +920,7 @@
                       </div>
                       
                       
-                      <div class="card-easy__block card__block"><a class="link" href="#">
+                      <div class="card-easy__block card__block"><a class="link" href="./cooperation.html">
                           <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div></a>
                       </div>
                     </article>
@@ -975,120 +975,87 @@
             </div>
           </div>
         </div>
-        <section class="section-block section-block--columns-1 section-more-about-company">
+        <section class="section-block">
           <div class="section-block__title-container">
-            <div class="lable-main lable-main--columns-1">02<span>/ Бiльше про Компанiю</span></div>
-            <h2 class="title-main title-main--columns-1  title-main--float-right _anim-items _anim-once _transition-right _transition-clip-form-left">
-              <div class="title-main__item"> медичний центр спеціалізується</div>
-              <div class="title-main__item"><span> на двох <i>основних напрямках:</i></span>
+            <div class="lable-main">01<span>/ Про компанiю</span></div>
+            <h2 class="title-main _anim-items _anim-once _transition-right">
+              <div class="title-main__item"> Ми надаємо <i>індивідуальні</i></div>
+              <div class="title-main__item"><span> та ефективні рішення в лiкуваннi деформації голови</span><span> використовуючи сучасні <b><strong>ортопедичні шоломи</strong></b></span>
               </div>
             </h2>
           </div>
-          <div class="section-block__content-container section-block__content-container--columns-1">
-            <div class="block-decor-information">
-              <div class="main-photo block-decor-information__main-photo" style="width: 1400px; height: 1400px;">
-                <div class="main-photo__0" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 160) + 'px,' + (mouseY * 1 / 160) + 'px, 0)'}})()">
-                  <div class="main-photo__block">
-                    <div class="block-decor-information__wrapper">
-                      <div class="block-decor-information__card-1">
-                        <div class="wrapper-frame wrapper-frame--40">
-                          <div class="wrapper-frame__container">
-                            <article class="card-easy-6 card" x-cloak="x-cloak">
-                              <div class="card-easy-6__number">01</div>
-                              
-                              
-                              <div class="card-easy-6__container" x-cloak="x-cloak"><img class="card-easy-6__image" src="./images/icons/card-a_1.svg" loading="lazy"/>
-                                <h3 class="card-easy-6__title" x-cloak="x-cloak">корекції деформації голови у дітей за допомогою ортопедичного шолома</h3>
-                              </div>
-                              
-                              
-                            </article>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="block-decor-information__card-2">
-                        <div class="wrapper-frame wrapper-frame--40">
-                          <div class="wrapper-frame__container">
-                            <article class="card-easy-6 card" x-cloak="x-cloak">
-                              <div class="card-easy-6__number">02</div>
-                              
-                              
-                              <div class="card-easy-6__container" x-cloak="x-cloak"><img class="card-easy-6__image" src="./images/icons/card-a_2.svg" loading="lazy"/>
-                                <h3 class="card-easy-6__title" x-cloak="x-cloak">та ортезування пацієнтів з ДЦП</h3>
-                              </div>
-                              
-                              
-                            </article>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="block-decor-information__card-3">
-                        <article class="card-block-4 card" x-cloak="x-cloak">
-                          
-                          
-                          <div class="card-block-4__container" x-cloak="x-cloak">
-                            <h3 class="card-block-4__title" x-cloak="x-cloak">Дужик <br>Вiкторiя <br>Сергiївна</h3>
-                            <p class="card-block-4__text" x-cloak="x-cloak">Засновниця, CEO <br>МЦ «ДIМ ОРТОПЕДiї»</p>
-                          </div>
-                          
-                          
-                          <div class="card-block-4__block card__block">
-                            <div class="social-list"><a class="social-link social-link--small" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-facebook_.svg" alt="facebook"/></a><a class="social-link social-link--small" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-instagram_.svg" alt="instagram"/></a><a class="social-link social-link--small" href="https://web.telegram.org" target="_blank" rel="noopener noreferrer"><img src="./images/icons/light__social-telegram_.svg" alt="telegram"/></a>
-                            </div>
-                          </div>
-                        </article>
-                      </div>
-                      <div class="block-decor-information__image-wrapper"><img class="block-decor-information__image" src="./images/photos/woman_x2.png" alt=""/></div>
+          <div class="section-block__content-container">
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_2">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-2 card" x-cloak="x-cloak">
+                    
+                    
+                    <div class="card-easy-2__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-2__title" x-cloak="x-cloak">1й</h3>
+                      <p class="card-easy-2__text" x-cloak="x-cloak">єдиний в Україні медичний центр з корекції деформації голови у дітей, заснованний <b>у 2024 роцi у м.Днiпро</b></p>
                     </div>
-                  </div>
-                  <div class="main-photo__1" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 130) + 'px,' + (mouseY * 1 / 130) + 'px, 0)'}})()">
-                    <div class="main-photo__2" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()">
-                      <div class="main-photo__3" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; false) {return 'transform: translate3d(' + (mouseX * 1 / 100) + 'px,' + (mouseY * 1 / 100) + 'px, 0)'}})()"></div>
-                    </div>
-                  </div>
+                    
+                    
+                  </article>
                 </div>
               </div>
             </div>
-            
-            <div class="section-more-about-company__cards">
-              <article class="card-easy-7 card" x-cloak="x-cloak">
-                
-                
-                <div class="card-easy-7__container" x-cloak="x-cloak">
-                  <h3 class="card-easy-7__title" x-cloak="x-cloak">Наша місія</h3>
-                  <p class="card-easy-7__text" x-cloak="x-cloak">Полягає у досягненні <b>100%</b> корекції деформації голови</p>
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_25">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-2 card" x-cloak="x-cloak">
+                    
+                    
+                    <div class="card-easy-2__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-2__title" x-cloak="x-cloak">!</h3>
+                      <p class="card-easy-2__text" x-cloak="x-cloak">Як <b>експерти в галузі ортопедії</b>, ми зосереджені на покращенні якості життя дітей за допомогою інноваційних методів лікування</p>
+                    </div>
+                    
+                    
+                  </article>
                 </div>
-                
-                
-              </article>
-              <article class="card-easy-7 card" x-cloak="x-cloak">
-                
-                
-                <div class="card-easy-7__container" x-cloak="x-cloak">
-                  <h3 class="card-easy-7__title" x-cloak="x-cloak">наша мета</h3>
-                  <p class="card-easy-7__text" x-cloak="x-cloak"><b>Покращення якості</b> життя пацієнтів з ортопедичними та нейроортопедичними захворюваннями</p>
+              </div>
+            </div>
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_5">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-2 card" x-cloak="x-cloak">
+                    
+                    
+                    <div class="card-easy-2__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-2__title" x-cloak="x-cloak">3D</h3>
+                      <p class="card-easy-2__text" x-cloak="x-cloak">Технологія 3D сканування гарантує, що шолом ідеально підійде вашій дитині</p>
+                    </div>
+                    
+                    
+                  </article>
                 </div>
-                
-                
-              </article>
-              <article class="card-easy-7 card" x-cloak="x-cloak">
-                
-                
-                <div class="card-easy-7__container" x-cloak="x-cloak">
-                  <h3 class="card-easy-7__title" x-cloak="x-cloak">Ми зосереджуємо </h3>
-                  <p class="card-easy-7__text" x-cloak="x-cloak">Нашу увагу на впровадженні нового покоління протезно-ортопедичних виробів, виготовлених за сучасними технологіями <b>3D-друку</b></p>
+              </div>
+            </div>
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_5">
+              <div class="wrapper-frame">
+                <div class="wrapper-frame__container">
+                  <article class="card-easy-2 card" x-cloak="x-cloak">
+                    
+                    
+                    <div class="card-easy-2__container" x-cloak="x-cloak">
+                      <h3 class="card-easy-2__title" x-cloak="x-cloak">20000+</h3>
+                      <p class="card-easy-2__text" x-cloak="x-cloak">Шоломом <span>Talee</span> було вилікувано <b>20 000+</b> дітей по всьому світу</p>
+                    </div>
+                    
+                    
+                  </article>
                 </div>
-                
-                
-              </article>
+              </div>
             </div>
           </div>
         </section>
         <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
         <section class="section-block  section-block--columns-1">
           <div class="section-block__title-container">
-            <div class="lable-main">12<span>/ Контакти</span></div>
-            <h2 class="title-main _anim-items _anim-once _transition-right _transition-clip-form-left">
+            <div class="lable-main">02<span>/ Контакти</span></div>
+            <h2 class="title-main _anim-items _anim-once _transition-right">
               <div class="title-main__item"> <i>Ми завжди вам раді</i> Та готовi</div>
               <div class="title-main__item"><span> с радiстЮ <b>вам допомогти,</b> щоб покращити здоров’я вашої дитини</span>
               </div>
@@ -1096,8 +1063,8 @@
           </div>
           <div class="section-block__content-container">
             <div class="section-contacts">
-              <div class="circle-block circle-block--min"><a class="circle-block__container" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
-              <div class="circle-block circle-block--min"><a class="circle-block__container" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
+              <div class="circle-block circle-block--min"><a class="circle-block__container circle-block__container--center" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
+              <div class="circle-block circle-block--min"><a class="circle-block__container circle-block__container--center" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
               <div class="shlem-head shlem-head--min">
                 <div class="shlem-head__wrapper" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=10,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()">
                   <div class="shlem-head__face">
@@ -1130,7 +1097,7 @@
               </div>
               <div class="circle-block circle-block--min">
                 <div class="circle-block__wrapper">
-                  <div class="circle-block__container"><img src="./images/icons/time.svg" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
+                  <div class="circle-block__container circle-block__container--center"><img src="./images/icons/time.svg" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
                   <div class="circle-block__container" @click="
   isShowPopUpContent = true;
   contentType = 'url';
@@ -1141,13 +1108,72 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="_grid-col-desk-3-4 _grid-row-desk-1-2">
-              <div class="super-map"><img src="./images/decor/map.png" alt="map" @click="
+              <div class="_grid-col-max-3-5 _grid-row-max-1-2 _grid-col-desk-3-4 _grid-row-desk-1-2 _grid-col-lap-1-2 _grid-row-lap-1-2 _grid-col-tab-1-2 _grid-row-tab-2-2 _grid-col-phone-1-1 _grid-row-phone-3-3">
+                <div class="super-map" @click="
   isShowPopUpContent = true;
   contentType = 'url';
   contentSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d165.36786284226784!2d35.04044810765634!3d48.45872054068833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2dfec05384b%3A0x75b21560c0e2f0ec!2z0YPQuy4g0KLRgNC-0LjRhtC60LDRjywgMjHQsywg0JTQvdC10L_RgCwg0JTQvdC10L_RgNC-0L_QtdGC0YDQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDQ5MDAw!5e0!3m2!1sru!2sua!4v1724411003246!5m2!1sru!2sua';
-" style="cursor:pointer;"/></div>
+"><img class="super-map__image" src="./images/decor/map.png" alt="map"/></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+        <section class="section-form">
+          <div class="wrapper-frame">
+            <div class="wrapper-frame__container">
+              <div class="wrapper-center section-form__container"><img src="./images/icons/user-file.svg" alt="file"/>
+                <h3 class="section-form__title">Або Залиште ваші дані і найближчим часом ми з вами зв'яжемося</h3>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper-frame">
+            <div class="wrapper-frame__container">
+              <form class="form" action="#" method="get">
+                <div class="form__container">
+                  <div class="wrapper-frame">
+                    <div class="wrapper-frame__container">
+                      <div class="wrapper-center">
+                        <label class="input-new">
+                          <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrapper-frame">
+                    <div class="wrapper-frame__container">
+                      <div class="wrapper-center">
+                        <label class="input-new">
+                          <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wrapper-frame">
+                  <div class="wrapper-frame__container">
+                    <div class="wrapper-center">
+                      <label class="input-new">
+                        <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <label class="checkbox">
+                  <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                </label>
+                <button class="button" @click="" type="submit">
+                  <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                  </p>
+                  <div class="button__icon">
+                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                    </div>
+                  </div>
+                </button>
+              </form>
             </div>
           </div>
         </section>
@@ -1156,7 +1182,7 @@
           <div class="section-accordion__container">
             <div class="section-accordion__content">
               <div class="section-accordion__lable">
-                <div class="lable-main">11<span>/ частi запитання</span></div>
+                <div class="lable-main">03<span>/ частi запитання</span></div>
                 <div class="wrapper-frame wrapper-frame--30">
                   <div class="wrapper-frame__container">
                     <div class="wrapper-center">
@@ -1254,64 +1280,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-        <section class="section-form">
-          <div class="wrapper-frame">
-            <div class="wrapper-frame__container">
-              <div class="wrapper-center section-form__container"><img src="./images/icons/user-file.svg" alt="file"/>
-                <h3 class="section-form__title">Або Залиште ваші дані і найближчим часом ми з вами зв'яжемося</h3>
-              </div>
-            </div>
-          </div>
-          <div class="wrapper-frame">
-            <div class="wrapper-frame__container">
-              <form class="form" action="#" method="get">
-                <div class="form__container">
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <label class="input-new">
-                          <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="wrapper-frame">
-                    <div class="wrapper-frame__container">
-                      <div class="wrapper-center">
-                        <label class="input-new">
-                          <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="wrapper-frame">
-                  <div class="wrapper-frame__container">
-                    <div class="wrapper-center">
-                      <label class="input-new">
-                        <input class="input-new__input" type="email" name="my-email" placeholder="Пошта*" required="required" title="Пошта"/>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <label class="checkbox">
-                  <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
-                </label>
-                <button class="button" @click="" type="submit">
-                  <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                  </p>
-                  <div class="button__icon">
-                    <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-                    </div>
-                  </div>
-                </button>
-              </form>
             </div>
           </div>
         </section>

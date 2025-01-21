@@ -458,11 +458,11 @@
                 </div>
               </section>
               <div class="burger-menu__main__container">
-                <div class="circle-block circle-block--mini"><a class="circle-block__container" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
-                <div class="circle-block circle-block--mini"><a class="circle-block__container" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
+                <div class="circle-block circle-block--mini"><a class="circle-block__container circle-block__container--center" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
+                <div class="circle-block circle-block--mini"><a class="circle-block__container circle-block__container--center" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
                 <div class="circle-block circle-block--mini">
                   <div class="circle-block__wrapper">
-                    <div class="circle-block__container"><img src="./images/icons/time.svg" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
+                    <div class="circle-block__container circle-block__container--center"><img src="./images/icons/time.svg" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
                     <div class="circle-block__container" @click="
   isShowPopUpContent = true;
   contentType = 'url';
@@ -764,10 +764,10 @@
                 </div>
                 
                 <div class="pop-up-repeat__container">
-                  <div class="circle-block circle-block--micro"><a class="circle-block__container" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
+                  <div class="circle-block circle-block--micro"><a class="circle-block__container circle-block__container--center" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
                   <div class="circle-block circle-block--micro">
                     <div class="circle-block__wrapper">
-                      <div class="circle-block__container"><img class="circle-block__img-time" src="./images/icons/time.svg" time="time" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
+                      <div class="circle-block__container circle-block__container--center"><img class="circle-block__img-time" src="./images/icons/time.svg" time="time" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
                       <div class="circle-block__container" @click="
   isShowPopUpContent = true;
   contentType = 'url';
@@ -775,7 +775,7 @@
 "><img src="./images/icons/marker.svg" alt="marker"/><span>м. Дніпро, <br>вул. Троїцька, 21Г, <br>5 поверх офic 556</span></div>
                     </div>
                   </div>
-                  <div class="circle-block circle-block--micro"><a class="circle-block__container" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
+                  <div class="circle-block circle-block--micro"><a class="circle-block__container circle-block__container--center" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
                   <div class="shlem-head shlem-head--mini">
                     <div class="shlem-head__wrapper" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=10,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()">
                       <div class="shlem-head__face">
@@ -920,7 +920,7 @@
                       </div>
                       
                       
-                      <div class="card-easy__block card__block"><a class="link" href="#">
+                      <div class="card-easy__block card__block"><a class="link" href="./cooperation.html">
                           <div class="link__text">ДІЗНАТИСЯ БІЛЬШЕ</div></a>
                       </div>
                     </article>
@@ -934,7 +934,7 @@
                       <ul class="breadcrumbs__list">
                         <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="main.html">Головна</a>
                         </li>
-                        <li class="breadcrumbs__item"><span class="breadcrumbs__link" href="#"><span></span></span>
+                        <li class="breadcrumbs__item"><span class="breadcrumbs__link" href="#"><span>Співпраця</span></span>
                         </li>
                       </ul>
                     </div>
@@ -978,14 +978,14 @@
         <section class="section-block">
           <div class="section-block__title-container">
             <div class="lable-main">01<span>/ Про компанiю</span></div>
-            <h2 class="title-main _anim-items _anim-once _transition-right _transition-clip-form-left">
+            <h2 class="title-main _anim-items _anim-once _transition-right">
               <div class="title-main__item"> Ми надаємо <i>індивідуальні</i></div>
               <div class="title-main__item"><span> та ефективні рішення в лiкуваннi деформації голови</span><span> використовуючи сучасні <b><strong>ортопедичні шоломи</strong></b></span>
               </div>
             </h2>
           </div>
           <div class="section-block__content-container">
-            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_25">
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_2">
               <div class="wrapper-frame">
                 <div class="wrapper-frame__container">
                   <article class="card-easy-2 card" x-cloak="x-cloak">
@@ -1001,7 +1001,7 @@
                 </div>
               </div>
             </div>
-            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_5">
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_25">
               <div class="wrapper-frame">
                 <div class="wrapper-frame__container">
                   <article class="card-easy-2 card" x-cloak="x-cloak">
@@ -1017,7 +1017,7 @@
                 </div>
               </div>
             </div>
-            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_75">
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_5">
               <div class="wrapper-frame">
                 <div class="wrapper-frame__container">
                   <article class="card-easy-2 card" x-cloak="x-cloak">
@@ -1033,7 +1033,7 @@
                 </div>
               </div>
             </div>
-            <div class="_anim-items _anim-once _transition-to-top _anim-delay-1">
+            <div class="_anim-items _anim-once _transition-to-top _anim-delay-0_5">
               <div class="wrapper-frame">
                 <div class="wrapper-frame__container">
                   <article class="card-easy-2 card" x-cloak="x-cloak">
@@ -1055,7 +1055,7 @@
         <section class="section-block section-block--columns-1">
           <div class="section-block__title-container">
             <div class="lable-main lable-main--columns-1">02<span>/ Співпраця</span></div>
-            <h2 class="title-main title-main--columns-1 _anim-items _anim-once _transition-right _transition-clip-form-left">
+            <h2 class="title-main title-main--columns-1 _anim-items _anim-once _transition-right">
               <div class="title-main__item"> <b>кваліфікована команда</b></div>
               <div class="title-main__item"><span> Запрошує до співпраці <i>майбутніх ріятівніків</i></span>
               </div>
@@ -1063,8 +1063,6 @@
           </div>
           <div class="section-block__content-container section-block__content-container--columns-1">
             <h3 class="section-image-block__title">Партнерам</h3>
-            
-            
             <div class="wrapper-frame  wrapper-frame--bg wrapper-frame--30">
               <div class="wrapper-frame__container">
                 <div class="section-image-block">
@@ -1152,11 +1150,7 @@
                 </div>
               </div>
             </div>
-            
-            
             <h3 class="section-image-block__title">Актуальні вакансії</h3>
-            
-            
             <div class="section-image-block__accordions">
               <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
                 <div class="wrapper-frame__container">
@@ -1168,9 +1162,36 @@
                       </div>
                     </h2>
                     <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">
-                      <div>
-                        <p>Повна зайнятість. Також готові взяти людину з інвалідністю. Досвід роботи від 2 років.</p>
-                        <p>Kuve, syanun Netpa Kannuwescekoro, 6. 8,8 км від ueHTpa</p>
+                      <div class="block-vacancy">
+                        <div class="block-vacancy__header">
+                          <div class="block-vacancy__header__title">Повна зайнятість. Також готові взяти людину з інвалідністю. <br>Досвід роботи від 2 років.</div><a class="block-vacancy__header__address"><img class="block-vacancy__header__icon" src="./images/icons/map_marker.svg"/><span class="block-vacancy__header__text">Kuve, syanun Netpa Kannuwescekoro, 6. 8,8 км від цeнтpa</span></a>
+                        </div>
+                        <div class="block-vacancy__main">
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">Умови:</div>
+                            <div class="block-vacancy__main__container__text">Мережа клінік Цифрова Стоматологія Ноженко, що знаходиться в Києві на лівому (Деснянський район, Троєщина) та правому березі (Мінський масив, Оболонь), в пошуку активного члена команди гнатолога, гнатолога -ортопеда, гнатолога -ортодонта.</div>
+                          </div>
+                          <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">Вимоги:</div>
+                            <ul class="block-vacancy__main__container__list">
+                              <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                              <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                              <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                              <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                            </ul>
+                          </div>
+                          <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">ОБОВ’ЯЗКИ:</div>
+                            <ul class="block-vacancy__main__container__list">
+                              <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                              <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                              <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                              <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1186,8 +1207,36 @@
                       </div>
                     </h2>
                     <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">
-                      <div>
-                        <p>1234</p><img src="./images/photos/man.png" alt=""/>
+                      <div class="block-vacancy">
+                        <div class="block-vacancy__header">
+                          <div class="block-vacancy__header__title">Повна зайнятість. Також готові взяти людину з інвалідністю. <br>Досвід роботи від 2 років.</div><a class="block-vacancy__header__address"><img class="block-vacancy__header__icon" src="./images/icons/map_marker.svg"/><span class="block-vacancy__header__text">Kuve, syanun Netpa Kannuwescekoro, 6. 8,8 км від цeнтpa</span></a>
+                        </div>
+                        <div class="block-vacancy__main">
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">Умови:</div>
+                            <div class="block-vacancy__main__container__text">Мережа клінік Цифрова Стоматологія Ноженко, що знаходиться в Києві на лівому (Деснянський район, Троєщина) та правому березі (Мінський масив, Оболонь), в пошуку активного члена команди гнатолога, гнатолога -ортопеда, гнатолога -ортодонта.</div>
+                          </div>
+                          <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">Вимоги:</div>
+                            <ul class="block-vacancy__main__container__list">
+                              <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                              <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                              <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                              <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                            </ul>
+                          </div>
+                          <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">ОБОВ’ЯЗКИ:</div>
+                            <ul class="block-vacancy__main__container__list">
+                              <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                              <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                              <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                              <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1203,8 +1252,36 @@
                       </div>
                     </h2>
                     <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">
-                      <div>
-                        <p>1234</p><img src="./images/photos/man.png" alt=""/>
+                      <div class="block-vacancy">
+                        <div class="block-vacancy__header">
+                          <div class="block-vacancy__header__title">Повна зайнятість. Також готові взяти людину з інвалідністю. <br>Досвід роботи від 2 років.</div><a class="block-vacancy__header__address"><img class="block-vacancy__header__icon" src="./images/icons/map_marker.svg"/><span class="block-vacancy__header__text">Kuve, syanun Netpa Kannuwescekoro, 6. 8,8 км від цeнтpa</span></a>
+                        </div>
+                        <div class="block-vacancy__main">
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">Умови:</div>
+                            <div class="block-vacancy__main__container__text">Мережа клінік Цифрова Стоматологія Ноженко, що знаходиться в Києві на лівому (Деснянський район, Троєщина) та правому березі (Мінський масив, Оболонь), в пошуку активного члена команди гнатолога, гнатолога -ортопеда, гнатолога -ортодонта.</div>
+                          </div>
+                          <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">Вимоги:</div>
+                            <ul class="block-vacancy__main__container__list">
+                              <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                              <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                              <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                              <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                            </ul>
+                          </div>
+                          <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">ОБОВ’ЯЗКИ:</div>
+                            <ul class="block-vacancy__main__container__list">
+                              <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                              <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                              <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                              <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1220,8 +1297,36 @@
                       </div>
                     </h2>
                     <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">
-                      <div>
-                        <p>1234</p><img src="./images/photos/man.png" alt=""/>
+                      <div class="block-vacancy">
+                        <div class="block-vacancy__header">
+                          <div class="block-vacancy__header__title">Повна зайнятість. Також готові взяти людину з інвалідністю. <br>Досвід роботи від 2 років.</div><a class="block-vacancy__header__address"><img class="block-vacancy__header__icon" src="./images/icons/map_marker.svg"/><span class="block-vacancy__header__text">Kuve, syanun Netpa Kannuwescekoro, 6. 8,8 км від цeнтpa</span></a>
+                        </div>
+                        <div class="block-vacancy__main">
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">Умови:</div>
+                            <div class="block-vacancy__main__container__text">Мережа клінік Цифрова Стоматологія Ноженко, що знаходиться в Києві на лівому (Деснянський район, Троєщина) та правому березі (Мінський масив, Оболонь), в пошуку активного члена команди гнатолога, гнатолога -ортопеда, гнатолога -ортодонта.</div>
+                          </div>
+                          <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">Вимоги:</div>
+                            <ul class="block-vacancy__main__container__list">
+                              <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                              <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                              <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                              <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                            </ul>
+                          </div>
+                          <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">ОБОВ’ЯЗКИ:</div>
+                            <ul class="block-vacancy__main__container__list">
+                              <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                              <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                              <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                              <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1237,8 +1342,36 @@
                       </div>
                     </h2>
                     <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">
-                      <div>
-                        <p>1234</p><img src="./images/photos/man.png" alt=""/>
+                      <div class="block-vacancy">
+                        <div class="block-vacancy__header">
+                          <div class="block-vacancy__header__title">Повна зайнятість. Також готові взяти людину з інвалідністю. <br>Досвід роботи від 2 років.</div><a class="block-vacancy__header__address"><img class="block-vacancy__header__icon" src="./images/icons/map_marker.svg"/><span class="block-vacancy__header__text">Kuve, syanun Netpa Kannuwescekoro, 6. 8,8 км від цeнтpa</span></a>
+                        </div>
+                        <div class="block-vacancy__main">
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">Умови:</div>
+                            <div class="block-vacancy__main__container__text">Мережа клінік Цифрова Стоматологія Ноженко, що знаходиться в Києві на лівому (Деснянський район, Троєщина) та правому березі (Мінський масив, Оболонь), в пошуку активного члена команди гнатолога, гнатолога -ортопеда, гнатолога -ортодонта.</div>
+                          </div>
+                          <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">Вимоги:</div>
+                            <ul class="block-vacancy__main__container__list">
+                              <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                              <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                              <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                              <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                            </ul>
+                          </div>
+                          <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">ОБОВ’ЯЗКИ:</div>
+                            <ul class="block-vacancy__main__container__list">
+                              <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                              <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                              <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                              <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1254,8 +1387,36 @@
                       </div>
                     </h2>
                     <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">
-                      <div>
-                        <p>1234</p><img src="./images/photos/man.png" alt=""/>
+                      <div class="block-vacancy">
+                        <div class="block-vacancy__header">
+                          <div class="block-vacancy__header__title">Повна зайнятість. Також готові взяти людину з інвалідністю. <br>Досвід роботи від 2 років.</div><a class="block-vacancy__header__address"><img class="block-vacancy__header__icon" src="./images/icons/map_marker.svg"/><span class="block-vacancy__header__text">Kuve, syanun Netpa Kannuwescekoro, 6. 8,8 км від цeнтpa</span></a>
+                        </div>
+                        <div class="block-vacancy__main">
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">Умови:</div>
+                            <div class="block-vacancy__main__container__text">Мережа клінік Цифрова Стоматологія Ноженко, що знаходиться в Києві на лівому (Деснянський район, Троєщина) та правому березі (Мінський масив, Оболонь), в пошуку активного члена команди гнатолога, гнатолога -ортопеда, гнатолога -ортодонта.</div>
+                          </div>
+                          <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">Вимоги:</div>
+                            <ul class="block-vacancy__main__container__list">
+                              <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                              <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                              <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                              <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                            </ul>
+                          </div>
+                          <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                          <div class="block-vacancy__main__container">
+                            <div class="block-vacancy__main__container__title">ОБОВ’ЯЗКИ:</div>
+                            <ul class="block-vacancy__main__container__list">
+                              <li class="block-vacancy__main__container__item">вища медична освіта</li>
+                              <li class="block-vacancy__main__container__item">загальний лікарський стаж не менше 3 років</li>
+                              <li class="block-vacancy__main__container__item">наявність сертифікату лікаря-спеціаліста, посвідчення про наявність діючої кваліфікаційної категорії (перша/вища — бажано), наявність додаткової спеціалізації (бажано)</li>
+                              <li class="block-vacancy__main__container__item">володіння методами сучасної діагностики, в тому числі ендоскопічні методи</li>
+                            </ul>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1267,15 +1428,15 @@
         <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
         <section class="section-block section-block--light  section-block--columns-4 section-block--background-2" style="background-image: url(&quot;./images/decor/decor_7.jpg&quot;);">
           <div class="section-block__title-container">
-            <div class="lable-main lable-main--light">09<span>/ Чому ми?</span></div>
-            <h2 class="title-main title-main--light _anim-items _anim-once _transition-right _transition-clip-form-left">
+            <div class="lable-main lable-main--light">03<span>/ Чому ми?</span></div>
+            <h2 class="title-main title-main--light _anim-items _anim-once _transition-right">
               <div class="title-main__item"> <b>Eфективність лікування</b></div>
               <div class="title-main__item"><span> ортопедичним шоломом TAlee підтверджена </span><span> численними науковими дослідженнями </span><span> та успішними випадками лікування</span>
               </div>
             </h2>
           </div>
           <div class="section-block__content-container section-block__content-container--light">
-            <article class="card-block-2 card-block-2--mini-text card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_25" x-cloak="x-cloak">
+            <article class="card-block-2 card-block-2--mini-text card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_2" x-cloak="x-cloak">
               <img class="card-block-2__image" x-cloak="x-cloak" src="./images/icons/card-b_1-state.svg" loading="lazy"/>
               
               <div class="card-block-2__container" x-cloak="x-cloak">
@@ -1284,7 +1445,7 @@
               
               
             </article>
-            <article class="card-block-2 card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_5" x-cloak="x-cloak">
+            <article class="card-block-2 card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_25" x-cloak="x-cloak">
               <img class="card-block-2__image" x-cloak="x-cloak" src="./images/icons/card-b_2-doctor.svg" loading="lazy"/>
               
               <div class="card-block-2__container" x-cloak="x-cloak">
@@ -1293,7 +1454,7 @@
               
               
             </article>
-            <article class="card-block-2 card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_75" x-cloak="x-cloak">
+            <article class="card-block-2 card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_5" x-cloak="x-cloak">
               <img class="card-block-2__image" x-cloak="x-cloak" src="./images/icons/card-b_3-3d.svg" loading="lazy"/>
               
               <div class="card-block-2__container" x-cloak="x-cloak">
@@ -1302,7 +1463,7 @@
               
               
             </article>
-            <article class="card-block-2 card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-1" x-cloak="x-cloak">
+            <article class="card-block-2 card _anim-items _anim-once _transition-clip-form-left _transition-opacity _anim-delay-0_5" x-cloak="x-cloak">
               <img class="card-block-2__image" x-cloak="x-cloak" src="./images/icons/card-b_4-health.svg" loading="lazy"/>
               
               <div class="card-block-2__container" x-cloak="x-cloak">
@@ -1317,7 +1478,7 @@
           <div class="section-accordion__container">
             <div class="section-accordion__content">
               <div class="section-accordion__lable">
-                <div class="lable-main">11<span>/ частi запитання</span></div>
+                <div class="lable-main">04<span>/ частi запитання</span></div>
                 <div class="wrapper-frame wrapper-frame--30">
                   <div class="wrapper-frame__container">
                     <div class="wrapper-center">
@@ -1420,8 +1581,8 @@
         </section>
         <section class="section-block  section-block--columns-1">
           <div class="section-block__title-container">
-            <div class="lable-main">12<span>/ Контакти</span></div>
-            <h2 class="title-main _anim-items _anim-once _transition-right _transition-clip-form-left">
+            <div class="lable-main">05<span>/ Контакти</span></div>
+            <h2 class="title-main _anim-items _anim-once _transition-right">
               <div class="title-main__item"> <i>Ми завжди вам раді</i> Та готовi</div>
               <div class="title-main__item"><span> с радiстЮ <b>вам допомогти,</b> щоб покращити здоров’я вашої дитини</span>
               </div>
@@ -1429,8 +1590,8 @@
           </div>
           <div class="section-block__content-container">
             <div class="section-contacts">
-              <div class="circle-block circle-block--min"><a class="circle-block__container" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
-              <div class="circle-block circle-block--min"><a class="circle-block__container" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
+              <div class="circle-block circle-block--min"><a class="circle-block__container circle-block__container--center" href="mailto:https://www.gmail.com"><img class="circle-block__image" src="./images/icons/email_.svg" alt="email"/><span>info@dimortopedii.com</span></a></div>
+              <div class="circle-block circle-block--min"><a class="circle-block__container circle-block__container--center" href="tel:+38 095 120 75 75"><img class="circle-block__image" src="./images/icons/phone.svg" alt="phone"/><span>+38 (095) 120 75 75</span></a></div>
               <div class="shlem-head shlem-head--min">
                 <div class="shlem-head__wrapper" :style="(() =&gt; {if (!isTablet &amp;&amp; !isPhone &amp;&amp; true) {const maxAngle=10,maxDistance = 400,rect = $el.getBoundingClientRect(),elementX = rect.left + rect.width / 2,elementY = rect.top + rect.height / 2,deltaX = mouseX - elementX,deltaY = mouseY - elementY,distanceX = Math.min(maxDistance, Math.abs(deltaX)),distanceY = Math.min(maxDistance, Math.abs(deltaY)),angleX = (distanceY / maxDistance) * maxAngle * Math.sign(deltaY),angleY = (distanceX / maxDistance) * maxAngle * -Math.sign(deltaX);return `transform: rotate3d(-1, 0, 0, ${angleX}deg) rotate3d(0, -1, 0, ${angleY}deg);`; }})()">
                   <div class="shlem-head__face">
@@ -1463,7 +1624,7 @@
               </div>
               <div class="circle-block circle-block--min">
                 <div class="circle-block__wrapper">
-                  <div class="circle-block__container"><img src="./images/icons/time.svg" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
+                  <div class="circle-block__container circle-block__container--center"><img src="./images/icons/time.svg" alt="time"/><span class="circle-block__time"><i>Пн-Пт</i>: 09:00-18:00</span></div>
                   <div class="circle-block__container" @click="
   isShowPopUpContent = true;
   contentType = 'url';
