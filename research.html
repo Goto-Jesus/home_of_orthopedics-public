@@ -36,9 +36,9 @@
       isPhone: false,
     }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor || isShowPopUpResult }">
     <div class="page__wrapper">
-      <template x-cloak x-if="isShowBurgerMenu">
-        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @click="setTimeout(() =&gt; {isShowBurgerMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
-          <div class="burger-menu__container" @click.stop="@click.stop">
+      <div x-cloak x-show="isShowBurgerMenu">
+        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-effect="if (isShowBurgerMenu) {setTimeout(() =&gt; {isClosedBurgerMenu=false;}, 1);}" @click="setTimeout(() =&gt; {isShowBurgerMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
+          <div class="burger-menu__container" @click.stop="">
             <div class="screen" style="z-index: -1;">
               <div class="screen__container">
                 <div class="_no-event screen-desk-↙">
@@ -238,10 +238,10 @@
             </div>
           </div>
         </div>
-      </template>
-      <template x-cloak x-if="isShowSearchMenu">
-        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @click="setTimeout(() =&gt; {isShowSearchMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
-          <div class="burger-menu__container" @click.stop="@click.stop">
+      </div>
+      <div x-cloak x-show="isShowSearchMenu">
+        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-effect="if (isShowSearchMenu) {setTimeout(() =&gt; {isClosedBurgerMenu=false;}, 1);}" @click="setTimeout(() =&gt; {isShowSearchMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
+          <div class="burger-menu__container" @click.stop="">
             <div class="screen" style="z-index: -1;">
               <div class="screen__container">
                 <div class="_no-event screen-desk-↙">
@@ -397,10 +397,10 @@
             </div>
           </div>
         </div>
-      </template>
-      <template x-cloak x-if="isShowPopUpContact">
-        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-init="setTimeout(() =&gt; {isClosedBurgerMenu=false}, 1);" @click="setTimeout(() =&gt; {isShowPopUpContact=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
-          <div class="burger-menu__container" @click.stop="@click.stop">
+      </div>
+      <div x-cloak x-show="isShowPopUpContact">
+        <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-effect="if (isShowPopUpContact) {setTimeout(() =&gt; {isClosedBurgerMenu=false;}, 1);}" @click="setTimeout(() =&gt; {isShowPopUpContact=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
+          <div class="burger-menu__container" @click.stop="">
             <div class="screen" style="z-index: -1;">
               <div class="screen__container">
                 <div class="_no-event screen-desk-↙">
@@ -429,7 +429,12 @@
                 </div>
                 <div class="wrapper-frame">
                   <div class="wrapper-frame__container">
-                    <form class="form" action="#" method="get">
+                    <form class="form" action="#" method="get" x-data="{
+          handleSubmit() {
+            console.log('Форма отправлена!');
+            // Ваша логика
+          }
+        }" @submit.prevent="handleSubmit">
                       <div class="form__container">
                         <div class="wrapper-frame">
                           <div class="wrapper-frame__container">
@@ -546,14 +551,14 @@
             </div>
           </div>
         </div>
-      </template>
-      <template x-cloak x-if="isShowPopUpDoctor">
-        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      </div>
+      <div x-cloak x-show="isShowPopUpDoctor">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpDoctor) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': false,
     }">
           <div class="pop-up__content">
-            <div class="modal" on-cloak="on-cloak" @click.stop="@click.stop" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
+            <div class="modal" on-cloak="on-cloak" @click.stop="" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
               <div class="modal__button">
                 <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
               </div>
@@ -635,14 +640,14 @@
             </div>
           </div>
         </div>
-      </template>
-      <template x-cloak x-if="isShowPopUpResult">
-        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpResult = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      </div>
+      <div x-cloak x-show="isShowPopUpResult">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpResult) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpResult = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': false,
     }">
           <div class="pop-up__content">
-            <div class="modal" on-cloak="on-cloak" @click.stop="@click.stop" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
+            <div class="modal" on-cloak="on-cloak" @click.stop="" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
               <div class="modal__button">
                 <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpResult = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
               </div>
@@ -668,7 +673,7 @@
                     </div>
                     <div class="card-result-info__block">
                       <div class="card-result-info__block__title">Результат:</div>
-                      <div class="card-result-info__block__text">Через <b x-text='title'></b></div>
+                      <div class="card-result-info__block__text">Через <b x-text="title"></b></div>
                     </div>
                   </div>
                   <div class="card-result-info__flex">
@@ -686,7 +691,7 @@
                       <img class="card-block-9__image" x-cloak="x-cloak" src="imageAfter" :src="imageAfter" loading="lazy" alt="undefined"/>
                       
                       <div class="card-block-9__container" x-cloak="x-cloak">
-                        <h3 class="card-block-9__title" x-cloak="x-cloak" x-text="ДO ЛІКУВАННЯ">ДO ЛІКУВАННЯ</h3>
+                        <h3 class="card-block-9__title" x-cloak="x-cloak">ДO ЛІКУВАННЯ</h3>
                       </div>
                       
                       
@@ -695,7 +700,7 @@
                       <img class="card-block-9__image" x-cloak="x-cloak" src="imageBefore" :src="imageBefore" loading="lazy" alt="undefined"/>
                       
                       <div class="card-block-9__container" x-cloak="x-cloak">
-                        <h3 class="card-block-9__title" x-cloak="x-cloak" x-text="&lt;b style=&quot;text-transform:uppercase&quot;&gt;ЧЕРЕЗ &lt;span x-text='title'&gt;&lt;/span&gt;&lt;/b&gt;"><b style="text-transform:uppercase">ЧЕРЕЗ <span x-text='title'></span></b></h3>
+                        <h3 class="card-block-9__title" x-cloak="x-cloak"><b style="text-transform:uppercase">ЧЕРЕЗ <span x-text="title"></span></b></h3>
                       </div>
                       
                       
@@ -706,14 +711,14 @@
             </div>
           </div>
         </div>
-      </template>
-      <template x-cloak x-if="isShowPopUpRepeat">
-        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpRepeat = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      </div>
+      <div x-cloak x-show="isShowPopUpRepeat">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpRepeat) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpRepeat = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': false,
     }">
           <div class="pop-up__content">
-            <div class="modal" on-cloak="on-cloak" @click.stop="@click.stop">
+            <div class="modal" on-cloak="on-cloak" @click.stop="">
               <div class="modal__button">
                 <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpRepeat = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
               </div>
@@ -730,7 +735,12 @@
                 
                 <div class="wrapper-frame">
                   <div class="wrapper-frame__container">
-                    <form class="form" action="#" method="get">
+                    <form class="form" action="#" method="get" x-data="{
+          handleSubmit() {
+            console.log('Форма отправлена!');
+            // Ваша логика
+          }
+        }" @submit.prevent="handleSubmit">
                       <div class="form__container">
                         <div class="wrapper-frame">
                           <div class="wrapper-frame__container">
@@ -835,9 +845,9 @@
             </div>
           </div>
         </div>
-      </template>
-      <template x-cloak x-if="isShowPopUpContent">
-        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-init="setTimeout(() =&gt; {isClosedPopUp = false}, 1);" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpContent = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      </div>
+      <div x-cloak x-show="isShowPopUpContent">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpContent) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpContent = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': true,
     }">
@@ -848,7 +858,7 @@
             <section class="section-modal">
               <div class="section-modal__container">
                 <div class="section-modal__bg"></div>
-                <div class="section-modal__screen" @click.stop="@click.stop"><img class="section-modal__content" x-show="contentType==='image'" :src="contentSrc" alt="image"/>
+                <div class="section-modal__screen" @click.stop=""><img class="section-modal__content" x-show="contentType==='image'" :src="contentSrc" alt="image"/>
                   <video class="section-modal__content" x-show="contentType==='video'" :src="contentSrc" autoplay="autoplay" controls="controls"></video>
                   <iframe class="section-modal__content" x-show="contentType==='url'" width="100%" height="100%" :src="contentSrc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -856,7 +866,7 @@
             </section>
           </div>
         </div>
-      </template>
+      </div>
       <header class="page__header">
         <div class="header">
           <div class="header__logo">
@@ -3190,7 +3200,12 @@
                     <div class="menu__list">
                       <h6 class="_h6 _uppercase">Залиште Ваші Контактні Дані</h6>
                       <p>Будь ласка, заповніть форму нижче,ми обов'язково зв'яжемося з вами найближчим часом для обговорення можливостей співробітництва</p>
-                      <form class="form" action="#" method="get" style="padding: 0;">
+                      <form class="form" action="#" method="get" style="padding: 0;" x-data="{
+        handleSubmit() {
+          console.log('Форма отправлена!');
+          // Ваша логика
+        }
+      }" @submit.prevent="handleSubmit">
                         <div class="wrapper-frame">
                           <div class="wrapper-frame__container">
                             <div class="wrapper-center">
@@ -3887,7 +3902,12 @@
           </div>
           <div class="wrapper-frame">
             <div class="wrapper-frame__container">
-              <form class="form" action="#" method="get">
+              <form class="form" action="#" method="get" x-data="{
+          handleSubmit() {
+            console.log('Форма отправлена!');
+            // Ваша логика
+          }
+        }" @submit.prevent="handleSubmit">
                 <div class="form__container">
                   <div class="wrapper-frame">
                     <div class="wrapper-frame__container">
