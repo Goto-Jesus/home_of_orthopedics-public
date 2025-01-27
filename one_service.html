@@ -28,13 +28,14 @@
       isShowPopUpDoctor: false,
       isShowPopUpResult: false,
       isShowPopUpContent: false,
+      isShowPopUpTHX: false,
 
       currentHook: '',
       contentType: '',
       contentSrc: '',
       isTablet: false,
       isPhone: false,
-    }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor || isShowPopUpResult }">
+    }" x-init="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" @mousemove="mouseX = $event.clientX; mouseY = $event.clientY;" @scroll.debounce.window="isShowToUp = window.scrollY &gt;= 800; currentHook = window.location.hash" @resize.debounce.window="setTimeout(() =&gt; {isTablet = (window.innerWidth &lt; 950);isPhone = (window.innerWidth &lt; 650);}, 0);" x-cloak :class="{'page__body--stop-scroll': isShowPopUpContact || isShowBurgerMenu || isShowPopUpContent || isShowPopUpRepeat || isShowPopUpDoctor || isShowPopUpResult || isShowSearchMenu}">
     <div class="page__wrapper">
       <div x-cloak x-show="isShowBurgerMenu">
         <div class="burger-menu" x-data="{ currentAnchor: '', isClosedBurgerMenu: true }" x-effect="if (isShowBurgerMenu) {setTimeout(() =&gt; {isClosedBurgerMenu=false;}, 1);}" @click="setTimeout(() =&gt; {isShowBurgerMenu=false}, 500);isClosedBurgerMenu=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{'burger-menu--closed': isClosedBurgerMenu}">
@@ -107,7 +108,7 @@
                   </div>
                 </div>
                 
-                <div class="burger-menu__container-2"><a href="./services.html"> 
+                <div class="burger-menu__container-2"><a href="./services.html">
                     <h4 class="section-links__title">Послуги</h4></a>
                   <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left section-links__hr"/>
                   <div class="burger-menu__list-card">
@@ -264,9 +265,24 @@
             </div>
             
             <div class="burger-menu__main">
-              <div class="burger-menu__main__container-2">
+              <div class="burger-menu__main__container-2 burger-menu__main__container-2--column">
                 
-                <div class="burger-menu__container-2"><a href="./services.html"> 
+                <div class="burger-menu__container-2">
+                  <h4 class="section-links__title">Результати Пошуку</h4>
+                  <div class="burger-menu__container-2__list"><a class="burger-menu__container-2__list__item" href="#">Запит</a><a class="burger-menu__container-2__list__item" href="#">Запит</a><a class="burger-menu__container-2__list__item" href="#">Запит</a><a class="burger-menu__container-2__list__item" href="#">Запит</a><a class="burger-menu__container-2__list__item" href="#">Запит</a>
+                  </div>
+                  <div style="margin-block: 10px;">
+                    <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left"/>
+                  </div>
+                  <div class="burger-menu__container-2__none">
+                    <div class="burger-menu__container-2__none__title">Результати пошуку за запитом «Запит» не знайдено</div>
+                    <ul class="burger-menu__container-2__none__list">
+                      <li>Переконайтеся, що всі слова написані правильно</li>
+                      <li>Спробуйте інший запиті</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="burger-menu__container-2"><a href="./services.html">
                     <h4 class="section-links__title">Послуги</h4></a>
                   <hr class="hr _anim-items _anim-once_ _anim-delay-0_5 _transition-clip-form-left section-links__hr"/>
                   <div class="burger-menu__list-card">
@@ -431,8 +447,9 @@
                   <div class="wrapper-frame__container">
                     <form class="form" action="#" method="get" x-data="{
           handleSubmit() {
+            isShowPopUpTHX = true;
+            /* Ваша логика */
             console.log('Форма отправлена!');
-            // Ваша логика
           }
         }" @submit.prevent="handleSubmit">
                       <div class="form__container">
@@ -556,6 +573,7 @@
         <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpDoctor) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpDoctor = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': false,
+      'pop-up--center': false,
     }">
           <div class="pop-up__content">
             <div class="modal" on-cloak="on-cloak" @click.stop="" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
@@ -645,6 +663,7 @@
         <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpResult) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpResult = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': false,
+      'pop-up--center': false,
     }">
           <div class="pop-up__content">
             <div class="modal" on-cloak="on-cloak" @click.stop="" x-data="{ title: &quot;&quot; }" style="max-width: 920px;">
@@ -716,6 +735,7 @@
         <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpRepeat) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpRepeat = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': false,
+      'pop-up--center': false,
     }">
           <div class="pop-up__content">
             <div class="modal" on-cloak="on-cloak" @click.stop="">
@@ -737,8 +757,9 @@
                   <div class="wrapper-frame__container">
                     <form class="form" action="#" method="get" x-data="{
           handleSubmit() {
+            isShowPopUpTHX = true;
+            /* Ваша логика */
             console.log('Форма отправлена!');
-            // Ваша логика
           }
         }" @submit.prevent="handleSubmit">
                       <div class="form__container">
@@ -850,6 +871,7 @@
         <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpContent) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpContent = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': true,
+      'pop-up--center': false,
     }">
           <div class="pop-up__button">
             <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpContent = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
@@ -864,6 +886,33 @@
                 </div>
               </div>
             </section>
+          </div>
+        </div>
+      </div>
+      <div x-cloak x-show="isShowPopUpTHX">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpTHX) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpTHX = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      'pop-up--closed': isClosedPopUp,
+      'pop-up--fixed': true,
+      'pop-up--center': true,
+    }">
+          <div class="pop-up__content">
+            <div class="modal" on-cloak="on-cloak" @click.stop="" style="width: 100%; max-width: max-content;">
+              <div class="modal__button">
+                <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpTHX = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
+              </div>
+              <div class="modal__content">
+                <div class="thx-block"><img class="thx-block__image" src="./images/decor/happy.png" alt="happy family">
+                  <div class="thx-block__content">
+                    <div class="title-easy-2">
+                      <p class="title-easy-2__text">Ми зв`яжемося з вами найближчим часом <br>🧡🧡🧡 </p>
+                      <div class="title-easy-2__container">
+                        <h2 class="title-easy-2__main-text">ДЯкуємо за ваше звернення</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2344,8 +2393,9 @@
                       <p>Будь ласка, заповніть форму нижче,ми обов'язково зв'яжемося з вами найближчим часом для обговорення можливостей співробітництва</p>
                       <form class="form" action="#" method="get" style="padding: 0;" x-data="{
         handleSubmit() {
+          isShowPopUpTHX = true;
+          /* Ваша логика */
           console.log('Форма отправлена!');
-          // Ваша логика
         }
       }" @submit.prevent="handleSubmit">
                         <div class="wrapper-frame">
@@ -3046,8 +3096,9 @@
             <div class="wrapper-frame__container">
               <form class="form" action="#" method="get" x-data="{
           handleSubmit() {
+            isShowPopUpTHX = true;
+            /* Ваша логика */
             console.log('Форма отправлена!');
-            // Ваша логика
           }
         }" @submit.prevent="handleSubmit">
                 <div class="form__container">
@@ -3099,7 +3150,7 @@
         </section>
       </main>
       <div class="page__menu">
-        <template x-if="isShowPageMenu &amp;&amp; !isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
+        <template x-if="isShowPageMenu &amp;&amp; !isShowPopUpContact &amp;&amp; !isShowBurgerMenu &amp; !isShowSearchMenu &amp;&amp; !isShowPopUpContent &amp;&amp; !isShowPopUpRepeat &amp;&amp; !isShowPopUpDoctor">
           <div class="page__menu__container">
             <div class="page__menu__container__up"><a class="to-up" href="#" :class="{'to-up--hidden': !isShowToUp}"><img class="to-up__image" src="./images/icons/arrow-to-up_.svg" alt="to-up icon"/></a>
               <div class="contacts-menu__item">
