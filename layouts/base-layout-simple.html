@@ -482,7 +482,7 @@
                         </div>
                       </div>
                       <label class="checkbox">
-                        <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                        <input class="checkbox__real" type="checkbox" checked="checked" required="required"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
                       </label>
                       <button class="button" @click="" type="submit">
                         <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
@@ -797,7 +797,7 @@
                         </div>
                       </div>
                       <label class="checkbox">
-                        <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                        <input class="checkbox__real" type="checkbox" checked="checked" required="required"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
                       </label>
                       <button class="button" @click="" type="submit">
                         <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
@@ -889,24 +889,25 @@
           </div>
         </div>
       </div>
-      <div x-cloak x-show="isShowPopUpTHX"></div>
-      <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpTHX) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpTHX = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      <div x-cloak x-show="isShowPopUpTHX">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpTHX) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpTHX = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': true,
       'pop-up--center': true,
     }">
-        <div class="pop-up__content">
-          <div class="modal" on-cloak="on-cloak" @click.stop="" style="width: 100%; max-width: max-content;">
-            <div class="modal__button">
-              <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpTHX = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
-            </div>
-            <div class="modal__content">
-              <div class="thx-block"><img class="thx-block__image" src="./images/decor/happy.png" alt="happy family">
-                <div class="thx-block__content">
-                  <div class="title-easy-2">
-                    <p class="title-easy-2__text">Ми зв`яжемося з вами найближчим часом <br>🧡🧡🧡 </p>
-                    <div class="title-easy-2__container">
-                      <h2 class="title-easy-2__main-text">ДЯкуємо за ваше звернення</h2>
+          <div class="pop-up__content">
+            <div class="modal" on-cloak="on-cloak" @click.stop="" style="width: 100%; max-width: max-content;">
+              <div class="modal__button">
+                <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpTHX = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
+              </div>
+              <div class="modal__content">
+                <div class="thx-block"><img class="thx-block__image" src="./images/decor/happy.png" alt="happy family">
+                  <div class="thx-block__content">
+                    <div class="title-easy-2">
+                      <p class="title-easy-2__text">Ми зв`яжемося з вами найближчим часом <br>🧡🧡🧡 </p>
+                      <div class="title-easy-2__container">
+                        <h2 class="title-easy-2__main-text">ДЯкуємо за ваше звернення</h2>
+                      </div>
                     </div>
                   </div>
                 </div>

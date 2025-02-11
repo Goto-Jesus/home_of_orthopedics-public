@@ -482,7 +482,7 @@
                         </div>
                       </div>
                       <label class="checkbox">
-                        <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                        <input class="checkbox__real" type="checkbox" checked="checked" required="required"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
                       </label>
                       <button class="button" @click="" type="submit">
                         <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
@@ -797,7 +797,7 @@
                         </div>
                       </div>
                       <label class="checkbox">
-                        <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                        <input class="checkbox__real" type="checkbox" checked="checked" required="required"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
                       </label>
                       <button class="button" @click="" type="submit">
                         <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
@@ -889,24 +889,25 @@
           </div>
         </div>
       </div>
-      <div x-cloak x-show="isShowPopUpTHX"></div>
-      <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpTHX) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpTHX = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
+      <div x-cloak x-show="isShowPopUpTHX">
+        <div class="pop-up" x-data="{ isClosedPopUp: true }" x-effect="if (isShowPopUpTHX) {setTimeout(() =&gt; {isClosedPopUp=false;}, 1);}" x-cloak="x-cloak" @click="setTimeout(() =&gt; {isShowPopUpTHX = false}, 500);isClosedPopUp=true;" @scroll.debounce.window="currentAnchor = window.location.hash" :class="{
       'pop-up--closed': isClosedPopUp,
       'pop-up--fixed': true,
       'pop-up--center': true,
     }">
-        <div class="pop-up__content">
-          <div class="modal" on-cloak="on-cloak" @click.stop="" style="width: 100%; max-width: max-content;">
-            <div class="modal__button">
-              <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpTHX = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
-            </div>
-            <div class="modal__content">
-              <div class="thx-block"><img class="thx-block__image" src="./images/decor/happy.png" alt="happy family">
-                <div class="thx-block__content">
-                  <div class="title-easy-2">
-                    <p class="title-easy-2__text">Ми зв`яжемося з вами найближчим часом <br>🧡🧡🧡 </p>
-                    <div class="title-easy-2__container">
-                      <h2 class="title-easy-2__main-text">ДЯкуємо за ваше звернення</h2>
+          <div class="pop-up__content">
+            <div class="modal" on-cloak="on-cloak" @click.stop="" style="width: 100%; max-width: max-content;">
+              <div class="modal__button">
+                <button class="button-icon" @click="setTimeout(() =&gt; {isShowPopUpTHX = false}, 500);isClosedPopUp=true;" type=""><img src="./images/icons/cclose.svg" alt="icon"/></button>
+              </div>
+              <div class="modal__content">
+                <div class="thx-block"><img class="thx-block__image" src="./images/decor/happy.png" alt="happy family">
+                  <div class="thx-block__content">
+                    <div class="title-easy-2">
+                      <p class="title-easy-2__text">Ми зв`яжемося з вами найближчим часом <br>🧡🧡🧡 </p>
+                      <div class="title-easy-2__container">
+                        <h2 class="title-easy-2__main-text">ДЯкуємо за ваше звернення</h2>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -2744,96 +2745,94 @@
               </template>
             </div>
             <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Запоріжжя'}">
-              <template x-if="delayedActiveRegion === 'Запоріжжя' || activeRegion === 'Запоріжжя'">
-                <div class="menu menu--blue">
-                  <div class="menu__container">
-                    <div class="menu__head">
-                      <h2 class="menu__title">СПІВПРАЦЯ</h2>
-                      <div class="menu__button">
-                        <button class="button-icon" @click="handleSVGClick" type=""><img src="./images/icons/ccclose.svg" alt="icon"/></button>
-                      </div>
+              <div class="menu menu--blue">
+                <div class="menu__container">
+                  <div class="menu__head">
+                    <h2 class="menu__title">СПІВПРАЦЯ</h2>
+                    <div class="menu__button">
+                      <button class="button-icon" @click="handleSVGClick" type=""><img src="./images/icons/ccclose.svg" alt="icon"/></button>
                     </div>
-                    
-                    <div class="menu__list">
-                      <h6 class="_h6 _uppercase">Залиште Ваші Контактні Дані</h6>
-                      <p>Будь ласка, заповніть форму нижче,ми обов'язково зв'яжемося з вами найближчим часом для обговорення можливостей співробітництва</p>
-                      <form class="form" action="#" method="get" style="padding: 0;" x-data="{
+                  </div>
+                  
+                  <div class="menu__list">
+                    <h6 class="_h6 _uppercase">Залиште Ваші Контактні Дані</h6>
+                    <p>Будь ласка, заповніть форму нижче,ми обов'язково зв'яжемося з вами найближчим часом для обговорення можливостей співробітництва</p>
+                    <form class="form" action="#" method="get" style="padding: 0;" x-data="{
         handleSubmit() {
           isShowPopUpTHX = true;
           /* Ваша логика */
           console.log('Форма отправлена!');
         }
       }" @submit.prevent="handleSubmit">
-                        <div class="wrapper-frame">
-                          <div class="wrapper-frame__container">
-                            <div class="wrapper-center">
-                              <label class="input-new">
-                                <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
-                              </label>
-                            </div>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <label class="input-new">
+                              <input class="input-new__input" type="text" name="my-name" placeholder="Ім’я*" required="required" title="Ім’я"/>
+                            </label>
                           </div>
                         </div>
-                        <div class="wrapper-frame">
-                          <div class="wrapper-frame__container">
-                            <div class="wrapper-center">
-                              <label class="input-new">
-                                <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
-                              </label>
-                            </div>
+                      </div>
+                      <div class="wrapper-frame">
+                        <div class="wrapper-frame__container">
+                          <div class="wrapper-center">
+                            <label class="input-new">
+                              <input class="input-new__input" type="tel" name="my-phone" placeholder="Телефон*" required="required" title="Телефон"/>
+                            </label>
                           </div>
                         </div>
-                        <label class="checkbox">
-                          <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
-                        </label>
-                        <button class="button" @click="" type="submit">
-                          <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
-                          </p>
-                          <div class="button__icon">
-                            <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      </div>
+                      <label class="checkbox">
+                        <input class="checkbox__real" type="checkbox" checked="checked" required="required"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                      </label>
+                      <button class="button" @click="" type="submit">
+                        <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
+                        </p>
+                        <div class="button__icon">
+                          <div class="icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.4497 1.43795L1.55018 11.3374M11.4497 1.43795V9.92323M11.4497 1.43795H2.96439" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
-                            </div>
-                          </div>
-                        </button>
-                      </form>
-                      <div style="display: flex; justify-content: space-between; align-items: end;">
-                        <h6 class="_h6 _uppercase">ВАКАНСІЇ</h6><a class="link link--nowrap" href="./cooperation.html">
-                          <div class="link__text">УСІ ВАКАНСІЇ</div></a>
-                      </div>
-                      <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
-                        <div class="wrapper-frame__container">
-                          <div class="accordion" x-data="{isOpen:false}">
-                            <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Технік-протезист нижніх та верхніх кінцівок, ортезист ортопедичного центру</span>
-                              <div class="accordion__icon">
-                                <div class="accordion__line"></div>
-                                <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
-                              </div>
-                            </h2>
-                            <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium rem id atque qui amet laborum quibusdam praesentium, minima hic quae iusto, molestias adipisci dicta cupiditate eum, nam dolorum aliquam. Quasi.</div>
                           </div>
                         </div>
+                      </button>
+                    </form>
+                    <div style="display: flex; justify-content: space-between; align-items: end;">
+                      <h6 class="_h6 _uppercase">ВАКАНСІЇ</h6><a class="link link--nowrap" href="./cooperation.html">
+                        <div class="link__text">УСІ ВАКАНСІЇ</div></a>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
+                      <div class="wrapper-frame__container">
+                        <div class="accordion" x-data="{isOpen:false}">
+                          <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Технік-протезист нижніх та верхніх кінцівок, ортезист ортопедичного центру</span>
+                            <div class="accordion__icon">
+                              <div class="accordion__line"></div>
+                              <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                            </div>
+                          </h2>
+                          <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium rem id atque qui amet laborum quibusdam praesentium, minima hic quae iusto, molestias adipisci dicta cupiditate eum, nam dolorum aliquam. Quasi.</div>
+                        </div>
                       </div>
-                      <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
-                        <div class="wrapper-frame__container">
-                          <div class="accordion" x-data="{isOpen:false}">
-                            <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Технік-протезист нижніх та верхніх кінцівок, ортезист ортопедичного центру</span>
-                              <div class="accordion__icon">
-                                <div class="accordion__line"></div>
-                                <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
-                              </div>
-                            </h2>
-                            <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium rem id atque qui amet laborum quibusdam praesentium, minima hic quae iusto, molestias adipisci dicta cupiditate eum, nam dolorum aliquam. Quasi.</div>
-                          </div>
+                    </div>
+                    <div class="wrapper-frame wrapper-frame--bg" style="height: max-content;">
+                      <div class="wrapper-frame__container">
+                        <div class="accordion" x-data="{isOpen:false}">
+                          <h2 class="accordion__title" x-on:click="isOpen=!isOpen"><span>Технік-протезист нижніх та верхніх кінцівок, ортезист ортопедичного центру</span>
+                            <div class="accordion__icon">
+                              <div class="accordion__line"></div>
+                              <div class="accordion__line" :class="{'accordion__line--plus':!isOpen}"></div>
+                            </div>
+                          </h2>
+                          <div class="accordion__text" :class="{'accordion__text--hidden':!isOpen}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium rem id atque qui amet laborum quibusdam praesentium, minima hic quae iusto, molestias adipisci dicta cupiditate eum, nam dolorum aliquam. Quasi.</div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  
-                  
-                  <div></div>
                 </div>
-              </template>
+                
+                
+                <div></div>
+              </div>
             </div>
             <div class="section-map__menu" :class="{'section-map__menu--hidden': activeRegion !== 'Донецьк'}">
               <template x-if="delayedActiveRegion === 'Донецьк' || activeRegion === 'Донецьк'">
@@ -3467,7 +3466,7 @@
                   </div>
                 </div>
                 <label class="checkbox">
-                  <input class="checkbox__real" type="checkbox" checked="checked"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
+                  <input class="checkbox__real" type="checkbox" checked="checked" required="required"/><span class="checkbox__fake"></span><span class="checkbox__text">Підтверджуючи, ви погоджуєтесь з <b>політикою конфіденційності</b></span>
                 </label>
                 <button class="button" @click="" type="submit">
                   <p class="button__text"><span>ЗАПИСАТИСЯ НА ПРИЙОМ</span>
